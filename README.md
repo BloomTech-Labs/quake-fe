@@ -27,7 +27,9 @@
 ![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
 ![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![Maintainability](https://api.codeclimate.com/v1/badges/eba84c54eac8747c806a/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/memefly-ds/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/ca644fa2d7d7e12836f8/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/quake-fe/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/ca644fa2d7d7e12836f8/test_coverage)](https://codeclimate.com/github/Lambda-School-Labs/quake-fe/test_coverage)
+
 
 🚫 more info on using badges [here](https://github.com/badges/shields)
 
