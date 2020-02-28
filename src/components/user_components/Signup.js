@@ -22,7 +22,12 @@ function SignUp(props) {
             validationSchema={SignUpSchema}
             onSubmit={async (values, { setStatus }) => {
                 try {
-                //needs the axios call once we make the BE end points
+                    await axios.post('https://quakelabs-be-staging.herokuapp.com/api/auth/register', values);
+                    const { password, username } = values;
+                    const response = await axios.post('https://quakelabs-be-staging.herokuapp.com/api/auth/login', { username, password});
+                    localStorage.setItem('token', response.data.token);
+                    props.setUser(response.data.user);
+                    props.history.push('/map');
                 } catch (error) {
                 console.log(error);
                 setStatus({ msg: error });
@@ -94,9 +99,7 @@ function SignUp(props) {
             )}
             </Formik>
             <div>
-            Already have an account? 
-            {/* <Link to="/login">Log in</Link> */}
-            {/* will readd this once we add the router cause right now itll just throw an error  */}
+            Already have an account? <Link to="/login">Log in</Link>
             </div>
         </>
     );
