@@ -1,0 +1,20 @@
+ .signup-container {
+     display: flex;
+
+ }
+ 
+ 
+ div {
+    display: flex;
+    background-color: #2C2929;
+    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    margin: 0px;
+}
+h1 {
+    justify-content: left;
+    color: red;
+    align-items: center;
+}

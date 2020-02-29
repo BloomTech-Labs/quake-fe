@@ -1,0 +1,16 @@
+div{
+    display: flex;
+    background-color: #2C2929;
+    justify-content: space-between;
+    flex-direction: column;
+}
+section {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+}
+h1 {
+    justify-content: left;
+    color: red;
+    align-items: center;
+}
