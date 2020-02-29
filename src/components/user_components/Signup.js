@@ -18,93 +18,39 @@ const SignUpSchema = Yup.object().shape({
 });
 function SignUp(props) {
   return (
-        <section classname = "signup-section">
-            <div classname = "signup-container">
-                <h1 classname = "signup-head">
-                    Sign Up With Quake!
-                </h1>
-            
-                <Formik
-                initialValues={{ firstName: '', lastName: '', email: '', password: '', phone: '', username: '' }}
-                validationSchema={SignUpSchema}
-                onSubmit={async (values, { setStatus }) => {
-                    try {
-                    //needs the axios call once we make the BE end points
-                    } catch (error) {
-                    console.log(error);
-                    setStatus({ msg: error });
-                    }
-                }}
-                >
-                {({ isSubmitting, errors, touched }) => (
-                    <Form className="form">
-                    <div classname = "signup-form">
-                        <Field
-                        className="field"
-                        type="text"
-                        name="firstName"
-                        placeholder="First Name"
-                        />
-                        {touched.firstName && errors.firstName && (
-                        <p className="form__error">{errors.firstName}</p>
-                        )}
-                        <Field
-                        className="field"
-                        type="text"
-                        name="lastName"
-                        placeholder="Last Name"
-                        />
-                        {touched.lastName && errors.lastName && (
-                        <p className="form__error">{errors.lastName}</p>
-                        )}
-                        <Field
-                        className="field"
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        />
-                        {touched.email && errors.email && (
-                        <p className="form__error">{errors.email}</p>
-                        )}
-                        <Field
-                        className="field"
-                        type="text"
-                        name="username"
-                        placeholder="Username"
-                        />
-                        {touched.username && errors.username && (
-                        <p className="form__error">{errors.username}</p>
-                        )}
-                        <Field
-                        className="field"
-                        type="password"
-                        name="password"
-                        placeholder="Password"
-                        />
-                        {touched.password && errors.password && (
-                        <p className="form__error">{errors.password}</p>
-                        )}
-                        <Field
-                        className="field"
-                        type="text"
-                        name="phone"
-                        placeholder="Phone number"
-                        />
-                        {touched.phone && errors.phone && (
-                        <p className="form__error">{errors.phone}</p>
-                        )}
-                        <button>
-                        Sign Up
-                        </button>
-                    </div>
-                    </Form>
-                )}
-                </Formik>
+        <section classname = "section-container">
+            <div>
+            Sign Up
+            </div>
+            <Formik
+            initialValues={{ firstName: '', lastName: '', email: '', password: '', phone: '', username: '' }}
+            validationSchema={SignUpSchema}
+            onSubmit={async (values, { setStatus }) => {
+                try {
+                    await axios.post('https://quakelabs-be-staging.herokuapp.com/api/auth/register', values);
+                    const { password, username } = values;
+                    const response = await axios.post('https://quakelabs-be-staging.herokuapp.com/api/auth/login', { username, password});
+                    localStorage.setItem('token', response.data.token);
+                    props.setUser(response.data.user);
+                    props.history.push('/map');
+                } catch (error) {
+                console.log(error);
+                setStatus({ msg: error });
+                }
+            }}
+            >
+            {({ isSubmitting, errors, touched }) => (
+                <Form className="form">
                 <div>
                 <a href = "">Already have an account? </a>
                 {/* <Link to="/login">Log in</Link> */}
                 {/* will readd this once we add the router cause right now itll just throw an error  */}
                 </div>
+                </Form>
+            )}
+            </Formik>
+            <div>
+            Already have an account? <Link to="/login">Log in</Link>
             </div>
         </section>
     );

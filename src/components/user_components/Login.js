@@ -16,13 +16,18 @@ function Login(props) {
             <Formik
             initialValues={{ username: '', password: ''}}
             validationSchema={LoginSchema}
-            onSubmit={async (values, { setStatus }) => {
-                try {
-                //needs the axios call once we make the BE end points
-                } catch (error) {
-                console.log(error);
-                setStatus({ msg: error });
-                }
+            onSubmit={async (values, { setSubmitting, setStatus }) => {
+                axios.post('https://quakelabs-be-staging.herokuapp.com/api/auth/login', values)
+                    .then(res => {
+                        localStorage.setItem('token', res.data.token);
+                        props.setUser(res.data.user);
+                        props.history.push('/map');
+                    })
+                    .catch(err => {
+                        console.log(err);
+                        setStatus(err.rresponse.data.message);
+                        setSubmitting(false);
+                    });
             }}
             >
             {({ isSubmitting, errors, touched }) => (
@@ -54,9 +59,7 @@ function Login(props) {
             )}
             </Formik>
             <div>
-            Need an account? 
-            {/* <Link to="/login">Log in</Link> */}
-            {/* will readd this once we add the router cause right now itll just throw an error  */}
+            Need an account? <Link to="/signup">Sign up</Link>
             </div>
         </>
     );
