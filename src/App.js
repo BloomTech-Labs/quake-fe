@@ -29,7 +29,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Quake Live</h1>
       
       <PrivateRoute
         exact

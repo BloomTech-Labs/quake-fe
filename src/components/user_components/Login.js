@@ -3,16 +3,19 @@ import { Link } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
 import axios from 'axios';
 import * as Yup from 'yup';
+import "../Styles/Signup.scss";
+
 const LoginSchema = Yup.object().shape({
   username: Yup.string().required('Please enter your username'),
   password: Yup.string().required('Please enter a password'),
 });
 function Login(props) {
   return (
-        <>
-            <div>
+        <div className= "login-container">
+            <h3 className = "quake-head">Quake Live</h3>
+            <h2 className = "login">
             Login
-            </div>
+            </h2>
             <Formik
             initialValues={{ username: '', password: ''}}
             validationSchema={LoginSchema}
@@ -32,7 +35,7 @@ function Login(props) {
             >
             {({ isSubmitting, errors, touched }) => (
                 <Form className="form">
-                <div>
+                <div className = "form-div">
                     <Field
                     className="field"
                     type="text"
@@ -40,7 +43,7 @@ function Login(props) {
                     placeholder="Username"
                     />
                     {touched.username && errors.username && (
-                    <p className="form__error">{errors.username}</p>
+                    <p className="form-error">{errors.username}</p>
                     )}
                     <Field
                     className="field"
@@ -49,19 +52,19 @@ function Login(props) {
                     placeholder="Password"
                     />
                     {touched.password && errors.password && (
-                    <p className="form__error">{errors.password}</p>
+                    <p className="form-error">{errors.password}</p>
                     )}
-                    <button>
-                    Login
+                    <button classname = "login-button">
+                        Login
                     </button>
                 </div>
                 </Form>
             )}
             </Formik>
-            <div>
+            <div className = "signup-link">
             Need an account? <Link to="/signup">Sign up</Link>
             </div>
-        </>
+        </div>
     );
 }
 export default Login;
