@@ -1,0 +1,10 @@
+.nav-link{
+    text-decoration: none;
+    color: black;
+}
+
+.navigation {
+    display: flex;
+    justify-content: flex-start;
+    
+}
