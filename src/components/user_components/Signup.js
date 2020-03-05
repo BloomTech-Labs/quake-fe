@@ -42,7 +42,7 @@ function SignUp(props) {
             {({ isSubmitting, errors, touched }) => (
                 <Form className="form">
                 <div>
-                <a href = "">Already have an account? </a>
+              
                 {/* <Link to="/login">Log in</Link> */}
                 {/* will readd this once we add the router cause right now itll just throw an error  */}
                 </div>
