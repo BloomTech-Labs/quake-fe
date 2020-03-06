@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
 import axios from 'axios';
 import * as Yup from 'yup';
-import "../Styles/Signup.scss";
+import "../Styles/Login.scss";
 
 const LoginSchema = Yup.object().shape({
   username: Yup.string().required('Please enter your username'),
@@ -13,9 +13,7 @@ function Login(props) {
   return (
         <div className= "login-container">
             <h3 className = "quake-head">Quake Live</h3>
-            <h2 className = "login">
-            Login
-            </h2>
+            <h2 className = "login">Login</h2>
             <Formik
             initialValues={{ username: '', password: ''}}
             validationSchema={LoginSchema}
