@@ -3,11 +3,6 @@ import { Link } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
 import axios from 'axios';
 import * as Yup from 'yup';
-import '../Styles/Signup.scss'
-
-
-
-
 const SignUpSchema = Yup.object().shape({
   firstName: Yup.string().required('Please enter your first name'),
   lastName: Yup.string().required('Please enter your last name'),
@@ -18,7 +13,7 @@ const SignUpSchema = Yup.object().shape({
 });
 function SignUp(props) {
   return (
-        <section classname = "section-container">
+        <>
             <div>
             Sign Up
             </div>
@@ -42,9 +37,63 @@ function SignUp(props) {
             {({ isSubmitting, errors, touched }) => (
                 <Form className="form">
                 <div>
-              
-                {/* <Link to="/login">Log in</Link> */}
-                {/* will readd this once we add the router cause right now itll just throw an error  */}
+                    <Field
+                    className="field"
+                    type="text"
+                    name="firstName"
+                    placeholder="First Name"
+                    />
+                    {touched.firstName && errors.firstName && (
+                    <p className="form__error">{errors.firstName}</p>
+                    )}
+                    <Field
+                    className="field"
+                    type="text"
+                    name="lastName"
+                    placeholder="Last Name"
+                    />
+                    {touched.lastName && errors.lastName && (
+                    <p className="form__error">{errors.lastName}</p>
+                    )}
+                    <Field
+                    className="field"
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    />
+                    {touched.email && errors.email && (
+                    <p className="form__error">{errors.email}</p>
+                    )}
+                    <Field
+                    className="field"
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                    />
+                    {touched.username && errors.username && (
+                    <p className="form__error">{errors.username}</p>
+                    )}
+                    <Field
+                    className="field"
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    />
+                    {touched.password && errors.password && (
+                    <p className="form__error">{errors.password}</p>
+                    )}
+                    <Field
+                    className="field"
+                    type="text"
+                    name="phone"
+                    placeholder="Phone number"
+                    />
+                    {touched.phone && errors.phone && (
+                    <p className="form__error">{errors.phone}</p>
+                    )}
+                    <button>
+                    Sign Up
+                    </button>
                 </div>
                 </Form>
             )}
@@ -52,7 +101,7 @@ function SignUp(props) {
             <div>
             Already have an account? <Link to="/login">Log in</Link>
             </div>
-        </section>
+        </>
     );
 }
 export default SignUp;
