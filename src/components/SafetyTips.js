@@ -1,4 +1,5 @@
 import React from 'react';
+import '../components/Styles/SafetyTips.css';
 
 function SafetyTips(props) {
     return (
