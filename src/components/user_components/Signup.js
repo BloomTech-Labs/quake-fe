@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
 import axios from 'axios';
 import * as Yup from 'yup';
+import "../Styles/Signup.scss"
+
 const SignUpSchema = Yup.object().shape({
   firstName: Yup.string().required('Please enter your first name'),
   lastName: Yup.string().required('Please enter your last name'),
@@ -13,10 +15,9 @@ const SignUpSchema = Yup.object().shape({
 });
 function SignUp(props) {
   return (
-        <>
-            <div>
-            Sign Up
-            </div>
+        <div className = "signup-container">
+            <h3 className = "quake-head">Quake Live</h3>
+            <h2 className = "signup">Sign Up</h2>
             <Formik
             initialValues={{ firstName: '', lastName: '', email: '', password: '', phone: '', username: '' }}
             validationSchema={SignUpSchema}
@@ -36,7 +37,7 @@ function SignUp(props) {
             >
             {({ isSubmitting, errors, touched }) => (
                 <Form className="form">
-                <div>
+                <div className = "form-div">
                     <Field
                     className="field"
                     type="text"
@@ -91,17 +92,17 @@ function SignUp(props) {
                     {touched.phone && errors.phone && (
                     <p className="form__error">{errors.phone}</p>
                     )}
-                    <button>
-                    Sign Up
+                    <button className = "signup-button">
+                        Sign Up
                     </button>
                 </div>
                 </Form>
             )}
             </Formik>
-            <div>
+            <div className = "login-link">
             Already have an account? <Link to="/login">Log in</Link>
             </div>
-        </>
+        </div>
     );
 }
 export default SignUp;
