@@ -4,9 +4,15 @@ import Login from './components/user_components/Login';
 import Signup from './components/user_components/Signup';
 import Logout from './components/user_components/Logout';
 import Map from './components/map_components/Map';
+import Navigation from './components/Navigation';
 import PrivateRoute from './Data/PrivateRoute';
 import axiosWithAuth from './Data/axiosWithAuth';
 import jwtDecode from 'jwt-decode';
+import QuakeMap from './components/map_components/Map.js'
+
+
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import SafetyTips from './components/SafetyTips';
 
@@ -32,7 +38,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Quake Live</h1>
+      
+      
+      
       <PrivateRoute
         exact
         path='/map'
@@ -53,6 +61,7 @@ function App() {
         path='/logout'
         render={props => <Logout {...props} setUser={setUser} />}
       />
+      
     </div>
   );
 }

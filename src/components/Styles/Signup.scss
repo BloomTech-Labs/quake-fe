@@ -1,0 +1,44 @@
+.signup-container {
+    display: flex;
+    background-color: rgb(250, 250, 250);
+    flex-direction: column;
+    max-width: 800px;
+    margin: 10px auto;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+ }
+ .signup {
+    color: #FF473A;
+    margin-bottom: 50px;
+}
+.quake-head {
+    color: #FF473A;
+    padding-left: 0px;
+    font-size: 3.6rem;
+    font-weight: bold;
+}
+.field {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 33px;
+    margin-bottom: 15px;
+    
+}
+
+.form-div {
+    width: 250px;
+ }
+ 
+ .signup-button{
+    width: 256px;
+    height: 42px;
+    background: #FF473A;
+    margin-top: 33px;
+    }
+
+.login-link {
+        color: #FF473A;
+        margin-top: 15px;
+    }
