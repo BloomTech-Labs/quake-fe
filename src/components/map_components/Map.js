@@ -1,10 +1,7 @@
-
-
-
 import React from 'react';
-
 import mapboxgl from 'mapbox-gl';
-import "./Map.css";
+import "../Styles/Map.css";
+import Navigation from '../Navigation';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYnF1YWNrZW5idXNoIiwiYSI6ImNrN2NyMWZ1NTBocHIzZm15ajIyeDh6bjQifQ.XvrPc_WB0_PCWnE37pU4bQ';
 
@@ -38,6 +35,7 @@ class QuakeMap extends React.Component {
   render() {
     return (
       <div>
+        <Navigation />
         <div className='sidebarStyle'>
           <div>Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom}</div>
         </div>
