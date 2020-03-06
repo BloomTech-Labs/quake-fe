@@ -8,6 +8,9 @@ import PrivateRoute from './Data/PrivateRoute';
 import axiosWithAuth from './Data/axiosWithAuth';
 import jwtDecode from 'jwt-decode';
 
+import SafetyTips from './components/SafetyTips';
+
+
 function App() {
   const [user, setUser] = useState({});
 
@@ -29,7 +32,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Quake Live</h1>
+      {/* <h1>Quake Live</h1>
       <PrivateRoute
         exact
         path='/map'
@@ -49,7 +52,8 @@ function App() {
         exact
         path='/logout'
         render={props => <Logout {...props} setUser={setUser} />}
-      />
+      /> */}
+    <SafetyTips />
     </div>
   );
 }
