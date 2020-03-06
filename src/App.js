@@ -8,6 +8,7 @@ import PrivateRoute from './Data/PrivateRoute';
 import axiosWithAuth from './Data/axiosWithAuth';
 import jwtDecode from 'jwt-decode';
 import QuakeMap from './components/map_components/Map.js'
+import LastEarthQuakeButton from './components/map_components/LastEarthQuakeButton.js';
 
 
 
@@ -34,6 +35,7 @@ function App() {
     <div className="App">
       <h1>Quake Live</h1>
       <QuakeMap />
+      <LastEarthQuakeButton />
       
       <PrivateRoute
         exact
