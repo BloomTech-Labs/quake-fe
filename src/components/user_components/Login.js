@@ -54,13 +54,14 @@ function Login(props) {
                     {touched.password && errors.password && (
                     <p className="form-error">{errors.password}</p>
                     )}
-                    <button classname = "login-button">
+                    <button className = "login-button">
                         Login
                     </button>
                 </div>
                 </Form>
             )}
             </Formik>
+            
             <div className = "signup-link">
             Need an account? <Link to="/signup">Sign up</Link>
             </div>
