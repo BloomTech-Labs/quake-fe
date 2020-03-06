@@ -14,6 +14,9 @@ import QuakeMap from './components/map_components/Map.js'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import SafetyTips from './components/SafetyTips';
+
+
 function App() {
   const [user, setUser] = useState({});
 

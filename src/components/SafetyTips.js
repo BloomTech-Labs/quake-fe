@@ -1,5 +1,7 @@
 import React from 'react';
+import '../components/Styles/SafetyTips.css';
 import Navigation from './Navigation';
+
 
 function SafetyTips(props) {
     return (
