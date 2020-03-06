@@ -11,7 +11,7 @@ function Navigation(props) {
 
     <Navbar expandSm light>
       <Nav start>
-        <NavbarLink light brand href="home">Home</NavbarLink>
+        <NavbarLink light brand href="map">Home</NavbarLink>
         <NavbarLink light brand href="dashboard">Dashboard</NavbarLink>
         <NavbarLink light brand href="safetytips">Safety Tips</NavbarLink>
         <NavbarLink light brand href="signup">Sign Up</NavbarLink>
@@ -31,7 +31,7 @@ function Navigation(props) {
         </Nav>
       </Nav>
       <Nav start collapse expandSm hidden={hidden}>
-        <Link to="/home">
+        <Link to="/map">
             <NavbarLink light>home</NavbarLink>
         </Link>
         <Link to="/dashboard">

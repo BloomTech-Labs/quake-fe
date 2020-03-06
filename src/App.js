@@ -9,7 +9,7 @@ import PrivateRoute from './Data/PrivateRoute';
 import axiosWithAuth from './Data/axiosWithAuth';
 import jwtDecode from 'jwt-decode';
 import QuakeMap from './components/map_components/Map.js'
-
+import UserDashboard from './components/UserDashboard';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -39,12 +39,10 @@ function App() {
   return (
     <div className="App">
       
-      
-      
       <PrivateRoute
         exact
         path='/map'
-        component = {props => <Map {...props} user = {user} />}
+        component = {props => <QuakeMap {...props} user = {user} />}
       />
       <Route
         exact
@@ -61,7 +59,18 @@ function App() {
         path='/logout'
         render={props => <Logout {...props} setUser={setUser} />}
       />
-      
+      <Route
+        exact
+        path='/safetytips'
+        render={props => <SafetyTips {...props} setUser={setUser} />}
+      />
+      <Route
+        exact
+        path='/dashboard'
+        render={props => <UserDashboard {...props} setUser={setUser} />}
+      />
+
+
     </div>
   );
 }
