@@ -4,7 +4,7 @@
 import React from 'react';
 
 import mapboxgl from 'mapbox-gl';
-import "./Map.css";
+import "../Styles/Map.css";
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYnF1YWNrZW5idXNoIiwiYSI6ImNrN2NyMWZ1NTBocHIzZm15ajIyeDh6bjQifQ.XvrPc_WB0_PCWnE37pU4bQ';
 
