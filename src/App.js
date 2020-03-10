@@ -11,6 +11,7 @@ import jwtDecode from 'jwt-decode';
 import QuakeMap from './components/map_components/Map.js'
 import LastEarthQuakeButton from './components/map_components/LastEarthQuakeButton.js';
 import UserDashboard from './components/UserDashboard';
+import MapMarker from './components/map_components/MapMarker.js'
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -42,6 +43,7 @@ function App() {
       <h1>Quake Live</h1>
       <QuakeMap />
       <LastEarthQuakeButton />
+      <MapMarker />
       
       <PrivateRoute
         exact
