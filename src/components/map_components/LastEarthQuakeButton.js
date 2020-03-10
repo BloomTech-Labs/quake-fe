@@ -19,9 +19,12 @@ class LastEarthQuakeButton extends Component {
         }
         
         handleClick = event => {
+            const proxy = "https://cors-anywhere.herokuapp.com/";
+            const url = "https://quake-ds-staging.herokuapp.com/lastQuake"
             event.preventDefault();
-            axios.get("https://quake-ds-staging.herokuapp.com/lastQuake")
+            axios.get(proxy + url)
                 .then(res => {
+                    console.log(res.data)
                     this.setState({
                         oceanic: res.data.message.oceanic,
                         id: res.data.message.id,
@@ -33,7 +36,7 @@ class LastEarthQuakeButton extends Component {
                     })
                     console.log(res, this.state)
                 })
-                .catch(err => console.log(err))
+                .catch(err => console.log(err, "It didn't work"))
         }
 
         render() {
