@@ -26,7 +26,7 @@ function Login(props) {
                     })
                     .catch(err => {
                         console.log(err);
-                        setStatus(err.rresponse.data.message);
+                        setStatus(err.response.data.message);
                         setSubmitting(false);
                     });
             }}
