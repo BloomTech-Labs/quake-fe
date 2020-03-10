@@ -1,6 +1,10 @@
 import React, { Component } from "react"
 import axios from "axios";
 
+import MapMarker from "./MapMarker.js"
+
+
+
 class LastEarthQuakeButton extends Component {
     constructor(props) {
         super(props);
@@ -11,17 +15,19 @@ class LastEarthQuakeButton extends Component {
                 lon: [],
                 mag: [],
                 place: [],
-                time: []
+                time: [],
+                marker: false,
+                zoom: 2
             }
         
         
         
         }
-        
-        handleClick = event => {
+
+        componentDidMount() {
             const proxy = "https://cors-anywhere.herokuapp.com/";
             const url = "https://quake-ds-staging.herokuapp.com/lastQuake"
-            event.preventDefault();
+            
             axios.get(proxy + url)
                 .then(res => {
                     console.log(res.data)
@@ -35,14 +41,21 @@ class LastEarthQuakeButton extends Component {
                         time: res.data.message.time
                     })
                     console.log(res, this.state)
+                    
                 })
                 .catch(err => console.log(err, "It didn't work"))
+
+            
+                
+                
         }
+        
+        
 
         render() {
             return (
                 <div>
-                    <button onClick={this.handleClick}>Last Earthquake</button>
+                   <MapMarker lastEarthquake={this.state}/>
                 </div>
             )
         }
