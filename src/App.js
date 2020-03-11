@@ -43,7 +43,7 @@ function App() {
       />
       <Route
         exact
-        path='/login'
+        path='/'
         render={props => <Login {...props} setUser={setUser} />}
       />
       <Route
