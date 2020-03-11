@@ -26,7 +26,7 @@ class LastEarthQuakeButton extends Component {
 
         componentDidMount() {
             const proxy = "https://cors-anywhere.herokuapp.com/";
-            const url = "https://quake-ds-staging.herokuapp.com/lastQuake"
+            const url = "https://quake-ds-production.herokuapp.com/lastQuake"
             
             axios.get(proxy + url)
                 .then(res => {
