@@ -1,7 +1,12 @@
 import React from 'react';
+import '../components/Styles/SafetyTips.css';
+import Navigation from './Navigation';
+
 
 function SafetyTips(props) {
     return (
+        <>
+        <Navigation />
         <div className="tips-container">
             <div className="tips-intro">
                 <h1>Earthquake Safety Tips:</h1>
@@ -64,6 +69,7 @@ function SafetyTips(props) {
                 </div>
             </div>
         </div>
+        </>
     );
 }
 

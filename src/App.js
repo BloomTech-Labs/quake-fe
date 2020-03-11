@@ -3,13 +3,20 @@ import { Route } from 'react-router-dom';
 import Login from './components/user_components/Login';
 import Signup from './components/user_components/Signup';
 import Logout from './components/user_components/Logout';
-import Map from './components/map_components/Map';
-import Navigation from './components/Navigation';
+
+
 import PrivateRoute from './Data/PrivateRoute';
 import axiosWithAuth from './Data/axiosWithAuth';
 import jwtDecode from 'jwt-decode';
 import QuakeMap from './components/map_components/Map.js'
+import LastEarthQuakeButton from './components/map_components/LastEarthQuakeButton.js';
+import UserDashboard from './components/UserDashboard';
 
+
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import SafetyTips from './components/SafetyTips';
 
 
 function App() {
@@ -33,13 +40,15 @@ function App() {
 
   return (
     <div className="App">
-      
+      <h1>Quake Live</h1>
+      <QuakeMap />
+      <LastEarthQuakeButton />
       
       
       <PrivateRoute
         exact
         path='/map'
-        component = {props => <Map {...props} user = {user} />}
+        component = {props => <QuakeMap {...props} user = {user} />}
       />
       <Route
         exact
@@ -56,7 +65,18 @@ function App() {
         path='/logout'
         render={props => <Logout {...props} setUser={setUser} />}
       />
-      
+      <Route
+        exact
+        path='/safetytips'
+        render={props => <SafetyTips {...props} setUser={setUser} />}
+      />
+      <Route
+        exact
+        path='/dashboard'
+        render={props => <UserDashboard {...props} setUser={setUser} />}
+      />
+
+
     </div>
   );
 }
