@@ -43,7 +43,14 @@
 width: 256px;
 height: 42px;
 background: #FF473A;
+color: white;
+font-size: 18px;
+font-weight: bold;
 margin-top: 33px;
+    :hover {
+        color: #FF473A;
+        background: white;
+    }
 
 }
 
