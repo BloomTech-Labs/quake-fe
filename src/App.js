@@ -14,7 +14,7 @@ import UserDashboard from './components/UserDashboard';
 
 
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import SafetyTips from './components/SafetyTips';
 
@@ -40,10 +40,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Quake Live</h1>
-      <QuakeMap />
-      <LastEarthQuakeButton />
-      
       
       <PrivateRoute
         exact
