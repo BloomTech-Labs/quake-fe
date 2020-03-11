@@ -8,23 +8,24 @@ import Navigation from '../Navigation';
 mapboxgl.accessToken = 'pk.eyJ1IjoiYnF1YWNrZW5idXNoIiwiYSI6ImNrN2NyMWZ1NTBocHIzZm15ajIyeDh6bjQifQ.XvrPc_WB0_PCWnE37pU4bQ';
 
 class MapMarker extends React.Component {
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.lastEarthquake !== this.props.lastEarthquake) {
+      console.log("state has changed and working")
+      const map = new mapboxgl.Map({
+        container: this.mapContainer,
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [this.props.lastEarthquake.lon, this.props.lastEarthquake.lat],
+        zoom: this.props.lastEarthquake.zoom
+        
+      });
+      console.log(this.props.lastEarthquake.lon)
   
-
-  componentDidMount(props) {
-    const map = new mapboxgl.Map({
-      container: this.mapContainer,
-      style: 'mapbox://styles/mapbox/streets-v11',
-      center: [this.props.lastEarthquake.lon, this.props.lastEarthquake.lat],
-      zoom: this.props.lastEarthquake.zoom
-      
-    });
-    console.log(this.props.lastEarthquake.lon)
-
-    new mapboxgl.Marker()
-        .setLngLat([this.props.lastEarthquake.lon, this.props.lastEarthquake.lat])
-        .addTo(map);
-
-   
+      new mapboxgl.Marker()
+          .setLngLat([this.props.lastEarthquake.lon, this.props.lastEarthquake.lat])
+          .addTo(map);
+  
+    }
   }
 
   render() {
