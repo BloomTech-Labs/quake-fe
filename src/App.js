@@ -40,7 +40,8 @@ function App() {
 
   return (
     <div className="App">
-    
+     
+      <LastEarthQuakeButton />
       <PrivateRoute
         exact
         path='/map'
