@@ -20,3 +20,13 @@
     left: 0;
     bottom: 0;
   }
+
+  .longitude {
+
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
