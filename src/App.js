@@ -66,12 +66,12 @@ function App() {
         exact
         path='/safetytips'
         render={props => <SafetyTips {...props} setUser={setUser} />}
-      />
+      />*/}
       <Route
         exact
         path='/dashboard'
         render={props => <UserDashboard {...props} setUser={setUser} />}
-      /> */}
+      /> 
 
 
     </div>
