@@ -32,10 +32,12 @@ class MapMarker extends React.Component {
     return (
       <div>
         <Navigation />
-        <div >
-         
+        <div className='container'>
+        <div className='sidebarStyle'>
+          <div className='longitude'>Latest Earth Quake | Longitude: {this.props.lastEarthquake.lon} | Latitude: {this.props.lastEarthquake.lat} | Place: {this.props.lastEarthquake.place}</div>
         </div>
         <div ref={el => this.mapContainer = el} className='mapContainer' />
+        </div>
       </div>
     )
   }
