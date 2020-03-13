@@ -27,7 +27,7 @@ function App() {
     if(!token) return;
     const decoded = jwtDecode(token);
 
-    if (!decoded || user.id) return;
+    if (!decoded || user) return;
     (async () => {
       try {
         const response = await axiosWithAuth().get('https://quakelabs-be-staging.herokuapp.com/api/users/${decoded.__uuid}');
@@ -36,7 +36,7 @@ function App() {
         console.log(error);
       }
     })();
-  },[user.id]);
+  },[user]);
 
   return (
     <div className="App">

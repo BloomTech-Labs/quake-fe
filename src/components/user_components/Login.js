@@ -22,12 +22,12 @@ function Login(props) {
                 axios.post('https://quakelabs-be-staging.herokuapp.com/api/auth/login', values)
                     .then(res => {
                         localStorage.setItem('token', res.data.token);
-                        props.setUser(res.datga.user);
+                        props.setUser(res.data.user);
                         props.history.push('/map');
                     })
                     .catch(err => {
                         console.log(err);
-                        setStatus(err.response.data.message);
+                        //setStatus(err.response.data.message);
                         setSubmitting(false);
                     });
             }}
