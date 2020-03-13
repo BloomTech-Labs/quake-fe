@@ -36,10 +36,12 @@ class QuakeMap extends React.Component {
     return (
       <div>
         <Navigation />
+        <div className='container'>
         <div className='sidebarStyle'>
-          <div>Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom}</div>
+          <div className='longitude'>Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom}</div>
         </div>
         <div ref={el => this.mapContainer = el} className='mapContainer' />
+      </div>
       </div>
     )
   }

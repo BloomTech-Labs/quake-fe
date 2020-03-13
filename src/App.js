@@ -14,7 +14,7 @@ import UserDashboard from './components/UserDashboard';
 
 //https://gifted-shirley-d83416.netlify.com/ is the deployed website.
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import SafetyTips from './components/SafetyTips';
 
@@ -40,19 +40,15 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Quake Live</h1>
       <QuakeMap />
-      <LastEarthQuakeButton />
-      
-      
-      <PrivateRoute
+      {/* <PrivateRoute
         exact
         path='/map'
         component = {props => <QuakeMap {...props} user = {user} />}
       />
       <Route
         exact
-        path='/login'
+        path='/'
         render={props => <Login {...props} setUser={setUser} />}
       />
       <Route
@@ -74,7 +70,7 @@ function App() {
         exact
         path='/dashboard'
         render={props => <UserDashboard {...props} setUser={setUser} />}
-      />
+      /> */}
 
 
     </div>
