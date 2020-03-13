@@ -12,7 +12,7 @@ import QuakeMap from './components/map_components/Map.js'
 import LastEarthQuakeButton from './components/map_components/LastEarthQuakeButton.js';
 import UserDashboard from './components/UserDashboard';
 
-
+//https://gifted-shirley-d83416.netlify.com/ is the deployed website.
 
 
 
@@ -40,8 +40,8 @@ function App() {
 
   return (
     <div className="App">
-      
-       <PrivateRoute
+    
+      <PrivateRoute
         exact
         path='/map'
         component = {props => <QuakeMap {...props} user = {user} />}
