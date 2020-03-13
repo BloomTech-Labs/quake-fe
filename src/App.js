@@ -42,7 +42,7 @@ function App() {
     <div className="App">
      
       <LastEarthQuakeButton />
-      {/* <PrivateRoute
+      <PrivateRoute
         exact
         path='/map'
         component = {props => <QuakeMap {...props} user = {user} />}
@@ -66,7 +66,7 @@ function App() {
         exact
         path='/safetytips'
         render={props => <SafetyTips {...props} setUser={setUser} />}
-      />*/}
+      />
       <Route
         exact
         path='/dashboard'
