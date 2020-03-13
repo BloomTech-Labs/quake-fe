@@ -10,6 +10,7 @@ const LoginSchema = Yup.object().shape({
   password: Yup.string().required('Please enter a password'),
 });
 function Login(props) {
+    
   return (
         <div className= "login-container">
             <h3 className = "quake-head">Quake Live</h3>
@@ -21,7 +22,7 @@ function Login(props) {
                 axios.post('https://quakelabs-be-staging.herokuapp.com/api/auth/login', values)
                     .then(res => {
                         localStorage.setItem('token', res.data.token);
-                        props.setUser(res.data.user);
+                        props.setUser(res.datga.user);
                         props.history.push('/map');
                     })
                     .catch(err => {
