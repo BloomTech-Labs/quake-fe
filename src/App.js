@@ -40,8 +40,8 @@ function App() {
 
   return (
     <div className="App">
-      
-      <PrivateRoute
+      <QuakeMap />
+      {/* <PrivateRoute
         exact
         path='/map'
         component = {props => <QuakeMap {...props} user = {user} />}
@@ -70,7 +70,7 @@ function App() {
         exact
         path='/dashboard'
         render={props => <UserDashboard {...props} setUser={setUser} />}
-      />
+      /> */}
 
 
     </div>
