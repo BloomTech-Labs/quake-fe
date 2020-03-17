@@ -4,7 +4,7 @@ function Logout(props) {
   props.setUser({});
   localStorage.removeItem('token');
   return (
-    <Redirect to='/login' />
+    <Redirect to='/' />
   );
 }
 export default Logout;

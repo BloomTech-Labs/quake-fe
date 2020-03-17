@@ -10,6 +10,7 @@ const LoginSchema = Yup.object().shape({
   password: Yup.string().required('Please enter a password'),
 });
 function Login(props) {
+    
   return (
         <div className= "login-container">
             <h3 className = "quake-head">Quake Live</h3>
@@ -26,7 +27,7 @@ function Login(props) {
                     })
                     .catch(err => {
                         console.log(err);
-                        setStatus(err.response.data.message);
+                        //setStatus(err.response.data.message);
                         setSubmitting(false);
                     });
             }}
