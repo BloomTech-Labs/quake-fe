@@ -72,8 +72,12 @@ function App() {
         exact
         path='/dashboard'
         render={props => <UserDashboard {...props} setUser={setUser} />}
-      /> 
-
+      />
+      <Route
+        exact
+        path='/multiquake'
+        render={props => <MultiQuakeMap {...props} setUser={setUser}/>} 
+      />
 
     </div>
   );

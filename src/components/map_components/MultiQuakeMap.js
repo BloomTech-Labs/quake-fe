@@ -17,11 +17,12 @@ class MultiQuakeMap extends Component {
 
 
     handleSubmit = event => {
-       event.preventDefault();
-       const proxy = "https://cors-anywhere.herokuapp.com/";
-       const url = `https://quake-ds-production.herokuapp.com/lastQuake/last/${this.inputBox}` 
-
-       axios.get(proxy + url)
+        event.preventDefault();
+        const proxy = "https://cors-anywhere.herokuapp.com/";
+        const url = `https://quake-ds-production.herokuapp.com/last/${this.state.inputBox}` 
+        
+        console.log(this.state.inputBox, "Input box state")
+        axios.get(proxy + url)
             .then(res => {
                 this.setState({
                     quakes: res.data.message
