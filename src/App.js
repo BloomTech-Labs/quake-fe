@@ -10,6 +10,7 @@ import axiosWithAuth from './Data/axiosWithAuth';
 import jwtDecode from 'jwt-decode';
 import QuakeMap from './components/map_components/Map.js'
 import LastEarthQuakeButton from './components/map_components/LastEarthQuakeButton.js';
+import MultiQuakeMap from './components/map_components/MultiQuakeMap.js'
 import UserDashboard from './components/UserDashboard';
 
 //https://gifted-shirley-d83416.netlify.com/ is the deployed website.
