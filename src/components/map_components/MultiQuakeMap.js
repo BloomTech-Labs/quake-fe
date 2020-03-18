@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import axios from "axios";
+import MultiQuakeMapMarkers from "./MultiQuakeMapMarkers"
 
 
 class MultiQuakeMap extends Component {
@@ -63,6 +64,7 @@ class MultiQuakeMap extends Component {
 
 
                 </form>
+                <MultiQuakeMapMarkers multiQuake={this.state.quakes} />
             </div>
         )
     }
