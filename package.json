@@ -1,39 +1,20 @@
 {
-  "name": "quake-frontend",
+  "name": "quake-fe",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "axios": "^0.19.2",
-    "bootstrap": "^4.4.1",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "formik": "^2.1.4",
-    "jwt-decode": "^2.2.0",
-    "mapbox-gl": "^1.8.1",
-    "nodemon": "^2.0.2",
-    "react": "^16.12.0",
-    "react-bootstrap": "^1.0.0-beta.17",
-    "react-dom": "^16.12.0",
-    "react-map-gl": "^5.2.3",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0",
-    "sass": "^1.26.1",
-    "semantic-ui-react": "^0.88.2",
-    "styled-button-component": "^4.0.0",
-    "styled-components": "^5.0.1",
-    "styled-container-component": "^4.0.0",
-    "styled-navbar-component": "^4.0.0",
-    "yup": "^0.28.1"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "server": "nodemon server.js"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -49,8 +30,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "request": "^2.88.2"
   }
 }
