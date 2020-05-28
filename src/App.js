@@ -12,20 +12,18 @@ import Report from './components/Report';
 
 //Common Components
 import Navigation from "./partials/Navigation";
+import Responsive from "./partials/Responsive";
 
 //Design
 import './App.css';
-import logo from './logo.svg';
 
 
 function App() {
   return (
     <Router>
-
+      
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
+      <Responsive />
       <Switch>
           <Route exact path='/' component={Activity} />
           <Route exact path='/activity' component={Activity} />
