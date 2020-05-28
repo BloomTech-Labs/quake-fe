@@ -5,7 +5,7 @@ import React from "react";
 const Activity = () => {
   return (
     <div>
-        <p>WIP...</p>
+        <p>WIP...Activity</p>
     </div>
   );
 };

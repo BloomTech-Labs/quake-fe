@@ -7,6 +7,8 @@ import Activity from './components/activity/Activity';
 import Feed from './components/feed/Feed';
 import About from './components/About';
 import Resources from './components/Resources';
+import Report from './components/Report';
+
 
 //Common Components
 import Navigation from "./partials/Navigation";
@@ -30,6 +32,8 @@ function App() {
           <Route exact path='/feed' component={Feed} />
           <Route exact path='/about' component={About} />
           <Route exact path='/resources' component={Resources} />
+          <Route exact path='/report' component={Report} />
+
         </Switch>
         <Navigation />
     </div>
