@@ -1,15 +1,33 @@
   
 import React from "react";
-import { Link } from "react-router-dom";
-import { Menu } from "semantic-ui-react";
+import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
-    <Menu widths={3}>
-        <Menu.Item as={Link} to='/report' name='Report' />
-        <Menu.Item as={Link} to='/activity' name='Activity' />
-        <Menu.Item as={Link} to='/feed' name='News Feed' />
-    </Menu>
+    <div id="myNav">
+      <NavLink
+       className="nav"
+       activeStyle={{ color: 'red' }}
+       to="/report"
+     >
+       Report
+     </NavLink>
+     <NavLink
+       className="nav"
+       activeStyle={{ color: 'red' }}
+       to="/activity"
+     >
+       Activity
+     </NavLink>
+     <NavLink
+       className="nav"
+       activeStyle={{ color: 'red' }}
+       to="/feed"
+     >
+       News Feed
+     </NavLink>
+
+  </div>
   );
 };
 
