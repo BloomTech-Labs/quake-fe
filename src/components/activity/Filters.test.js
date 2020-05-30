@@ -9,16 +9,16 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import { quakeReducer as reducer } from "../../reducers/index";
 
-import Activity from "./Activity";
+import Filters from "./Filters";
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
-describe("<Activity/>", () => {
+describe("<Filters/>", () => {
   it("should render...", () => {
     rtl.render(
       <Provider store={store}>
         <Router>
-          <Activity />
+          <Filters />
         </Router>
       </Provider>
     );

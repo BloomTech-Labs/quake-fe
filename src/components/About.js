@@ -1,11 +1,9 @@
-  
 import React from "react";
-
 
 const About = () => {
   return (
     <div>
-        <p>WIP...About</p>
+      <p>WIP...About</p>
     </div>
   );
 };

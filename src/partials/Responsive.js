@@ -1,17 +1,17 @@
 import React from "react";
-import MediaQuery from 'react-responsive'
+import MediaQuery from "react-responsive";
 
 const Responsive = () => {
-    return (
+  return (
     <div>
-    <MediaQuery minWidth={501}>
+      <MediaQuery minWidth={501}>
         <h1>😬</h1>
         <p>It Looks like you are using desktop or laptop</p>
         <p>FaultLine is a mobile first app</p>
         <p>Emulate mobile below 500px to continue</p>
-    </MediaQuery>
+      </MediaQuery>
     </div>
-        );
-    };
-    
-    export default Responsive;
+  );
+};
+
+export default Responsive;
