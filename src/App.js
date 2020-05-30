@@ -14,7 +14,7 @@ import Navigation from "./partials/Navigation";
 import Responsive from "./partials/Responsive";
 
 //Design
-import "./App.css";
+import "./App.scss";
 
 function App() {
   return (
