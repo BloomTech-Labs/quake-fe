@@ -7,27 +7,27 @@ import Activity from "./components/activity/Activity";
 import Feed from "./components/feed/Feed";
 import About from "./components/About";
 import Resources from "./components/Resources";
+import Report from "./components/Report";
 
 //Common Components
 import Navigation from "./partials/Navigation";
+import Responsive from "./partials/Responsive";
 
 //Design
 import "./App.css";
-import logo from "./logo.svg";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
+        <Responsive />
         <Switch>
           <Route exact path="/" component={Activity} />
           <Route exact path="/activity" component={Activity} />
           <Route exact path="/feed" component={Feed} />
           <Route exact path="/about" component={About} />
           <Route exact path="/resources" component={Resources} />
+          <Route exact path="/report" component={Report} />
         </Switch>
         <Navigation />
       </div>

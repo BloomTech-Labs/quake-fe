@@ -25,7 +25,7 @@ function Filters(props) {
     const initialQuery = `&starttime=${getDates(today)}&endtime=${getDates(
       tomorrow
     )}&minmagnitude=3&maxmagnitude=9&orderby=time`;
-      console.log(initialQuery);
+    console.log(initialQuery);
     props.quakeFetch(initialQuery);
   }, []);
 
@@ -53,7 +53,7 @@ function Filters(props) {
     <div>
       <form onSubmit={handleSubmit}>
         <label>Date Range</label>
-        
+
         <input
           type="date"
           name="starttime"
@@ -97,7 +97,6 @@ function Filters(props) {
 
         <button type="submit">Search</button>
       </form>
-
     </div>
   );
 }
@@ -106,6 +105,6 @@ const mapStateToProps = (state) => {
   return {};
 };
 
-export default connect(mapStateToProps,{
+export default connect(mapStateToProps, {
   quakeFetch,
 })(Filters);
