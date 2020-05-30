@@ -1,14 +1,8 @@
 import React from "react";
-import styled from "styled-components";
-
-const ListCard = styled.div`
-  border: 1px solid blue;
-  border-radius: 5px;
-`;
 
 function Card({ quake, number }) {
   return (
-    <ListCard>
+    <div>
       <h1>
         {number} - {quake.properties.title}
       </h1>
@@ -19,7 +13,7 @@ function Card({ quake, number }) {
       <p>Magnitude: {quake.properties.mag}</p>
       <p>Depth: {quake.geometry.coordinates[2]} km.</p>
       <p>Status: {quake.properties.status}</p>
-    </ListCard>
+    </div>
   );
 }
 

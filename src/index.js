@@ -9,7 +9,6 @@ import { quakeReducer as reducer } from "./reducers/index";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import "semantic-ui-css/semantic.min.css";
 
 const store = createStore(reducer, applyMiddleware(thunk));
 

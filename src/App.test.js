@@ -7,7 +7,3 @@ import App from './App';
 //   const linkElement = getByText(/learn react/i);
 //   expect(linkElement).toBeInTheDocument();
 // });
-
-it("renders without crashing", () => {
-  render(<App />);
-});
