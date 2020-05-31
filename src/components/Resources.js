@@ -1,11 +1,9 @@
-  
 import React from "react";
-
 
 const Resources = () => {
   return (
     <div>
-        <p>WIP...Resources</p>
+      <p>WIP...Resources</p>
     </div>
   );
 };
