@@ -1,6 +1,35 @@
-.activity-card{
-    margin: 0 auto;
-    width: 95%;
-    border: 1px solid red;
-    
-};
+@import '../variables.scss';
+
+.activity-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 15px;
+    width: 100%;
+    border: 1px solid rgba(213, 209, 198, 0.5);
+}
+
+;
+
+.magnitude {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.375rem;
+    color: white;
+    height: 38px;
+    width: 38px;
+    background-color: $logo-primary;
+    border-radius: 5px;
+}
+
+;
+
+.dropdown-arrow {
+    border: solid black;
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}

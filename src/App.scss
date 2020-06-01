@@ -1,27 +1,12 @@
 //Import component styles: 
 @import './styling/activity/activity.scss';
 @import './styling/header.scss';
+@import './styling/navigation.scss';
 
 .App {
-  text-align: center;
+  width: 500px;
 }
 
 .App-link {
   color: #61dafb;
 }
-
-
-/* CSS for basic Nav */
-  .myNav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    overflow: hidden;
-  }
-
- .nav {
-  padding: 14px 16px;
-  font-size: 17px;
- }
