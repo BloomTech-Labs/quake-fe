@@ -1,1 +1,26 @@
 @import './variables.scss';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    padding: 0px 15px;
+    background-color: #d5d1c6;
+
+}
+
+.header-logo {
+    max-width: 55px;
+    max-height: 55px;
+    border: 1px solid red;
+}
+
+.hamburger-menu {
+    div {
+        width: 35px;
+        height: 5px;
+        background-color: black;
+        margin: 6px auto;
+    }
+}

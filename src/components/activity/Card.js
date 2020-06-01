@@ -2,7 +2,7 @@ import React from "react";
 
 function Card({ quake, number }) {
   return (
-    <div>
+    <div className="activity-card">
       <h1>
         {number} - {quake.properties.title}
       </h1>
