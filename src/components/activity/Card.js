@@ -1,14 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 
 function Card({ quake, number }) {
-  console.log(quake.properties);
+  const [open, setOpen] = useState(false);
   return (
-    <div className="activity-card">
-      <div className="magnitude">{Number.parseFloat(quake.properties.mag).toPrecision(2)}</div>
-      <div className="card-info">
-        <div className="place">{quake.properties.place}</div>
+    <div>
+      <div className="activity-card" onClick={() => setOpen(open => !open)}>
+        <div className="magnitude">{Number.parseFloat(quake.properties.mag).toPrecision(2)}</div>
+        <div className="card-info">
+          <div className="place">{quake.properties.place}</div>
+        </div>
+        <div className={!open ? "dropdown-arrow" :"dropdown-arrow-clicked"} onClick={()=> setOpen(open=>!open)}></div>
       </div>
-      <div className="dropdown-arrow"></div>
+      <div className={!open ? "activity-details-closed" : "activity-details-open"}>
+        <div className="detail-item">Magnitude: {quake.properties.mag}</div>
+        <div className="detail-item">Depth: {quake.geometry.coordinates[2]} km.</div>
+        <div className="detail-item">Status: {quake.properties.status}</div>
+        <div className="detail-item">Depth: {quake.geometry.coordinates[2]} km.</div>
+        <div className="detail-item">Status: {quake.properties.status}</div>
+      </div>
     </div>
   );
 }
