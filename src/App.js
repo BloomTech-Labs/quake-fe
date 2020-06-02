@@ -8,6 +8,7 @@ import thunk from "redux-thunk";
 import { quakeReducer as reducer } from "./reducers/index";
 
 //Components
+import Header from './partials/Header';
 import Activity from "./components/activity/Activity";
 import Feed from "./components/feed/Feed";
 import About from "./components/About";
@@ -29,6 +30,7 @@ function App() {
       <Router>
         <div className="App">
           <Responsive />
+          <Header />
           <Switch>
             <Route exact path="/" component={Activity} />
             <Route exact path="/activity" component={Activity} />
