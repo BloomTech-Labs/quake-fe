@@ -1,7 +1,9 @@
 //Import component styles: 
+@import './styling/reset.scss';
 @import './styling/activity/activity.scss';
 @import './styling/header.scss';
 @import './styling/navigation.scss';
+
 
 .App {
   width: 500px;
