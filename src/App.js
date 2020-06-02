@@ -28,8 +28,8 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
+      <Responsive />
         <div className="App">
-          <Responsive />
           <Header />
           <Switch>
             <Route exact path="/" component={Activity} />
