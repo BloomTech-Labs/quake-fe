@@ -1,10 +1,12 @@
 import React, {useState} from "react";
+var moment = require('moment');
 
 function Card({ quake, number }) {
   const [open, setOpen] = useState(false);
   console.log(quake);
 
   const epoch = new Date(quake.properties.time);
+  var localTime = moment(quake.properties.time).format('MM-DD-YYYY / hh:mm:ss A')
 
   function getDates(theDate) {
     var month = "" + (theDate.getMonth() + 1),
@@ -30,7 +32,7 @@ function Card({ quake, number }) {
         <div className={!open ? "dropdown-arrow" :"dropdown-arrow-clicked"} onClick={()=> setOpen(open=>!open)}></div>
       </div>
       <div className={!open ? "activity-details-closed" : "activity-details-open"}>
-        <div className="detail-item">Date &amp; Time: {getDates(epoch)}</div>
+        <div className="detail-item">Date &amp; Time: {localTime}</div>
         <div className="detail-item">Location: {quake.geometry.coordinates[0]},{quake.geometry.coordinates[1]}</div>
         <div className="detail-item">Depth: {quake.geometry.coordinates[2]} km.</div>
         <div className="detail-item">Magnitude: {quake.properties.mag}</div>

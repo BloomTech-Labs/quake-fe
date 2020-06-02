@@ -9,7 +9,6 @@ const Header = () => {
             <h1 className="site-title">FaultLine</h1>
             <div className="search-header">
                 <div className="search-icon"/>
-                <div className="search-text">Search</div>
             </div>
         </div>
     );
