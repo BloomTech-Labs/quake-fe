@@ -28,8 +28,8 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
+      <Responsive />
         <div className="App">
-          <Responsive />
           <Header />
           <Switch>
             <Route exact path="/" component={Activity} />
@@ -39,7 +39,6 @@ function App() {
             <Route exact path="/resources" component={Resources} />
             <Route exact path="/report" component={Report} />
           </Switch>
-          <Navigation />
         </div>
       </Router>
     </Provider>

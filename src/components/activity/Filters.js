@@ -25,16 +25,13 @@ function Filters(props) {
     const initialQuery = `&starttime=${getDates(today)}&endtime=${getDates(
       tomorrow
     )}&minmagnitude=3&maxmagnitude=9&orderby=time`;
-    console.log(initialQuery);
     props.quakeFetch(initialQuery);
   }, []);
 
   const formSubmitCallback = () => {
-    console.log(values);
 
     const newQuery = `&starttime=${values.starttime}&endtime=${values.endtime}&minmagnitude=${values.minmagnitude}&maxmagnitude=${values.maxmagnitude}&orderby=${values.orderby}`;
 
-    console.log(newQuery);
     props.quakeFetch(newQuery);
   };
 
@@ -53,6 +50,7 @@ function Filters(props) {
 
   return (
     <div>
+      <div className="filter-bar"><div className="filter-icon"></div></div>
       <form onSubmit={handleSubmit}>
         <label>Date Range</label>
 

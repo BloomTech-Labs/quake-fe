@@ -7,10 +7,8 @@ const Header = () => {
         <div className="header">
             <FaultlineLogo className="header-logo"/>
             <h1 className="site-title">FaultLine</h1>
-            <div className="hamburger-menu">
-                <div></div>
-                <div></div>
-                <div></div>
+            <div className="search-header">
+                <div className="search-icon"/>
             </div>
         </div>
     );
