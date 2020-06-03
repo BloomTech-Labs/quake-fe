@@ -7,6 +7,9 @@
     padding: 5px 15px;
     width: 100%;
     border: 1px solid rgba(213, 209, 198, 0.5);
+    font-family: Catamaran;
+    line-height: 3em;
+    background-color: $neutral-1;
 }
 
 ;
@@ -15,15 +18,32 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.375rem;
-    color: white;
-    height: 38px;
+    font-size: 2.2em;
+    color: $logo-primary;
+    padding: 5px;
+    height: 42px;
     width: 38px;
-    background-color: $logo-primary;
+    border: 3px solid $logo-primary;
+    background-color: none;
     border-radius: 5px;
 }
 
 ;
+
+.card-info {
+    width: 80%;
+}
+
+.place-info {
+    font-size: 1.8em;
+    width: 100%;
+    padding: 0 0 0 10px;
+
+}
+
+.city {
+    font-weight: 600;
+}
 
 .dropdown-arrow-clicked {
     border: solid black;
@@ -47,8 +67,10 @@
 
 
 .activity-details-open {
+    font-family: Catamaran;
+    font-size: 1.8em;
     transition: height .3s;
-    background-color: $neutral-1;
+    background-color: $neutral-2;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -56,6 +78,10 @@
     width: 100%;
     margin: auto;
     padding: 20px;
+}
+
+strong{
+    font-weight: 600;
 }
 
 .detail-item {

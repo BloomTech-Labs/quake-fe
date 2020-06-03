@@ -7,22 +7,34 @@
 
 // Colors for the site theme: 
 //primary
-$logo-primary: #1C4E4A;
-$logo-secondary: #c2996c;
+$logo-primary: #247249;
 $logo-background: #FFFFFA;
 
 //accent
-$active-icon: #323232;
+$active-icon: #247249;
 
 //etc. 
-$inactive-icon: #828282;
-$lightest-text: #F5F3EE;
-$neutral-1: #D5D1C6;
-$neutral-2: #747068;
-$neutral-3: #323232;
+$inactive-icon: #7BA29E;
+$lightest-text: #FFFFFA;
+$neutral-1: #F6FCFB;
+$neutral-2: #D9E3E2;
+$neutral-3: #252525;
 
 //----------
 
 // Site fonts: 
 //logo font: Post no bills
+@font-face {
+    font-family: 'PostNoBills';
+    src: local('PostNoBills'), url(./fonts/PostNoBillsJaffna-Regular.ttf) format('truetype');
+}
+
+;
+
 //body font: catamaran
+@font-face {
+    font-family: 'Catamaran';
+    src: local('Catamaran'), url(./fonts/Catamaran-Regular.ttf) format('truetype');
+}
+
+;

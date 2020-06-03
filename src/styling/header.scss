@@ -19,8 +19,8 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0px 15px;
-    background-color: $neutral-1;
+    padding: 15px 15px;
+    background-color: white;
 
 }
 
@@ -29,11 +29,11 @@
     max-height: 55px;
 }
 
-.hamburger-menu {
-    div {
-        width: 35px;
-        height: 5px;
-        background-color: black;
-        margin: 6px auto;
-    }
+.site-title {
+    font-family: PostNoBills;
+    font-size: 4em;
+    font-weight: 600;
+    color: #247249;
 }
+
+;
