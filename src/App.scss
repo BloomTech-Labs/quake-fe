@@ -4,11 +4,21 @@
 @import './styling/header.scss';
 @import './styling/navigation.scss';
 
+@media (max-width: 500px) {
+  .App { width: 500px; }
+  .Wipe { display: none; }
+}
 
-.App {
-  width: 500px;
+@media (min-width: 501px) {
+  // for desktop wipe
+  .Wipe { 
+    font-size: 7vh;
+    text-align: center;
+  }
+  .App { display: none; }
 }
 
 .App-link {
   color: #61dafb;
 }
+
