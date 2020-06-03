@@ -1,4 +1,6 @@
 import axios from "axios";
+import '../styling/fonts/Catamaran-Regular.ttf'
+import "../styling/fonts/PostNoBillsJaffna-Regular.ttf";
 
 export const QUAKE_FETCH = "QUAKE_FETCH";
 export const QUAKE_FETCH_ERROR = "QUAKE_FETCH_ERROR";

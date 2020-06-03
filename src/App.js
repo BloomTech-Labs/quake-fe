@@ -39,7 +39,6 @@ function App() {
             <Route exact path="/resources" component={Resources} />
             <Route exact path="/report" component={Report} />
           </Switch>
-          <Navigation />
         </div>
       </Router>
     </Provider>
