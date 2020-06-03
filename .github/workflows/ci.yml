@@ -18,6 +18,6 @@ jobs:
         env:
           CC_TEST_REPORTER_ID: '${{ secrets.CodeClimateReporterId }}'
         with:
-          coverageCommand: npm run coverage
+          coverageCommand: yarn run coverage
           coverageLocations: './coverage/clover.xml:clover'
           debug: true
