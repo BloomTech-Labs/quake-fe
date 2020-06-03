@@ -42,6 +42,8 @@ function Filters(props) {
       minmagnitude: 0,
       maxmagnitude: 10,
       orderby: "time",
+      latitude: 0,
+      longitude: 0
     },
     formSubmitCallback
   );
