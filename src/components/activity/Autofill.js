@@ -1,14 +1,10 @@
 import React, { Component } from "react";
 import Geocoder from "react-mapbox-gl-geocoder";
 
-const mapAccess = {
-  mapboxApiAccessToken:
-    "pk.eyJ1IjoiZWRkaWVqZGV2IiwiYSI6ImNrYWoxNmllODA3c3Iyd2xlY25qMWdqZTcifQ.qwSgQ-5q7jNjy2XWojuwwg",
-};
-
 const queryTypes = {
   types: "country,region,place,postcode,locality,neighborhood",
 };
+console.log(process.env.REACT_APP_MAP_API_TOKEN);
 
 class SearchBar extends Component {
   state = {
@@ -20,18 +16,22 @@ class SearchBar extends Component {
     console.log("Selected: ", item);
   };
 
+  
+  
+
   render() {
     const { viewport } = this.state;
 
     return (
       <div>
         <Geocoder
-          {...mapAccess}
+          mapboxApiAccessToken={process.env.REACT_APP_MAP_API_TOKEN}
           onSelected={this.onSelected}
           viewport={viewport}
           hideOnSelect={true}
           types={queryTypes}
           autocomplete={true}
+
         />
       </div>
     );
