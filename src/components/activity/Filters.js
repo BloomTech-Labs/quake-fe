@@ -95,7 +95,7 @@ function Filters(props) {
           <option value="magnitude-asc">Magnitude Asc.</option>
         </select>
 
-        <button type="submit">Search</button>
+        <button type="submit">Filter</button>
       </form>
     </div>
   );
