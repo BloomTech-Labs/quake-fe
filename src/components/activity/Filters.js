@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { quakeFetch } from "../../actions";
 import { useForm } from "../../customHooks/useForm";
+import SearchBar from "./SearchBar";
 
 function Filters(props) {
   const today = new Date();
@@ -52,6 +53,7 @@ function Filters(props) {
     <div>
       <div className="filter-bar"><div className="filter-icon"></div></div>
       <form onSubmit={handleSubmit}>
+        <SearchBar/>
         <label>Date Range</label>
 
         <input
