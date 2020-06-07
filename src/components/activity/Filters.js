@@ -38,11 +38,14 @@ function Filters({
 
   const handleChanges = (e) => {
     e.preventDefault();
-    const theParams = {
+    // const theParams = {
+    //   name: e.target.name,
+    //   value: e.target.value,
+    // };
+    updateSearchParams({
       name: e.target.name,
       value: e.target.value,
-    };
-    updateSearchParams(theParams);
+    });
   };
 
   return (

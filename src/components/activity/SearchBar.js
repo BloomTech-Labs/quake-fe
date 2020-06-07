@@ -1,46 +1,52 @@
 import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import { updateSearchParams } from "../../actions";
 import axios from "axios";
 import SearchBarResults from "./SearchBarResults";
 
 // STILL NEED TO CLEAN UP INPUT BY NOT ALLOWING ';'!!!!!!
+// Also make sure when hitting enter to select first auto correct result or do so when leaving focus of input
 
-const SearchBar = () => {
-  const [searchState, setSearchState] = useState({
-    searchTerm: "",
-    encoded: "",
-  });
+const SearchBar = ({ updateSearchParams, placename }) => {
+  const [encodedSearch, setEncodedSearch] = useState("");
 
-  const [geoState, setGeoState] = useState([]);
+  const [geocodeResults, setGeocodeResults] = useState([]);
 
   const handleChanges = (e) => {
     e.preventDefault();
-    setSearchState({
-      ...searchState,
-      searchTerm: e.target.value,
-      encoded: encodeURI(e.target.value),
+
+    updateSearchParams({
+      name: e.target.name,
+      value: e.target.value,
     });
+
+    setEncodedSearch(encodeURI(e.target.value));
   };
 
   useEffect(() => {
-    if (searchState.searchTerm.length > 2) {
+    if (placename.length > 2) {
       axios
         .get(
-          `https://api.mapbox.com/geocoding/v5/mapbox.places/${searchState.encoded}.json?access_token=${process.env.REACT_APP_MAP_API_TOKEN}&autocomplete=true&limit=5`
+          `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodedSearch}.json?access_token=${process.env.REACT_APP_MAP_API_TOKEN}&autocomplete=true&limit=5`
         )
         .then((res) => {
           // console.log(res);
-          setGeoState(res.data.features);
+          setGeocodeResults(res.data.features);
         })
         .catch((err) => {
           console.log("Error", err);
         });
     } else {
-      setGeoState([]); // This gets rid of the mapped results
+      setGeocodeResults([]); // This gets rid of the mapped results
     }
-  }, [searchState.searchTerm, searchState.encoded]);
+  }, [encodedSearch]);
 
-  console.log("SEARCH STATE!", searchState, searchState.encoded);
-  console.log("GEO STATE!", geoState);
+  const clearResults = () => {
+    setGeocodeResults([]);
+  }
+
+  console.log("ENCODED SEARCH STATE!", encodedSearch);
+  console.log("GEOCODE RESULTS STATE!", geocodeResults);
   // console.log(process.env.REACT_APP_MAP_API_TOKEN);
   //   console.log(`https://api.mapbox.com/geocoding/v5/mapbox.places/${geoState.encoded}.json?limit=5?access_token=${process.env.REACT_APP_MAP_API_TOKEN}`);
 
@@ -50,20 +56,28 @@ const SearchBar = () => {
     <div className="geocoder-container">
       <input
         type="text"
-        name="geocoder"
+        name="placename"
         onChange={handleChanges}
-        value={searchState.searchTerm}
+        value={placename}
         placeholder="Search"
         maxLength="256"
         className="search-bar"
       />
       <div className="search-results">
-        {geoState.map((feature) => {
-          return <SearchBarResults feature={feature} />;
+        {geocodeResults.map((feature) => {
+          return <SearchBarResults feature={feature} clearResults={clearResults} />;
         })}
       </div>
     </div>
   );
 };
 
-export default SearchBar;
+const mapStateToProps = (state) => {
+  return {
+    placename: state.searchReducer.placename
+  };
+};
+
+export default connect(mapStateToProps, {
+  updateSearchParams
+})(SearchBar);
