@@ -28,9 +28,9 @@ function List({ quakes, quakeFetch, quakeFetchError }) {
 
 const mapPropsToState = (state) => {
   return {
-    quakes: state.quakes,
-    quakeFetch: state.quakeFetch,
-    quakeFetchError: state.quakeFetchError,
+    quakes: state.quakeReducer.quakes,
+    quakeFetch: state.quakeReducer.quakeFetch,
+    quakeFetchError: state.quakeReducer.quakeFetchError,
   };
 };
 

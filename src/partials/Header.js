@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import { ReactComponent as FaultlineLogo } from '../images/Faultline_Logo.svg';
 
 const Header = () => {

@@ -1,10 +1,10 @@
 import axios from "axios";
-import '../styling/fonts/Catamaran-Regular.ttf'
-import "../styling/fonts/PostNoBillsJaffna-Regular.ttf";
 
 export const QUAKE_FETCH = "QUAKE_FETCH";
 export const QUAKE_FETCH_ERROR = "QUAKE_FETCH_ERROR";
 export const DISPLAY_QUAKES = "DISPLAY_QUAKES ";
+
+export const UPDATE_SEARCH_PARAMS = "UPDATE_SEARCH_PARAMS";
 
 export const quakeFetch = (theQuery) => (dispatch) => {
   dispatch({ type: QUAKE_FETCH });
@@ -22,3 +22,9 @@ export const quakeFetch = (theQuery) => (dispatch) => {
       });
   }, 500);
 };
+
+export const updateSearchParams = (theParams) => (dispatch) => {
+  console.log('Ran updateSearchParams: ', theParams);
+  dispatch({ type: UPDATE_SEARCH_PARAMS, params: theParams });
+};
+

@@ -2,10 +2,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+//Redux
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
-import { quakeReducer as reducer } from "./reducers/index";
+import { rootReducer as reducers } from "./reducers/index";
 
 //Components
 import Header from './partials/Header';
@@ -22,7 +23,7 @@ import Responsive from "./partials/Responsive";
 //Design
 import "./App.scss";
 
-const store = createStore(reducer, applyMiddleware(thunk));
+const store = createStore(reducers, applyMiddleware(thunk));
 
 function App() {
   return (

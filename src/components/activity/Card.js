@@ -5,7 +5,6 @@ function Card({ quake, number }) {
   const [open, setOpen] = useState(false);
 
   // Converting epoch time to a more familiar MM-DD-YYYY / hh:mm format.
-  const epoch = new Date(quake.properties.time);
   var localTime = moment(quake.properties.time).format('MM-DD-YYYY / hh:mm:ss A');
   
   // Splitting the quake title into 'distance from', 'city', 'state/nation'
@@ -13,9 +12,6 @@ function Card({ quake, number }) {
   const split2 = split1[0].split(' of ');
   split2.push(split1[1]);
   split2.push(split2.shift());
-
-  //Rounding magnitude to the nearest tenth.
-  const magRound = Math.round(quake.properties.mag * 10) / 10;
 
   return (
     <div>

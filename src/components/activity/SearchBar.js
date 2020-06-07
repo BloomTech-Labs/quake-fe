@@ -37,7 +37,7 @@ const SearchBar = () => {
     } else {
       setGeoState([]); // This gets rid of the mapped results
     }
-  }, [searchState.searchTerm]);
+  }, [searchState.searchTerm, searchState.encoded]);
 
   console.log("SEARCH STATE!", searchState, searchState.encoded);
   console.log("GEO STATE!", geoState);
@@ -59,7 +59,7 @@ const SearchBar = () => {
       />
       <div className="search-results">
         {geoState.map((feature) => {
-          return <Results feature={feature} />;
+          return <SearchBarResults feature={feature} />;
         })}
       </div>
     </div>
