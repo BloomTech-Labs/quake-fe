@@ -1,7 +1,7 @@
 import { UPDATE_SEARCH_PARAMS } from "../actions/index";
 
-// We could add the geolocation function here and set coords to 
-// initial state as an 'or' to the hard coded coords 
+// We could add the geolocation function here and set coords to
+// initial state as an 'or' to the hard coded coords
 
 const today = new Date();
 const tomorrow = new Date(today);
@@ -26,9 +26,9 @@ export const initialSearchState = {
   minmagnitude: 3.5,
   maxmagnitude: 10,
   maxradiuskm: 5000,
-  latitude: 37.781970,
-  longitude: -121.939920,
-  placename: ""
+  latitude: 37.78197,
+  longitude: -121.93992,
+  placename: "",
 };
 
 export const searchReducer = (state = initialSearchState, action) => {

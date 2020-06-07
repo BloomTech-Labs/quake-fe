@@ -11,17 +11,17 @@ const SearchBarResults = ({ updateSearchParams, feature, clearResults }) => {
     );
     updateSearchParams({
       name: "placename",
-      value: feature.place_name
+      value: feature.place_name,
     });
 
     updateSearchParams({
       name: "latitude",
-      value: feature.geometry.coordinates[0]
+      value: feature.geometry.coordinates[0],
     });
-    
+
     updateSearchParams({
       name: "longitude",
-      value: feature.geometry.coordinates[1]
+      value: feature.geometry.coordinates[1],
     });
     clearResults();
   };
@@ -30,12 +30,13 @@ const SearchBarResults = ({ updateSearchParams, feature, clearResults }) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
+  // ownProps allows the setting of props being passed down from a parent to state along side store props
   return {
     feature: ownProps.feature,
-    clearResults: ownProps.clearResults
+    clearResults: ownProps.clearResults,
   };
 };
 
 export default connect(mapStateToProps, {
-  updateSearchParams
+  updateSearchParams,
 })(SearchBarResults);

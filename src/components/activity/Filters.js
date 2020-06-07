@@ -14,15 +14,16 @@ function Filters({
   latitude,
   longitude,
 }) {
-
-  console.log('In Filters.js, Here Is State',
-  maxradiuskm,
-  starttime,
-  endtime,
-  minmagnitude,
-  maxmagnitude,
-  latitude,
-  longitude);
+  console.log(
+    "In Filters.js, Here Is State",
+    maxradiuskm,
+    starttime,
+    endtime,
+    minmagnitude,
+    maxmagnitude,
+    latitude,
+    longitude
+  );
 
   useEffect(() => {
     const initialQuery = `&starttime=${starttime}&endtime=${endtime}&minmagnitude=${minmagnitude}&maxmagnitude=${maxmagnitude}&maxradiuskm=${maxradiuskm}&latitude=${latitude}&longitude=${longitude}`;
@@ -123,5 +124,5 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
   quakeFetch,
-  updateSearchParams
+  updateSearchParams,
 })(Filters);

@@ -6,8 +6,10 @@ const Activity = () => {
   return (
     <div>
       <Filters />
-      
-      <div className="filter-bar"><div className="filter-icon"></div></div>
+
+      <div className="filter-bar">
+        <div className="filter-icon"></div>
+      </div>
       <List />
     </div>
   );

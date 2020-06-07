@@ -9,7 +9,7 @@ import thunk from "redux-thunk";
 import { rootReducer as reducers } from "./reducers/index";
 
 //Components
-import Header from './partials/Header';
+import Header from "./partials/Header";
 import Activity from "./components/activity/Activity";
 import Feed from "./components/feed/Feed";
 import About from "./components/About";
@@ -29,7 +29,7 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-      <Responsive />
+        <Responsive />
         <div className="App">
           <Header />
           <Switch>

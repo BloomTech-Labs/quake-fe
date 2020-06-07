@@ -24,7 +24,6 @@ export const quakeFetch = (theQuery) => (dispatch) => {
 };
 
 export const updateSearchParams = (theParams) => (dispatch) => {
-  console.log('Ran updateSearchParams: ', theParams);
+  console.log("Ran updateSearchParams: ", theParams);
   dispatch({ type: UPDATE_SEARCH_PARAMS, params: theParams });
 };
-
