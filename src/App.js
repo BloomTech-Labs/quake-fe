@@ -1,14 +1,14 @@
-//React
+// React
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-//Redux
+// Redux
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import { rootReducer as reducers } from "./reducers/index";
 
-//Components
+// Components
 import Header from "./partials/Header";
 import Activity from "./components/activity/Activity";
 import Feed from "./components/feed/Feed";
@@ -16,11 +16,11 @@ import About from "./components/About";
 import Resources from "./components/Resources";
 import Report from "./components/Report";
 
-//Common Components
+// Common Components
 import Navigation from "./partials/Navigation";
 import Responsive from "./partials/Responsive";
 
-//Design
+// Design
 import "./App.scss";
 
 const store = createStore(reducers, applyMiddleware(thunk));

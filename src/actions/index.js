@@ -1,9 +1,11 @@
 import axios from "axios";
 
+// quakeReducer Actions
 export const QUAKE_FETCH = "QUAKE_FETCH";
 export const QUAKE_FETCH_ERROR = "QUAKE_FETCH_ERROR";
 export const DISPLAY_QUAKES = "DISPLAY_QUAKES ";
 
+// searchReducer Actions
 export const UPDATE_SEARCH_PARAMS = "UPDATE_SEARCH_PARAMS";
 
 export const quakeFetch = (theQuery) => (dispatch) => {
@@ -24,6 +26,5 @@ export const quakeFetch = (theQuery) => (dispatch) => {
 };
 
 export const updateSearchParams = (theParams) => (dispatch) => {
-  console.log("Ran updateSearchParams: ", theParams);
   dispatch({ type: UPDATE_SEARCH_PARAMS, params: theParams });
 };

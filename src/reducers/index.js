@@ -1,8 +1,20 @@
+// Redux
 import { combineReducers } from "redux";
-import { quakeReducer } from "./quakeReducer"
-import { searchReducer } from "./searchReducer"
+
+// Reducers
+import { quakeReducer } from "./quakeReducer";
+import { searchReducer } from "./searchReducer";
+
+// ***** NOTE *****
+// When using connect and mapStateToProps, make sure
+// you link with this syntax:
+
+// 'prop_name': state.'reducer_name'.'state_value'
+
+// Because we have multiple reducers, you MUST specify
+// which state object you are trying to get values from
 
 export const rootReducer = combineReducers({
-    quakeReducer,
-    searchReducer
+  quakeReducer,
+  searchReducer,
 });

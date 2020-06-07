@@ -10,6 +10,7 @@ const Activity = () => {
       <div className="filter-bar">
         <div className="filter-icon"></div>
       </div>
+
       <List />
     </div>
   );

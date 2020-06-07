@@ -34,6 +34,8 @@ export const initialSearchState = {
 export const searchReducer = (state = initialSearchState, action) => {
   switch (action.type) {
     case UPDATE_SEARCH_PARAMS:
+      // Updates state values dynamically based on the name passed in by the payload.
+      // See src/components/activity/Filters.js handleChanges() for example.
       return {
         ...state,
         [action.params.name]: action.params.value,

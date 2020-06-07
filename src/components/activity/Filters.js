@@ -14,35 +14,25 @@ function Filters({
   latitude,
   longitude,
 }) {
-  console.log(
-    "In Filters.js, Here Is State",
-    maxradiuskm,
-    starttime,
-    endtime,
-    minmagnitude,
-    maxmagnitude,
-    latitude,
-    longitude
-  );
+  // The query parameters to be sent to USGS. Updates with state changes
+  const USGSQuery = `&starttime=${starttime}&endtime=${endtime}&minmagnitude=${minmagnitude}&maxmagnitude=${maxmagnitude}&maxradiuskm=${maxradiuskm}&latitude=${latitude}&longitude=${longitude}`;
 
+  // Initial Quake Search, runs on first load
   useEffect(() => {
-    const initialQuery = `&starttime=${starttime}&endtime=${endtime}&minmagnitude=${minmagnitude}&maxmagnitude=${maxmagnitude}&maxradiuskm=${maxradiuskm}&latitude=${latitude}&longitude=${longitude}`;
-    quakeFetch(initialQuery);
+    quakeFetch(USGSQuery);
   }, []);
 
+  // dispatches quakeFetch actions with the query for USGS upon form submit
   const formSubmitCallback = (e) => {
     e.preventDefault();
-    const newQuery = `&starttime=${starttime}&endtime=${endtime}&minmagnitude=${minmagnitude}&maxmagnitude=${maxmagnitude}&maxradiuskm=${maxradiuskm}&latitude=${latitude}&longitude=${longitude}`;
 
-    quakeFetch(newQuery);
+    quakeFetch(USGSQuery);
   };
 
+  // Updates the search state dynamically for each input due to shared key names
   const handleChanges = (e) => {
     e.preventDefault();
-    // const theParams = {
-    //   name: e.target.name,
-    //   value: e.target.value,
-    // };
+
     updateSearchParams({
       name: e.target.name,
       value: e.target.value,

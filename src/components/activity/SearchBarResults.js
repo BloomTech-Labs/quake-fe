@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { updateSearchParams } from "../../actions";
 
 const SearchBarResults = ({ updateSearchParams, feature, clearResults }) => {
+  // Sets coords and place name to state when autocomplete result is selected
   const submitLocation = () => {
     console.log(
       "LOGGING FEATURE COORDS: ",
@@ -23,7 +24,7 @@ const SearchBarResults = ({ updateSearchParams, feature, clearResults }) => {
       name: "longitude",
       value: feature.geometry.coordinates[1],
     });
-    clearResults();
+    clearResults(); // Function passed from parent that clears the autocomplete results
   };
 
   return <p onClick={submitLocation}>{feature.place_name}</p>;
