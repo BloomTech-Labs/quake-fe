@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { quakeFetch, updateSearchParams } from "../../actions";
-import { useForm } from "../../customHooks/useForm";
 import SearchBar from "./SearchBar";
 
 function Filters({
   quakeFetch,
   updateSearchParams,
-  radius,
+  maxradiuskm,
   starttime,
   endtime,
   minmagnitude,
@@ -15,25 +14,9 @@ function Filters({
   latitude,
   longitude,
 }) {
-  // const today = new Date();
-  // const tomorrow = new Date(today);
-  // tomorrow.setDate(tomorrow.getDate() + 1);
-
-  // function getDates(theDate) {
-  //   var month = "" + (theDate.getMonth() + 1),
-  //     day = "" + theDate.getDate(),
-  //     year = theDate.getFullYear();
-
-  //   if (month.length < 2) month = "0" + month;
-  //   if (day.length < 2) day = "0" + day;
-
-  //   const fullDate = [year, month, day].join("-");
-
-  //   return fullDate;
-  // }
 
   console.log('In Filters.js, Here Is State',
-  radius,
+  maxradiuskm,
   starttime,
   endtime,
   minmagnitude,
@@ -42,28 +25,16 @@ function Filters({
   longitude);
 
   useEffect(() => {
-    const initialQuery = `&starttime=${starttime}&endtime=${endtime}&minmagnitude=3.5&maxmagnitude=9`;
+    const initialQuery = `&starttime=${starttime}&endtime=${endtime}&minmagnitude=${minmagnitude}&maxmagnitude=${maxmagnitude}&maxradiuskm=${maxradiuskm}&latitude=${latitude}&longitude=${longitude}`;
     quakeFetch(initialQuery);
   }, []);
 
-  const formSubmitCallback = () => {
-    const newQuery = `&starttime=${starttime}&endtime=${endtime}&minmagnitude=${minmagnitude}&maxmagnitude=${maxmagnitude}`;
+  const formSubmitCallback = (e) => {
+    e.preventDefault();
+    const newQuery = `&starttime=${starttime}&endtime=${endtime}&minmagnitude=${minmagnitude}&maxmagnitude=${maxmagnitude}&maxradiuskm=${maxradiuskm}&latitude=${latitude}&longitude=${longitude}`;
 
     quakeFetch(newQuery);
   };
-
-  // const [values, handleChanges, handleSubmit] = useForm(
-  //   {
-  //     starttime: getDates(today),
-  //     endtime: getDates(tomorrow),
-  //     minmagnitude: 3.5,
-  //     maxmagnitude: 10,
-  //     radius: 500,
-  //     latitude: 0,
-  //     longitude: 0,
-  //   },
-  //   formSubmitCallback
-  // );
 
   const handleChanges = (e) => {
     e.preventDefault();
@@ -83,9 +54,9 @@ function Filters({
 
         <input
           type="number"
-          name="radius"
+          name="maxradiuskm"
           onChange={handleChanges}
-          value={radius}
+          value={maxradiuskm}
           min="1"
           max="20001.6"
           step="0.1"
@@ -141,7 +112,7 @@ const mapStateToProps = (state) => {
     endtime: state.searchReducer.endtime,
     minmagnitude: state.searchReducer.minmagnitude,
     maxmagnitude: state.searchReducer.maxmagnitude,
-    radius: state.searchReducer.radius,
+    maxradiuskm: state.searchReducer.maxradiuskm,
     latitude: state.searchReducer.latitude,
     longitude: state.searchReducer.longitude,
   };

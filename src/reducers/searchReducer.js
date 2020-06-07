@@ -22,9 +22,9 @@ export const initialSearchState = {
   endtime: getDates(tomorrow),
   minmagnitude: 3.5,
   maxmagnitude: 10,
-  radius: 500,
-  latitude: 0,
-  longitude: 0,
+  maxradiuskm: 5000,
+  latitude: 37.781970,
+  longitude: -121.939920,
 };
 
 export const searchReducer = (state = initialSearchState, action) => {
