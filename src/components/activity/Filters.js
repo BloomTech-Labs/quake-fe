@@ -1,71 +1,75 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { quakeFetch } from "../../actions";
-import { useForm } from "../../customHooks/useForm";
+import { quakeFetch, updateSearchParams } from "../../actions";
+import SearchBar from "./SearchBar";
 
-function Filters(props) {
-  const today = new Date();
-  const tomorrow = new Date(today);
-  tomorrow.setDate(tomorrow.getDate() + 1);
+function Filters({
+  quakeFetch,
+  updateSearchParams,
+  maxradiuskm,
+  starttime,
+  endtime,
+  minmagnitude,
+  maxmagnitude,
+  latitude,
+  longitude,
+}) {
+  // The query parameters to be sent to USGS. Updates with state changes
+  const USGSQuery = `&starttime=${starttime}&endtime=${endtime}&minmagnitude=${minmagnitude}&maxmagnitude=${maxmagnitude}&maxradiuskm=${maxradiuskm}&latitude=${latitude}&longitude=${longitude}`;
 
-  function getDates(theDate) {
-    var month = "" + (theDate.getMonth() + 1),
-      day = "" + theDate.getDate(),
-      year = theDate.getFullYear();
-
-    if (month.length < 2) month = "0" + month;
-    if (day.length < 2) day = "0" + day;
-
-    const fullDate = [year, month, day].join("-");
-
-    return fullDate;
-  }
-
+  // Initial Quake Search, runs on first load
   useEffect(() => {
-    const initialQuery = `&starttime=${getDates(today)}&endtime=${getDates(
-      tomorrow
-    )}&minmagnitude=3&maxmagnitude=9&orderby=time`;
-    props.quakeFetch(initialQuery);
+    quakeFetch(USGSQuery);
   }, []);
 
-  const formSubmitCallback = () => {
+  // dispatches quakeFetch actions with the query for USGS upon form submit
+  const formSubmitCallback = (e) => {
+    e.preventDefault();
 
-    const newQuery = `&starttime=${values.starttime}&endtime=${values.endtime}&minmagnitude=${values.minmagnitude}&maxmagnitude=${values.maxmagnitude}&orderby=${values.orderby}`;
-
-    props.quakeFetch(newQuery);
+    quakeFetch(USGSQuery);
   };
 
-  const [values, handleChanges, handleSubmit] = useForm(
-    {
-      starttime: getDates(today),
-      endtime: getDates(tomorrow),
-      minmagnitude: 0,
-      maxmagnitude: 10,
-      orderby: "time",
-      latitude: 0,
-      longitude: 0
-    },
-    formSubmitCallback
-  );
+  // Updates the search state dynamically for each input due to shared key names
+  const handleChanges = (e) => {
+    e.preventDefault();
+
+    updateSearchParams({
+      name: e.target.name,
+      value: e.target.value,
+    });
+  };
 
   return (
-    <div>
-      <div className="filter-bar"><div className="filter-icon"></div></div>
-      <form onSubmit={handleSubmit}>
+    <div className="search-menu" id="search-menu">
+      <form onSubmit={formSubmitCallback}>
+        <SearchBar />
+
+        <label>Search Radius &#40;km&#41;</label>
+
+        <input
+          type="number"
+          name="maxradiuskm"
+          onChange={handleChanges}
+          value={maxradiuskm}
+          min="1"
+          max="20001.6"
+          step="0.1"
+        />
+
         <label>Date Range</label>
 
         <input
           type="date"
           name="starttime"
           onChange={handleChanges}
-          value={values.starttime}
+          value={starttime}
         />
 
         <input
           type="date"
           name="endtime"
           onChange={handleChanges}
-          value={values.endtime}
+          value={endtime}
         />
 
         <label>Magnitude</label>
@@ -75,8 +79,9 @@ function Filters(props) {
           name="minmagnitude"
           min="0"
           max="10"
+          step="0.1"
           onChange={handleChanges}
-          value={values.minmagnitude}
+          value={minmagnitude}
         />
 
         <input
@@ -84,8 +89,9 @@ function Filters(props) {
           name="maxmagnitude"
           min="0"
           max="10"
+          step="0.1"
           onChange={handleChanges}
-          value={values.maxmagnitude}
+          value={maxmagnitude}
         />
 
         <select name="orderby" onChange={handleChanges}>
@@ -102,9 +108,18 @@ function Filters(props) {
 }
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    starttime: state.searchReducer.starttime,
+    endtime: state.searchReducer.endtime,
+    minmagnitude: state.searchReducer.minmagnitude,
+    maxmagnitude: state.searchReducer.maxmagnitude,
+    maxradiuskm: state.searchReducer.maxradiuskm,
+    latitude: state.searchReducer.latitude,
+    longitude: state.searchReducer.longitude,
+  };
 };
 
 export default connect(mapStateToProps, {
   quakeFetch,
+  updateSearchParams,
 })(Filters);

@@ -7,7 +7,7 @@ import "@testing-library/jest-dom/extend-expect";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
-import { quakeReducer as reducer } from "../../reducers/index";
+import { rootReducer as reducer } from "../../reducers/index";
 
 import Filters from "./Filters";
 

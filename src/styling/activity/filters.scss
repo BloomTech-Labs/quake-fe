@@ -11,3 +11,60 @@
     height: 32px;
     width: 32px;
 }
+
+.search-menu {
+    display: none;
+    position: fixed;
+    width: 90vw;
+    padding: 20px;
+    background: rgb(247, 177, 177);
+    left: 50%;
+    transform: translateX(-50%);
+
+    .geocoder-container {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+
+        .search-bar {
+            height: 35px;
+            padding: 5px;
+            border: none;
+            background-image: url("https://image.flaticon.com/icons/svg/1086/1086933.svg");
+            background-size: 15px;
+            background-position: 96%;
+            background-repeat: no-repeat;
+          }
+
+        .search-results {
+            position: absolute;
+            padding: 0 5px;
+            z-index: 10;
+            margin-top: 35px;
+            background: #333;
+            width: 100%;
+          }
+          
+          .search-results p {
+            display: block;
+            background: rgb(255, 253, 248);
+            font-size: 0.85rem;
+            line-height: 1.2rem;
+            border-top: 1px solid #000000;
+            padding: 5px;
+            margin: 0 auto;
+            width: 97%;
+            transition: 0.3s;
+            transition-timing-function: ease-in-out;
+          }
+          
+          .search-results p:hover {
+            cursor: pointer;
+            background: rgb(255, 246, 223);
+          }
+          
+    }
+}
