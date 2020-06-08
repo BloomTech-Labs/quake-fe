@@ -40,7 +40,7 @@ function Filters({
   };
 
   return (
-    <div className="search-menu">
+    <div className="search-menu" id="search-menu">
       <form onSubmit={formSubmitCallback}>
         <SearchBar />
 
