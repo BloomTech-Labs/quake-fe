@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { quakeFetch } from "../../actions";
-import { useForm } from "../../customHooks/useForm";
+import {quakeSort} from "../../actions/index.js";
 
-function Sort(props) {
+function Sort({sortBy}) {
+
+    useEffect(() => {
+        quakeSort("newest");
+      }, []);
 
     const handleChanges = (e)=>{
-        const sortBy=e.target.value;
+        e.preventDefault();
+        sortBy=e.target.value;
         console.log(sortBy);
+        quakeSort(sortBy);
     }
 
     return (
@@ -25,4 +30,12 @@ function Sort(props) {
     )
 }
 
-export default Sort;
+const mapStateToProps = (state) => {
+    return {
+      sortBy: state.quakeReducer.sortBy
+    };
+  };
+  
+  export default connect(mapStateToProps, {
+    quakeSort,
+  })(Sort);

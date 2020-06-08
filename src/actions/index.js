@@ -4,10 +4,7 @@ import axios from "axios";
 export const QUAKE_FETCH = "QUAKE_FETCH";
 export const QUAKE_FETCH_ERROR = "QUAKE_FETCH_ERROR";
 export const DISPLAY_QUAKES = "DISPLAY_QUAKES ";
-export const SORT_NEWEST = "SORT_NEWEST";
-export const SORT_OLDEST = "SORT_OLDEST";
-export const SORT_MAG_ASCEND = "SORT_MAG_ASCEND";
-export const SORT_MAG_DESCEND = "SORT_MAG_DESCEND";
+export const SORT_QUAKES = "SORT_QUAKES";
 
 // searchReducer Actions
 export const UPDATE_SEARCH_PARAMS = "UPDATE_SEARCH_PARAMS";
@@ -34,5 +31,5 @@ export const updateSearchParams = (theParams) => (dispatch) => {
 };
 
 export const quakeSort = (sortBy) => (dispatch) =>{
-  dispatch ({type: SORT_NEWEST})
+  dispatch ({type: SORT_QUAKES, payload: sortBy})
 }
