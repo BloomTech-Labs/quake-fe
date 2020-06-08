@@ -1,39 +1,20 @@
-import {
-  QUAKE_FETCH,
-  QUAKE_FETCH_ERROR,
-  DISPLAY_QUAKES,
-} from "../actions/index.js";
+// Redux
+import { combineReducers } from "redux";
 
-export const initialState = {
-  quakes: [],
-  quakeFetch: false,
-  quakeFetchError: false,
-};
+// Reducers
+import { quakeReducer } from "./quakeReducer";
+import { searchReducer } from "./searchReducer";
 
-export const quakeReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case QUAKE_FETCH:
-      return {
-        ...state,
-        quakes: [],
-        quakeFetch: true,
-        quakeFetchError: false,
-      };
-    case QUAKE_FETCH_ERROR:
-      return {
-        ...state,
-        quakes: [],
-        quakeFetch: false,
-        quakeFetchError: true,
-      };
-    case DISPLAY_QUAKES:
-      return {
-        ...state,
-        quakes: action.quakeData,
-        quakeFetch: false,
-        quakeFetchError: false,
-      };
-    default:
-      return state;
-  }
-};
+// ***** NOTE *****
+// When using connect and mapStateToProps, make sure
+// you link with this syntax:
+
+// 'prop_name': state.'reducer_name'.'state_value'
+
+// Because we have multiple reducers, you MUST specify
+// which state object you are trying to get values from
+
+export const rootReducer = combineReducers({
+  quakeReducer,
+  searchReducer,
+});
