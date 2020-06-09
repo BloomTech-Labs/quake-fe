@@ -66,5 +66,31 @@
             background: rgb(255, 246, 223);
           }
           
+    } // end geocoder-container
+    .dark-mode-toggle {
+      background: #fff;
+      border-radius: 50px;
+      border: 1px solid black;
+      height: 20px;
+      position: relative;
+      width: 40px;
+      margin-top: 10px;
+
+      .toggle-switch {
+        background: #D9E3E2;
+        border-radius: 50px;
+        height: 18px;
+        left: 0;
+        position: absolute;
+        transition: 0.2s;
+        width: 20px;
+
+        &.toggled {
+          left: 18px;
+        }
+
+      }
+
     }
-}
+
+} // end search-menu

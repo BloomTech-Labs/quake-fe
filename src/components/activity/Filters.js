@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { quakeFetch, updateSearchParams } from "../../actions";
 import SearchBar from "./SearchBar";
+import useDarkMode from '../../customHooks/useDarkMode';
 
 function Filters({
   quakeFetch,
@@ -14,6 +15,7 @@ function Filters({
   latitude,
   longitude,
 }) {
+  const [darkMode, setDarkMode] = useDarkMode(false);
   // The query parameters to be sent to USGS. Updates with state changes
   const USGSQuery = `&starttime=${starttime}&endtime=${endtime}&minmagnitude=${minmagnitude}&maxmagnitude=${maxmagnitude}&maxradiuskm=${maxradiuskm}&latitude=${latitude}&longitude=${longitude}`;
 
@@ -38,6 +40,11 @@ function Filters({
       value: e.target.value,
     });
   };
+
+  const toggleDarkMode = e => {
+    e.preventDefault();
+    setDarkMode(!darkMode);
+  }
 
   return (
     <div className="search-menu" id="search-menu">
@@ -103,6 +110,9 @@ function Filters({
 
         <button type="submit">Filter</button>
       </form>
+      <div className='dark-mode-toggle'>
+        <div onClick={toggleDarkMode} className={darkMode ? 'toggle-switch toggled' : 'toggle-switch'} />
+      </div>
     </div>
   );
 }
