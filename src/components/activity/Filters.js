@@ -101,7 +101,14 @@ function Filters({
           value={maxmagnitude}
         />
 
-        <button type="submit">Search</button>
+        <select name="orderby" onChange={handleChanges}>
+          <option value="time">Time Dec.</option>
+          <option value="time-asc">Time Asc.</option>
+          <option value="magnitude">Magnitude Dec.</option>
+          <option value="magnitude-asc">Magnitude Asc.</option>
+        </select>
+
+        <button type="submit">Filter</button>
       </form>
       <div className='dark-mode-toggle'>
         <div onClick={toggleDarkMode} className={darkMode ? 'toggle-switch toggled' : 'toggle-switch'} />
