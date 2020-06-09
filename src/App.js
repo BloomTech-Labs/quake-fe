@@ -24,6 +24,7 @@ import Responsive from "./partials/Responsive";
 import "./App.scss";
 
 const store = createStore(reducers, applyMiddleware(thunk));
+store.subscribe(() => { store.getState() });
 
 function App() {
   return (

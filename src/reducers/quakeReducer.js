@@ -9,31 +9,8 @@ export const initialQuakeState = {
   quakes: [],
   quakeFetch: false,
   quakeFetchError: false,
+  sortBy: "newest",
 };
-
-function compareValues(key, order = 'asc') {
-  return function innerSort(a, b) {
-    if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
-      // property doesn't exist on either object
-      return 0;
-    }
-
-    const varA = (typeof a[key] === 'string')
-      ? a[key].toUpperCase() : a[key];
-    const varB = (typeof b[key] === 'string')
-      ? b[key].toUpperCase() : b[key];
-
-    let comparison = 0;
-    if (varA > varB) {
-      comparison = 1;
-    } else if (varA < varB) {
-      comparison = -1;
-    }
-    return (
-      (order === 'desc') ? (comparison * -1) : comparison
-    );
-  };
-}
 
 export const quakeReducer = (state = initialQuakeState, action) => {
   switch (action.type) {
@@ -67,8 +44,12 @@ export const quakeReducer = (state = initialQuakeState, action) => {
         quakeFetchError: false,
       };
     case SORT_QUAKES:
-      console.log("inside redux", action.payload)
-      return state;
+      return {
+        ...state,
+        quakes: action.quakeData,
+        quakeFetch: false,
+        quakeFetchError: false,
+      };
       
     default:
       return state;

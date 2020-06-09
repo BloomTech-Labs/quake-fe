@@ -17,6 +17,7 @@ export const quakeFetch = (theQuery) => (dispatch) => {
         `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=20000${theQuery}`
       )
       .then((res) => {
+        console.log(res.data.features);
         dispatch({ type: DISPLAY_QUAKES, quakeData: res.data.features });
       })
       .catch((err) => {
@@ -30,6 +31,9 @@ export const updateSearchParams = (theParams) => (dispatch) => {
   dispatch({ type: UPDATE_SEARCH_PARAMS, params: theParams });
 };
 
-export const quakeSort = (sortBy) => (dispatch) =>{
-  dispatch ({type: SORT_QUAKES, payload: sortBy})
-}
+export const quakeSort = (sortBy, quakes) => (dispatch) =>{
+  const sortedQuakes = quakes.sort((a,b)=>b.properties.mag-a.properties.mag);
+  console.log('SORTED QUAKES: ', sortedQuakes);
+  dispatch({ type: SORT_QUAKES, quakeData: [] });
+  dispatch({ type: SORT_QUAKES, quakeData: sortedQuakes });
+};

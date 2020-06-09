@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import {quakeSort} from "../../actions/index.js";
+import { quakeSort } from "../../actions/index.js";
 
-function Sort({sortBy}) {
-
-    useEffect(() => {
-        quakeSort("newest");
-      }, []);
+function Sort({ quakeSort, quakes, sortBy }) {
 
     const handleChanges = (e)=>{
         e.preventDefault();
         sortBy=e.target.value;
         console.log(sortBy);
-        quakeSort(sortBy);
+        quakeSort(sortBy, quakes);
     }
+
+    useEffect(() => {
+      console.log('IN SORT.JS LOGGIN SORT STATE', sortBy);
+    },[sortBy]);
 
     return (
         <div>
@@ -32,7 +32,8 @@ function Sort({sortBy}) {
 
 const mapStateToProps = (state) => {
     return {
-      sortBy: state.quakeReducer.sortBy
+      sortBy: state.quakeReducer.sortBy,
+      quakes: state.quakeReducer.quakes
     };
   };
   
