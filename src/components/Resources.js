@@ -16,6 +16,10 @@ import { ReactComponent as TriangleUp } from "../images/triangle-up.svg";
 import { ReactComponent as BulletPlus } from "../images/bullet-plus.svg";
 import { ReactComponent as BulletSolid } from "../images/bullet-solid.svg";
 import { ReactComponent as STEPLogo } from "../images/STEP-logo.svg";
+import { ReactComponent as FEMALogo } from "../images/fema-logo.svg";
+import { ReactComponent as RedCrossLogo } from "../images/red-cross-logo.svg";
+import { ReactComponent as SalvationArmyLogo } from "../images/salvation-army-logo.svg";
+import { ReactComponent as EarthquakeShelterLogo } from "../images/earthquake-shelter-logo.svg";
 
 
 const Resources = () => {
@@ -266,30 +270,39 @@ const Resources = () => {
       </section>
       <section id='disaster-help'>
         <div className='content-container'>
+          <div className='title-container'>
+            <h2 className='section-title'>Disaster Links:</h2>
+            <div className='jump-link-container'>
+              <a href='#disaster-help' className='jump-link'>
+                <TriangleUp className='triangle-up' />
+                <p className='jump-text'>Back to top</p>
+              </a>
+            </div>
+          </div>
           <div className='resources-container'>
             <div className='resource-card'>
-              <div className='resource-logo'></div>
+              <FEMALogo className='resource-logo' />
               <h4 className='resource-name'>FEMA - Greater LA Area</h4>
               <p className='resource-phone'>Phone: <span className='resource-highlight'>231-549-2345</span></p>
               <p className='resource-email'>Email: <span className='resource-highlight'>helpnow@fema.org</span></p>
               <a href='http://www.fema.gov' className='resource-highlight website'>http://www.fema.gov</a>
             </div>
             <div className='resource-card'>
-              <div className='resource-logo'></div>
+              <RedCrossLogo className='resource-logo' />
               <h4 className='resource-name'>American Red Cross - LA</h4>
               <p className='resource-phone'>Phone: <span className='resource-highlight'>231-549-2345</span></p>
               <p className='resource-email'>Email: <span className='resource-highlight'>helpnow@redcross.org</span></p>
               <a href='http://www.recross.org' className='resource-highlight website'>http://www.recross.org</a>
             </div>
             <div className='resource-card'>
-              <div className='resource-logo'></div>
+              <SalvationArmyLogo className='resource-logo' />
               <h4 className='resource-name'>Salvation Army - Greater LA</h4>
               <p className='resource-phone'>Phone: <span className='resource-highlight'>231-549-2345</span></p>
               <p className='resource-email'>Email: <span className='resource-highlight'>help@salvationarmyusa.org</span></p>
               <a href='http://www.salvationarmyusa.org' className='resource-highlight website'>http://www.salvationarmyusa.org</a>
             </div>
             <div className='resource-card'>
-              <div className='resource-logo'></div>
+              <EarthquakeShelterLogo className='resource-logo' />
               <h4 className='resource-name'>LA Emergency Shelters</h4>
               <p className='resource-phone'>Phone: <span className='resource-highlight'>231-549-2345</span></p>
               <p className='resource-email'>Email: <span className='resource-highlight'>help@salvationarmyusa.org</span></p>

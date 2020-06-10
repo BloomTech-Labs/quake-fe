@@ -3,7 +3,6 @@
   padding: 12px 0;
 }
 
-
 .content-container {
   width: 89%;
   margin: 0 auto;
@@ -44,6 +43,8 @@
 
       .bullet-plus {
         margin-right: 10px;
+        position: relative;
+        top: 2px;
       }
     }
   }
@@ -56,6 +57,8 @@
 
       .bullet-solid {
         margin-right: 10px;
+        position: relative;
+        top: 1px;
       }
     }
   }
@@ -75,7 +78,6 @@
       width: 90%;
       margin: 0 auto;
     }
-
   }
 
   .resource-link-container {
@@ -88,6 +90,21 @@
       line-height: 23px;
       color: #247249;
       margin-left: 7%;
+    }
+  }
+
+  .resources-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .resource-card {
+      width: 47%;
+      background: red;
+      display: flex;
+      height: 200px;
+      margin: 10px 0;
+      flex-direction: column;
     }
   }
 } // end content-container
