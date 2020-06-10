@@ -42,7 +42,7 @@
 visibility: visible;
 position: absolute;
 margin: auto;
-z-index: 1001
+z-index: 1001;
 };
 
 .sort-input-closed{
@@ -52,7 +52,7 @@ margin: auto;
 };
 
 .page-fade-on{
-    background-color: rgba(0,0,0,.4);
+    background: rgba(0,0,0,.4);
     top:0;
     left:0;
     height:100vh;
