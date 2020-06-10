@@ -4,11 +4,14 @@ import { quakeSort } from "../../actions/index.js";
 
 function Sort({ quakeSort, quakes, sortBy }) {
 
+    const [sortClicked, setSortClicked] = useState(false);
+
     const handleChanges = (e)=>{
         e.preventDefault();
         sortBy=e.target.value;
         console.log(sortBy);
         quakeSort(sortBy, quakes);
+        setSortClicked(false);
     }
 
     useEffect(() => {
@@ -17,16 +20,22 @@ function Sort({ quakeSort, quakes, sortBy }) {
 
     return (
         <div>
-            <label for="sort">Sort by:</label>
-            <form>
-                <select name="sort" onChange={handleChanges}>
-                    <option value="newest">Newest</option>
-                    <option value="oldest">Oldest</option>
-                    <option value="ascending magnitude">Ascending Magnitude</option>
-                    <option value="descending magnitude">Descending Magnitude</option>
-                </select>
-            </form>
+          <div className={!sortClicked ? "page-fade-off" : "page-fade-on"} onClick={() => setSortClicked((sortClicked) => !sortClicked)}></div>
+          <div className="sort-bar" onClick={() => setSortClicked((sortClicked) => !sortClicked)}>
+              <label for="sort">Sort Results</label>
+          </div>
+          <div className={!sortClicked ? "sort-input-closed" : "sort-input-open"}>
+          <form className="sort-input">
+            <p className="sort-text">Sort by:</p>
+              <select className="sort-dropdown" name="sort" onChange={handleChanges}>
+                  <option value="newest">Time: Newest First</option>
+                  <option value="oldest">Time: Oldest First</option>
+                  <option value="ascending magnitude">Magnitude: Lowest First</option>
+                  <option value="descending magnitude">Magnitude: Highest First</option>
+              </select>
+          </form>
         </div>
+      </div>
     )
 }
 
