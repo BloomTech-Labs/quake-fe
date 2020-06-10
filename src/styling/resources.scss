@@ -1,0 +1,146 @@
+#intro, #section-links, #indoors, #outdoors, #in-vehicle, #e-kits, #step, #help-signals, #travel-tips, #medical-aid, #disaster-help {
+  box-shadow: inset 0px 2px 2px rgba(36, 114, 73, 0.24);
+  padding: 12px 0;
+}
+
+
+.content-container {
+  width: 89%;
+  margin: 0 auto;
+  color: #323232;
+  font-family: Catamaran;
+
+  .title {
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 25px;
+    padding-bottom: 10px;
+  }
+
+  .text {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .sub-head-text {
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 25px;
+  }
+
+  .img-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    margin-top: 12px;
+  }
+
+  .list-type-plus {
+    .list-item {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+
+      .bullet-plus {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .list-type-solid {
+    .list-item {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+
+      .bullet-solid {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .green-message {
+    background: #247249;
+    border-radius: 8px;
+    margin: 12px 0;
+    padding: 10px 0;
+
+    &-text {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      color: #FFFFFA;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+  }
+
+  .resource-link-container {
+    display: flex;
+    flex-direction: column;
+
+    .resource-link {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 23px;
+      color: #247249;
+      margin-left: 7%;
+    }
+  }
+} // end content-container
+
+.section-title {
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.section-text-container {
+  padding: 12px 0;
+
+  .section-text {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 23px;
+  }
+}
+
+.links-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .link {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    width: 90px;
+    color: #247249;
+    padding: 5px 0;
+    text-decoration: none;
+  }
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+
+  .jump-link {
+    display: flex;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+
+    .jump-text {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 18px;
+      color: #247249;
+      padding-left: 6px;
+    }
+  }
+}
