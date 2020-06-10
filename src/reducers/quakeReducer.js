@@ -2,14 +2,12 @@ import {
   QUAKE_FETCH,
   QUAKE_FETCH_ERROR,
   DISPLAY_QUAKES,
-  SORT_QUAKES
 } from "../actions/index.js";
 
 export const initialQuakeState = {
   quakes: [],
   quakeFetch: false,
   quakeFetchError: false,
-  sortBy: "newest",
 };
 
 export const quakeReducer = (state = initialQuakeState, action) => {
@@ -43,14 +41,6 @@ export const quakeReducer = (state = initialQuakeState, action) => {
         quakeFetch: false,
         quakeFetchError: false,
       };
-    case SORT_QUAKES:
-      return {
-        ...state,
-        quakes: action.quakeData,
-        quakeFetch: false,
-        quakeFetchError: false,
-      };
-      
     default:
       return state;
   }
