@@ -23,6 +23,11 @@ import Responsive from "./partials/Responsive";
 // Design
 import "./App.scss";
 
+// Google Analytics
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-169193629-1'); //this is our unique id
+
+
 const store = createStore(reducers, applyMiddleware(thunk));
 store.subscribe(() => { store.getState() });
 
