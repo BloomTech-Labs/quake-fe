@@ -1,10 +1,41 @@
-import axios from 'axios';
-import quakeFetch from './index.js';
+import { quakeReducer } from '../reducers/quakeReducer';
 
-jest.mock('axios');
+describe('reducer', () => {
+  it('should return the initial state', () => {
+    expect(quakeReducer(undefined, {})).toEqual(
+      {
+        quakes: [],
+        quakeFetch: false,
+        quakeFetchError: false
+      }
+    )
+  })
 
-test('should fetch quakes', () => {
-  const quakes = quakeFetch;
-  const resp = {data: quakes};
-  axios.get.mockResolvedValue(resp);  
-});
+  it('should handle QUAKE_FETCH', () => {
+    expect(
+      quakeReducer([], {
+        type: 'QUAKE_FETCH'
+      })
+    ).toEqual(
+      {
+        quakes: [],
+        quakeFetch: true,
+        quakeFetchError: false
+      }
+    )
+  })
+
+  it('should handle QUAKE_FETCH_ERROR', () => {
+    expect(
+      quakeReducer([], {
+        type: 'QUAKE_FETCH_ERROR'
+      })
+    ).toEqual(
+      {
+        quakes: [],
+        quakeFetch: false,
+        quakeFetchError: true
+      }
+    )
+  })
+})
