@@ -1,13 +1,35 @@
 .search-menu {
-    display: none;
-    position: fixed;
-    width: 90vw;
-    padding: 20px;
-    background: rgb(247, 177, 177);
-    left: 50%;
-    transform: translateX(-50%);
+  display: none;
+  position: fixed;
+  width: 90vw;
+  padding: 20px;
+  background: #3b3b3b;
+  font-family: 'Catamaran';
+  left: 50%;
+  transform: translateX(-50%);
 
-    .geocoder-container {
+  form {
+    display: flex;
+    flex-direction: column;
+
+    fieldset {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid dodgerblue;
+      margin-bottom: 15px;
+    }
+    legend {
+      color: #fffffa;
+      font-size: 1.4em;
+      margin-bottom: 10px;
+    }
+    label {
+      color: #fffffa;
+    }
+
+    .search-bar-field {
+
+      .geocoder-container {
         display: flex;
         flex-direction: column;
         position: relative;
@@ -16,67 +38,80 @@
         width: 90%;
 
         .search-bar {
-            height: 35px;
-            padding: 5px;
-            border: none;
-            background-image: url("https://image.flaticon.com/icons/svg/1086/1086933.svg");
-            background-size: 15px;
-            background-position: 96%;
-            background-repeat: no-repeat;
-          }
-
-        .search-results {
-            position: absolute;
-            padding: 0 5px;
-            z-index: 10;
-            margin-top: 35px;
-            background: #333;
-            width: 100%;
-          }
-          
-          .search-results p {
-            display: block;
-            background: rgb(255, 253, 248);
-            font-size: 0.85rem;
-            line-height: 1.2rem;
-            border-top: 1px solid #000000;
-            padding: 5px;
-            margin: 0 auto;
-            width: 97%;
-            transition: 0.3s;
-            transition-timing-function: ease-in-out;
-          }
-          
-          .search-results p:hover {
-            cursor: pointer;
-            background: rgb(255, 246, 223);
-          }
-          
-    } // end geocoder-container
-    .dark-mode-toggle {
-      background: #fff;
-      border-radius: 50px;
-      border: 1px solid black;
-      height: 20px;
-      position: relative;
-      width: 40px;
-      margin-top: 10px;
-
-      .toggle-switch {
-        background: #D9E3E2;
-        border-radius: 50px;
-        height: 18px;
-        left: 0;
-        position: absolute;
-        transition: 0.2s;
-        width: 20px;
-
-        &.toggled {
-          left: 18px;
+          height: 35px;
+          padding: 5px;
+          border: none;
+          background-image: url("https://image.flaticon.com/icons/svg/1086/1086933.svg");
+          background-size: 15px;
+          background-position: 96%;
+          background-repeat: no-repeat;
         }
 
-      }
+        .search-results {
+          position: absolute;
+          padding: 0 5px;
+          z-index: 10;
+          margin-top: 35px;
+          background: #333;
+          width: 100%;
+        }
 
+        .search-results p {
+          display: block;
+          background: rgb(255, 253, 248);
+          font-size: 0.85rem;
+          line-height: 1.2rem;
+          border-top: 1px solid #000000;
+          padding: 5px;
+          margin: 0 auto;
+          width: 97%;
+          transition: 0.3s;
+          transition-timing-function: ease-in-out;
+        }
+
+        .search-results p:hover {
+          cursor: pointer;
+          background: rgb(255, 246, 223);
+        }
+      }
+      .more-options-button {
+        width: 100px;
+      }
+    }
+    .advanced-filters {
+      display: none;
+      .radius-field {
+      }
+      .date-field {
+      }
+      .mag-field {
+      }
     }
 
+    .search-submit-button {
+    }
+  }
+  .dark-mode-toggle {
+    background: #fff;
+    border-radius: 50px;
+    border: 1px solid black;
+    height: 20px;
+    position: relative;
+    width: 40px;
+    margin-top: 10px;
+
+    .toggle-switch {
+      background: #d9e3e2;
+      border-radius: 50px;
+      height: 18px;
+      left: 0;
+      position: absolute;
+      transition: 0.2s;
+      width: 20px;
+
+      &.toggled {
+        left: 18px;
+      }
+    }
+  }
 } // end search-menu

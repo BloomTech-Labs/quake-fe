@@ -15,7 +15,13 @@ function Filters({
   latitude,
   longitude,
 }) {
+  // Toggles Dark Mode CSS theme. See src/customHooks/useDarkMode.js
   const [darkMode, setDarkMode] = useDarkMode(false);
+  const toggleDarkMode = (e) => {
+    e.preventDefault();
+    setDarkMode(!darkMode);
+  };
+
   // The query parameters to be sent to USGS. Updates with state changes
   const USGSQuery = `&starttime=${starttime}&endtime=${endtime}&minmagnitude=${minmagnitude}&maxmagnitude=${maxmagnitude}&maxradiuskm=${maxradiuskm}&latitude=${latitude}&longitude=${longitude}`;
 
@@ -41,15 +47,14 @@ function Filters({
     });
   };
 
-  // Toggles Dark Mode CSS theme. See src/customHooks/useDarkMode.js
-  const toggleDarkMode = (e) => {
-    e.preventDefault();
-    setDarkMode(!darkMode);
-  };
-
   // Toggles the advanced search filters dropdown.
   const toggleAdvanced = (e) => {
     e.preventDefault();
+    const advancedFilters = document.getElementById("advanced-filters");
+    advancedFilters.style.display === "flex"
+      ? (advancedFilters.style.display = "none")
+      : (advancedFilters.style.display = "flex");
+    console.log("toggled display");
   };
 
   return (
@@ -60,80 +65,94 @@ function Filters({
 
           <SearchBar />
 
-          <button onClick={toggleAdvanced} className="more-options-button">More Options</button>
+          <button onClick={toggleAdvanced} className="more-options-button">
+            More Options
+          </button>
         </fieldset>
 
-        <fieldset className="advanced-filters">
+        <fieldset id="advanced-filters" className="advanced-filters">
           <legend>Advanced Filters</legend>
 
           <fieldset className="radius-field">
             <legend>Search Radius</legend>
 
-            <label for="kilometers">Kilometers</label>
-            <input
-              id="kilometers"
-              type="number"
-              name="maxradiuskm"
-              onChange={handleChanges}
-              value={maxradiuskm}
-              min="1"
-              max="20001.6"
-              step="0.1"
-            />
+            <label for="kilometers">
+              Kilometers
+              <input
+                id="kilometers"
+                type="number"
+                name="maxradiuskm"
+                onChange={handleChanges}
+                value={maxradiuskm}
+                min="1"
+                max="20001.6"
+                step="0.1"
+              />
+            </label>
           </fieldset>
 
           <fieldset className="date-field">
             <legend>Date Range</legend>
 
-            <label for="start-date">Start Date</label>
-            <input
-              id="start-date"
-              type="date"
-              name="starttime"
-              onChange={handleChanges}
-              value={starttime}
-            />
+            <label for="start-date">
+              Start Date
+              <input
+                id="start-date"
+                type="date"
+                name="starttime"
+                onChange={handleChanges}
+                value={starttime}
+              />
+            </label>
 
-            <label for="end-date">End Date</label>
-            <input
-              id="end-date"
-              type="date"
-              name="endtime"
-              onChange={handleChanges}
-              value={endtime}
-            />
+            <label for="end-date">
+              End Date
+              <input
+                id="end-date"
+                type="date"
+                name="endtime"
+                onChange={handleChanges}
+                value={endtime}
+              />
+            </label>
           </fieldset>
 
           <fieldset className="mag-field">
             <legend>Magnitude</legend>
 
-            <label for="start-magnitude">Start Magnitude</label>
-            <input
-              id="start-magnitude"
-              type="number"
-              name="minmagnitude"
-              min="0"
-              max="10"
-              step="0.1"
-              onChange={handleChanges}
-              value={minmagnitude}
-            />
+            <label for="start-magnitude">
+              Start Magnitude
+              <input
+                id="start-magnitude"
+                type="number"
+                name="minmagnitude"
+                min="0"
+                max="10"
+                step="0.1"
+                onChange={handleChanges}
+                value={minmagnitude}
+              />
+            </label>
 
-            <label for="end-magnitude">End Magnitude</label>
-            <input
-              id="end-magnitude"
-              type="number"
-              name="maxmagnitude"
-              min="0"
-              max="10"
-              step="0.1"
-              onChange={handleChanges}
-              value={maxmagnitude}
-            />
+            <label for="end-magnitude">
+              End Magnitude
+              <input
+                id="end-magnitude"
+                type="number"
+                name="maxmagnitude"
+                min="0"
+                max="10"
+                step="0.1"
+                onChange={handleChanges}
+                value={maxmagnitude}
+              />
+            </label>
           </fieldset>
         </fieldset>
 
-        <button type="submit" className="search-submit-button">Search For Activity</button>
+        <button type="submit" className="search-submit-button">
+          Search For Activity
+        </button>
       </form>
 
       <div className="dark-mode-toggle">
