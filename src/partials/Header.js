@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ReactComponent as FaultlineLogo } from "../images/Faultline_Logo.svg";
+import { useLocation } from "react-router-dom";
 
-const toggleSearch = () => { // Toggles visibility of search menu
+const Header = () => {
+  let location = useLocation();
+
+  const toggleSearch = () => { // Toggles visibility of search menu
     const searchMenu = document.getElementById("search-menu");
     searchMenu.style.display === "block" ? (
         searchMenu.style.display = "none"
@@ -9,16 +13,29 @@ const toggleSearch = () => { // Toggles visibility of search menu
         searchMenu.style.display = "block"
     );
     console.log("toggled display");
-};
+  };
 
-const Header = () => {
+  const checkLocation = () => {
+    console.log(location)
+  };
+  
+  useEffect(() => {
+    checkLocation();
+  });
+
   return (
     <div className="header">
       <FaultlineLogo className="header-logo" />
       <h1 className="site-title">FaultLine</h1>
+      {(location.pathname === '/resources') ? 
+      <div className='hamburger-menu'>
+        <div className='bar'></div>
+        <div className='bar'></div>
+        <div className='bar'></div>
+      </div> : 
       <div className="search-header" onClick={toggleSearch}>
         <div className="search-icon" />
-      </div>
+      </div>}
     </div>
   );
 };

@@ -16,10 +16,10 @@ import { ReactComponent as TriangleUp } from "../images/triangle-up.svg";
 import { ReactComponent as BulletPlus } from "../images/bullet-plus.svg";
 import { ReactComponent as BulletSolid } from "../images/bullet-solid.svg";
 import { ReactComponent as STEPLogo } from "../images/STEP-logo.svg";
-import { ReactComponent as FEMALogo } from "../images/fema-logo.svg";
-import { ReactComponent as RedCrossLogo } from "../images/red-cross-logo.svg";
-import { ReactComponent as SalvationArmyLogo } from "../images/salvation-army-logo.svg";
-import { ReactComponent as EarthquakeShelterLogo } from "../images/earthquake-shelter-logo.svg";
+import FEMALogo from "../images/fema-logo.jpg";
+import RedCrossLogo from "../images/red-cross-logo.jpg";
+import SalvationArmyLogo from "../images/salvation-army-logo.jpg";
+import EarthquakeShelterLogo from "../images/earthquake-shelter-logo.jpg";
 
 
 const Resources = () => {
@@ -38,10 +38,9 @@ const Resources = () => {
             <a href='#indoors' className='link'>Indoors</a>
             <a href='#outdoors' className='link'>Outdoors</a>
             <a href='#in-vehicle' className='link'>In Vehicle</a>
-            <a href='#travel-tips' className='link'>Travel Tips</a>
+            <a href='#travel-tips' className='link'>Travel Tips</a> 
             <a href='#e-kits' className='link'>E-Kits</a>
             <a href='#step' className='link'>S.T.E.P.</a>
-            <a href='#site-tools' className='link'>Site Tools</a>
             <a href='#help-signals' className='link'>Help Signals</a>
             <a href='#medical-aid' className='link'>Medical Aid</a>
             <a href='#disaster-help' className='link'>Disaster Help</a>
@@ -173,7 +172,7 @@ const Resources = () => {
       </section>
       <section id='step'>
         <div className='content-container'>
-          <div className='title-container'>
+          <div className='title-container large-title'>
             <h2 className='section-title'>Sign up for S.T.E.P. and Faultline Notifications</h2>
             <div className='jump-link-container'>
               <a href='#intro' className='jump-link'>
@@ -184,7 +183,7 @@ const Resources = () => {
           </div>
           <div className='logo-container'>
             <STEPLogo className='step-logo' alt='Smart Traveler Enrollment Program compony logo'/>
-            <a href='https://step.state.gov/' className='resource-link'>Connect to step.state.gov</a>
+            <a href='https://step.state.gov/' target='_blank' rel='noopener noreferrer' className='resource-link'>Connect to step.state.gov</a>
           </div>
           <div className='section-text-container'>
             <p className='section-text'>Sign up for Smart Traveler Enrollment Program, or STEP, through the Bureau of Consular Affairs. They will send you important emergency information during a disaster.</p>
@@ -259,14 +258,13 @@ const Resources = () => {
             <p className='section-text'>If you find yourself or anyone injured during an event, refer to these links for medical care.</p>
           </div>
           <div className='resource-link-container'>
-            <a href='https://www.osha.gov/' className='resource-link'>OSHA - Occupational Safety and Health Administration</a>
-            <a href='https://www.cdc.gov/' className='resource-link'>CDC - Center for Disease Control</a>
-            <a href='https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/earthquake.html' className='resource-link'>Red Cross.org Earthquake Safety</a>
-            <a href='https://www.fema.gov/media-library-data/1510153676317-82124ab3b0a31ea239f60acc8d46c2ba/FEMA_B-526_Earthquake_Safety_Checklist_110217_508.pdf' className='resource-link'>FEMA - Earthquake Preparedness Form</a>
-            <a href='https://www.aarp.org/health/healthy-living/info-10-2012/medical-emergency-preparation.html' className='resource-link'>AARP - Tips to Prepare for Medical Response</a>
+            <a href='https://www.osha.gov/' target='_blank' rel='noopener noreferrer' className='resource-link'>OSHA - Occupational Safety and Health Administration</a>
+            <a href='https://www.cdc.gov/' target='_blank' rel='noopener noreferrer' className='resource-link'>CDC - Center for Disease Control</a>
+            <a href='https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/earthquake.html' target='_blank' rel='noopener noreferrer' className='resource-link'>Red Cross.org Earthquake Safety</a>
+            <a href='https://www.fema.gov/media-library-data/1510153676317-82124ab3b0a31ea239f60acc8d46c2ba/FEMA_B-526_Earthquake_Safety_Checklist_110217_508.pdf' target='_blank' rel='noopener noreferrer' className='resource-link'>FEMA - Earthquake Preparedness Form</a>
+            <a href='https://www.aarp.org/health/healthy-living/info-10-2012/medical-emergency-preparation.html' target='_blank' rel='noopener noreferrer' className='resource-link'>AARP - Tips to Prepare for Medical Response</a>
           </div>
         </div>
-        
       </section>
       <section id='disaster-help'>
         <div className='content-container'>
@@ -281,32 +279,32 @@ const Resources = () => {
           </div>
           <div className='resources-container'>
             <div className='resource-card'>
-              <FEMALogo className='resource-logo' />
+              <img src={FEMALogo} className='resource-logo' alt='Federal Emergency Management Agency logo'/>
               <h4 className='resource-name'>FEMA - Greater LA Area</h4>
               <p className='resource-phone'>Phone: <span className='resource-highlight'>231-549-2345</span></p>
               <p className='resource-email'>Email: <span className='resource-highlight'>helpnow@fema.org</span></p>
-              <a href='http://www.fema.gov' className='resource-highlight website'>http://www.fema.gov</a>
+              <a href='http://www.fema.gov' target='_blank' rel='noopener noreferrer' className='resource-highlight website'>http://www.fema.gov</a>
             </div>
             <div className='resource-card'>
-              <RedCrossLogo className='resource-logo' />
+              <img src ={RedCrossLogo} className='resource-logo' alt='American Red Cross logo'/>
               <h4 className='resource-name'>American Red Cross - LA</h4>
               <p className='resource-phone'>Phone: <span className='resource-highlight'>231-549-2345</span></p>
               <p className='resource-email'>Email: <span className='resource-highlight'>helpnow@redcross.org</span></p>
-              <a href='http://www.recross.org' className='resource-highlight website'>http://www.recross.org</a>
+              <a href='http://www.recross.org' target='_blank' rel='noopener noreferrer' className='resource-highlight website'>http://www.recross.org</a>
             </div>
             <div className='resource-card'>
-              <SalvationArmyLogo className='resource-logo' />
+              <img src={SalvationArmyLogo} className='resource-logo' alt='Salvation Army logo'/>
               <h4 className='resource-name'>Salvation Army - Greater LA</h4>
               <p className='resource-phone'>Phone: <span className='resource-highlight'>231-549-2345</span></p>
-              <p className='resource-email'>Email: <span className='resource-highlight'>help@salvationarmyusa.org</span></p>
-              <a href='http://www.salvationarmyusa.org' className='resource-highlight website'>http://www.salvationarmyusa.org</a>
+              <p className='resource-email smaller'>Email: <span className='resource-highlight'>help@salvationarmyusa.org</span></p>
+              <a href='http://www.salvationarmyusa.org' target='_blank' rel='noopener noreferrer' className='resource-highlight website smaller'>http://www.salvationarmyusa.org</a>
             </div>
             <div className='resource-card'>
-              <EarthquakeShelterLogo className='resource-logo' />
+              <img src={EarthquakeShelterLogo} className='resource-logo' alt='Emergency Shelters logo'/>
               <h4 className='resource-name'>LA Emergency Shelters</h4>
               <p className='resource-phone'>Phone: <span className='resource-highlight'>231-549-2345</span></p>
-              <p className='resource-email'>Email: <span className='resource-highlight'>help@salvationarmyusa.org</span></p>
-              <a href='http://www.salvationarmyusa.org' className='resource-highlight website'>http://www.salvationarmyusa.org</a>
+              <p className='resource-email smaller'>Email: <span className='resource-highlight'>help@salvationarmyusa.org</span></p>
+              <a href='http://www.salvationarmyusa.org' target='_blank' rel='noopener noreferrer' className='resource-highlight website smaller'>http://www.salvationarmyusa.org</a>
             </div>
           </div>
         </div>

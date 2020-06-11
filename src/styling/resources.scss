@@ -6,7 +6,7 @@
 .content-container {
   width: 89%;
   margin: 0 auto;
-  color: #323232;
+  color: $font-color;
   font-family: Catamaran;
 
   .title {
@@ -64,7 +64,7 @@
   }
 
   .green-message {
-    background: #247249;
+    background: $accent-color;
     border-radius: 8px;
     margin: 12px 0;
     padding: 10px 0;
@@ -74,7 +74,7 @@
       font-size: 16px;
       line-height: 20px;
       text-align: center;
-      color: #FFFFFA;
+      color: $lightest-text;
       width: 90%;
       margin: 0 auto;
     }
@@ -85,29 +85,60 @@
     flex-direction: column;
 
     .resource-link {
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 23px;
-      color: #247249;
       margin-left: 7%;
     }
+  }
+
+  .resource-link {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 23px;
+    color: $accent-color;
   }
 
   .resources-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
     .resource-card {
-      width: 47%;
-      background: red;
+      width: 176px;
       display: flex;
       height: 200px;
       margin: 10px 0;
       flex-direction: column;
+      border-radius: 4px;
+
+      .resource-logo {
+        width: 75px;
+        height: 75px;
+        margin: 0 auto;
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+
+      .resource-highlight {
+        color: $accent-color;
+      }
+
+      .resource-name, .resource-phone, .resource-email, .website {
+        width: 98%;
+        margin: 2px 0 2px 2%;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 23px;
+
+        &.smaller {
+          font-size: 12px;
+        }
+      }
     }
   }
 } // end content-container
+
+.step-logo {
+  width: 100%;
+}
 
 .section-title {
   font-weight: 800;
@@ -117,12 +148,12 @@
 
 .section-text-container {
   padding: 12px 0;
+}
 
-  .section-text {
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 23px;
-  }
+.section-text {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 23px;
 }
 
 .links-container {
@@ -135,7 +166,7 @@
     font-size: 14px;
     line-height: 18px;
     width: 90px;
-    color: #247249;
+    color: $accent-color;
     padding: 5px 0;
     text-decoration: none;
   }
@@ -156,8 +187,20 @@
       font-weight: 600;
       font-size: 14px;
       line-height: 18px;
-      color: #247249;
+      color: $accent-color;
       padding-left: 6px;
+    }
+  }
+
+  &.large-title {
+    flex-direction: column-reverse;
+
+    .section-title {
+      margin: 5px 0;
+    }
+
+    .jump-link {
+      justify-content: flex-end;
     }
   }
 }
