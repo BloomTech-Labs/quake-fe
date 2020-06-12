@@ -56,19 +56,15 @@ const SearchBar = ({ updateSearchParams, placename }) => {
         placeholder="Search"
         maxLength="256"
         className="search-bar"
-        aria-label="input location"
+        ARIA-label="input location"
       />
-      <aside className="search-results">
+      <div className="search-results">
         {geocodeResults.map((feature) => {
           return (
-            <SearchBarResults
-              key={feature.place_name}
-              feature={feature}
-              clearResults={clearResults}
-            />
+            <SearchBarResults feature={feature} clearResults={clearResults} />
           );
         })}
-      </aside>
+      </div>
     </div>
   );
 };

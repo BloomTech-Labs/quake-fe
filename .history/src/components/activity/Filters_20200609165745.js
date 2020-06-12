@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { quakeFetch, updateSearchParams } from "../../actions";
 import SearchBar from "./SearchBar";
-import useDarkMode from "../../customHooks/useDarkMode";
+import useDarkMode from '../../customHooks/useDarkMode';
 
 function Filters({
   quakeFetch,
@@ -41,20 +41,19 @@ function Filters({
     });
   };
 
-  const toggleDarkMode = (e) => {
+  const toggleDarkMode = e => {
     e.preventDefault();
     setDarkMode(!darkMode);
-  };
+  }
 
   return (
-    <>
-      <form onSubmit={formSubmitCallback} className="search-menu" id="search-menu">
+    <div className="search-menu" id="search-menu">
+      <form onSubmit={formSubmitCallback}>
         <SearchBar />
 
-        <label htmlFor="searchRadius">Search Radius &#40;km&#41;</label>
+        <label>Search Radius &#40;km&#41;</label>
 
         <input
-          id="searchRadius"
           type="number"
           name="maxradiuskm"
           onChange={handleChanges}
@@ -64,10 +63,9 @@ function Filters({
           step="0.1"
         />
 
-        <label htmlFor="dateRange">Date Range</label>
+        <label>Date Range</label>
 
         <input
-          id="dateRange"
           type="date"
           name="starttime"
           onChange={handleChanges}
@@ -75,17 +73,15 @@ function Filters({
         />
 
         <input
-          id="dateRange"
           type="date"
           name="endtime"
           onChange={handleChanges}
           value={endtime}
         />
 
-        <label htmlFor="magnitude">Magnitude</label>
+        <label>Magnitude
 
         <input
-          id="magnitude"
           type="number"
           name="minmagnitude"
           min="0"
@@ -96,7 +92,6 @@ function Filters({
         />
 
         <input
-          id="magnitude"
           type="number"
           name="maxmagnitude"
           min="0"
@@ -104,17 +99,16 @@ function Filters({
           step="0.1"
           onChange={handleChanges}
           value={maxmagnitude}
+          label="input magnitude"
         />
+        </label>
 
         <button type="submit">Search</button>
       </form>
-      <div className="dark-mode-toggle">
-        <div
-          onClick={toggleDarkMode}
-          className={darkMode ? "toggle-switch toggled" : "toggle-switch"}
-        />
+      <div className='dark-mode-toggle'>
+        <div onClick={toggleDarkMode} className={darkMode ? 'toggle-switch toggled' : 'toggle-switch'} />
       </div>
-    </>
+    </div>
   );
 }
 

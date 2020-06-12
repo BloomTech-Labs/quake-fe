@@ -1,13 +1,14 @@
 import React from "react";
 import { ReactComponent as FaultlineLogo } from "../images/Faultline_Logo.svg";
 
-const toggleSearch = () => {
-  // Toggles visibility of search menu
-  const searchMenu = document.getElementById("search-menu");
-  searchMenu.style.display === "block"
-    ? (searchMenu.style.display = "none")
-    : (searchMenu.style.display = "block");
-  console.log("toggled display");
+const toggleSearch = () => { // Toggles visibility of search menu
+    const searchMenu = document.getElementById("search-menu");
+    searchMenu.style.display === "block" ? (
+        searchMenu.style.display = "none"
+    ) : (
+        searchMenu.style.display = "block"
+    );
+    console.log("toggled display");
 };
 
 const Header = () => {

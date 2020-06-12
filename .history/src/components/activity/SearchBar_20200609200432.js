@@ -56,19 +56,22 @@ const SearchBar = ({ updateSearchParams, placename }) => {
         placeholder="Search"
         maxLength="256"
         className="search-bar"
-        aria-label="input location"
+        ARIA-label="input location"
       />
-      <aside className="search-results">
+      <React.Fragment className="search-results">
         {geocodeResults.map((feature) => {
           return (
-            <SearchBarResults
-              key={feature.place_name}
-              feature={feature}
-              clearResults={clearResults}
-            />
+            <select id="locations" aria-label="location results">
+              <option>
+                <SearchBarResults
+                  feature={feature}
+                  clearResults={clearResults}
+                />
+              </option>
+            </select>
           );
         })}
-      </aside>
+      </React.Fragment>
     </div>
   );
 };

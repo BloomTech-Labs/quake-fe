@@ -19,13 +19,13 @@ function Card({ quake, number }) {
         <div className="magnitude">
           {Math.round(quake.properties.mag * 10) / 10}
         </div>
-        <section className="card-info">
-          <article className="place-info">
+        <div className="card-info">
+          <div className="place-info">
             <h2 className="city">{split2[0]}</h2>
             <h2 className="country">{split2[1]}</h2>
             <h3 className="distance">{split2[2]}</h3>
-          </article>
-        </section>
+          </div>
+        </div>
         <div
           className={!open ? "dropdown-arrow" : "dropdown-arrow-clicked"}
           onClick={() => setOpen((open) => !open)}
@@ -35,7 +35,7 @@ function Card({ quake, number }) {
         className={!open ? "activity-details-closed" : "activity-details-open"}
       >
         <section className="detail-item">
-          <strong>Date &amp; Time:</strong> <time>{localTime}</time>
+          <strong>Date &amp; Time:</strong> {localTime}
         </section>
         <section className="detail-item">
           <strong>Location:</strong> {quake.geometry.coordinates[0]}, {quake.geometry.coordinates[1]}

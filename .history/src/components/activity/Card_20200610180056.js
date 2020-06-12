@@ -15,12 +15,12 @@ function Card({ quake, number }) {
 
   return (
     <main>
-      <article className="activity-card" onClick={() => setOpen((open) => !open)}>
-        <div className="magnitude">
+      <section className="activity-card" onClick={() => setOpen((open) => !open)}>
+        <article className="magnitude">
           {Math.round(quake.properties.mag * 10) / 10}
-        </div>
-        <section className="card-info">
-          <article className="place-info">
+        </article>
+        <article className="card-info">
+          < className="place-info">
             <h2 className="city">{split2[0]}</h2>
             <h2 className="country">{split2[1]}</h2>
             <h3 className="distance">{split2[2]}</h3>

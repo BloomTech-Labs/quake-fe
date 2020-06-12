@@ -47,8 +47,8 @@ function Filters({
   };
 
   return (
-    <>
-      <form onSubmit={formSubmitCallback} className="search-menu" id="search-menu">
+    <div >
+      <form onSubmit={formSubmitCallback}>
         <SearchBar />
 
         <label htmlFor="searchRadius">Search Radius &#40;km&#41;</label>
@@ -114,7 +114,7 @@ function Filters({
           className={darkMode ? "toggle-switch toggled" : "toggle-switch"}
         />
       </div>
-    </>
+    </div>
   );
 }
 
