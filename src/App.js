@@ -15,7 +15,7 @@ import Feed from "./components/feed/Feed";
 import About from "./components/About";
 import Resources from "./components/Resources";
 import Report from "./components/Report";
-import useDarkMode from './customHooks/useDarkMode';
+import useDarkMode from "./customHooks/useDarkMode";
 
 // Common Components
 import Navigation from "./partials/Navigation";
@@ -25,20 +25,21 @@ import Responsive from "./partials/Responsive";
 import "./App.scss";
 
 // Google Analytics
-import ReactGA from 'react-ga';
-ReactGA.initialize('UA-169193629-1'); //this is our unique id
-
+import ReactGA from "react-ga";
+ReactGA.initialize("UA-169193629-1"); //this is our unique id
 
 const store = createStore(reducers, applyMiddleware(thunk));
-store.subscribe(() => { store.getState() });
+store.subscribe(() => {
+  store.getState();
+});
 
 function App() {
   const [darkMode] = useDarkMode(false);
 
   useEffect(() => {
-    if (darkMode) document.body.classList.add('dark-mode');
-    else document.body.classList.remove('dark-mode');
-  })
+    if (darkMode) document.body.classList.add("dark-mode");
+    else document.body.classList.remove("dark-mode");
+  });
 
   return (
     <Provider store={store}>
