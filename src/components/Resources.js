@@ -188,6 +188,10 @@ const Resources = () => {
           <div className='section-text-container'>
             <p className='section-text'>Sign up for Smart Traveler Enrollment Program, or STEP, through the Bureau of Consular Affairs. They will send you important emergency information during a disaster.</p>
           </div>
+        </div>
+      </section>
+      <section id='site-tools'>
+        <div className='content-container'>
           <div className='resource-link-container'>
             <div className='section-text-container'>
               <p className='section-text'><strong>Consider using the tools on this site to get</strong></p>
@@ -198,6 +202,7 @@ const Resources = () => {
             <a href='#' className='resource-link'>Review the news feed for up-to-date information</a>
           </div>
         </div>
+
       </section>
       <section id='help-signals'>
         <div className='content-container'>
