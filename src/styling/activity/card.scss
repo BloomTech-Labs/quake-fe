@@ -5,11 +5,11 @@
     align-items: center;
     justify-content: space-between;
     padding: 5px 15px;
-    width: 100%;
+    width: 100vw;
     border: 1px solid rgba(213, 209, 198, 0.5);
     font-family: Catamaran;
     line-height: 3em;
-    background-color: $neutral-1;
+    background-color: white;
 }
 
 ;
@@ -75,8 +75,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: 175px;
-    width: 100%;
-    margin: auto;
+    width: 100vw;
     padding: 20px;
 }
 
@@ -97,4 +96,8 @@ strong{
     margin: 0px;
     padding: 0px;
     line-height: 0;
+}
+
+.dark-mode {
+    background: #323232;
 }

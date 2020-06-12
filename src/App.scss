@@ -3,6 +3,7 @@
 @import './styling/activity/activity.scss';
 @import './styling/header.scss';
 @import './styling/navigation.scss';
+@import './styling/resources.scss';
 
 @media (max-width: 500px) {
   .App { width: 100vw; }
@@ -21,4 +22,3 @@
 .App-link {
   color: #61dafb;
 }
-

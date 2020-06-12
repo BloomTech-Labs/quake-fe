@@ -15,7 +15,7 @@ function Filters({
   latitude,
   longitude,
 }) {
-  const [darkMode, setDarkMode] = useDarkMode(false);
+  const [darkMode, setDarkMode] = useDarkMode('dark-mode');
   // The query parameters to be sent to USGS. Updates with state changes
   const USGSQuery = `&starttime=${starttime}&endtime=${endtime}&minmagnitude=${minmagnitude}&maxmagnitude=${maxmagnitude}&maxradiuskm=${maxradiuskm}&latitude=${latitude}&longitude=${longitude}`;
 
@@ -106,7 +106,14 @@ function Filters({
           value={maxmagnitude}
         />
 
-        <button type="submit">Search</button>
+        <select name="orderby" onChange={handleChanges}>
+          <option value="time">Time Dec.</option>
+          <option value="time-asc">Time Asc.</option>
+          <option value="magnitude">Magnitude Dec.</option>
+          <option value="magnitude-asc">Magnitude Asc.</option>
+        </select>
+
+        <button type="submit">Filter</button>
       </form>
       <div className="dark-mode-toggle">
         <div
