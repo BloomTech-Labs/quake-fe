@@ -6,7 +6,7 @@
 @import './styling/resources.scss';
 
 @media (max-width: 500px) {
-  .App { max-width: 500px; }
+  .App { width: 100vw; }
   .Wipe { display: none; }
 }
 
