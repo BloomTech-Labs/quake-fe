@@ -1,5 +1,4 @@
 import React, {Fragment} from "react";
-import Header from '../partials/Header'
 import { ReactComponent as Drop } from "../images/drop.svg";
 import { ReactComponent as Cover } from "../images/cover.svg";
 import { ReactComponent as HoldOn } from "../images/holdon.svg";

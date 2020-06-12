@@ -33,7 +33,7 @@ const store = createStore(reducers, applyMiddleware(thunk));
 store.subscribe(() => { store.getState() });
 
 function App() {
-  const [darkMode, setDarkMode] = useDarkMode(false);
+  const [darkMode] = useDarkMode(false);
 
   useEffect(() => {
     if (darkMode) document.body.classList.add('dark-mode');
