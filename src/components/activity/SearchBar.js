@@ -83,6 +83,7 @@ const SearchBar = ({ updateSearchParams, placename }) => {
         placeholder="Search"
         maxLength="256"
         className="search-bar"
+        autoComplete="off"
       />
       <div className="search-results">
         {geocodeResults.map((feature) => {

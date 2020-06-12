@@ -16,7 +16,7 @@ function Filters({
   longitude,
 }) {
   // Toggles Dark Mode CSS theme. See src/customHooks/useDarkMode.js
-  const [darkMode, setDarkMode] = useDarkMode(false);
+  const [darkMode, setDarkMode] = useDarkMode("dark-mode");
   const toggleDarkMode = (e) => {
     e.preventDefault();
     setDarkMode(!darkMode);
@@ -57,15 +57,14 @@ function Filters({
     console.log("toggled display");
   };
 
-  const toggleSearch = () => { // Toggles visibility of search menu
+  const toggleSearch = () => {
+    // Toggles visibility of search menu
     const searchMenu = document.getElementById("search-menu");
-    searchMenu.style.display === "block" ? (
-        searchMenu.style.display = "none"
-    ) : (
-        searchMenu.style.display = "block"
-    );
+    searchMenu.style.display === "block"
+      ? (searchMenu.style.display = "none")
+      : (searchMenu.style.display = "block");
     console.log("toggled display");
-};
+  };
 
   return (
     <div className="search-menu" id="search-menu">
@@ -164,6 +163,13 @@ function Filters({
         <button type="submit" className="search-submit-button">
           Search For Activity
         </button>
+
+        <p
+          className="close-sort"
+          onClick={toggleSearch}
+        >
+          Close
+        </p>
 
         <div className="dark-mode-toggle">
           <div

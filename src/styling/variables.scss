@@ -22,6 +22,10 @@ $neutral-3: #252525;
 
 //----------
 
+// Resources page theme: 
+$font-color: #323232;
+$accent-color: #247249;
+
 // Site fonts: 
 //logo font: Post no bills
 @font-face {
@@ -29,12 +33,9 @@ $neutral-3: #252525;
     src: local('PostNoBills'), url(./fonts/PostNoBillsJaffna-Regular.ttf) format('truetype');
 }
 
-;
 
 //body font: catamaran
 @font-face {
     font-family: 'Catamaran';
     src: local('Catamaran'), url(./fonts/Catamaran-Regular.ttf) format('truetype');
 }
-
-;

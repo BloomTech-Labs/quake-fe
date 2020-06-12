@@ -87,7 +87,7 @@
           background: #fffffa;
           border: none;
           border-radius: 5px;
-          background-image: url("https://image.flaticon.com/icons/svg/1086/1086933.svg");
+          background-image: url("../../images/search.svg");
           background-size: 15px;
           background-position: 96%;
           background-repeat: no-repeat;
@@ -132,6 +132,7 @@
         background-size: 15px;
         background-position: 96% 2px;
         background-repeat: no-repeat;
+        cursor: pointer;
       }
     }
     .advanced-filters {
@@ -152,6 +153,16 @@
       border: none;
       padding: 7px;
       border-radius: 5px;
+      cursor: pointer;
+    }
+    .close-sort {
+      font-family: Catamaran;
+      font-size: 1.4em;
+      margin: 0px auto;
+      margin-top: 10px;
+      color: white;
+      text-decoration: underline;
+      cursor: pointer;
     }
   }
 
