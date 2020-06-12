@@ -53,4 +53,23 @@
 }
 
 .dark-mode {
+  .header {
+    background-color: $dark-theme;
+
+    .site-title {
+      color: $lightest-text;
+    }
+    .bar {
+      background-color: $lightest-text;
+    }
+
+    .header-logo {
+      .outline {
+        fill: $logo-outline;
+      }
+      .land {
+        fill: $logo-primary;
+      }
+    }
+  }
 }
