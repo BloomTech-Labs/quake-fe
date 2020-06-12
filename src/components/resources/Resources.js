@@ -5,7 +5,7 @@ import ImageRow from './imageRow';
 import ListTypePlus from './listTypePlus';
 import ListTypeSolid from './listTypeSolid';
 
-import { Drop, Cover, HoldOn, CaneDrop, CaneCover, CaneHoldOn, WalkerLock, WalkerCover, WalkerHoldOn, WheelchairBrake, WheelchairCover, WheelchairHoldOn, STEPLogo, FEMALogo, RedCrossLogo, SalvationArmyLogo, EarthquakeShelterLogo } from './imageImports';
+import { Drop, Cover, HoldOn, CaneDrop, CaneCover, CaneHoldOn, WalkerLock, WalkerCover, WalkerHoldOn, WheelchairBrake, WheelchairCover, WheelchairHoldOn, STEPLogo} from './imageImports';
 
 const Resources = () => {
   return (
@@ -108,10 +108,11 @@ const Resources = () => {
             <div className='section-text-container'>
               <p className='section-text'><strong>Consider using the tools on this site to get</strong></p>
             </div>
-            <a href='#' className='resource-link'>SMS Messenger updates</a>
-            <a href='#' className='resource-link'>Find locations of shelters nearby</a>
-            <a href='#' className='resource-link'>Report an event</a>
-            <a href='#' className='resource-link'>Review the news feed for up-to-date information</a>
+            {/* temp links while pages under construction */}
+            <a href='#intro' className='resource-link'>SMS Messenger updates</a>
+            <a href='#intro' className='resource-link'>Find locations of shelters nearby</a>
+            <a href='#intro' className='resource-link'>Report an event</a>
+            <a href='#intro' className='resource-link'>Review the news feed for up-to-date information</a>
           </div>
         </div>
 
@@ -156,10 +157,7 @@ const Resources = () => {
         <div className='content-container'>
           <TitleContainer title='Disaster Links:' />
           <div className='resources-container'>
-            <ResourceCard image={FEMALogo} alt='Federal Emergency Management Agency logo' name='FEMA - Greater LA Area' phone='231-549-2345' email='helpnow@fema.org' website='http://www.fema.gov'/>
-            <ResourceCard image={RedCrossLogo} alt='American Red Cross logo' name='American Red Cross - LA' phone='231-549-2345' email='helpnow@redcross.org' website='http://www.recross.org'/>
-            <ResourceCard image={SalvationArmyLogo} alt='Salvation Army logo' name='Salvation Army - Greater LA' phone='231-549-2345' email='help@salvationarmyusa.org' emailSize='smaller' website='http://www.salvationarmyusa.org' websiteSize='smaller'/>
-            <ResourceCard image={EarthquakeShelterLogo} alt='Emergency Shelters logo' name='LA Emergency Shelters' phone='231-549-2345' email='help@salvationarmyusa.org' emailSize='smaller' website='http://www.salvationarmyusa.org' websiteSize='smaller'/>
+            <ResourceCard />
           </div>
         </div>
       </section>

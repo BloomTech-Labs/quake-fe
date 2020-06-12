@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { ReactComponent as FaultlineLogo } from "../images/Faultline_Logo.svg";
 import { useLocation } from "react-router-dom";
 
@@ -14,14 +14,6 @@ const Header = () => {
     );
     console.log("toggled display");
   };
-
-  const checkLocation = () => {
-    console.log(location)
-  };
-  
-  useEffect(() => {
-    checkLocation();
-  });
 
   return (
     <div className="header">
