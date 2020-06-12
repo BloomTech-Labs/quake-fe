@@ -45,16 +45,45 @@ const SearchBar = ({ updateSearchParams, placename }) => {
     setGeocodeResults([]);
   };
 
+  const handleEnter = (e) => {
+    // If the user hits enter instead of selecting a result, this function passes the first suggestion into state
+    if (e.which == 13 || e.keyCode == 13) {
+      e.preventDefault();
+      console.log(
+        "LOGGING FEATURE COORDS: ",
+        geocodeResults[0].place_name,
+        geocodeResults[0].geometry.coordinates
+      );
+      updateSearchParams({
+        name: "placename",
+        value: geocodeResults[0].place_name,
+      });
+  
+      updateSearchParams({
+        name: "latitude",
+        value: geocodeResults[0].geometry.coordinates[0],
+      });
+  
+      updateSearchParams({
+        name: "longitude",
+        value: geocodeResults[0].geometry.coordinates[1],
+      });
+      clearResults(); 
+    }
+  };
+
   return (
     <div className="geocoder-container">
       <input
         type="text"
         name="placename"
         onChange={handleChanges}
+        onKeyPress={handleEnter}
         value={placename}
         placeholder="Search"
         maxLength="256"
         className="search-bar"
+        autoComplete="off"
       />
       <div className="search-results">
         {geocodeResults.map((feature) => {
