@@ -33,7 +33,7 @@ function Filters({
   // dispatches quakeFetch actions with the query for USGS upon form submit
   const formSubmitCallback = (e) => {
     e.preventDefault();
-
+    toggleSearch();
     quakeFetch(USGSQuery);
   };
 
@@ -57,8 +57,19 @@ function Filters({
     console.log("toggled display");
   };
 
+  const toggleSearch = () => { // Toggles visibility of search menu
+    const searchMenu = document.getElementById("search-menu");
+    searchMenu.style.display === "block" ? (
+        searchMenu.style.display = "none"
+    ) : (
+        searchMenu.style.display = "block"
+    );
+    console.log("toggled display");
+};
+
   return (
     <div className="search-menu" id="search-menu">
+      <div onClick={toggleSearch}></div>
       <form onSubmit={formSubmitCallback}>
         <fieldset className="search-bar-field">
           <legend>Earthquake Search</legend>
@@ -74,7 +85,7 @@ function Filters({
           <legend>Advanced Filters</legend>
 
           <fieldset className="radius-field">
-            <legend>Search Radius</legend>
+            <legend>Search Radius:</legend>
 
             <label for="kilometers">
               Kilometers
@@ -92,10 +103,10 @@ function Filters({
           </fieldset>
 
           <fieldset className="date-field">
-            <legend>Date Range</legend>
+            <legend>Date Range:</legend>
 
             <label for="start-date">
-              Start Date
+              Start
               <input
                 id="start-date"
                 type="date"
@@ -106,7 +117,7 @@ function Filters({
             </label>
 
             <label for="end-date">
-              End Date
+              End
               <input
                 id="end-date"
                 type="date"
@@ -118,10 +129,10 @@ function Filters({
           </fieldset>
 
           <fieldset className="mag-field">
-            <legend>Magnitude</legend>
+            <legend>Magnitude Range:</legend>
 
             <label for="start-magnitude">
-              Start Magnitude
+              Start
               <input
                 id="start-magnitude"
                 type="number"
@@ -135,7 +146,7 @@ function Filters({
             </label>
 
             <label for="end-magnitude">
-              End Magnitude
+              End
               <input
                 id="end-magnitude"
                 type="number"
@@ -153,14 +164,14 @@ function Filters({
         <button type="submit" className="search-submit-button">
           Search For Activity
         </button>
-      </form>
 
-      <div className="dark-mode-toggle">
-        <div
-          onClick={toggleDarkMode}
-          className={darkMode ? "toggle-switch toggled" : "toggle-switch"}
-        />
-      </div>
+        <div className="dark-mode-toggle">
+          <div
+            onClick={toggleDarkMode}
+            className={darkMode ? "toggle-switch toggled" : "toggle-switch"}
+          />
+        </div>
+      </form>
     </div>
   );
 }
