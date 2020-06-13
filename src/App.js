@@ -13,7 +13,7 @@ import Header from "./partials/Header";
 import Activity from "./components/activity/Activity";
 import Feed from "./components/feed/Feed";
 import About from "./components/About";
-import Resources from "./components/Resources";
+import Resources from "./components/resources/Resources";
 import Report from "./components/Report";
 import useDarkMode from "./customHooks/useDarkMode";
 
