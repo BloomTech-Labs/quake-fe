@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { updateSearchParams } from "../../actions";
 import axios from "axios";
 import SearchBarResults from "./SearchBarResults";
+import location from "../../utils/UserLocation";
+
 
 // STILL NEED TO CLEAN UP INPUT BY NOT ALLOWING ';'!!!!!!
 // Also make sure when hitting enter to select first auto correct result or do so when leaving focus of input
@@ -85,6 +87,9 @@ const SearchBar = ({ updateSearchParams, placename }) => {
         className="search-bar"
         autoComplete="off"
       />
+
+      <button className="geo-location" onClick={() => location.setGps()}/>
+
       <div className="search-results">
         {geocodeResults.map((feature) => {
           return (

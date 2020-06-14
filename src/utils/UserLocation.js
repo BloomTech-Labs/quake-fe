@@ -1,4 +1,6 @@
-const setGps = (onSuccess, onError) => {
+import React from "react";
+
+function setGps (onSuccess, onError) {
     navigator.geolocation.getCurrentPosition(
       position => {
         const { latitude, longitude } = position.coords;
@@ -16,7 +18,7 @@ const setGps = (onSuccess, onError) => {
     );
   };
   
-  const getGps = () => {
+  function getGps () {
     const coords = localStorage.getItem("gps");
     if (coords) {
       console.log('getGPS coords', coords)
