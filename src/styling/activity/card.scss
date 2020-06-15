@@ -4,14 +4,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100vw;
+    width: 100%;
     border-bottom: 1px solid rgba(213, 209, 198, 0.5);
     font-family: Catamaran;
     line-height: 3em;
     background-color: white;
 }
-
-;
 
 .magnitude-info{
     display: flex;
@@ -24,7 +22,6 @@
     align-items: center;
     justify-content: center;
     font-size: 2.2em;
-    padding: 5px;
     height: 95px;
     width: 15px;
 }
@@ -73,9 +70,8 @@
 
 .place-info {
     font-size: 1.8em;
-    width: 100%;
+    width: 95%;
     padding: 0 0 0 10px;
-
 }
 
 .city {
