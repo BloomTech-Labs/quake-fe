@@ -1,0 +1,99 @@
+@import '../variables.scss';
+
+.activity-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 15px;
+    width: 100vw;
+    border: 1px solid rgba(213, 209, 198, 0.5);
+    font-family: Catamaran;
+    line-height: 3em;
+    background-color: white;
+}
+
+;
+
+.magnitude {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2em;
+    color: $logo-primary;
+    padding: 5px;
+    height: 42px;
+    width: 38px;
+    border: 3px solid $logo-primary;
+    background-color: none;
+    border-radius: 5px;
+}
+
+;
+
+.place-info {
+    font-size: 1.8em;
+    width: 80%;
+    padding: 0 0 0 10px;
+
+}
+
+.city {
+    font-weight: 600;
+}
+
+.dropdown-arrow-clicked {
+    border: solid black;
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(225deg);
+    -webkit-transform: rotate(225deg);
+    transition: all .3s;
+}
+
+.dropdown-arrow {
+    border: solid black;
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transition: all .3s;
+}
+
+
+.activity-details-open {
+    font-family: Catamaran;
+    font-size: 1.8em;
+    transition: height .3s;
+    background-color: $neutral-2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 175px;
+    width: 100vw;
+    padding: 20px;
+}
+
+strong{
+    font-weight: 600;
+}
+
+.detail-item {
+    margin: 0;
+}
+
+.activity-details-closed {
+    transition: height .3s;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
+    line-height: 0;
+}
+
+.dark-mode {
+    background: $dark-theme;
+}

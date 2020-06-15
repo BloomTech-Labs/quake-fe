@@ -11,6 +11,7 @@
     "moment": "^2.26.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
+    "react-document-title": "^2.0.3",
     "react-dom": "^16.13.1",
     "react-ga": "^3.0.0",
     "react-map-gl": "^5.2.5",

@@ -1,0 +1,192 @@
+.search-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #00000040;
+  border-radius: 5px;
+  z-index: 1;
+  font-family: "Catamaran";
+  @supports (
+    (-webkit-backdrop-filter: blur(4px)) or (backdrop-filter: blur(4px))
+  ) {
+    background-color: #00000040;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+  }
+  & > div {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 90vw;
+    border-radius: 5px;
+    margin: 0 auto;
+    top: 65px;
+    background: #3b3b3b;
+    padding: 20px;
+
+    fieldset {
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      // border: 1px solid dodgerblue;
+      margin-bottom: 15px;
+      padding-top: 10px;
+      fieldset {
+        padding-top: 0;
+        // border: 1px solid red;
+        width: 300px;
+      }
+    }
+    legend {
+      color: #fffffa;
+      font-size: 1.4em;
+      margin-bottom: 10px;
+    }
+    label {
+      color: #fffffa;
+      width: 100%;
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.3em;
+
+      input {
+        width: 60%;
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+        color: #747068;
+        background: #fffffa;
+      }
+    }
+
+    .search-bar-field {
+      display: flex;
+      align-items: center;
+
+      .geocoder-container {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+
+        .search-bar {
+          height: 35px;
+          padding: 5px;
+          background: #fffffa;
+          border: none;
+          border-radius: 5px;
+          background-image: url("../../images/search.svg");
+          background-size: 15px;
+          background-position: 96%;
+          background-repeat: no-repeat;
+        }
+
+        .search-results {
+          position: absolute;
+          padding: 0 5px;
+          z-index: 10;
+          margin-top: 35px;
+          width: 100%;
+          background: #3b3b3b;
+        }
+
+        .search-results p {
+          display: block;
+          background: #fffffa;
+          font-size: 0.85rem;
+          line-height: 1.2rem;
+          border-top: 1px solid #000000;
+          border-radius: 5px;
+          padding: 5px;
+          margin: 5px auto;
+          width: 100%;
+          transition: 0.2s;
+          transition-timing-function: ease-in-out;
+        }
+
+        .search-results p:hover {
+          cursor: pointer;
+          background: #d8ffc8;
+        }
+      }
+      .more-options-button {
+        width: 105px;
+        margin: 10px auto;
+        border: none;
+        background: none;
+        color: #828282;
+        text-align: left;
+        background-image: url("../../images/sort-icon.svg");
+        background-size: 15px;
+        background-position: 96% 2px;
+        background-repeat: no-repeat;
+        cursor: pointer;
+      }
+    }
+    .advanced-filters {
+      display: none;
+      .radius-field {
+      }
+      .date-field {
+      }
+      .mag-field {
+      }
+    }
+
+    .search-submit-button {
+      background: #247249;
+      color: #fffffa;
+      font-size: 1.6em;
+      width: 150px;
+      border: none;
+      padding: 7px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .close-sort {
+      font-family: Catamaran;
+      font-size: 1.4em;
+      margin: 0px auto;
+      margin-top: 10px;
+      color: white;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  #dark-mode-toggle {
+    background: #fff;
+    border-radius: 50px;
+    border: 1px solid black;
+    height: 20px;
+    position: relative;
+    width: 40px;
+    margin-top: 10px;
+
+    .toggle-switch {
+      background: #d9e3e2;
+      border-radius: 50px;
+      height: 18px;
+      left: 0;
+      position: absolute;
+      transition: 0.2s;
+      width: 20px;
+
+      &.toggled {
+        left: 18px;
+      }
+    }
+  }
+} // end search-menu
