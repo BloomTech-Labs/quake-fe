@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { updateSearchParams } from "../../actions";
 import axios from "axios";
 import SearchBarResults from "./SearchBarResults";
+import location from "../../utils/UserLocation";
+
 
 // STILL NEED TO CLEAN UP INPUT BY NOT ALLOWING ';'!!!!!!
 // Also make sure when hitting enter to select first auto correct result or do so when leaving focus of input
@@ -68,8 +70,29 @@ const SearchBar = ({ updateSearchParams, placename }) => {
         name: "longitude",
         value: geocodeResults[0].geometry.coordinates[1],
       });
+
       clearResults(); 
     }
+  };
+
+  const updateGeoLocation = (e) => {
+    setGeocodeResults([]);
+
+    location.setGps(() => {
+      const latestCoords = JSON.parse(location.getGps());
+      console.log('latestCordsLat',latestCoords.latitude);
+      console.log('latestCordsLong',latestCoords.longitude);
+
+      updateSearchParams({
+        name: "latitude",
+        value: latestCoords.latitude,
+      });
+
+      updateSearchParams({
+        name: "longitude",
+        value: latestCoords.longitude,
+      });
+    })
   };
 
   return (
@@ -87,7 +110,9 @@ const SearchBar = ({ updateSearchParams, placename }) => {
         aria-label="input location"
         autoComplete="off"
       />
+      <button className="geo-location" onClick={() => updateGeoLocation()}/>
       <aside className="search-results">
+
         {geocodeResults.map((feature) => {
           return (
             <SearchBarResults
@@ -98,7 +123,6 @@ const SearchBar = ({ updateSearchParams, placename }) => {
           );
         })}
       </aside>
-    </div>
   );
 };
 

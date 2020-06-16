@@ -46,6 +46,7 @@
         width: 300px;
       }
     }
+
     legend {
       color: #fffffa;
       font-size: 1.4em;
@@ -77,7 +78,7 @@
 
       .geocoder-container {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         position: relative;
         width: 100%;
 
@@ -91,6 +92,22 @@
           background-size: 15px;
           background-position: 96%;
           background-repeat: no-repeat;
+          width:85%;
+        }
+
+        .geo-location {
+          color: #fffffa;
+          fill: red;
+          width: 35px;
+          height: 35px;
+          border: none;
+          padding: 8px;
+          margin-left: 7px;
+          border-radius: 50%;
+          background-image: url("../../images/myLocation.svg");
+          background-position: center;
+          background-repeat: no-repeat;
+          cursor: pointer;
         }
 
         .search-results {
@@ -98,7 +115,7 @@
           padding: 0 5px;
           z-index: 10;
           margin-top: 35px;
-          width: 100%;
+          width: 85%;
           background: #3b3b3b;
         }
 
