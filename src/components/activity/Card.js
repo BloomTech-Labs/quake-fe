@@ -15,6 +15,8 @@ function Card({ quake, number }) {
   split2.push(split1[1]);
   split2.push(split2.shift());
 
+  const roundedMag = Math.round(quake.properties.mag * 10) / 10;
+
   return (
     <main id="activity-main" aria-label="earthquake information container">
       <article
@@ -22,15 +24,36 @@ function Card({ quake, number }) {
         className="activity-card"
         onClick={() => setOpen((open) => !open)}
       >
-        <aside
+        <section
           tabIndex="0"
           aria-label={`earthquake magnitude ${
             Math.round(quake.properties.mag * 10) / 10
           }`}
-          className="magnitude"
+          className="magnitude-info"
         >
-          {Math.round(quake.properties.mag * 10) / 10}
-        </aside>
+          <aside
+            className={
+              roundedMag < 1.5
+                ? "magnitude-1"
+                : roundedMag < 3
+                ? "magnitude-3"
+                : roundedMag < 4.5
+                ? "magnitude-4"
+                : roundedMag < 6
+                ? "magnitude-6"
+                : roundedMag < 7.5
+                ? "magnitude-7"
+                : "magnitude-9"
+            }
+          ></aside>
+          <aside
+            tabIndex="0"
+            aria-label={`magnitude = ${roundedMag.toFixed(1)}`}
+            className="magnitude-number"
+          >
+            {roundedMag.toFixed(1)}
+          </aside>
+        </section>
         <article
           tabIndex="0"
           aria-label="location information"
