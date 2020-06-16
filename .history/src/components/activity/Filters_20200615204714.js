@@ -193,7 +193,6 @@ function Filters({
             aria-label="dark mode toggle"
             type="button"
             role="switch"
-            aria-checked={false}
             onClick={toggleDarkMode}
             className={darkMode ? "toggle-switch toggled" : "toggle-switch"}
           />

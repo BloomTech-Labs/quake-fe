@@ -44,8 +44,8 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <Responsive />
         <DocumentTitle title="faultline">
+          <Responsive />
           <div className="App">
             <Header />
             <Switch>
