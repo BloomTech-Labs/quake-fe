@@ -19,18 +19,20 @@
   justify-content: space-between;
   align-items: center;
   width: 100vw;
+  height: 35px;
   padding: 15px 15px;
   background-color: white;
 }
 
 .header-logo {
-  max-width: 55px;
-  max-height: 55px;
+  max-width: 25px;
+  max-height: 25px;
+  margin-right: 10px;
 }
 
 .site-title {
   font-family: PostNoBills;
-  font-size: 4em;
+  font-size: 2em;
   font-weight: 600;
   color: #247249;
 }

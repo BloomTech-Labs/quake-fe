@@ -49,7 +49,7 @@ const SearchBar = ({ updateSearchParams, placename }) => {
 
   const handleEnter = (e) => {
     // If the user hits enter instead of selecting a result, this function passes the first suggestion into state
-    if (e.which == 13 || e.keyCode == 13) {
+    if (e.which === 13 || e.keyCode === 13) {
       e.preventDefault();
       console.log(
         "LOGGING FEATURE COORDS: ",
@@ -98,6 +98,7 @@ const SearchBar = ({ updateSearchParams, placename }) => {
   return (
     <div className="geocoder-container">
       <input
+        role="search"
         type="text"
         name="placename"
         onChange={handleChanges}
@@ -106,19 +107,22 @@ const SearchBar = ({ updateSearchParams, placename }) => {
         placeholder="Search"
         maxLength="256"
         className="search-bar"
+        aria-label="input location"
         autoComplete="off"
       />
-
       <button className="geo-location" onClick={() => updateGeoLocation()}/>
+      <aside className="search-results">
 
-      <div className="search-results">
         {geocodeResults.map((feature) => {
           return (
-            <SearchBarResults feature={feature} clearResults={clearResults} />
+            <SearchBarResults
+              key={feature.place_name}
+              feature={feature}
+              clearResults={clearResults}
+            />
           );
         })}
-      </div>
-    </div>
+      </aside>
   );
 };
 

@@ -4,31 +4,70 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 15px;
-    width: 100vw;
-    border: 1px solid rgba(213, 209, 198, 0.5);
+    width: 100%;
+    border-bottom: 1px solid rgba(213, 209, 198, 0.5);
     font-family: Catamaran;
     line-height: 3em;
     background-color: white;
 }
 
-;
+.magnitude-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-.magnitude {
+%magnitude {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2.2em;
-    color: $logo-primary;
-    padding: 5px;
-    height: 42px;
-    width: 38px;
-    border: 3px solid $logo-primary;
-    background-color: none;
-    border-radius: 5px;
+    height: 95px;
+    width: 15px;
 }
 
-;
+.place-info {
+    font-size: 1.8em;
+    width: 80%;
+}
+
+.magnitude-1{
+    @extend %magnitude;
+    background-color: #53E0CD;
+};
+
+.magnitude-3{
+    @extend %magnitude;
+    background-color: #A5BF65;
+};
+
+.magnitude-4{
+    @extend %magnitude;
+    background-color: #E4912F;
+};
+
+.magnitude-6{
+    @extend %magnitude;
+    background-color: #F46428;
+};
+
+.magnitude-7{
+    @extend %magnitude;
+    background-color: #F13342;
+};
+
+.magnitude-9{
+    @extend %magnitude;
+    background-color: #EF2073;
+}
+
+
+.magnitude-number{
+    font-family: Catamaran;
+    font-size: 4.2em;
+    font-weight: 700;
+    margin-left: 10px;
+}
 
 .card-info {
     width: 80%;
@@ -36,9 +75,8 @@
 
 .place-info {
     font-size: 1.8em;
-    width: 100%;
+    width: 95%;
     padding: 0 0 0 10px;
-
 }
 
 .city {
