@@ -5,7 +5,6 @@ import axios from "axios";
 import SearchBarResults from "./SearchBarResults";
 import location from "../../utils/UserLocation";
 
-
 // STILL NEED TO CLEAN UP INPUT BY NOT ALLOWING ';'!!!!!!
 // Also make sure when hitting enter to select first auto correct result or do so when leaving focus of input
 
@@ -60,18 +59,18 @@ const SearchBar = ({ updateSearchParams, placename }) => {
         name: "placename",
         value: geocodeResults[0].place_name,
       });
-  
+
       updateSearchParams({
         name: "latitude",
         value: geocodeResults[0].geometry.coordinates[0],
       });
-  
+
       updateSearchParams({
         name: "longitude",
         value: geocodeResults[0].geometry.coordinates[1],
       });
 
-      clearResults(); 
+      clearResults();
     }
   };
 
@@ -80,8 +79,8 @@ const SearchBar = ({ updateSearchParams, placename }) => {
 
     location.setGps(() => {
       const latestCoords = JSON.parse(location.getGps());
-      console.log('latestCordsLat',latestCoords.latitude);
-      console.log('latestCordsLong',latestCoords.longitude);
+      console.log("latestCordsLat", latestCoords.latitude);
+      console.log("latestCordsLong", latestCoords.longitude);
 
       updateSearchParams({
         name: "latitude",
@@ -92,7 +91,7 @@ const SearchBar = ({ updateSearchParams, placename }) => {
         name: "longitude",
         value: latestCoords.longitude,
       });
-    })
+    });
   };
 
   return (
@@ -110,9 +109,8 @@ const SearchBar = ({ updateSearchParams, placename }) => {
         aria-label="input location"
         autoComplete="off"
       />
-      <button className="geo-location" onClick={() => updateGeoLocation()}/>
+      <button className="geo-location" onClick={() => updateGeoLocation()} />
       <aside className="search-results">
-
         {geocodeResults.map((feature) => {
           return (
             <SearchBarResults
@@ -123,6 +121,7 @@ const SearchBar = ({ updateSearchParams, placename }) => {
           );
         })}
       </aside>
+    </div>
   );
 };
 
