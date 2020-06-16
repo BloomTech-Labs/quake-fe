@@ -17,8 +17,10 @@ const Header = () => {
 
   return (
     <div className="header">
-      <FaultlineLogo className="header-logo" />
-      <h1 className="site-title">FaultLine</h1>
+      <div className="title-logo">
+        <FaultlineLogo className="header-logo" />
+        <h1 className="site-title">FaultLine</h1>
+      </div>
       {(location.pathname === '/resources') ? 
       <div className='hamburger-menu'>
         <div className='bar'></div>

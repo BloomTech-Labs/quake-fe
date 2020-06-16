@@ -13,11 +13,23 @@ function Card({ quake, number }) {
   split2.push(split1[1]);
   split2.push(split2.shift());
 
+  const roundedMag = Math.round(quake.properties.mag * 10) / 10;
+
   return (
     <div>
       <div className="activity-card" onClick={() => setOpen((open) => !open)}>
-        <div className="magnitude">
-          {Math.round(quake.properties.mag * 10) / 10}
+        <div className="magnitude-info">
+          <div className={
+              roundedMag < 1.5 ? "magnitude-1"
+              : roundedMag < 3 ? "magnitude-3"
+              : roundedMag < 4.5 ? "magnitude-4"
+              : roundedMag < 6 ? "magnitude-6"
+              : roundedMag < 7.5 ? "magnitude-7"
+              : "magnitude-9"
+          }></div>
+          <div className="magnitude-number">
+            {roundedMag.toFixed(1)}
+          </div>
         </div>
         <div className="card-info">
           <div className="place-info">
