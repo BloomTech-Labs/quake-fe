@@ -70,8 +70,29 @@ const SearchBar = ({ updateSearchParams, placename }) => {
         name: "longitude",
         value: geocodeResults[0].geometry.coordinates[1],
       });
+
       clearResults(); 
     }
+  };
+
+  const updateGeoLocation = (e) => {
+    setGeocodeResults([]);
+
+    location.setGps(() => {
+      const latestCoords = JSON.parse(location.getGps());
+      console.log('latestCordsLat',latestCoords.latitude);
+      console.log('latestCordsLong',latestCoords.longitude);
+
+      updateSearchParams({
+        name: "latitude",
+        value: latestCoords.latitude,
+      });
+
+      updateSearchParams({
+        name: "longitude",
+        value: latestCoords.longitude,
+      });
+    })
   };
 
   return (
@@ -88,7 +109,7 @@ const SearchBar = ({ updateSearchParams, placename }) => {
         autoComplete="off"
       />
 
-      <button className="geo-location" onClick={() => location.setGps()}/>
+      <button className="geo-location" onClick={() => updateGeoLocation()}/>
 
       <div className="search-results">
         {geocodeResults.map((feature) => {

@@ -5,7 +5,6 @@ function setGps (onSuccess, onError) {
       position => {
         const { latitude, longitude } = position.coords;
         localStorage.setItem("gps", JSON.stringify({ latitude, longitude }));
-        console.log('setGps', latitude, longitude )
         if (onSuccess) onSuccess(position);
       },
       err => {
@@ -21,10 +20,8 @@ function setGps (onSuccess, onError) {
   function getGps () {
     const coords = localStorage.getItem("gps");
     if (coords) {
-      console.log('getGPS coords', coords)
       return coords;
-    }
-  
+    } 
     return { latitude: null, longitude: null };
   };
   
