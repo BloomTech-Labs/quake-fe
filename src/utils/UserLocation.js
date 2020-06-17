@@ -1,5 +1,3 @@
-import React from "react";
-
 function setGps(onSuccess, onError) {
   navigator.geolocation.getCurrentPosition(
     (position) => {
