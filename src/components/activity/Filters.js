@@ -77,11 +77,7 @@ function Filters({
   };
 
   return (
-    <dialog
-      id="search-menu"
-      onClick={onClickRef}
-      className="search-menu"
-    >
+    <dialog id="search-menu" onClick={onClickRef} className="search-menu">
       <form ref={searchRef} onSubmit={formSubmitCallback}>
         <fieldset className="search-bar-field">
           <legend tabIndex="0">Earthquake Search</legend>

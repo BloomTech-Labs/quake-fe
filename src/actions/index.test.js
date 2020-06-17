@@ -1,41 +1,35 @@
-import { quakeReducer } from '../reducers/quakeReducer';
+import { quakeReducer } from "../reducers/quakeReducer";
 
-describe('reducer', () => {
-  it('should return the initial state', () => {
-    expect(quakeReducer(undefined, {})).toEqual(
-      {
-        quakes: [],
-        quakeFetch: false,
-        quakeFetchError: false
-      }
-    )
-  })
+describe("reducer", () => {
+  it("should return the initial state", () => {
+    expect(quakeReducer(undefined, {})).toEqual({
+      quakes: [],
+      quakeFetch: false,
+      quakeFetchError: false,
+    });
+  });
 
-  it('should handle QUAKE_FETCH', () => {
+  it("should handle QUAKE_FETCH", () => {
     expect(
       quakeReducer([], {
-        type: 'QUAKE_FETCH'
+        type: "QUAKE_FETCH",
       })
-    ).toEqual(
-      {
-        quakes: [],
-        quakeFetch: true,
-        quakeFetchError: false
-      }
-    )
-  })
+    ).toEqual({
+      quakes: [],
+      quakeFetch: true,
+      quakeFetchError: false,
+    });
+  });
 
-  it('should handle QUAKE_FETCH_ERROR', () => {
+  it("should handle QUAKE_FETCH_ERROR", () => {
     expect(
       quakeReducer([], {
-        type: 'QUAKE_FETCH_ERROR'
+        type: "QUAKE_FETCH_ERROR",
       })
-    ).toEqual(
-      {
-        quakes: [],
-        quakeFetch: false,
-        quakeFetchError: true
-      }
-    )
-  })
-})
+    ).toEqual({
+      quakes: [],
+      quakeFetch: false,
+      quakeFetchError: true,
+    });
+  });
+});

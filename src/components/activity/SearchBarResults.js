@@ -17,12 +17,12 @@ const SearchBarResults = ({ updateSearchParams, feature, clearResults }) => {
 
     updateSearchParams({
       name: "latitude",
-      value: feature.geometry.coordinates[0],
+      value: feature.geometry.coordinates[1],
     });
 
     updateSearchParams({
       name: "longitude",
-      value: feature.geometry.coordinates[1],
+      value: feature.geometry.coordinates[0],
     });
     clearResults(); // Function passed from parent that clears the autocomplete results
   };
