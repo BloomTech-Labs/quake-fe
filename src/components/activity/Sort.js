@@ -14,32 +14,40 @@ function Sort({ quakeSort, quakes, sortBy }) {
   };
 
   useEffect(() => {
-    console.log("IN SORT.JS LOGGIN SORT STATE", sortBy);
+    console.log("IN SORT.JS LOGGING SORT STATE", sortBy);
   }, [sortBy]);
 
   return (
-    <div>
-      <div
+    <>
+      <aside
         className={!sortClicked ? "page-fade-off" : "page-fade-on"}
         onClick={() => {
           setSortClicked((sortClicked) => !sortClicked);
         }}
-      ></div>
+      />
       <div
         className="sort-bar"
         onClick={() => {
           setSortClicked((sortClicked) => !sortClicked);
         }}
       >
-        <label for="sort">Sort Results</label>
+        <label htmlFor="sort-input">
+          <h3 tabIndex="0" type="button" role="button">
+            Sort Results
+          </h3>
+        </label>
       </div>
+
       <div className={!sortClicked ? "sort-input-closed" : "sort-input-open"}>
-        <form className="sort-input">
-          <p className="sort-text">Sort by:</p>
+        <dialog className="sort-input">
+          <h1 tabIndex="0" className="sort-text">
+            Sort by:
+          </h1>
           <select
+            id="sort-input"
             className="sort-dropdown"
-            name="sort"
             onChange={handleChanges}
+            tabIndex="0"
           >
             <option value="newest">Time: Newest First</option>
             <option value="oldest">Time: Oldest First</option>
@@ -56,9 +64,9 @@ function Sort({ quakeSort, quakes, sortBy }) {
           >
             Close
           </p>
-        </form>
+        </dialog>
       </div>
-    </div>
+    </>
   );
 }
 

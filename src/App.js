@@ -1,7 +1,7 @@
 // React
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
+import DocumentTitle from "react-document-title";
 // Redux
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
@@ -18,7 +18,7 @@ import Report from "./components/Report";
 import useDarkMode from "./customHooks/useDarkMode";
 
 // Common Components
-import Navigation from "./partials/Navigation";
+// import Navigation from "./partials/Navigation";
 import Responsive from "./partials/Responsive";
 
 // Design
@@ -45,17 +45,19 @@ function App() {
     <Provider store={store}>
       <Router>
         <Responsive />
-        <div className="App">
-          <Header />
-          <Switch>
-            <Route exact path="/" component={Activity} />
-            <Route exact path="/activity" component={Activity} />
-            <Route exact path="/feed" component={Feed} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/resources" component={Resources} />
-            <Route exact path="/report" component={Report} />
-          </Switch>
-        </div>
+        <DocumentTitle title="faultline">
+          <div className="App">
+            <Header />
+            <Switch>
+              <Route exact path="/" component={Activity} />
+              <Route exact path="/activity" component={Activity} />
+              <Route exact path="/feed" component={Feed} />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/resources" component={Resources} />
+              <Route exact path="/report" component={Report} />
+            </Switch>
+          </div>
+        </DocumentTitle>
       </Router>
     </Provider>
   );

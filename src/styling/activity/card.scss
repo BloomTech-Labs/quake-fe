@@ -26,6 +26,11 @@
     width: 15px;
 }
 
+.place-info {
+    font-size: 1.8em;
+    width: 80%;
+}
+
 .magnitude-1{
     @extend %magnitude;
     background-color: #53E0CD;

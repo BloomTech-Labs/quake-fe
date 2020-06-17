@@ -2,7 +2,7 @@ import {
   QUAKE_FETCH,
   QUAKE_FETCH_ERROR,
   DISPLAY_QUAKES,
-  SORT_QUAKES
+  SORT_QUAKES,
 } from "../actions/index.js";
 
 export const initialQuakeState = {
@@ -50,7 +50,7 @@ export const quakeReducer = (state = initialQuakeState, action) => {
         quakeFetch: false,
         quakeFetchError: false,
       };
-      
+
     default:
       return state;
   }

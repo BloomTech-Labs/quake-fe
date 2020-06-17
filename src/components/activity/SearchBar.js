@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { updateSearchParams } from "../../actions";
 import axios from "axios";
 import SearchBarResults from "./SearchBarResults";
+import location from "../../utils/UserLocation";
 
 // STILL NEED TO CLEAN UP INPUT BY NOT ALLOWING ';'!!!!!!
 // Also make sure when hitting enter to select first auto correct result or do so when leaving focus of input
@@ -47,34 +48,59 @@ const SearchBar = ({ updateSearchParams, placename }) => {
 
   const handleEnter = (e) => {
     // If the user hits enter instead of selecting a result, this function passes the first suggestion into state
-    if (e.which == 13 || e.keyCode == 13) {
+    if (e.which === 13 || e.keyCode === 13) {
       e.preventDefault();
-      console.log(
-        "LOGGING FEATURE COORDS: ",
-        geocodeResults[0].place_name,
-        geocodeResults[0].geometry.coordinates
-      );
-      updateSearchParams({
-        name: "placename",
-        value: geocodeResults[0].place_name,
-      });
-  
+      if (geocodeResults.length > 1) {
+        console.log(
+          "LOGGING FEATURE COORDS: ",
+          geocodeResults[0].place_name,
+          geocodeResults[0].geometry.coordinates
+        );
+        updateSearchParams({
+          name: "placename",
+          value: geocodeResults[0].place_name,
+        });
+
+        updateSearchParams({
+          name: "latitude",
+          value: geocodeResults[0].geometry.coordinates[1],
+        });
+
+        updateSearchParams({
+          name: "longitude",
+          value: geocodeResults[0].geometry.coordinates[0],
+        });
+
+        clearResults();
+      }
+    }
+  };
+
+  const updateGeoLocation = (e) => {
+    // e.preventDefault();
+    setGeocodeResults([]);
+
+    location.setGps(() => {
+      const latestCoords = JSON.parse(location.getGps());
+      console.log("latestCordsLat", latestCoords.latitude);
+      console.log("latestCordsLong", latestCoords.longitude);
+
       updateSearchParams({
         name: "latitude",
-        value: geocodeResults[0].geometry.coordinates[0],
+        value: latestCoords.latitude,
       });
-  
+
       updateSearchParams({
         name: "longitude",
-        value: geocodeResults[0].geometry.coordinates[1],
+        value: latestCoords.longitude,
       });
-      clearResults(); 
-    }
+    });
   };
 
   return (
     <div className="geocoder-container">
       <input
+        role="search"
         type="text"
         name="placename"
         onChange={handleChanges}
@@ -83,15 +109,21 @@ const SearchBar = ({ updateSearchParams, placename }) => {
         placeholder="Search"
         maxLength="256"
         className="search-bar"
+        aria-label="input location"
         autoComplete="off"
       />
-      <div className="search-results">
+      <button className="geo-location" onClick={() => updateGeoLocation()} />
+      <aside className="search-results">
         {geocodeResults.map((feature) => {
           return (
-            <SearchBarResults feature={feature} clearResults={clearResults} />
+            <SearchBarResults
+              key={feature.place_name}
+              feature={feature}
+              clearResults={clearResults}
+            />
           );
         })}
-      </div>
+      </aside>
     </div>
   );
 };
