@@ -50,31 +50,34 @@ const SearchBar = ({ updateSearchParams, placename }) => {
     // If the user hits enter instead of selecting a result, this function passes the first suggestion into state
     if (e.which === 13 || e.keyCode === 13) {
       e.preventDefault();
-      console.log(
-        "LOGGING FEATURE COORDS: ",
-        geocodeResults[0].place_name,
-        geocodeResults[0].geometry.coordinates
-      );
-      updateSearchParams({
-        name: "placename",
-        value: geocodeResults[0].place_name,
-      });
+      if (geocodeResults.length > 1) {
+        console.log(
+          "LOGGING FEATURE COORDS: ",
+          geocodeResults[0].place_name,
+          geocodeResults[0].geometry.coordinates
+        );
+        updateSearchParams({
+          name: "placename",
+          value: geocodeResults[0].place_name,
+        });
 
-      updateSearchParams({
-        name: "latitude",
-        value: geocodeResults[0].geometry.coordinates[0],
-      });
+        updateSearchParams({
+          name: "latitude",
+          value: geocodeResults[0].geometry.coordinates[1],
+        });
 
-      updateSearchParams({
-        name: "longitude",
-        value: geocodeResults[0].geometry.coordinates[1],
-      });
+        updateSearchParams({
+          name: "longitude",
+          value: geocodeResults[0].geometry.coordinates[0],
+        });
 
-      clearResults();
+        clearResults();
+      }
     }
   };
 
   const updateGeoLocation = (e) => {
+    // e.preventDefault();
     setGeocodeResults([]);
 
     location.setGps(() => {
