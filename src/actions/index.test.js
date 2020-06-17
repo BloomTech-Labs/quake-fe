@@ -6,7 +6,8 @@ describe('reducer', () => {
       {
         quakes: [],
         quakeFetch: false,
-        quakeFetchError: false
+        quakeFetchError: false,
+        sortBy: 'newest'
       }
     )
   })
