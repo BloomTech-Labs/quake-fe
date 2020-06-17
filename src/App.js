@@ -1,7 +1,6 @@
 // React
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import DocumentTitle from "react-document-title";
 // Redux
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
@@ -45,7 +44,6 @@ function App() {
     <Provider store={store}>
       <Router>
         <Responsive />
-        <DocumentTitle title="faultline">
           <div className="App">
             <Header />
             <Switch>
@@ -57,7 +55,6 @@ function App() {
               <Route exact path="/report" component={Report} />
             </Switch>
           </div>
-        </DocumentTitle>
       </Router>
     </Provider>
   );
