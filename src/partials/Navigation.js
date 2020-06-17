@@ -7,7 +7,11 @@ const Navigation = () => {
       <NavLink className="nav-icon" activeStyle={{ color: "red" }} to="/report">
         Report
       </NavLink>
-      <NavLink className="nav-icon" activeStyle={{ color: "red" }} to="/activity">
+      <NavLink
+        className="nav-icon"
+        activeStyle={{ color: "red" }}
+        to="/activity"
+      >
         Activity
       </NavLink>
       <NavLink className="nav-icon" activeStyle={{ color: "red" }} to="/feed">
