@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import { quakeFetch, updateSearchParams } from "../../actions";
 import SearchBar from "./SearchBar";
@@ -17,10 +17,22 @@ function Filters({
 }) {
   // Toggles Dark Mode CSS theme. See src/customHooks/useDarkMode.js
   const [darkMode, setDarkMode] = useDarkMode("dark-mode");
+
   const toggleDarkMode = (e) => {
     e.preventDefault();
     setDarkMode(!darkMode);
   };
+
+  // Set Ref for off click to close search.
+  const searchRef = useRef(null);
+
+  function onClickRef(e) {
+    const isOutside = searchRef.current.contains(e.target);
+
+    if (isOutside === false) {
+      toggleSearch();
+    }
+  }
 
   // The query parameters to be sent to USGS. Updates with state changes
   const USGSQuery = `&starttime=${starttime}&endtime=${endtime}&minmagnitude=${minmagnitude}&maxmagnitude=${maxmagnitude}&maxradiuskm=${maxradiuskm}&latitude=${latitude}&longitude=${longitude}`;
@@ -54,7 +66,6 @@ function Filters({
     advancedFilters.style.display === "flex"
       ? (advancedFilters.style.display = "none")
       : (advancedFilters.style.display = "flex");
-    console.log("toggled display");
   };
 
   const toggleSearch = () => {
@@ -63,15 +74,13 @@ function Filters({
     searchMenu.style.display === "block"
       ? (searchMenu.style.display = "none")
       : (searchMenu.style.display = "block");
-    console.log("toggled display");
   };
 
   return (
-    <div className="search-menu" id="search-menu">
-      <div onClick={toggleSearch}></div>
-      <form onSubmit={formSubmitCallback}>
+    <dialog id="search-menu" onClick={onClickRef} className="search-menu">
+      <form ref={searchRef} onSubmit={formSubmitCallback}>
         <fieldset className="search-bar-field">
-          <legend>Earthquake Search</legend>
+          <legend tabIndex="0">Earthquake Search</legend>
 
           <SearchBar />
 
@@ -86,7 +95,7 @@ function Filters({
           <fieldset className="radius-field">
             <legend>Search Radius:</legend>
 
-            <label for="kilometers">
+            <label htmlFor="kilometers">
               Kilometers
               <input
                 id="kilometers"
@@ -104,7 +113,7 @@ function Filters({
           <fieldset className="date-field">
             <legend>Date Range:</legend>
 
-            <label for="start-date">
+            <label htmlFor="start-date">
               Start
               <input
                 id="start-date"
@@ -115,7 +124,7 @@ function Filters({
               />
             </label>
 
-            <label for="end-date">
+            <label htmlFor="end-date">
               End
               <input
                 id="end-date"
@@ -130,7 +139,7 @@ function Filters({
           <fieldset className="mag-field">
             <legend>Magnitude Range:</legend>
 
-            <label for="start-magnitude">
+            <label htmlFor="start-magnitude">
               Start
               <input
                 id="start-magnitude"
@@ -144,7 +153,7 @@ function Filters({
               />
             </label>
 
-            <label for="end-magnitude">
+            <label htmlFor="end-magnitude">
               End
               <input
                 id="end-magnitude"
@@ -165,20 +174,28 @@ function Filters({
         </button>
 
         <p
+          tabIndex="0"
+          type="button"
+          role="button"
           className="close-sort"
           onClick={toggleSearch}
         >
           Close
         </p>
 
-        <div className="dark-mode-toggle">
+        <aside className="dark-mode-toggle">
           <div
+            tabIndex="0"
+            aria-label="dark mode toggle"
+            type="button"
+            role="switch"
+            aria-checked={false}
             onClick={toggleDarkMode}
             className={darkMode ? "toggle-switch toggled" : "toggle-switch"}
           />
-        </div>
+        </aside>
       </form>
-    </div>
+    </dialog>
   );
 }
 
