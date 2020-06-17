@@ -13,7 +13,6 @@ import { rootReducer as reducer } from "../../reducers/index";
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
-
 describe("<Sort/>", () => {
     it("should render...", () => {
       rtl.render(
