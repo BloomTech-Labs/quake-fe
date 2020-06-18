@@ -1,12 +1,15 @@
 import { quakeReducer } from "../reducers/quakeReducer";
 
-describe("reducer", () => {
-  it("should return the initial state", () => {
-    expect(quakeReducer(undefined, {})).toEqual({
-      quakes: [],
-      quakeFetch: false,
-      quakeFetchError: false,
-    });
+describe('reducer', () => {
+  it('should return the initial state', () => {
+    expect(quakeReducer(undefined, {})).toEqual(
+      {
+        quakes: [],
+        quakeFetch: false,
+        quakeFetchError: false,
+        sortBy: 'newest'
+      }
+    )
   });
 
   it("should handle QUAKE_FETCH", () => {
