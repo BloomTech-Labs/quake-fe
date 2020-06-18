@@ -75,8 +75,9 @@
 
 .place-info {
     font-size: 1.8em;
-    width: 95%;
+    width: 70%;
     padding: 0 0 0 10px;
+    border: 1px solid red;
 }
 
 .city {
@@ -85,11 +86,13 @@
 
 .dropdown-arrow-clicked {
     display: inline-block;
-    transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
+    transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
     max-height: 25px;
     max-width: 25px;
     transition: all .3s;
+    margin-right: 20px;
+    border: 1px solid green;
 }
 
 .dropdown-arrow {
@@ -97,6 +100,8 @@
     max-height: 25px;
     max-width: 25px;
     transition: all .3s;
+    margin-right: 20px;
+    border: 1px solid green;
 }
 
 
@@ -109,7 +114,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: 175px;
-    width: 100vw;
+    width: 100%;
     padding: 20px;
 }
 
@@ -127,6 +132,7 @@ strong{
     white-space: nowrap;
     overflow: hidden;
     height: 0px;
+    width: 0px;
     margin: 0px;
     padding: 0px;
     line-height: 0;
