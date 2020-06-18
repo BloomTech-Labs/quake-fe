@@ -1,143 +1,159 @@
-@import '../variables.scss';
+@import "../variables.scss";
 
-.activity-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    border-bottom: 1px solid rgba(213, 209, 198, 0.5);
-    font-family: Catamaran;
-    line-height: 3em;
-    background-color: white;
-    padding-right: 20px;
+// ----- Begin Card Container -----
+
+.earthquake-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  width: 100%;
+  min-height: calc(100vh - 78px);
+
+  margin: 78px 0 0 0;
+  position: relative;
 }
 
-.magnitude-info{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+// ----- End Card Container -----
+
+// ----- Begin Initial Info Card -----
+
+.activity-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid rgba(213, 209, 198, 0.5);
+  font-family: Catamaran;
+  line-height: 3em;
+  background-color: white;
+}
+
+.magnitude-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 25%;
+  max-width: 100px;
 }
 
 %magnitude {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.2em;
-    height: 95px;
-    width: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2em;
+  height: 95px;
+  width: 15px;
+}
+
+.magnitude-1 {
+  @extend %magnitude;
+  background-color: #53e0cd;
+}
+
+.magnitude-3 {
+  @extend %magnitude;
+  background-color: #a5bf65;
+}
+
+.magnitude-4 {
+  @extend %magnitude;
+  background-color: #e4912f;
+}
+
+.magnitude-6 {
+  @extend %magnitude;
+  background-color: #f46428;
+}
+
+.magnitude-7 {
+  @extend %magnitude;
+  background-color: #f13342;
+}
+
+.magnitude-9 {
+  @extend %magnitude;
+  background-color: #ef2073;
+}
+
+.magnitude-number {
+  font-family: Catamaran;
+  font-size: 4.2em;
+  font-weight: 700;
+  width: calc(100% - 15px);
+  text-align: center;
 }
 
 .place-info {
-    font-size: 1.8em;
-    width: 80%;
-}
-
-.magnitude-1{
-    @extend %magnitude;
-    background-color: #53E0CD;
-};
-
-.magnitude-3{
-    @extend %magnitude;
-    background-color: #A5BF65;
-};
-
-.magnitude-4{
-    @extend %magnitude;
-    background-color: #E4912F;
-};
-
-.magnitude-6{
-    @extend %magnitude;
-    background-color: #F46428;
-};
-
-.magnitude-7{
-    @extend %magnitude;
-    background-color: #F13342;
-};
-
-.magnitude-9{
-    @extend %magnitude;
-    background-color: #EF2073;
-}
-
-.magnitude-number{
-    font-family: Catamaran;
-    font-size: 4.2em;
-    font-weight: 700;
-    margin-left: 10px;
-}
-
-.card-info {
-    width: 80%;
-}
-
-.place-info {
-    font-size: 1.8em;
-    width: 70%;
-    padding: 0 0 0 10px;
-    border: 1px solid red;
+  height: 100%;
+  font-size: 1.8em;
+  width: calc(75% - 25px);
+  padding: 0;
 }
 
 .city {
-    font-weight: 600;
-}
-
-.dropdown-arrow-clicked {
-    display: inline-block;
-    transform: rotate(-180deg);
-    -webkit-transform: rotate(-180deg);
-    max-height: 25px;
-    max-width: 25px;
-    transition: all .3s;
-    margin-right: 20px;
-    border: 1px solid green;
+  font-weight: 600;
 }
 
 .dropdown-arrow {
-    display: inline-block;
-    max-height: 25px;
-    max-width: 25px;
-    transition: all .3s;
-    margin-right: 20px;
-    border: 1px solid green;
+  display: inline-block;
+  max-height: 25px;
+  max-width: 25px;
+  transition: all 0.3s;
+  margin-right: 5%;
+  border: 1px solid green;
 }
 
+.dropdown-arrow-clicked {
+  display: inline-block;
+  transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+  max-height: 25px;
+  max-width: 25px;
+  transition: all 0.3s;
+  margin-right: 5%;
+  border: 1px solid green;
+}
+
+// ----- End Initial Info Card -----
+
+// ----- Begin Details Dropdown Card -----
 
 .activity-details-open {
-    font-family: Catamaran;
-    font-size: 1.8em;
-    transition: height .3s;
-    background-color: $neutral-2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 175px;
-    width: 100%;
-    padding: 20px;
+  font-family: Catamaran;
+  font-size: 1.8em;
+  transition: height 0.3s;
+  background-color: $neutral-2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 175px;
+  width: 100%;
+  padding: 20px;
 }
 
-strong{
-    font-weight: 600;
+strong {
+  font-weight: 600;
 }
 
 .detail-item {
-    margin: 0;
+  margin: 0;
 }
 
 .activity-details-closed {
-    transition: height .3s;
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    height: 0px;
-    width: 0px;
-    margin: 0px;
-    padding: 0px;
-    line-height: 0;
+  transition: height 0.3s;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 0px;
+  width: 0px;
+  margin: 0px;
+  padding: 0px;
+  line-height: 0;
 }
 
 .dark-mode {
-    background: $dark-theme;
+  background: $dark-theme;
 }
+
+// ----- End Details Dropdown Card -----

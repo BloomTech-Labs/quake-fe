@@ -20,6 +20,9 @@ function Card({ quake, number }) {
 
   return (
     <main id="activity-main" aria-label="earthquake information container">
+
+      {/* ----- Begin Initial Info Card ----- */}
+
       <article
         tabIndex="0"
         className="activity-card"
@@ -47,6 +50,7 @@ function Card({ quake, number }) {
                 : "magnitude-9"
             }
           ></aside>
+
           <aside
             tabIndex="0"
             aria-label={`magnitude = ${roundedMag.toFixed(1)}`}
@@ -55,6 +59,7 @@ function Card({ quake, number }) {
             {roundedMag.toFixed(1)}
           </aside>
         </section>
+
         <article
           tabIndex="0"
           aria-label="location information"
@@ -63,38 +68,51 @@ function Card({ quake, number }) {
           <h2 tabIndex="0" className="city">
             {split2[0]}
           </h2>
+
           <h2 tabIndex="0" className="country">
             {split2[1]}
           </h2>
+
           <h3 tabIndex="0" className="distance">
             {split2[2]}
           </h3>
         </article>
+
         <img
           src={Arrow}
           tabIndex="0"
           className={!open ? "dropdown-arrow" : "dropdown-arrow-clicked"}
           onClick={() => setOpen((open) => !open)}
           onFocus={() => setOpen((open) => !open)}
-        ></img>
+        />
       </article>
+
+      {/* ----- End Initial Info Card ----- */}
+
+      {/* ----- Begin Details Dropdown Card ----- */}
+
       <article
         className={!open ? "activity-details-closed" : "activity-details-open"}
       >
         <section tabIndex="0" className="detail-item">
           <strong>Date &amp; Time:</strong> <time>{localTime}</time>
         </section>
+
         <section tabIndex="0" className="detail-item">
           <strong>Location:</strong> {quake.geometry.coordinates[0]},{" "}
           {quake.geometry.coordinates[1]}
         </section>
+
         <section tabIndex="0" className="detail-item">
           <strong>Depth:</strong> {quake.geometry.coordinates[2]} km.
         </section>
+
         <section tabIndex="0" className="detail-item">
           <strong>Magnitude:</strong> {quake.properties.mag}
         </section>
       </article>
+
+      {/* ----- End Details Dropdown Card ----- */}
     </main>
   );
 }
