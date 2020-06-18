@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { updateSearchParams } from "../../actions";
 import axios from "axios";
 import SearchBarResults from "./SearchBarResults";
-import location from "../../utils/UserLocation";
+import { setGps, getGps } from "../../utils/UserLocation";
 
 // STILL NEED TO CLEAN UP INPUT BY NOT ALLOWING ';'!!!!!!
 // Also make sure when hitting enter to select first auto correct result or do so when leaving focus of input
@@ -80,8 +80,8 @@ const SearchBar = ({ updateSearchParams, placename }) => {
     // e.preventDefault();
     setGeocodeResults([]);
 
-    location.setGps(() => {
-      const latestCoords = JSON.parse(location.getGps());
+    setGps(() => {
+      const latestCoords = JSON.parse(getGps());
       console.log("latestCordsLat", latestCoords.latitude);
       console.log("latestCordsLong", latestCoords.longitude);
 

@@ -1,4 +1,4 @@
-function setGps(onSuccess, onError) {
+export const setGps = (onSuccess, onError) => {
   navigator.geolocation.getCurrentPosition(
     (position) => {
       const { latitude, longitude } = position.coords;
@@ -13,14 +13,12 @@ function setGps(onSuccess, onError) {
       timeout: 5000,
     }
   );
-}
+};
 
-function getGps() {
+export const getGps = () => {
   const coords = localStorage.getItem("gps");
   if (coords) {
     return coords;
   }
   return { latitude: null, longitude: null };
-}
-
-export default { setGps, getGps };
+};

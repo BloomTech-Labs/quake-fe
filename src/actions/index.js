@@ -15,7 +15,7 @@ export const quakeFetch = (theQuery) => (dispatch) => {
   setTimeout(() => {
     axios
       .get(
-        `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=20000${theQuery}`
+        `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100${theQuery}`
       )
       .then((res) => {
         console.log(res.data.features);
