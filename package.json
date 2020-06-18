@@ -34,7 +34,8 @@
       "**/*.js",
       "!**/node_modules/**",
       "!**/vendor/**",
-      "!**/__tests__/**"
+      "!**/__tests__/**",
+      "!**/src/serviceWorker.js"
     ]
   },
   "eslintConfig": {
