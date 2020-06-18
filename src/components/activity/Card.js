@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Arrow from "../../images/Arrow_Active.png";
 var moment = require("moment");
 
 function Card({ quake, number }) {
@@ -69,12 +70,13 @@ function Card({ quake, number }) {
             {split2[2]}
           </h3>
         </article>
-        <div
+        <img
+          src={Arrow}
           tabIndex="0"
           className={!open ? "dropdown-arrow" : "dropdown-arrow-clicked"}
           onClick={() => setOpen((open) => !open)}
           onFocus={() => setOpen((open) => !open)}
-        ></div>
+        ></img>
       </article>
       <article
         className={!open ? "activity-details-closed" : "activity-details-open"}

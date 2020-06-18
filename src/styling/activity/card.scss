@@ -84,22 +84,18 @@
 }
 
 .dropdown-arrow-clicked {
-    border: solid black;
-    border-width: 0 5px 5px 0;
     display: inline-block;
-    padding: 3px;
-    transform: rotate(225deg);
-    -webkit-transform: rotate(225deg);
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    max-height: 25px;
+    max-width: 25px;
     transition: all .3s;
 }
 
 .dropdown-arrow {
-    border: solid black;
-    border-width: 0 5px 5px 0;
     display: inline-block;
-    padding: 3px;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
+    max-height: 25px;
+    max-width: 25px;
     transition: all .3s;
 }
 
