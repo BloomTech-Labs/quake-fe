@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as FaultlineLogo } from "../images/Faultline_Logo.svg";
+import FaultlineLogo from "../images/Logo_wtext_lightschm.png";
 import { useLocation } from "react-router-dom";
 
 const Header = () => {
@@ -16,14 +16,12 @@ const Header = () => {
 
   return (
     <header tabIndex="0" role="banner" className="header">
-      <FaultlineLogo
+      <img
+        src={FaultlineLogo}
         className="header-logo"
         tabIndex="0"
         aria-label="faultline logo"
       />
-      <h1 className="site-title" tabIndex="0" aria-label="faultline">
-        FaultLine
-      </h1>
       {location.pathname === "/resources" ? (
         <div className="hamburger-menu">
           <div className="bar"></div>
