@@ -1,6 +1,9 @@
 import React from "react";
 import Sort from "./Sort";
+import { quakeSort } from '../../actions/index'
 import * as rtl from "@testing-library/react";
+import 'jest-extended';
+
 
 import { BrowserRouter as Router } from "react-router-dom";
 
@@ -22,4 +25,10 @@ describe("<Sort/>", () => {
         </Router>
       </Provider>      );
     });
+  });
+
+  describe('sort function', () => {
+    it('should return', () => {
+        expect(quakeSort()).toBeTruthy();
+    })
   });
