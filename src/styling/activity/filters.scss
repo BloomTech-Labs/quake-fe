@@ -97,6 +97,10 @@
           width: 85%;
         }
 
+        .search-bar:focus {
+          background-image: url("../../images/clear.svg");
+        }
+
         .geo-location {
           color: #fffffa;
           fill: red;
