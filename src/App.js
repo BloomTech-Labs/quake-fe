@@ -33,6 +33,7 @@ store.subscribe(() => {
 
 function App() {
   ReactGA.initialize("UA-169193629-1"); //this is our unique ga id
+  ReactGA.pageview(window.location.pathname + window.location.search);
   const [darkMode] = useDarkMode(false);
 
   useEffect(() => {
