@@ -46,6 +46,11 @@ const SearchBar = ({ updateSearchParams, placename }) => {
     setGeocodeResults([]);
   };
 
+  const clearSearchText = () => {
+    // Clears the search text
+    alert("Hello! I am an alert box!!");
+  };
+
   const handleEnter = (e) => {
     // If the user hits enter instead of selecting a result, this function passes the first suggestion into state
     if (e.which === 13 || e.keyCode === 13) {
@@ -101,7 +106,7 @@ const SearchBar = ({ updateSearchParams, placename }) => {
     <div className="geocoder-container">
       <input
         role="search"
-        type="text"
+        type="search"
         name="placename"
         onChange={handleChanges}
         onKeyPress={handleEnter}
