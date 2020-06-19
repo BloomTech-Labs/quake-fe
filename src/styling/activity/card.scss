@@ -101,6 +101,7 @@
   max-width: 25px;
   transition: all 0.3s;
   margin-right: 5%;
+  pointer-events: none;
 }
 
 .dropdown-arrow-clicked {
@@ -111,7 +112,7 @@
   max-width: 25px;
   transition: all 0.3s;
   margin-right: 5%;
-  border: 1px solid green;
+  pointer-events: none;
 }
 
 // ----- End Initial Info Card -----
