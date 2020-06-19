@@ -27,7 +27,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "coverage": " yarn test --ci=true --coverage --watchAll=false || true"
+    "coverage": "yarn test --CI=true --coverage --watchAll=false || true"
   },
   "jest": {
     "collectCoverageFrom": [
