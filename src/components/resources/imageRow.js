@@ -6,9 +6,9 @@ const ImageRow = ({subHeadText, ImageOne, ImageTwo, ImageThree, altOne, altTwo, 
     <Fragment>
       <h3 className='sub-head-text'>{subHeadText}</h3>
       <div className='img-row'>
-        <ImageOne className='safety-step-img' alt={altOne}/>
-        <ImageTwo className='safety-step-img' alt={altTwo}/>
-        <ImageThree className='safety-step-img' alt={altThree}/>
+        <ImageOne className='safety-step-img imageOne' alt={altOne}/>
+        <ImageTwo className='safety-step-img imageTwo' alt={altTwo}/>
+        <ImageThree className='safety-step-img imageThree' alt={altThree}/>
       </div>
     </Fragment>
    );
