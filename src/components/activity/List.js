@@ -12,9 +12,13 @@ function List({ quakes, quakeFetch, quakeFetchError }) {
         return <div>Looks Like We Couldn't Find Any Quakes...</div>;
       } else {
         console.log("Have Quakes", quakes);
-        return quakes.map((quake, index) => {
-          return <Card quake={quake} number={index} key={index} />;
-        });
+        return (
+          <div className="earthquake-list-container">
+            {quakes.map((quake, index) => {
+              return <Card quake={quake} number={index} key={index} />;
+            })}
+          </div>
+        );
       }
     } else {
       console.log("Fetching Quakes", quakeFetch);

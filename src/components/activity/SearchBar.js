@@ -101,7 +101,7 @@ const SearchBar = ({ updateSearchParams, placename }) => {
     <div className="geocoder-container">
       <input
         role="search"
-        type="text"
+        type="search"
         name="placename"
         onChange={handleChanges}
         onKeyPress={handleEnter}
