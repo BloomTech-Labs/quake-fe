@@ -8,7 +8,7 @@ const Activity = () => {
     <>
       <Filters />
       <Sort />
-      <List className="list"/>
+      <List />
     </>
   );
 };
