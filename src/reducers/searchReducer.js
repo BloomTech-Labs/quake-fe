@@ -23,7 +23,7 @@ function getDates(theDate) {
 export const initialSearchState = {
   starttime: getDates(today),
   endtime: getDates(tomorrow),
-  minmagnitude: 3.5,
+  minmagnitude: 3,
   maxmagnitude: 10,
   maxradiuskm: 5000,
   latitude: 37.78197,

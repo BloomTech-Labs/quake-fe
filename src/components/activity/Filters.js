@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { connect } from "react-redux";
 import { quakeFetch, updateSearchParams } from "../../actions";
 import SearchBar from "./SearchBar";
@@ -60,12 +60,17 @@ function Filters({
   };
 
   // Toggles the advanced search filters dropdown.
+  const [theText, setTheText] = useState("Less");
   const toggleAdvanced = (e) => {
     e.preventDefault();
     const advancedFilters = document.getElementById("advanced-filters");
-    advancedFilters.style.display === "flex"
-      ? (advancedFilters.style.display = "none")
-      : (advancedFilters.style.display = "flex");
+    if (advancedFilters.style.display === "none") {
+      advancedFilters.style.display = "flex";
+      setTheText("Less");
+    } else {
+      advancedFilters.style.display = "none";
+      setTheText("More");
+    }
   };
 
   const toggleSearch = () => {
@@ -85,7 +90,7 @@ function Filters({
           <SearchBar />
 
           <button onClick={toggleAdvanced} className="more-options-button">
-            More Options
+            {theText} Options
           </button>
         </fieldset>
 
