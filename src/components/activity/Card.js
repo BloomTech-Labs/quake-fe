@@ -82,8 +82,6 @@ function Card({ quake, number }) {
           src={Arrow}
           tabIndex="0"
           className={!open ? "dropdown-arrow" : "dropdown-arrow-clicked"}
-          onClick={() => setOpen((open) => !open)}
-          onFocus={() => setOpen((open) => !open)}
         />
       </article>
 
