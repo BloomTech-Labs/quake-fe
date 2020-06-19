@@ -97,6 +97,11 @@
           width: 85%;
         }
 
+        //removes background image onfocus
+        .search-bar:focus {
+          background-image: url();
+        }
+
         .geo-location {
           color: #fffffa;
           fill: red;
