@@ -82,6 +82,7 @@ function Card({ quake, number }) {
           src={Arrow}
           tabIndex="0"
           className={!open ? "dropdown-arrow" : "dropdown-arrow-clicked"}
+          alt="dropdown arrow"
         />
       </article>
 

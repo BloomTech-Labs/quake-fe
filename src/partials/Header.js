@@ -21,6 +21,7 @@ const Header = () => {
         className="header-logo"
         tabIndex="0"
         aria-label="faultline logo"
+        alt="faultline logo"
       />
       {location.pathname === "/resources" ? (
         <div className="hamburger-menu">
