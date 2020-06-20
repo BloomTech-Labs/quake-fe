@@ -5,6 +5,7 @@ const Responsive = () => {
   return (
     <div className="Wipe">
       <MediaQuery minWidth={501}>
+        <br />
         <span role="img" aria-label="Grimacing Face">
           😬
         </span>
@@ -12,7 +13,7 @@ const Responsive = () => {
         <br />
         <p>FaultLine is a mobile first app.</p>
         <br />
-        <p>Emulate mobile below 500px to continue.</p>
+        <p>Reduce the width of the window until the screen changes.</p>
         <br />
       </MediaQuery>
     </div>
