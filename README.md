@@ -5,77 +5,44 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/ca644fa2d7d7e12836f8/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/quake-fe/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ca644fa2d7d7e12836f8/test_coverage)](https://codeclimate.com/github/Lambda-School-Labs/quake-fe/test_coverage)
 
-🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline, feel free to add your own flare to it.
+# FaultLine
 
-🚫 The numbers 1️⃣ through 5️⃣ next to each item represent the week that part of the docs needs to be comepleted by.  Make sure to delete the numbers by the end of Labs.
+You can find the deployed project [Here](https://quakelabs-fe-production.herokuapp.com/).
 
-🚫 Each student has a required minimum number of meaningful PRs each week per the rubric. Contributing to docs does NOT count as a PR to meet your weekly requirements.
+## Contributors
 
-🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline, feel free to add your own flare to it.
-
-🚫 The numbers 1️⃣ through 5️⃣ next to each item represent the week that part of the docs needs to be comepleted by.  Make sure to delete the numbers by the end of Labs.
-
-🚫 Each student has a required minimum number of meaningful PRs each week per the rubric. Contributing to docs does NOT count as a PR to meet your weekly requirements.
-
-# 1️⃣ FaultLine
-
-1️⃣ You can find the deployed project at [🚫URL NAME GOES HERE](🚫copy and paste URL here).
-
-## 4️⃣ Contributors
-
-🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
-
-|[Nicole White](https://github.com/Nicci498)|                                       [Pete James](https://github.com/petedram)                                        |                                       [Cesar Hernandez](https://github.com/cesarhj19)                                        |                                       [Ken Diehl](https://github.com/diehlkj)                                        |                                       [Eddie Jimenez](https://github.com/l8nightswithJS) |
-                                        [Jeff Breig](https://github.com/jjbreig5909)                                        |
-| :-: | :-: | :-: | :-: | :-: | :-: |
-|                      [<img src="https://avatars1.githubusercontent.com/u/56371568?s=460&u=576c01ec836c9d48619406ac37593fb78a58fd88&v=4" width = "200" />](https://github.com/Nicci498)                       |                      [<img src="https://avatars0.githubusercontent.com/u/50643245?s=460&u=10cb7da24bc90fb845f4655632df28c38404a5ed&v=4" width = "200" />](https://github.com/petedram/)                       |                      [<img src="https://avatars1.githubusercontent.com/u/40823565?s=460&u=98f9b08838d7d3b3cfd1384d1e8105ae9f479801&v=4" width = "200" />](https://github.com/cesarhj19)                       |                      [<img src="https://avatars2.githubusercontent.com/u/52009014?s=460&v=4" width = "200" />](https://github.com/diehlkj)                       |                      [<img src="https://avatars0.githubusercontent.com/u/52768061?s=460&u=474d87f3c11bdf098f80212b63417804e9690b90&v=4" width = "200" />](https://github.com/l8nightswithJS)                       |
-                      [<img src="https://avatars1.githubusercontent.com/u/52798970?s=460&u=abaccbf3ab305e22782b3c8178f7f7a5f5484d2b&v=4" width = "200" />](https://github.com/jjbreig5909)                       
-|                      [<img src="https://i.imgur.com/fvRbd3S.jpg" height = "200" width = "auto" />](https://github.com/l8nightswithJS)                       |
-                   [<img src="https://ca.slack-edge.com/ESZCHB482-W012JQ0SEUT-618e2d6f9b69-512" width = "200" />](https://github.com/jjbreig5909)                       
-|
-|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Nicci498)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/petedram/)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/cesarhj19)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/diehlkj)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/l8nightswithJS)             |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/jjbreig5909)             |
-            - |
-                        - | |[ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/nicole-white-dev/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/max-keller-923164196/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](http://www.linkedin.com/in/laurasuyasa) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/jeremy-green-4a5462169/) |
-
-<br>
-<br>
-
-
-🚫 4️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
-
-
-
-
-🚫 more info on using badges [here](https://github.com/badges/shields)
+|  |  |  |  |
+|:-:|:-:|:-:|:-:|
+| Nicole White [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Nicci498) [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15">](https://www.linkedin.com/in/nicole-white-dev/) | Pete James [<img src="https://github.com/favicon.ico" width="15">](https://github.com/petedram) [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15">](https://www.linkedin.com/) | Cesar Hernandez [<img src="https://github.com/favicon.ico" width="15">](https://github.com/cesarhj19) [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15">](https://www.linkedin.com/) | Ken Diehl [<img src="https://github.com/favicon.ico" width="15">](https://github.com/diehlkj) [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15">](https://www.linkedin.com/in/diehlkj/) |
+| [<img src="https://avatars1.githubusercontent.com/u/56371568?s=460&u=576c01ec836c9d48619406ac37593fb78a58fd88&v=4" width = "200" />](https://www.linkedin.com/in/nicole-white-dev/) | [<img src="https://avatars0.githubusercontent.com/u/50643245?s=460&u=10cb7da24bc90fb845f4655632df28c38404a5ed&v=4" width = "200" />](https://www.linkedin.com/) | [<img src="https://avatars1.githubusercontent.com/u/40823565?s=460&u=98f9b08838d7d3b3cfd1384d1e8105ae9f479801&v=4" width = "200" />](https://www.linkedin.com/) | [<img src="https://avatars2.githubusercontent.com/u/52009014?s=460&v=4" width = "200" />](https://www.linkedin.com/in/diehlkj) |
+| <strong>Eddie Jimenez</strong> [<img src="https://github.com/favicon.ico" width="15">](https://github.com/l8nightswithJS) [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15">](https://www.linkedin.com/) | <strong>Jeff Breig</strong> [<img src="https://github.com/favicon.ico" width="15">](https://github.com/jjbreig5909) [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15">](https://www.linkedin.com/) | <strong>Laura Suyasa</strong> [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15">](https://www.linkedin.com/) | <strong>Jeremy Green</strong> [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15">](https://www.linkedin.com/) |
+| [<img src="https://avatars0.githubusercontent.com/u/52768061?s=460&u=474d87f3c11bdf098f80212b63417804e9690b90&v=4" width = "200" />](https://www.linkedin.com/) | [<img src="https://avatars1.githubusercontent.com/u/52798970?s=460&u=abaccbf3ab305e22782b3c8178f7f7a5f5484d2b&v=4" width = "200" />](https://www.linkedin.com/) | [<img src="https://i.imgur.com/fvRbd3S.jpg" height = "200" width = "auto" />](https://www.linkedin.com/) | [<img src="https://ca.slack-edge.com/ESZCHB482-W012JQ0SEUT-618e2d6f9b69-512" width = "200" />](https://www.linkedin.com/) |
 
 ## Project Overview
 
-1️⃣ [Trello Board](https://trello.com/b/QwlYrox7/labspt11-quake)
+[<img src="https://a.trellocdn.com/prgb/dist/images/pinned-tab-icon.225c8d1cf8bbf74add43.svg" width="15"/>](https://trello.com/b/QwlYrox7/labspt11-quake) [Trello Board](https://trello.com/b/QwlYrox7/labspt11-quake)
 
-1️⃣ [Product Canvas](https://www.notion.so/Quake-FaultLine-b58b447c82104fc89e0237c95da33cc9)
+[<img src="https://cdn.iconscout.com/icon/free/png-512/notion-1693557-1442598.png" width="25"/>](https://www.notion.so/Quake-FaultLine-b58b447c82104fc89e0237c95da33cc9) [Product Canvas](https://www.notion.so/Quake-FaultLine-b58b447c82104fc89e0237c95da33cc9)
 
-1️⃣ [UX Design files](https://www.figma.com/file/RF4AkqkiKCCzL8HGPTV82s/Quake)
+[<img src="https://static.figma.com/app/icon/1/favicon.png" width="15"/>](https://www.figma.com/file/RF4AkqkiKCCzL8HGPTV82s/Quake) [UX Design files](https://www.figma.com/file/RF4AkqkiKCCzL8HGPTV82s/Quake)
 
-🚫 Replace lorem ipsum with a description of your project
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+FaultLine is an earthquake application that is based on multiple data sources.
+With this app, you can get the latest earthquake info immediately from all over the world.  Also, you can search the earthquakes occurred in the past.
 
 
-### 4️⃣ Key Features
+### Key Features
 
--    feature one
--    feature two
--    feature three
--    feature four
--    feature five
+-    Get the latest earthquake info immediately from all over the world.
+-    A map to visualize the information and browse geographically.
+-    Snappy and fast to use, not dependent on any one API source.
+-    A mobile first web app, so we are always in your pocket!
+-    A mobile first web app, so we are always in your pocket!
 
-## 1️⃣ Tech Stack
+## Tech Stack
 
 ### Front end built using:
 
-#### _Front end framework goes here_
+#### React.js
 
 🚫 Why did you choose this framework?
 
@@ -100,54 +67,37 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 
 # APIs
 
-## 2️⃣ Authentication API here
+## [USGS Earthquake Catalog](https://earthquake.usgs.gov/fdsnws/event/1/)
 
 🚫Replace text below with a description of the API
 
 Water's like me. It's laaazy ... Boy, it always looks for the easiest way to do things A little happy sunlight shining through there. Let all these little things happen. Don't fight them. Learn to use them. Even the worst thing we can do here is good.
 
-## 2️⃣ Payment API here
+## [MapBox Search Service](https://docs.mapbox.com/api/search/)
 
 🚫Replace text below with a description of the API
 
 This is the way you take out your flustrations. Get away from those little Christmas tree things we used to make in school. Isn't it fantastic that you can change your mind and create all these happy things? Everything's not great in life, but we can still find beauty in it.
 
-## 3️⃣ Misc API here
+## [MapBox Maps Service](https://docs.mapbox.com/api/maps/)
 
 🚫Replace text below with a description of the API
 
 You can do anything your heart can imagine. In life you need colors. This is where you take out all your hostilities and frustrations. It's better than kicking the puppy dog around and all that so. I'm sort of a softy, I couldn't shoot Bambi except with a camera. Trees get lonely too, so we'll give him a little friend. We'll lay all these little funky little things in there.
 
-## 3️⃣ Misc API here
+## [Twilio SMS](https://www.twilio.com/docs/sms)
 
 🚫Replace text below with a description of the API
 
 When you do it your way you can go anywhere you choose. Let your heart take you to wherever you want to be. If I paint something, I don't want to have to explain what it is. A tree needs to be your friend if you're going to paint him. That's a son of a gun of a cloud. Even the worst thing we can do here is good.
 
-## 3️⃣ Misc API here
-
-🚫Replace text below with a description of the API
-
-Volunteering your time; it pays you and your whole community fantastic dividends. Maybe there's a happy little waterfall happening over here. You can spend all day playing with mountains. We don't have to be committed. We are just playing here. You have freedom here. The only guide is your heart. It's cold, but it's beautiful.
-
-# 3️⃣ Environment Variables
+# ️Environment Variables
 
 In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
 
-🚫These are just examples, replace them with the specifics for your app
+    *  REACT_APP_MAP_API_TOKEN - this is your MapBox API Token, which can be found in the MapBox Account card on the trello board.
 
-    *  REACT_APP_apiKey - this is your Google API key, which can be generated in the Google Cloud Console
-    *  REACT_APP_authDomain - when you set up your Firebase project, this information will be in the dashboard
-    *  REACT_APP_databaseURL - in the Firebase dashboard
-    *  REACT_APP_projectID - in the Firebase dashboard
-    *  REACT_APP_storageBucket - in the Firebase dashboard
-    *  REACT_APP_messagingSenderId - in the Firebase dashboard
-    *  REACT_APP_stripe_API - this is your public Stripe API key, generated in the Stripe dashboard
-    *  REACT_APP_backendURL - optional for your local development server
-    *  REACT_APP_clientid - this is the Stripe_connect clientID, generated in Stripe_connect settings
-    *  REACT_APP_stripe_plan - this is the ID for a second Stripe subscription plan, generated under Stripe products
-
-# 5️⃣ Content Licenses
+# ️Content Licenses
 
 🚫For all content - images, icons, etc, use this table to document permission of use. Remove the two placeholders and add you content to this table
 
@@ -156,11 +106,11 @@ In order for the app to function correctly, the user must set up their own envir
 | doodles.png    | Nicole Bennett   | [Creative Commons](https://www.toptal.com/designers/subtlepatterns/doodles/) |
 | rings.svg      | Sam Herbert      | [MIT](https://github.com/SamHerbert/SVG-Loaders)                             |
 
-# 4️⃣ Testing
+# Testing
 
 🚫Document what you used for testing and why
 
-# 4️⃣ Installation Instructions
+# Installation Instructions
 
 🚫explain how to install the required dependencies to get this project up and running with yarn and NPM
 
