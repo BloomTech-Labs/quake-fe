@@ -47,7 +47,6 @@ function Sort({ quakeSort, quakes, sortBy }) {
             id="sort-input"
             className="sort-dropdown"
             onChange={handleChanges}
-            tabIndex="0"
           >
             <option value="newest">Time: Newest First</option>
             <option value="oldest">Time: Oldest First</option>

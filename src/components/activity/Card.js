@@ -20,16 +20,13 @@ function Card({ quake, number }) {
 
   return (
     <main id="activity-main" aria-label="earthquake information container">
-
       {/* ----- Begin Initial Info Card ----- */}
 
       <article
-        tabIndex="0"
         className="activity-card"
         onClick={() => setOpen((open) => !open)}
       >
         <section
-          tabIndex="0"
           aria-label={`earthquake magnitude ${
             Math.round(quake.properties.mag * 10) / 10
           }`}
@@ -52,7 +49,6 @@ function Card({ quake, number }) {
           ></aside>
 
           <aside
-            tabIndex="0"
             aria-label={`magnitude = ${roundedMag.toFixed(1)}`}
             className="magnitude-number"
           >
@@ -60,27 +56,16 @@ function Card({ quake, number }) {
           </aside>
         </section>
 
-        <article
-          tabIndex="0"
-          aria-label="location information"
-          className="place-info"
-        >
-          <h2 tabIndex="0" className="city">
-            {split2[0]}
-          </h2>
+        <article aria-label="location information" className="place-info">
+          <h2 className="city">{split2[0]}</h2>
 
-          <h2 tabIndex="0" className="country">
-            {split2[1]}
-          </h2>
+          <h2 className="country">{split2[1]}</h2>
 
-          <h3 tabIndex="0" className="distance">
-            {split2[2]}
-          </h3>
+          <h3 className="distance">{split2[2]}</h3>
         </article>
 
         <img
           src={Arrow}
-          tabIndex="0"
           className={!open ? "dropdown-arrow" : "dropdown-arrow-clicked"}
           alt="dropdown arrow"
         />
@@ -93,20 +78,20 @@ function Card({ quake, number }) {
       <article
         className={!open ? "activity-details-closed" : "activity-details-open"}
       >
-        <section tabIndex="0" className="detail-item">
+        <section className="detail-item">
           <strong>Date &amp; Time:</strong> <time>{localTime}</time>
         </section>
 
-        <section tabIndex="0" className="detail-item">
+        <section className="detail-item">
           <strong>Location:</strong> {quake.geometry.coordinates[0]},{" "}
           {quake.geometry.coordinates[1]}
         </section>
 
-        <section tabIndex="0" className="detail-item">
+        <section className="detail-item">
           <strong>Depth:</strong> {quake.geometry.coordinates[2]} km.
         </section>
 
-        <section tabIndex="0" className="detail-item">
+        <section className="detail-item">
           <strong>Magnitude:</strong> {quake.properties.mag}
         </section>
       </article>
