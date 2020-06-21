@@ -15,11 +15,10 @@ const Header = () => {
   };
 
   return (
-    <header tabIndex="0" role="banner" className="header">
+    <header role="banner" className="header">
       <img
         src={FaultlineLogo}
         className="header-logo"
-        tabIndex="0"
         aria-label="faultline logo"
       />
       {location.pathname === "/resources" ? (
@@ -30,14 +29,14 @@ const Header = () => {
         </div>
       ) : (
         <aside className="search-header">
-          <div
+          <button
             onClick={toggleSearch}
-            tabIndex="0"
             type="button"
             role="switch"
             aria-checked="false"
             aria-label="search button"
             className="search-icon"
+            tabIndex="0"
           />
         </aside>
       )}
