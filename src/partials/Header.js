@@ -20,6 +20,7 @@ const Header = () => {
         src={FaultlineLogo}
         className="header-logo"
         aria-label="faultline logo"
+        alt="faultline logo"
       />
       {location.pathname === "/resources" ? (
         <div className="hamburger-menu">

@@ -67,6 +67,7 @@ function Card({ quake, number }) {
         <img
           src={Arrow}
           className={!open ? "dropdown-arrow" : "dropdown-arrow-clicked"}
+          alt="dropdown arrow"
         />
       </article>
 
