@@ -4,7 +4,7 @@ import MediaQuery from "react-responsive";
 const Responsive = () => {
   return (
     <div className="Wipe">
-      <MediaQuery minWidth={501}>
+      <MediaQuery minWidth={505}>
         <br />
         <span role="img" aria-label="Grimacing Face">
           😬
