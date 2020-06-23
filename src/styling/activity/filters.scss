@@ -209,6 +209,7 @@
     position: relative;
     width: 40px;
     margin-top: 10px;
+    
 
     .toggle-switch {
       background: #d9e3e2;
@@ -223,5 +224,10 @@
         left: 18px;
       }
     }
+  }
+  .dark-mode-text {
+    padding-top: 5px;
+    color: white;
+    font-size: 13px;
   }
 } // end search-menu

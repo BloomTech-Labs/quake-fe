@@ -154,6 +154,13 @@ strong {
 
 .dark-mode {
   background: $dark-theme;
+  .activity-card {
+    background-color: #323232;
+    color: white;
+    .dropdown-arrow, .dropdown-arrow-clicked {
+      filter: invert(1);
+    }
+  }
 }
 
 // ----- End Details Dropdown Card -----
