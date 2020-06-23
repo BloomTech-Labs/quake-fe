@@ -45,17 +45,17 @@ function App() {
     <Provider store={store}>
       <Router>
         <Responsive />
-          <div className="App">
-            <Header />
-            <Switch>
-              <Route exact path="/" component={Activity} />
-              <Route exact path="/activity" component={Activity} />
-              <Route exact path="/feed" component={Feed} />
-              <Route exact path="/about" component={About} />
-              <Route exact path="/resources" component={Resources} />
-              <Route exact path="/report" component={Report} />
-            </Switch>
-          </div>
+        <div className="App">
+          <Header />
+          <Switch>
+            <Route exact path="/" component={Activity} />
+            <Route exact path="/activity" component={Activity} />
+            <Route exact path="/feed" component={Feed} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/resources" component={Resources} />
+            <Route exact path="/report" component={Report} />
+          </Switch>
+        </div>
       </Router>
     </Provider>
   );
