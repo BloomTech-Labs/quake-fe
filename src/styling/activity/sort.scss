@@ -100,3 +100,10 @@
   z-index: 1000;
   transition: background-color 0.3s;
 }
+
+.dark-mode {
+  .sort-bar {
+    background-color: $accent-color;
+    color: white;
+  }
+}
