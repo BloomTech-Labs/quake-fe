@@ -74,6 +74,10 @@
       }
     }
 
+    input:focus {
+      outline: none;
+    }
+
     .search-bar-field {
       display: flex;
       align-items: center;
@@ -99,7 +103,7 @@
 
         //removes background image onfocus
         .search-bar:focus {
-          background-image:none;
+          background-image: none;
         }
 
         .geo-location {

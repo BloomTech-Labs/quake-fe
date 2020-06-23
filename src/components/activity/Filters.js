@@ -83,9 +83,9 @@ function Filters({
 
   return (
     <dialog id="search-menu" onClick={onClickRef} className="search-menu">
-      <form ref={searchRef} onSubmit={formSubmitCallback}>
+      <form ref={searchRef} onSubmit={formSubmitCallback} name="filters-form">
         <fieldset className="search-bar-field">
-          <legend tabIndex="0">Earthquake Search</legend>
+          <legend>Earthquake Search</legend>
 
           <SearchBar />
 
@@ -179,7 +179,6 @@ function Filters({
         </button>
 
         <p
-          tabIndex="0"
           type="button"
           role="button"
           className="close-sort"
@@ -190,7 +189,6 @@ function Filters({
 
         <aside className="dark-mode-toggle">
           <div
-            tabIndex="0"
             aria-label="dark mode toggle"
             type="button"
             role="switch"
