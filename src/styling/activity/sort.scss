@@ -31,6 +31,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  outline: none;
+  border: none;
 }
 
 .sort-text {
@@ -44,6 +46,7 @@
 .sort-dropdown {
   border-radius: 5px;
   font-family: Catamaran;
+  outline: none;
 }
 
 .close-sort {
