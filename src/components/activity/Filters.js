@@ -195,8 +195,9 @@ function Filters({
             aria-checked={false}
             onClick={toggleDarkMode}
             className={darkMode ? "toggle-switch toggled" : "toggle-switch"}
-          />
+          /> 
         </aside>
+        <p className='dark-mode-text'>Dark mode</p>
       </form>
     </dialog>
   );
