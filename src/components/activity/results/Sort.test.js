@@ -1,6 +1,6 @@
 import React from "react";
 import Sort from "./Sort";
-import { quakeSort } from '../../actions/index'
+import { quakeSort } from '../../../actions/index'
 import * as rtl from "@testing-library/react";
 import 'jest-extended';
 
@@ -12,7 +12,7 @@ import "@testing-library/jest-dom/extend-expect";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
-import { rootReducer as reducer } from "../../reducers/index";
+import { rootReducer as reducer } from "../../../reducers/index";
 
 const store = createStore(reducer, applyMiddleware(thunk));
 

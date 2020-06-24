@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { updateSearchParams } from "../../actions";
+import { updateSearchParams } from "../../../actions";
 import axios from "axios";
 import SearchBarResults from "./SearchBarResults";
-import { setGps, getGps } from "../../utils/UserLocation";
+import { setGps, getGps } from "../../../utils/UserLocation";
 
 // STILL NEED TO CLEAN UP INPUT BY NOT ALLOWING ';'!!!!!!
 // Also make sure when hitting enter to select first auto correct result or do so when leaving focus of input

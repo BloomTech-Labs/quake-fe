@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Arrow from "../../images/Arrow_Active.png";
+import Arrow from "../../../images/Arrow_Active.png";
 var moment = require("moment");
 
 function Card({ quake, number }) {

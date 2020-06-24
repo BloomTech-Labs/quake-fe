@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { quakeSort } from "../../actions/index.js";
+import { quakeSort } from "../../../actions/index.js";
 
 function Sort({ quakeSort, quakes, sortBy }) {
   const [sortClicked, setSortClicked] = useState(false);
