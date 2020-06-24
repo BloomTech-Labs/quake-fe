@@ -1,5 +1,5 @@
 import React from "react";
-import FaultlineLogo from "../images/Logo_wtext_lightschm.png";
+import {ReactComponent as FaultlineLogo} from '../images/logo_wtext.svg'
 import { useLocation } from "react-router-dom";
 
 const Header = () => {
@@ -16,8 +16,7 @@ const Header = () => {
 
   return (
     <header role="banner" className="header">
-      <img
-        src={FaultlineLogo}
+      <FaultlineLogo
         className="header-logo"
         aria-label="faultline logo"
         alt="faultline logo"
