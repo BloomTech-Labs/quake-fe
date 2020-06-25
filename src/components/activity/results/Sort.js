@@ -32,7 +32,7 @@ function Sort({ quakeSort, quakes, sortBy }) {
         }}
       >
         <label htmlFor="sort-input">
-          <h3 tabIndex="0" type="button" role="button">
+          <h3 type="button" role="button">
             Sort Results
           </h3>
         </label>
@@ -40,7 +40,7 @@ function Sort({ quakeSort, quakes, sortBy }) {
 
       <div className={!sortClicked ? "sort-input-closed" : "sort-input-open"}>
         <dialog className="sort-input">
-          <h1 tabIndex="0" className="sort-text">
+          <h1 className="sort-text">
             Sort by:
           </h1>
           <select
