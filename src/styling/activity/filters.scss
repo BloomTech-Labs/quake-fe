@@ -89,7 +89,7 @@
         position: relative;
         width: 100%;
 
-        .search-bar {
+        .geocode-input {
           height: 35px;
           padding: 5px;
           background: #fffffa;
@@ -104,7 +104,7 @@
         }
 
         //removes background image onfocus
-        .search-bar:focus {
+        .geocode-input:focus {
           background-image: none;
         }
 

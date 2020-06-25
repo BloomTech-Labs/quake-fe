@@ -13,11 +13,11 @@ function List({ quakes, quakeFetch, quakeFetchError }) {
       } else {
         console.log("Have Quakes", quakes);
         return (
-          <div className="earthquake-list-container">
+          <>
             {quakes.map((quake, index) => {
               return <Card quake={quake} number={index} key={index} />;
             })}
-          </div>
+          </>
         );
       }
     } else {

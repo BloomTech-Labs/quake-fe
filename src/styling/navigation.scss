@@ -9,5 +9,13 @@
     bottom: 0;
     height: 66px;
     width: 100vw;
-    background-color: $neutral-1;
+    background-color: $logo-primary;
+}
+
+nav {
+    width: 100%;
+    background: $logo-primary;
+    height: 45px;
+    // position: fixed;
+    bottom: 0;
 }

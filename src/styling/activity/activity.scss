@@ -1,3 +1,126 @@
 @import "./card.scss";
 @import "./filters.scss";
 @import "./sort.scss";
+@import "./map.scss";
+
+.main-container {
+  width: 100%;
+  margin: 0;
+  height: calc(100vh - 80px);
+//   border: 1px solid lime;
+  position: relative;
+//   overflow-y: auto;
+}
+
+.scroll {
+    overflow-y: auto;
+}
+
+.no-scroll {
+    overflow-y: hidden;
+}
+
+.search-container {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    z-index: 999;
+    background: $logo-primary;
+
+    .search-bar {
+
+    }
+}
+
+.geocoder-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+
+    .geocode-input {
+      height: 35px;
+      padding: 5px;
+      background: #fffffa;
+      border: none;
+      border-radius: 5px;
+      background-image: url("../../images/search.svg");
+      background-size: 15px;
+      background-position: 96%;
+      background-repeat: no-repeat;
+      width: 85%;
+      font-size: 1.6em;
+    }
+
+    //removes background image onfocus
+    .geocode-input:focus {
+      background-image: none;
+    }
+
+    .geo-location {
+      color: #fffffa;
+      fill: red;
+      width: 35px;
+      height: 35px;
+      border: none;
+      padding: 8px;
+      margin-left: 7px;
+      border-radius: 50%;
+      background-image: url("../../images/myLocation.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+
+    .geocoder-results {
+      position: absolute;
+      padding: 0 5px;
+      z-index: 10;
+      margin-top: 35px;
+      width: 85%;
+      background: #3b3b3b;
+    }
+
+    .geocoder-results p {
+      display: block;
+      background: #fffffa;
+      font-size: 0.85rem;
+      line-height: 1.2rem;
+      border-top: 1px solid #000000;
+      border-radius: 5px;
+      padding: 5px;
+      margin: 5px auto;
+      width: 100%;
+      transition: 0.2s;
+      transition-timing-function: ease-in-out;
+    }
+
+    .geocoder-results p:hover {
+      cursor: pointer;
+      background: #d8ffc8;
+    }
+  }
+
+.results-container {
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    bottom: 0;
+    z-index: 999;
+    transition: 0.2s cubic-bezier(.73,0,.9,1);
+    // transform: translateY(calc(100% - 30px));
+
+    .results-toggle {
+        width: 100;
+        height: 30px;
+        background: $logo-primary;
+        border-bottom: 1px solid #fff;
+    }
+}

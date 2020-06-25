@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { connect } from "react-redux";
 import { quakeFetch, updateSearchParams } from "../../actions";
-import SearchBar from "./search/SearchBar";
+// import SearchBar from "./search/SearchBar";
 import useDarkMode from "../../customHooks/useDarkMode";
 
 function Filters({
@@ -87,7 +87,7 @@ function Filters({
         <fieldset className="search-bar-field">
           <legend>Earthquake Search</legend>
 
-          <SearchBar />
+          {/* <SearchBar /> */}
 
           <button onClick={toggleAdvanced} className="more-options-button">
             {theText} Options
