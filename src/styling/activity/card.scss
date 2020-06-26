@@ -1,21 +1,5 @@
 @import "../variables.scss";
 
-// ----- Begin Card Container -----
-
-.earthquake-list-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  width: 100%;
-  height: calc(100% - 75px);
-
-  margin: 0;
-  position: relative;
-}
-
-// ----- End Card Container -----
-
 // ----- Begin Initial Info Card -----
 
 .activity-card {
