@@ -55,7 +55,8 @@ function App() {
             <Route exact path="/resources" component={Resources} />
             <Route exact path="/report" component={Report} />
           </Switch>
-          <nav></nav>{/* Navigation Placeholder */}
+          <nav></nav>
+          {/* Navigation Placeholder */}
         </div>
       </Router>
     </Provider>

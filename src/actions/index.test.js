@@ -1,19 +1,15 @@
 import { quakeReducer } from "../reducers/quakeReducer";
 import { searchReducer } from "../reducers/searchReducer";
-import 'jest-extended';
+import "jest-extended";
 
-
-
-describe('reducer', () => {
-  it('should return the initial state', () => {
-    expect(quakeReducer(undefined, {})).toEqual(
-      {
-        quakes: [],
-        quakeFetch: false,
-        quakeFetchError: false,
-        sortBy: 'newest'
-      }
-    )
+describe("reducer", () => {
+  it("should return the initial state", () => {
+    expect(quakeReducer(undefined, {})).toEqual({
+      quakes: [],
+      quakeFetch: false,
+      quakeFetchError: false,
+      sortBy: "newest",
+    });
   });
 
   it("should handle QUAKE_FETCH", () => {
@@ -49,8 +45,8 @@ it("should handle SORT_QUAKES", () => {
   expect(quakeReducer([], { type: "SORT_QUAKES" })).toBeObject();
 });
 
-describe('Searchreducer', () => {
-  it('should return object', () => {
-    expect(searchReducer(undefined, {})).toBeObject()
+describe("Searchreducer", () => {
+  it("should return object", () => {
+    expect(searchReducer(undefined, {})).toBeObject();
   });
 });

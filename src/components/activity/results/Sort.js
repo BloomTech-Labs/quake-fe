@@ -13,11 +13,7 @@ function Sort({ quakeSort, quakes, sortBy }) {
     <div className="sort-bar">
       <label>
         Sort by:
-
-        <select
-          id="sort-input"
-          onChange={handleChanges}
-        >
+        <select id="sort-input" onChange={handleChanges}>
           <option value="newest">Time: Newest First</option>
           <option value="oldest">Time: Oldest First</option>
           <option value="ascending magnitude">Magnitude: Lowest First</option>

@@ -1,8 +1,7 @@
-import React from 'react'
-import Geocoder from './Geocoder'
+import React from "react";
+import Geocoder from "./Geocoder";
 
 const SearchBar = () => {
-
   const toggleFilters = (e) => {
     // Toggles visibility of search menu
     e.preventDefault();
@@ -17,14 +16,14 @@ const SearchBar = () => {
   };
 
   return (
-    <div className='search-container'>
-      <div className='search-bar'>
-        <Geocoder/>
+    <div className="search-container">
+      <div className="search-bar">
+        <Geocoder />
         {/* Current Location Button */}
       </div>
       <button className="filters-toggle" onClick={toggleFilters}></button>
     </div>
-  )
-}
+  );
+};
 
 export default SearchBar;

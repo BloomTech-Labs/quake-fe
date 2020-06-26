@@ -59,20 +59,6 @@ function Filters({
     });
   };
 
-  // Toggles the advanced search filters dropdown.
-  const [theText, setTheText] = useState("Less");
-  const toggleAdvanced = (e) => {
-    e.preventDefault();
-    const advancedFilters = document.getElementById("advanced-filters");
-    if (advancedFilters.style.display === "none") {
-      advancedFilters.style.display = "flex";
-      setTheText("Less");
-    } else {
-      advancedFilters.style.display = "none";
-      setTheText("More");
-    }
-  };
-
   const toggleSearch = () => {
     // Toggles visibility of search menu
     const searchMenu = document.getElementById("search-menu");
@@ -84,16 +70,6 @@ function Filters({
   return (
     <dialog id="search-menu" onClick={onClickRef} className="search-menu">
       <form ref={searchRef} onSubmit={formSubmitCallback} name="filters-form">
-        <fieldset className="search-bar-field">
-          <legend>Earthquake Search</legend>
-
-          {/* <SearchBar /> */}
-
-          <button onClick={toggleAdvanced} className="more-options-button">
-            {theText} Options
-          </button>
-        </fieldset>
-
         <fieldset id="advanced-filters" className="advanced-filters">
           <legend>Advanced Filters</legend>
 
@@ -195,9 +171,9 @@ function Filters({
             aria-checked={false}
             onClick={toggleDarkMode}
             className={darkMode ? "toggle-switch toggled" : "toggle-switch"}
-          /> 
+          />
         </aside>
-        <p className='dark-mode-text'>Dark mode</p>
+        <p className="dark-mode-text">Dark mode</p>
       </form>
     </dialog>
   );

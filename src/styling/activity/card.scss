@@ -141,7 +141,8 @@ strong {
   .activity-card {
     background-color: #323232;
     color: white;
-    .dropdown-arrow, .dropdown-arrow-clicked {
+    .dropdown-arrow,
+    .dropdown-arrow-clicked {
       filter: invert(1);
     }
   }

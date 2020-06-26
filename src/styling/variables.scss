@@ -1,44 +1,43 @@
 // responsive breakpoints:
-//mobile: 
+//mobile:
 //tablet:
 //desktop:
 
-
-
-// Colors for the site theme: 
+// Colors for the site theme:
 //primary
 $logo-primary: #247249;
-$logo-background: #FFFFFA;
+$logo-background: #fffffa;
 
 //accent
 $active-icon: #247249;
 
-//etc. 
-$inactive-icon: #7BA29E;
-$lightest-text: #FFFFFA;
-$neutral-1: #F6FCFB;
-$neutral-2: #D9E3E2;
+//etc.
+$inactive-icon: #7ba29e;
+$lightest-text: #fffffa;
+$neutral-1: #f6fcfb;
+$neutral-2: #d9e3e2;
 $neutral-3: #252525;
 
 //----------
 
-// Resources page theme: 
+// Resources page theme:
 $font-color: #323232;
 $accent-color: #247249;
 
 // dark mode
 $dark-theme: #323232;
-$logo-outline: #FFFFFA;
+$logo-outline: #fffffa;
 
-// Site fonts: 
-$logo-font: 'Montserrat', Arial, Helvetica, sans-serif;
-$body-font: 'Catamaran', Arial, Helvetica, sans-serif;
+// Site fonts:
+$logo-font: "Montserrat", Arial, Helvetica, sans-serif;
+$body-font: "Catamaran", Arial, Helvetica, sans-serif;
 
 @font-face {
-    font-family: 'Montserrat';
-    src: local('Montserrat'), url(./fonts/MontserratSubrayada-Regular.ttf) format('truetype');
+  font-family: "Montserrat";
+  src: local("Montserrat"),
+    url(./fonts/MontserratSubrayada-Regular.ttf) format("truetype");
 }
 @font-face {
-    font-family: 'Catamaran';
-    src: local('Catamaran'), url(./fonts/Catamaran-Regular.ttf) format('truetype');
+  font-family: "Catamaran";
+  src: local("Catamaran"), url(./fonts/Catamaran-Regular.ttf) format("truetype");
 }

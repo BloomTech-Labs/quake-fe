@@ -1,9 +1,8 @@
 import React from "react";
 import Sort from "./Sort";
-import { quakeSort } from '../../../actions/index'
+import { quakeSort } from "../../../actions/index";
 import * as rtl from "@testing-library/react";
-import 'jest-extended';
-
+import "jest-extended";
 
 import { BrowserRouter as Router } from "react-router-dom";
 
@@ -17,18 +16,19 @@ import { rootReducer as reducer } from "../../../reducers/index";
 const store = createStore(reducer, applyMiddleware(thunk));
 
 describe("<Sort/>", () => {
-    it("should render...", () => {
-      rtl.render(
-        <Provider store={store}>
+  it("should render...", () => {
+    rtl.render(
+      <Provider store={store}>
         <Router>
           <Sort />
         </Router>
-      </Provider>      );
-    });
+      </Provider>
+    );
   });
+});
 
-  describe('sort function', () => {
-    it('should return', () => {
-        expect(quakeSort()).toBeTruthy();
-    })
+describe("sort function", () => {
+  it("should return", () => {
+    expect(quakeSort()).toBeTruthy();
   });
+});
