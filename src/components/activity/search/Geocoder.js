@@ -1,14 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { updateSearchParams } from "../../actions";
+import { updateSearchParams, quakeFetch } from "../../../actions";
 import axios from "axios";
-import SearchBarResults from "./SearchBarResults";
-import { setGps, getGps } from "../../utils/UserLocation";
+import GeocoderResults from "./GeocoderResults";
+import { setGps, getGps } from "../../../utils/UserLocation";
 
 // STILL NEED TO CLEAN UP INPUT BY NOT ALLOWING ';'!!!!!!
 // Also make sure when hitting enter to select first auto correct result or do so when leaving focus of input
 
-const SearchBar = ({ updateSearchParams, placename }) => {
+function Geocoder({
+  updateSearchParams,
+  quakeFetch,
+  placename,
+  maxradiuskm,
+  starttime,
+  endtime,
+  minmagnitude,
+  maxmagnitude,
+  latitude,
+  longitude,
+}) {
   const [encodedSearch, setEncodedSearch] = useState(""); // Holds the URI encoded search text
 
   const [geocodeResults, setGeocodeResults] = useState([]); // Holds array of autocomplete results from MapBox Geocode API
@@ -82,18 +93,30 @@ const SearchBar = ({ updateSearchParams, placename }) => {
 
     setGps(() => {
       const latestCoords = JSON.parse(getGps());
-      console.log("latestCordsLat", latestCoords.latitude);
-      console.log("latestCordsLong", latestCoords.longitude);
 
-      updateSearchParams({
-        name: "latitude",
-        value: latestCoords.latitude,
-      });
+      if (latestCoords) {
+        console.log("latestCordsLat", latestCoords.latitude);
+        console.log("latestCordsLong", latestCoords.longitude);
 
-      updateSearchParams({
-        name: "longitude",
-        value: latestCoords.longitude,
-      });
+        updateSearchParams({
+          name: "placename",
+          value: "Your Current Location",
+        });
+
+        updateSearchParams({
+          name: "latitude",
+          value: latestCoords.latitude,
+        });
+
+        updateSearchParams({
+          name: "longitude",
+          value: latestCoords.longitude,
+        });
+
+        quakeFetch(
+          `&starttime=${starttime}&endtime=${endtime}&minmagnitude=${minmagnitude}&maxmagnitude=${maxmagnitude}&maxradiuskm=${maxradiuskm}&latitude=${latitude}&longitude=${longitude}`
+        );
+      }
     });
   };
 
@@ -108,15 +131,15 @@ const SearchBar = ({ updateSearchParams, placename }) => {
         value={placename}
         placeholder="Search"
         maxLength="256"
-        className="search-bar"
+        className="geocode-input"
         aria-label="input location"
         autoComplete="off"
       />
       <button className="geo-location" onClick={() => updateGeoLocation()} />
-      <aside className="search-results">
+      <aside className="geocoder-results">
         {geocodeResults.map((feature) => {
           return (
-            <SearchBarResults
+            <GeocoderResults
               key={feature.place_name}
               feature={feature}
               clearResults={clearResults}
@@ -126,14 +149,22 @@ const SearchBar = ({ updateSearchParams, placename }) => {
       </aside>
     </div>
   );
-};
+}
 
 const mapStateToProps = (state) => {
   return {
     placename: state.searchReducer.placename,
+    starttime: state.searchReducer.starttime,
+    endtime: state.searchReducer.endtime,
+    minmagnitude: state.searchReducer.minmagnitude,
+    maxmagnitude: state.searchReducer.maxmagnitude,
+    maxradiuskm: state.searchReducer.maxradiuskm,
+    latitude: state.searchReducer.latitude,
+    longitude: state.searchReducer.longitude,
   };
 };
 
 export default connect(mapStateToProps, {
   updateSearchParams,
-})(SearchBar);
+  quakeFetch,
+})(Geocoder);

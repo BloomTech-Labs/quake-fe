@@ -89,7 +89,7 @@
         position: relative;
         width: 100%;
 
-        .search-bar {
+        .geocode-input {
           height: 35px;
           padding: 5px;
           background: #fffffa;
@@ -104,7 +104,7 @@
         }
 
         //removes background image onfocus
-        .search-bar:focus {
+        .geocode-input:focus {
           background-image: none;
         }
 
@@ -194,7 +194,7 @@
       cursor: pointer;
     }
     .close-sort {
-      font-family: Catamaran;
+      font-family: $font-body;
       font-size: 1.4em;
       margin: 0px auto;
       margin-top: 10px;
@@ -212,7 +212,6 @@
     position: relative;
     width: 40px;
     margin-top: 10px;
-    
 
     .toggle-switch {
       background: #d9e3e2;

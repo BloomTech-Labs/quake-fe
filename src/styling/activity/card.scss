@@ -1,21 +1,5 @@
 @import "../variables.scss";
 
-// ----- Begin Card Container -----
-
-.earthquake-list-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  width: 100%;
-  min-height: calc(100vh - 78px);
-
-  margin: 78px 0 0 0;
-  position: relative;
-}
-
-// ----- End Card Container -----
-
 // ----- Begin Initial Info Card -----
 
 .activity-card {
@@ -24,7 +8,7 @@
   justify-content: space-between;
   width: 100%;
   border-bottom: 1px solid rgba(213, 209, 198, 0.5);
-  font-family: Catamaran;
+  font-family: $font-body;
   line-height: 3em;
   background-color: white;
 }
@@ -77,7 +61,7 @@
 }
 
 .magnitude-number {
-  font-family: Catamaran;
+  font-family: $font-body;
   font-size: 4.2em;
   font-weight: 700;
   width: calc(100% - 15px);
@@ -120,7 +104,7 @@
 // ----- Begin Details Dropdown Card -----
 
 .activity-details-open {
-  font-family: Catamaran;
+  font-family: $font-body;
   font-size: 1.8em;
   transition: height 0.3s;
   background-color: $neutral-2;
@@ -157,7 +141,8 @@ strong {
   .activity-card {
     background-color: #323232;
     color: white;
-    .dropdown-arrow, .dropdown-arrow-clicked {
+    .dropdown-arrow,
+    .dropdown-arrow-clicked {
       filter: invert(1);
     }
   }
