@@ -26,14 +26,14 @@
   }
 
   p {
-    font-family: $logo-font;
+    font-family: $font-logo;
     font-size: 1.4em;
     color: $logo-primary;
   }
 }
 
 .site-title {
-  font-family: PostNoBills;
+  font-family: $font-logo;
   font-size: 2em;
   font-weight: 600;
   color: #247249;
