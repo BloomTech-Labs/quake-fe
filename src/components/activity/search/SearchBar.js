@@ -2,14 +2,27 @@ import React from 'react'
 import Geocoder from './Geocoder'
 
 const SearchBar = () => {
+
+  const toggleFilters = (e) => {
+    // Toggles visibility of search menu
+    e.preventDefault();
+
+    const filterMenu = document.getElementById("search-menu");
+
+    filterMenu.style.display === "block"
+      ? (filterMenu.style.display = "none")
+      : (filterMenu.style.display = "block");
+
+    console.log("toggled display");
+  };
+
   return (
     <div className='search-container'>
       <div className='search-bar'>
-        {/* Search Icon */}
         <Geocoder/>
         {/* Current Location Button */}
       </div>
-      {/* Filter Button */}
+      <button className="filters-toggle" onClick={toggleFilters}></button>
     </div>
   )
 }

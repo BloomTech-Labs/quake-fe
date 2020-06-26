@@ -1,22 +1,5 @@
 @import "./variables.scss";
 
-.search-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  button {
-    border: none;
-  }
-}
-
-.search-icon {
-  background: url("../images/search.svg") no-repeat center center / contain;
-  height: 37px;
-  width: 37px;
-  cursor: pointer;
-}
-
 .header {
   // position: fixed;
   display: flex;
@@ -30,9 +13,23 @@
   z-index: 999;
 }
 
-.header-logo {
-  max-height: 25px;
-  margin-right: 10px;
+.logo-container {
+  width: 110px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .header-logo {
+    height: 25px;
+    width: 25px;
+  }
+
+  p {
+    font-family: $logo-font;
+    font-size: 1.4em;
+    color: $logo-primary;
+  }
 }
 
 .site-title {
@@ -72,7 +69,8 @@
     }
 
     .header-logo {
-      .outline, .text {
+      .outline,
+      .text {
         fill: $logo-outline;
       }
       .land {

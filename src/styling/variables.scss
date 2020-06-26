@@ -31,14 +31,13 @@ $dark-theme: #323232;
 $logo-outline: #FFFFFA;
 
 // Site fonts: 
-//logo font: Post no bills
+$logo-font: 'Montserrat', Arial, Helvetica, sans-serif;
+$body-font: 'Catamaran', Arial, Helvetica, sans-serif;
+
 @font-face {
-    font-family: 'PostNoBills';
-    src: local('PostNoBills'), url(./fonts/PostNoBillsJaffna-Regular.ttf) format('truetype');
+    font-family: 'Montserrat';
+    src: local('Montserrat'), url(./fonts/MontserratSubrayada-Regular.ttf) format('truetype');
 }
-
-
-//body font: catamaran
 @font-face {
     font-family: 'Catamaran';
     src: local('Catamaran'), url(./fonts/Catamaran-Regular.ttf) format('truetype');
