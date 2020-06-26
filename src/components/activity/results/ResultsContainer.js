@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Sort from "./Sort";
 import List from "./List";
 
 const ResultsContainer = () => {
@@ -21,7 +22,7 @@ const ResultsContainer = () => {
   return (
     <div id="results-container" className="results-container no-scroll">
       <div className="results-toggle" onClick={toggleList}></div>
-
+      <Sort/>
       <div className="earthquake-list-container scroll">
         <List />
       </div>
