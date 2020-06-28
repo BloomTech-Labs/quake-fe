@@ -18,85 +18,93 @@ function Card({ quake, number }) {
 
   const roundedMag = Math.round(quake.properties.mag * 10) / 10;
 
+  const locationJump = (e) => {
+    e.preventDefault();
+  }
+
   return (
-    <main id="activity-main" aria-label="earthquake information container">
+    <main
+      className={!open ? ("activity-card-container activity-card-container-closed") : ("activity-card-container activity-card-container-open")}
+      id="activity-main"
+      aria-label="earthquake information container"
+    >
+      <aside
+        className={
+          roundedMag < 1.5
+            ? "magnitude-1"
+            : roundedMag < 3
+            ? "magnitude-3"
+            : roundedMag < 4.5
+            ? "magnitude-4"
+            : roundedMag < 6
+            ? "magnitude-6"
+            : roundedMag < 7.5
+            ? "magnitude-7"
+            : "magnitude-9"
+        }
+      ></aside>
+
       {/* ----- Begin Initial Info Card ----- */}
-
-      <article
-        className="activity-card"
-        onClick={() => setOpen((open) => !open)}
-      >
-        <section
-          aria-label={`earthquake magnitude ${
-            Math.round(quake.properties.mag * 10) / 10
-          }`}
-          className="magnitude-info"
+      <div className="activity-info-container">
+        <article
+          className="activity-info-primary"
+          onClick={() => setOpen((open) => !open)}
         >
-          <aside
-            className={
-              roundedMag < 1.5
-                ? "magnitude-1"
-                : roundedMag < 3
-                ? "magnitude-3"
-                : roundedMag < 4.5
-                ? "magnitude-4"
-                : roundedMag < 6
-                ? "magnitude-6"
-                : roundedMag < 7.5
-                ? "magnitude-7"
-                : "magnitude-9"
-            }
-          ></aside>
-
-          <aside
-            aria-label={`magnitude = ${roundedMag.toFixed(1)}`}
-            className="magnitude-number"
+          <section
+            aria-label={`earthquake magnitude ${
+              Math.round(quake.properties.mag * 10) / 10
+            }`}
+            className="magnitude-info"
           >
-            {roundedMag.toFixed(1)}
-          </aside>
-        </section>
+            <aside
+              aria-label={`magnitude = ${roundedMag.toFixed(1)}`}
+            >
+              {roundedMag.toFixed(1)}
+            </aside>
+          </section>
 
-        <article aria-label="location information" className="place-info">
-          <h2 className="city">{split2[0]}</h2>
+          <article aria-label="location information" className="place-info">
+            <h2 className="city">{split2[0]}</h2>
 
-          <h2 className="country">{split2[1]}</h2>
+            <h2 className="country">{split2[1]}</h2>
 
-          <h3 className="distance">{split2[2]}</h3>
+            <h3 className="distance">{split2[2]}</h3>
+          </article>
+
+          <img
+            src={Arrow}
+            className={!open ? "dropdown-arrow-not-clicked" : "dropdown-arrow-clicked"}
+            alt="dropdown arrow"
+          />
         </article>
 
-        <img
-          src={Arrow}
-          className={!open ? "dropdown-arrow" : "dropdown-arrow-clicked"}
-          alt="dropdown arrow"
-        />
-      </article>
+        {/* ----- End Initial Info Card ----- */}
 
-      {/* ----- End Initial Info Card ----- */}
+        {/* ----- Begin Details Dropdown Card ----- */}
 
-      {/* ----- Begin Details Dropdown Card ----- */}
+        <article className="activity-info-secondary">
+          <section className="detail-item">
+            <strong>Date &amp; Time:</strong> <time>{localTime}</time>
+          </section>
 
-      <article
-        className={!open ? "activity-details-closed" : "activity-details-open"}
-      >
-        <section className="detail-item">
-          <strong>Date &amp; Time:</strong> <time>{localTime}</time>
-        </section>
+          <section className="detail-item">
+            <strong>Location:</strong> {quake.geometry.coordinates[0]},{" "}
+            {quake.geometry.coordinates[1]}
+          </section>
 
-        <section className="detail-item">
-          <strong>Location:</strong> {quake.geometry.coordinates[0]},{" "}
-          {quake.geometry.coordinates[1]}
-        </section>
+          <section className="detail-item">
+            <strong>Depth:</strong> {quake.geometry.coordinates[2]} km.
+          </section>
 
-        <section className="detail-item">
-          <strong>Depth:</strong> {quake.geometry.coordinates[2]} km.
-        </section>
+          <section className="detail-item">
+            <strong>Magnitude:</strong> {quake.properties.mag}
+          </section>
 
-        <section className="detail-item">
-          <strong>Magnitude:</strong> {quake.properties.mag}
-        </section>
-      </article>
+          <button onClick={locationJump}>Jump to Loaction</button>
+        </article>
 
-      {/* ----- End Details Dropdown Card ----- */}
+        {/* ----- End Details Dropdown Card ----- */}
+      </div>
     </main>
   );
 }

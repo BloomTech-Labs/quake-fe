@@ -1,140 +1,184 @@
 @import "../variables.scss";
 
 // ----- Begin Initial Info Card -----
-
-.activity-card {
+.activity-card-container-open {
+  height: 285px;
+}
+.activity-card-container-closed {
+  height: 100px;
+}
+.activity-card-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: row;
+  flex-shrink: 0;
+
   width: 100%;
+  transition: 0.3s ease-in-out;
+
   border-bottom: 1px solid rgba(213, 209, 198, 0.5);
-  font-family: $font-body;
-  line-height: 3em;
-  background-color: white;
-}
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 
-.magnitude-info {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 25%;
-  max-width: 100px;
-}
+  %activity-color {
+    width: 15px;
+    height: 100%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  .magnitude-1 {
+    @extend %activity-color;
+    background-color: #53e0cd;
+  }
+  .magnitude-3 {
+    @extend %activity-color;
+    background-color: #a5bf65;
+  }
+  .magnitude-4 {
+    @extend %activity-color;
+    background-color: #e4912f;
+  }
+  .magnitude-6 {
+    @extend %activity-color;
+    background-color: #f46428;
+  }
+  .magnitude-7 {
+    @extend %activity-color;
+    background-color: #f13342;
+  }
+  .magnitude-9 {
+    @extend %activity-color;
+    background-color: #ef2073;
+  }
 
-%magnitude {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.2em;
-  height: 95px;
-  width: 15px;
-}
+  .activity-info-container {
+    display: flex;
+    flex-direction: column;
 
-.magnitude-1 {
-  @extend %magnitude;
-  background-color: #53e0cd;
-}
+    position: relative;
 
-.magnitude-3 {
-  @extend %magnitude;
-  background-color: #a5bf65;
-}
+    width: calc(100% - 15px);
+    height: 100%;
 
-.magnitude-4 {
-  @extend %magnitude;
-  background-color: #e4912f;
-}
+    background-color: white;
 
-.magnitude-6 {
-  @extend %magnitude;
-  background-color: #f46428;
-}
+    font-family: $font-body;
+    line-height: 3em;
 
-.magnitude-7 {
-  @extend %magnitude;
-  background-color: #f13342;
-}
+    overflow: hidden;
+  }
 
-.magnitude-9 {
-  @extend %magnitude;
-  background-color: #ef2073;
-}
+  .activity-info-primary {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
-.magnitude-number {
-  font-family: $font-body;
-  font-size: 4.2em;
-  font-weight: 700;
-  width: calc(100% - 15px);
-  text-align: center;
-}
+    align-self: top;
+    height: 100px;
+    z-index: 996;
 
-.place-info {
-  height: 100%;
-  font-size: 1.8em;
-  width: calc(75% - 25px);
-  padding: 0;
-}
+    -webkit-box-shadow: 0px 0px 11px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 11px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 11px -5px rgba(0, 0, 0, 0.75);
 
-.city {
-  font-weight: 600;
-}
+    background-color: #ffffff;
 
-.dropdown-arrow {
-  display: inline-block;
-  max-height: 25px;
-  max-width: 25px;
-  transition: all 0.3s;
-  margin-right: 5%;
-  pointer-events: none;
-}
+    .magnitude-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 25%;
+      max-width: 100px;
 
-.dropdown-arrow-clicked {
-  display: inline-block;
-  transform: rotate(-180deg);
-  -webkit-transform: rotate(-180deg);
-  max-height: 25px;
-  max-width: 25px;
-  transition: all 0.3s;
-  margin-right: 5%;
-  pointer-events: none;
-}
+      aside {
+        font-family: $font-body;
+        font-size: 4.2em;
+        font-weight: 700;
+        width: calc(100% - 15px);
+        text-align: center;
+      }
+    }
 
+    .place-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 100%;
+      font-size: 1.8em;
+      width: calc(75% - 25px);
+      padding: 0;
+    }
+
+    .city {
+      font-weight: 600;
+    }
+
+    %dropdown-arrow {
+      display: inline-block;
+      max-height: 25px;
+      max-width: 25px;
+      transition: 0.3s ease-in-out;
+      margin-right: 5%;
+      pointer-events: none;
+    }
+
+    .dropdown-arrow-clicked {
+      @extend %dropdown-arrow;
+      transform: rotate(-180deg);
+      -webkit-transform: rotate(-180deg);
+    }
+
+    .dropdown-arrow-not-clicked {
+      @extend %dropdown-arrow;
+      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+    }
+  }
+
+  .activity-info-secondary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    position: absolute;
+    bottom: 0;
+    z-index: 995;
+
+    width: 100%;
+    height: 185px;
+    padding: 15px;
+
+    background: $neutral-2;
+
+    -webkit-box-shadow: inset 0px -32px 21px -46px rgba(0, 0, 0, 1);
+    -moz-box-shadow: inset 0px -32px 21px -46px rgba(0, 0, 0, 1);
+    box-shadow: inset 0px -32px 21px -46px rgba(0, 0, 0, 1);
+
+    font-family: $font-body;
+    font-size: 1.6em;
+
+    .detail-item {
+      width: 100%;
+      margin: 0;
+      
+      strong {
+        font-weight: 600;
+      }
+    }
+    button {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      background: $logo-primary;
+      color: #ffffff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+}
 // ----- End Initial Info Card -----
 
 // ----- Begin Details Dropdown Card -----
-
-.activity-details-open {
-  font-family: $font-body;
-  font-size: 1.8em;
-  transition: height 0.3s;
-  background-color: $neutral-2;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 175px;
-  width: 100%;
-  padding: 20px;
-}
-
-strong {
-  font-weight: 600;
-}
-
-.detail-item {
-  margin: 0;
-}
-
-.activity-details-closed {
-  transition: height 0.3s;
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  height: 0px;
-  width: 0px;
-  margin: 0px;
-  padding: 0px;
-  line-height: 0;
-}
 
 .dark-mode {
   background: $dark-theme;
