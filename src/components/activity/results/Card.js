@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { jumpViewport } from "../../../actions";
 import Arrow from "../../../images/Arrow_Active.png";
 var moment = require("moment");
 
-function Card({ quake, number }) {
+function Card({ jumpViewport, quake, number }) {
   const [open, setOpen] = useState(false);
 
   // Converting epoch time to a more familiar MM-DD-YYYY / hh:mm format.
@@ -20,6 +22,7 @@ function Card({ quake, number }) {
 
   const locationJump = (e) => {
     e.preventDefault();
+    jumpViewport(quake.geometry.coordinates[0], quake.geometry.coordinates[1]);
   }
 
   return (
@@ -109,4 +112,11 @@ function Card({ quake, number }) {
   );
 }
 
-export default Card;
+const mapStateToProps = (state) => {
+  return {};
+};
+
+export default connect(mapStateToProps, {
+  jumpViewport,
+})(Card);
+

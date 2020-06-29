@@ -8,31 +8,11 @@ function MapContainer({
   quakes,
   latitude,
   longitude,
+  transition,
   zoom,
   width,
   height,
 }) {
-  
-  // className={`marker${expandMarker ? " expand-marker" : ""}`} onClick={expandMarker}
-  // expandMarker = () => {
-
-  // }
-
-  // const [dimensions, setDimensions] = React.useState({
-  //   height: window.innerHeight,
-  //   width: window.innerWidth,
-  // });
-
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     setDimensions({
-  //       height: window.innerHeight,
-  //       width: window.innerWidth,
-  //     });
-  //   };
-  //   console.log("in the resize useEffect ", dimensions);
-  //   window.addEventListener("resize", handleResize);
-  // });
 
   return (
     <div className="map-container" id="map-container">
@@ -42,6 +22,7 @@ function MapContainer({
         zoom={zoom}
         width={width}
         height={height} // Its the viewport info silly
+        transitionDuration={transition}
         mapboxApiAccessToken={process.env.REACT_APP_MAP_API_TOKEN} // API access token from mapbox account
         mapStyle={process.env.REACT_APP_MAP_STYLE_TOKEN} // style from mapbox studio
         onViewportChange={(viewport) => {
@@ -96,6 +77,7 @@ const mapPropsToState = (state) => {
     quakes: state.quakeReducer.quakes,
     latitude: state.mapReducer.latitude,
     longitude: state.mapReducer.longitude,
+    transition: state.mapReducer.transition,
     zoom: state.mapReducer.zoom,
     width: state.mapReducer.width,
     height: state.mapReducer.height,
