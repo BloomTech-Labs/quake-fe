@@ -88,8 +88,8 @@ function Card({ quake, number }) {
           </section>
 
           <section className="detail-item">
-            <strong>Location:</strong> {quake.geometry.coordinates[0]},{" "}
-            {quake.geometry.coordinates[1]}
+            <strong>Location:</strong> {quake.geometry.coordinates[0]}&deg;{" / "} 
+            {quake.geometry.coordinates[1]}&deg;
           </section>
 
           <section className="detail-item">

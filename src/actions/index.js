@@ -5,6 +5,7 @@ export const QUAKE_FETCH = "QUAKE_FETCH";
 export const QUAKE_FETCH_ERROR = "QUAKE_FETCH_ERROR";
 export const DISPLAY_QUAKES = "DISPLAY_QUAKES ";
 export const SORT_QUAKES = "SORT_QUAKES";
+export const UPDATE_VIEWPORT = "UPDATE_VIEWPORT";
 
 // searchReducer Actions
 export const UPDATE_SEARCH_PARAMS = "UPDATE_SEARCH_PARAMS";
@@ -67,3 +68,15 @@ export const quakeSort = (sortBy, quakes) => (dispatch) => {
     dispatch({ type: SORT_QUAKES, quakeData: sortedQuakes });
   }
 };
+
+export const setViewport = (viewport) => (dispatch) => {
+  console.log('UPDATING VIEWPORT TO: ', viewport);
+    let newVP = {
+      ...viewport,
+      width: "100%",
+      height: "100%",
+    };
+    dispatch({ type: UPDATE_VIEWPORT, viewportInfo: newVP });
+  
+  
+}

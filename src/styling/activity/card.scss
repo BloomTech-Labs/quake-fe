@@ -2,7 +2,7 @@
 
 // ----- Begin Initial Info Card -----
 .activity-card-container-open {
-  height: 285px;
+  height: 300px;
 }
 .activity-card-container-closed {
   height: 100px;
@@ -15,7 +15,7 @@
   width: 100%;
   transition: 0.3s ease-in-out;
 
-  border-bottom: 1px solid rgba(213, 209, 198, 0.5);
+  border-bottom: 1px solid #d5d1c680;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 
@@ -27,27 +27,27 @@
   }
   .magnitude-1 {
     @extend %activity-color;
-    background-color: #53e0cd;
+    background: $mag-1;
   }
   .magnitude-3 {
     @extend %activity-color;
-    background-color: #a5bf65;
+    background: $mag-2;
   }
   .magnitude-4 {
     @extend %activity-color;
-    background-color: #e4912f;
+    background: $mag-3;
   }
   .magnitude-6 {
     @extend %activity-color;
-    background-color: #f46428;
+    background: $mag-4;
   }
   .magnitude-7 {
     @extend %activity-color;
-    background-color: #f13342;
+    background: $mag-5;
   }
   .magnitude-9 {
     @extend %activity-color;
-    background-color: #ef2073;
+    background: $mag-6;
   }
 
   .activity-info-container {
@@ -145,7 +145,7 @@
     z-index: 995;
 
     width: 100%;
-    height: 185px;
+    height: 200px;
     padding: 15px;
 
     background: $neutral-2;
@@ -158,14 +158,17 @@
     font-size: 1.6em;
 
     .detail-item {
+      display: flex;
+      justify-content: space-between;
       width: 100%;
-      margin: 0;
+      border-bottom: 1px solid #ffffff62;
       
       strong {
         font-weight: 600;
       }
     }
     button {
+      margin-top: 10px;
       padding: 5px 10px;
       border: none;
       border-radius: 5px;

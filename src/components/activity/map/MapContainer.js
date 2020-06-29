@@ -1,25 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
+import { setViewport } from "../../../actions";
 import ReactMapGL, { Marker } from "react-map-gl"; // https://github.com/visgl/react-map-gl/tree/master/docs
 
-
-function MapContainer({ quakes }) {
-  const [viewport, setViewport] = useState({
-    latitude: 37.09024,
-    longitude: -95.712891,
-    zoom: 4,
-    width: "100%",
-    height: "100%",
-  });
+function MapContainer({
+  setViewport,
+  quakes,
+  latitude,
+  longitude,
+  zoom,
+  width,
+  height,
+}) {
+  
   // className={`marker${expandMarker ? " expand-marker" : ""}`} onClick={expandMarker}
   // expandMarker = () => {
 
   // }
 
+  // const [dimensions, setDimensions] = React.useState({
+  //   height: window.innerHeight,
+  //   width: window.innerWidth,
+  // });
+
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setDimensions({
+  //       height: window.innerHeight,
+  //       width: window.innerWidth,
+  //     });
+  //   };
+  //   console.log("in the resize useEffect ", dimensions);
+  //   window.addEventListener("resize", handleResize);
+  // });
+
   return (
-    <div className="map-container">
+    <div className="map-container" id="map-container">
       <ReactMapGL
-        {...viewport} // Its the viewport info silly
+        latitude={latitude}
+        longitude={longitude}
+        zoom={zoom}
+        width={width}
+        height={height} // Its the viewport info silly
         mapboxApiAccessToken={process.env.REACT_APP_MAP_API_TOKEN} // API access token from mapbox account
         mapStyle={process.env.REACT_APP_MAP_STYLE_TOKEN} // style from mapbox studio
         onViewportChange={(viewport) => {
@@ -72,7 +94,14 @@ function MapContainer({ quakes }) {
 const mapPropsToState = (state) => {
   return {
     quakes: state.quakeReducer.quakes,
+    latitude: state.mapReducer.latitude,
+    longitude: state.mapReducer.longitude,
+    zoom: state.mapReducer.zoom,
+    width: state.mapReducer.width,
+    height: state.mapReducer.height,
   };
 };
 
-export default connect(mapPropsToState, {})(MapContainer);
+export default connect(mapPropsToState, {
+  setViewport,
+})(MapContainer);

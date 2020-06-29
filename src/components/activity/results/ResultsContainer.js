@@ -10,14 +10,18 @@ const ResultsContainer = () => {
   const handleClicks = (e) => {
     if (clickTimeout !== null) {
       const container = document.getElementById("results-container");
-      console.log("double click executes");
+      const theMap = document.getElementById("map-container");
 
-      if (fullList === false) {
-        container.style.height = "calc(100% - 45px)";
-        setFullList(true);
-      } else {
-        container.style.height = "calc(75% - 45px)";
-        setFullList(false);
+      if (openList === true) {
+        if (fullList === false) {
+          container.style.height = "calc(100% - 45px)";
+          theMap.style.height = "45px";
+          setFullList(true);
+        } else {
+          container.style.height = "calc(75% - 45px)";
+          theMap.style.height = "calc(25% + 45px)";
+          setFullList(false);
+        }
       }
 
       clearTimeout(clickTimeout);
@@ -29,13 +33,16 @@ const ResultsContainer = () => {
       setClickTimeout(
         setTimeout(() => {
           const container = document.getElementById("results-container");
+          const theMap = document.getElementById("map-container");
           console.log("single click executes");
 
           if (openList === true) {
             container.style.transform = "translateY(calc(100% - 30px))";
+            theMap.style.height = "calc(100% - 30px)";
             setOpenList(false);
           } else {
             container.style.transform = "translateY(0)";
+            theMap.style.height = "calc(25% + 45px)";
             setOpenList(true);
           }
 
