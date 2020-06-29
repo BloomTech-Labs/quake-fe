@@ -13,7 +13,6 @@ function MapContainer({
   width,
   height,
 }) {
-
   return (
     <div className="map-container" id="map-container">
       <ReactMapGL
@@ -21,7 +20,7 @@ function MapContainer({
         longitude={longitude}
         zoom={zoom}
         width={width}
-        height={height} // Its the viewport info silly
+        height={height}
         transitionDuration={transition}
         mapboxApiAccessToken={process.env.REACT_APP_MAP_API_TOKEN} // API access token from mapbox account
         mapStyle={process.env.REACT_APP_MAP_STYLE_TOKEN} // style from mapbox studio

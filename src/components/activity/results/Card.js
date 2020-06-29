@@ -21,13 +21,18 @@ function Card({ jumpViewport, quake, number }) {
   const roundedMag = Math.round(quake.properties.mag * 10) / 10;
 
   const locationJump = (e) => {
+    // Triggers map to move to quake marker
     e.preventDefault();
     jumpViewport(quake.geometry.coordinates[0], quake.geometry.coordinates[1]);
-  }
+  };
 
   return (
     <main
-      className={!open ? ("activity-card-container activity-card-container-closed") : ("activity-card-container activity-card-container-open")}
+      className={
+        !open
+          ? "activity-card-container activity-card-container-closed"
+          : "activity-card-container activity-card-container-open"
+      }
       id="activity-main"
       aria-label="earthquake information container"
     >
@@ -59,9 +64,7 @@ function Card({ jumpViewport, quake, number }) {
             }`}
             className="magnitude-info"
           >
-            <aside
-              aria-label={`magnitude = ${roundedMag.toFixed(1)}`}
-            >
+            <aside aria-label={`magnitude = ${roundedMag.toFixed(1)}`}>
               {roundedMag.toFixed(1)}
             </aside>
           </section>
@@ -76,7 +79,9 @@ function Card({ jumpViewport, quake, number }) {
 
           <img
             src={Arrow}
-            className={!open ? "dropdown-arrow-not-clicked" : "dropdown-arrow-clicked"}
+            className={
+              !open ? "dropdown-arrow-not-clicked" : "dropdown-arrow-clicked"
+            }
             alt="dropdown arrow"
           />
         </article>
@@ -91,7 +96,8 @@ function Card({ jumpViewport, quake, number }) {
           </section>
 
           <section className="detail-item">
-            <strong>Location:</strong> {quake.geometry.coordinates[0]}&deg;{" / "} 
+            <strong>Location:</strong> {quake.geometry.coordinates[0]}&deg;
+            {" / "}
             {quake.geometry.coordinates[1]}&deg;
           </section>
 
@@ -119,4 +125,3 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
   jumpViewport,
 })(Card);
-

@@ -5,11 +5,13 @@ export const QUAKE_FETCH = "QUAKE_FETCH";
 export const QUAKE_FETCH_ERROR = "QUAKE_FETCH_ERROR";
 export const DISPLAY_QUAKES = "DISPLAY_QUAKES ";
 export const SORT_QUAKES = "SORT_QUAKES";
-export const UPDATE_VIEWPORT = "UPDATE_VIEWPORT";
-export const JUMP_VIEWPORT = "JUMP_VIEWPORT";
 
 // searchReducer Actions
 export const UPDATE_SEARCH_PARAMS = "UPDATE_SEARCH_PARAMS";
+
+// mapReducer Actions
+export const UPDATE_VIEWPORT = "UPDATE_VIEWPORT";
+export const JUMP_VIEWPORT = "JUMP_VIEWPORT";
 
 export const quakeFetch = (theQuery) => (dispatch) => {
   dispatch({ type: QUAKE_FETCH });
