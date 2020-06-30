@@ -4,6 +4,7 @@ import { combineReducers } from "redux";
 // Reducers
 import { quakeReducer } from "./quakeReducer";
 import { searchReducer } from "./searchReducer";
+import { mapReducer } from "./mapReducer";
 
 // ***** NOTE *****
 // When using connect and mapStateToProps, make sure
@@ -17,4 +18,5 @@ import { searchReducer } from "./searchReducer";
 export const rootReducer = combineReducers({
   quakeReducer,
   searchReducer,
+  mapReducer,
 });

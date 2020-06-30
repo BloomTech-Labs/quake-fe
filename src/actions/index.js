@@ -9,6 +9,10 @@ export const SORT_QUAKES = "SORT_QUAKES";
 // searchReducer Actions
 export const UPDATE_SEARCH_PARAMS = "UPDATE_SEARCH_PARAMS";
 
+// mapReducer Actions
+export const UPDATE_VIEWPORT = "UPDATE_VIEWPORT";
+export const JUMP_VIEWPORT = "JUMP_VIEWPORT";
+
 export const quakeFetch = (theQuery) => (dispatch) => {
   dispatch({ type: QUAKE_FETCH });
   console.log("Query to USGS: ", theQuery);
@@ -67,3 +71,26 @@ export const quakeSort = (sortBy, quakes) => (dispatch) => {
     dispatch({ type: SORT_QUAKES, quakeData: sortedQuakes });
   }
 };
+
+export const setViewport = (viewport) => (dispatch) => {
+  console.log('UPDATING VIEWPORT TO: ', viewport);
+    let newVP = {
+      ...viewport,
+      width: "100%",
+      height: "100%",
+    };
+
+    dispatch({ type: UPDATE_VIEWPORT, viewportInfo: newVP });
+}
+
+export const jumpViewport = (long, lat) => (dispatch) => {
+  console.log('JUMPING VIEWPORT TO: ', lat, long);
+    let newVP = {
+      latitude: lat,
+      longitude: long,
+      width: "100%",
+      height: "100%",
+    };
+
+    dispatch({ type: JUMP_VIEWPORT, jumpInfo: newVP });
+}
