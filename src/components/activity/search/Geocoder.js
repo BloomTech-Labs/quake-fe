@@ -135,7 +135,7 @@ function Geocoder({
         aria-label="input location"
         autoComplete="off"
       />
-      <button className="geo-location" onClick={() => updateGeoLocation()} />
+      <button aria-label="update geolocation" className="geo-location" onClick={() => updateGeoLocation()} />
       <aside className="geocoder-results">
         {geocodeResults.map((feature) => {
           return (
