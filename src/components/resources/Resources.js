@@ -5,7 +5,7 @@ import ImageRow from './imageRow';
 import ListTypePlus from './listTypePlus';
 import ListTypeSolid from './listTypeSolid';
 
-import { Drop, Cover, HoldOn, CaneDrop, CaneCover, CaneHoldOn, WalkerLock, WalkerCover, WalkerHoldOn, WheelchairBrake, WheelchairCover, WheelchairHoldOn, STEPLogo} from './imageImports';
+import { Drop, Cover, HoldOn, CaneDrop, CaneCover, CaneHoldOn, WalkerLock, WalkerCover, WalkerHoldOn, WheelchairBrake, WheelchairCover, WheelchairHoldOn, STEPLogo, Outdoors, InVehicle, EKit} from './imageImports';
 
 const Resources = () => {
   return (
@@ -63,6 +63,7 @@ const Resources = () => {
           <div className='section-text-container'>
             <p className='section-text'><strong>Injury can occur from broken doorways or glass.</strong></p>
             <p className='section-text'>Instead <strong>look for an open area</strong> away from powerlines, buildings, tall structures, and anything else that could be flung around during an earthquake.</p>
+            <Outdoors className='outdoor-img' alt='people standing in an open area during an earthquake'/>
             <p className='section-text'><strong>Get into the drop and cover position and wait out the shaking.</strong></p>
           </div>
         </div>
@@ -72,7 +73,8 @@ const Resources = () => {
           <TitleContainer title='In your vehicle:' />
           <div className='section-text-container'>
             <p className='section-text'>Drive to an <strong>open area</strong> free of powerlines, overpasses, or anything that could fall or collapse.</p>
-            <p className='section-text'><strong>Stay buckled and remain in the car until the quake has ended.</strong></p>
+            <InVehicle className='invehicle-img' alt='slow down, pull over, stay inside image representation'/>
+            <p className='section-text bigger'><strong>Stay buckled and remain in the car until the quake has ended.</strong></p>
             <p className='section-text'>Check the vehicle for damage as well as the roadway for cracks or tall debris.</p>
           </div>
         </div>
@@ -81,8 +83,9 @@ const Resources = () => {
         <div className='content-container'>
           <TitleContainer title='Keep an emergency kit:' />
           <div className='section-text-container'>
-            <p className='section-text'><strong>A kit can save the day should the worst occur.</strong></p>
-            <p className='section-text'>Consider leaving a kit in your house, car, or luggage in a earthquake prone area.</p>
+            <EKit className='ekit-img' alt='emergency kit containing the following items: waterproof bags, non-perishable food, batteries, first aid kit, important documents in sealed bags, flashlight, baby formula, sturdy gloves, portable radio'/>
+            <p className='section-text bigger'><strong>An emergency kit can save the day should the worst occur.</strong></p>
+            <p className='section-text'>Consider leaving a kit in your house, vehicle, or luggage in an earthquake prone area.</p>
           </div>
           <ListTypePlus />
           <div className='section-text-container'>

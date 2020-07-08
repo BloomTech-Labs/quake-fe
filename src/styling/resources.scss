@@ -1,216 +1,251 @@
+// all except #step
 #intro, #section-links, #indoors, #outdoors, #in-vehicle, #e-kits, #help-signals, #travel-tips, #medical-aid, #disaster-help {
   box-shadow: inset 0px 2px 2px rgba(36, 114, 73, 0.24), 0px 2px 2px rgba(36, 114, 73, 0.24);
-  padding: 12px 0;
+  padding: 20px 0;
 }
 
+// all sections
+#intro, #section-links, #indoors, #outdoors, #in-vehicle, #e-kits, #step, #help-signals, #travel-tips, #medical-aid, #disaster-help {
+  .content-container {
+    width: 90%;
+    margin: 0 auto;
+    color: $font-color;
+    font-family: Catamaran;
+  
+    .title {
+      font-weight: 800;
+      font-size: 24px;
+      line-height: 25px;
+      padding-bottom: 15px;
+    }
+  
+    .text {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    .section-title {
+      font-weight: 800;
+      font-size: 24px;
+      line-height: 25px;
+    }
+
+    .links-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-top: 5px;
+    
+      .link {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+        width: 90px;
+        color: $accent-color;
+        padding: 5px 0;
+        text-decoration: none;
+      }
+    } // end links-container
+
+    .title-container {
+      display: flex;
+      justify-content: space-between;
+      .jump-link {
+        display: flex;
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+      } // end jump-link
+      &.large-title {
+        flex-direction: column-reverse;
+        .section-title {
+          margin: 5px 0;
+        }
+        .jump-link {
+          justify-content: flex-end;
+        }
+      } // end large-title
+    } // end title-container
+  
+    .sub-head-text {
+      font-weight: 800;
+      font-size: 24px;
+      line-height: 25px;
+    }
+
+    .img-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      margin-top: 12px;
+    }
+
+    .section-text-container {
+      padding: 12px 0;
+      .section-text {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 23px;
+        &.bigger {
+          font-size: 24px;
+          line-height: 30px;
+          margin: 10px 0;
+        }
+      }
+    }
+    
+
+
+    .list-type-plus {
+      .list-item {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+  
+        .bullet-plus {
+          margin-right: 10px;
+          position: relative;
+          top: 2px;
+        }
+      }
+    }
+  
+    .list-type-solid {
+      .list-item {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+  
+        .bullet-solid {
+          margin-right: 10px;
+          position: relative;
+          top: 1px;
+        }
+      }
+    }
+  
+    .green-message {
+      background: $accent-color;
+      border-radius: 8px;
+      margin: 12px 0;
+      padding: 10px 0;
+  
+      &-text {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: $lightest-text;
+        width: 90%;
+        margin: 0 auto;
+      }
+    }
+  
+    .resource-link-container {
+      display: flex;
+      flex-direction: column;
+  
+      .resource-link {
+        margin-left: 7%;
+      }
+    }
+  
+    .resource-link {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 23px;
+      color: $accent-color;
+      padding-left: 5px;
+    }
+  
+    .resources-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+  
+      .resource-card {
+        width: 176px;
+        display: flex;
+        height: 200px;
+        margin: 10px 0;
+        flex-direction: column;
+        border-radius: 4px;
+  
+        .resource-logo {
+          width: 75px;
+          height: 75px;
+          margin: 0 auto;
+          margin-top: 10px;
+          margin-bottom: 5px;
+        }
+  
+        .resource-highlight {
+          color: $accent-color;
+        }
+  
+        .resource-name, .resource-phone, .resource-email, .website {
+          width: 98%;
+          margin: 2px 0 2px 2%;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 23px;
+  
+          &.smaller {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  } // end content-container
+} // end all sections
+
+#intro {
+  margin-top: 35px;
+}
+
+#outdoors {
+  .outdoor-img {
+    max-width: 100%;
+    margin: 5px 0;
+  }
+}
+
+#in-vehicle {
+  .invehicle-img {
+    max-width: 100%;
+    margin: 5px 0;
+  }
+}
+#e-kits {
+  .ekit-img {
+    margin: 15px 0;
+  }
+}
 #site-tools {
   padding-bottom: 12px;
 }
 
 #step {
   padding-top: 12px;
-}
-
-.content-container {
-  width: 89%;
-  margin: 0 auto;
-  color: $font-color;
-  font-family: Catamaran;
-
-  .title {
-    font-weight: 800;
-    font-size: 24px;
-    line-height: 25px;
-    padding-bottom: 10px;
-  }
-
-  .text {
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 18px;
-  }
-
-  .sub-head-text {
-    font-weight: 800;
-    font-size: 24px;
-    line-height: 25px;
-  }
-
-  .img-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 12px;
-    margin-top: 12px;
-  }
-
-  .list-type-plus {
-    .list-item {
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 17px;
-
-      .bullet-plus {
-        margin-right: 10px;
-        position: relative;
-        top: 2px;
-      }
-    }
-  }
-
-  .list-type-solid {
-    .list-item {
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 17px;
-
-      .bullet-solid {
-        margin-right: 10px;
-        position: relative;
-        top: 1px;
-      }
-    }
-  }
-
-  .green-message {
-    background: $accent-color;
-    border-radius: 8px;
-    margin: 12px 0;
-    padding: 10px 0;
-
-    &-text {
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 20px;
-      text-align: center;
-      color: $lightest-text;
-      width: 90%;
-      margin: 0 auto;
-    }
-  }
-
-  .resource-link-container {
-    display: flex;
-    flex-direction: column;
-
-    .resource-link {
-      margin-left: 7%;
-    }
-  }
-
-  .resource-link {
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 23px;
-    color: $accent-color;
-    padding-left: 5px;
-  }
-
-  .resources-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-
-    .resource-card {
-      width: 176px;
-      display: flex;
-      height: 200px;
-      margin: 10px 0;
-      flex-direction: column;
-      border-radius: 4px;
-
-      .resource-logo {
-        width: 75px;
-        height: 75px;
-        margin: 0 auto;
-        margin-top: 10px;
-        margin-bottom: 5px;
-      }
-
-      .resource-highlight {
-        color: $accent-color;
-      }
-
-      .resource-name, .resource-phone, .resource-email, .website {
-        width: 98%;
-        margin: 2px 0 2px 2%;
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 23px;
-
-        &.smaller {
-          font-size: 12px;
-        }
-      }
-    }
-  }
-} // end content-container
-
-.step-logo {
-  width: 100%;
-}
-
-.section-title {
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 25px;
-}
-
-.section-text-container {
-  padding: 12px 0;
-}
-
-.section-text {
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 23px;
-}
-
-.links-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-
-  .link {
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 18px;
-    width: 90px;
-    color: $accent-color;
-    padding: 5px 0;
-    text-decoration: none;
-  }
-}
-
-.title-container {
-  display: flex;
-  justify-content: space-between;
-
-  .jump-link {
-    display: flex;
-    text-decoration: none;
+  // .logo-container .resource-link {
+  //     font-weight: 600;
+  //     font-size: 14px;
+  //     line-height: 23px;
+  //     color: $accent-color;
+  //     padding-left: 5px;
+  //     margin-left: 3%;
+  //     text-decoration: none;
+  // }
+  .step-logo {
     width: 100%;
-    height: 100%;
-    align-items: center;
-
-    .jump-text {
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 18px;
-      color: $accent-color;
-      padding-left: 6px;
-    }
   }
-
-  &.large-title {
-    flex-direction: column-reverse;
-
-    .section-title {
-      margin: 5px 0;
-    }
-
-    .jump-link {
-      justify-content: flex-end;
-    }
+  .section-text-container {
+    width: 100%;
+    margin: 0 auto;
+    color: $font-color;
+    font-family: 'Catamaran';
   }
 }
 
@@ -255,4 +290,61 @@
   #medical-aid .triangle-color, #disaster-help .triangle-color {
     fill: $accent-color;
   }
-}
+
+  #indoors {
+    .img-row {
+      .table, .arrow, .wheelchair, .walker, .cover {
+        fill: #EAAE4F;
+      }
+      .background {
+        fill: $accent-color;
+        stroke: $accent-color;
+      }
+      .bottom, .person {
+        fill: $lightest-text;
+      }
+      .text {
+        fill: black;
+      }
+    } // end img-row
+  } // end indoors
+
+  #outdoors {
+    .outdoor-img {
+      .background {
+        fill: $accent-color;
+      }
+      .person {
+        fill: white;
+      }
+      .highlight-background {
+        fill: #889d00;
+      }
+    }
+  } // end outdoors
+
+  #in-vehicle {
+    .invehicle-img {
+      .background {
+        fill: $accent-color;
+      }
+      .person, .door-frame, .gauge-cluster, .sub-img-outline, .text, .block {
+        fill: white;
+      }
+      .steering-wheel, .table, .arrow {
+        fill: #EAAE4F;
+      }
+      .odometer {
+        fill: #8cc63f;
+      }
+    }
+  } // end in-vehicle
+
+  #e-kits {
+    .ekit-img {
+      .text {
+        fill: white;
+      }
+    }
+  }
+} // end dark-mode

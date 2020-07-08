@@ -12,7 +12,6 @@ const TitleContainer = ({title, size}) => {
       <div className='jump-link-container'>
         <a href='#intro' className='jump-link'>
           <TriangleUp className='triangle-up' />
-          <p className='jump-text'>Back to top</p>
         </a>
       </div>
     </div>
