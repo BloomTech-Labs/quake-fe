@@ -8,11 +8,13 @@ const TitleContainer = ({title, size}) => {
   'title-container';
   return ( 
     <div className={classes}>
-      <h2 className='section-title'>{title}</h2>
-      <div className='jump-link-container'>
-        <a href='#intro' className='jump-link'>
-          <TriangleUp className='triangle-up' />
-        </a>
+      <div className='inner-container'>
+        <h2 className='section-title'>{title}</h2>
+        <div className='jump-link-container'>
+          <a href='#intro' className='jump-link'>
+            <TriangleUp className='triangle-up' />
+          </a>
+        </div>
       </div>
     </div>
    );

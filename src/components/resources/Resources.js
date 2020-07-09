@@ -33,8 +33,8 @@ const Resources = () => {
         </div>
       </section>
       <section id='indoors'>
+        <TitleContainer title='Indoors:'/>
         <div className='content-container'>
-          <TitleContainer title='Indoors:'/>
           <div className='section-text-container'>
             <p className='section-text'>While indoors during an earthquake the best thing to do is find a safe spot <strong>away from windows</strong> preferably on the <strong>1st floor</strong>.</p>
           </div>
@@ -54,8 +54,8 @@ const Resources = () => {
         </div>
       </section>
       <section id='outdoors'>
+        <TitleContainer title='Outdoors:'/>
         <div className='content-container'>
-          <TitleContainer title='Outdoors:'/>
           <div className='section-text-container'>
             <p className='section-text'>While outdoors during an earthquake</p>
           </div>
@@ -69,8 +69,8 @@ const Resources = () => {
         </div>
       </section>
       <section id='in-vehicle'>
+        <TitleContainer title='In your vehicle:' />
         <div className='content-container'>
-          <TitleContainer title='In your vehicle:' />
           <div className='section-text-container'>
             <p className='section-text'>Drive to an <strong>open area</strong> free of powerlines, overpasses, or anything that could fall or collapse.</p>
             <InVehicle className='invehicle-img' alt='slow down, pull over, stay inside image representation'/>
@@ -80,8 +80,8 @@ const Resources = () => {
         </div>
       </section>
       <section id='e-kits'>
+        <TitleContainer title='Keep an emergency kit:' />
         <div className='content-container'>
-          <TitleContainer title='Keep an emergency kit:' />
           <div className='section-text-container'>
             <EKit className='ekit-img' alt='emergency kit containing the following items: waterproof bags, non-perishable food, batteries, first aid kit, important documents in sealed bags, flashlight, baby formula, sturdy gloves, portable radio'/>
             <p className='section-text bigger'><strong>An emergency kit can save the day should the worst occur.</strong></p>
@@ -94,8 +94,8 @@ const Resources = () => {
         </div>
       </section>
       <section id='step'>
+        <TitleContainer title='Sign up for S.T.E.P.'/>
         <div className='content-container'>
-          <TitleContainer title='Sign up for S.T.E.P. and Faultline Notifications' size='large-title'/>
           <div className='logo-container'>
             <STEPLogo className='step-logo' alt='Smart Traveler Enrollment Program compony logo'/>
             <a href='https://step.state.gov/' target='_blank' rel='noopener noreferrer' className='resource-link'>Connect to step.state.gov</a>
@@ -105,24 +105,24 @@ const Resources = () => {
           </div>
         </div>
       </section>
-      <section id='site-tools'>
+      {/* <section id='site-tools'>
         <div className='content-container'>
           <div className='resource-link-container'>
             <div className='section-text-container'>
               <p className='section-text'><strong>Consider using the tools on this site to get</strong></p>
-            </div>
+            </div> */}
             {/* temp links while pages under construction */}
-            <a href='#intro' className='resource-link'>SMS Messenger updates</a>
+            {/* <a href='#intro' className='resource-link'>SMS Messenger updates</a>
             <a href='#intro' className='resource-link'>Find locations of shelters nearby</a>
             <a href='#intro' className='resource-link'>Report an event</a>
             <a href='#intro' className='resource-link'>Review the news feed for up-to-date information</a>
           </div>
         </div>
 
-      </section>
+      </section> */}
       <section id='help-signals'>
+        <TitleContainer title='Signaling for help:' />
         <div className='content-container'>
-          <TitleContainer title='Signaling for help:' />
           <div className='section-text-container'>
             <p className='section-text'>During an earthquake, becoming buried under debris is possible.</p>
             <div className='green-message'>
@@ -134,16 +134,16 @@ const Resources = () => {
         </div>
       </section>
       <section id='travel-tips'>
+        <TitleContainer title='Other travel tips:' />
         <div className='content-container'>
-          <TitleContainer title='Other travel tips:' />
           <div className='section-text-container'>
             <p className='section-text'>Consider travel insurance to cover possible expenses abroad. Bring cash and copies of important travel documents in case you are forced to evacuate the country.</p>
           </div>
         </div>
       </section>
       <section id='medical-aid'>
+        <TitleContainer title='Medical aid:' />
         <div className='content-container'>
-          <TitleContainer title='Medical aid:' />
           <div className='section-text-container'>
             <p className='section-text'>If you find yourself or anyone injured during an event, refer to these links for medical care.</p>
           </div>
@@ -157,8 +157,8 @@ const Resources = () => {
         </div>
       </section>
       <section id='disaster-help'>
+        <TitleContainer title='Disaster Links:' />
         <div className='content-container'>
-          <TitleContainer title='Disaster Links:' />
           <div className='resources-container'>
             <ResourceCard />
           </div>
