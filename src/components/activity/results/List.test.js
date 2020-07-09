@@ -64,7 +64,7 @@ describe("List.js Tests", () => {
 
   // Maps quake array
   describe("Card Map Condition", () => {
-    it("show no results", () => {
+    it("Maps quake results", () => {
       store = mockStore({
         quakeReducer: {
           quakes: [
@@ -128,7 +128,7 @@ describe("List.js Tests", () => {
 
   // Searching for quakes
   describe("Quake Search Condition", () => {
-    it("show no results", () => {
+    it("Renders search message", () => {
       store = mockStore({
         quakeReducer: {
           quakes: [],
@@ -153,7 +153,7 @@ describe("List.js Tests", () => {
 
   // Error display
   describe("Quake Error Condition", () => {
-    it("show no results", () => {
+    it("Renders error message", () => {
       store = mockStore({
         quakeReducer: {
           quakes: [],
