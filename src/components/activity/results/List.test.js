@@ -1,5 +1,4 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
 
 import * as rtl from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
@@ -7,7 +6,6 @@ import renderer from "react-test-renderer";
 
 import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
-// import { rootReducer as reducers } from "../../../reducers/index";
 
 import List from "./List";
 

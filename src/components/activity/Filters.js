@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import { quakeFetch, updateSearchParams } from "../../actions";
-// import SearchBar from "./search/SearchBar";
 import useDarkMode from "../../customHooks/useDarkMode";
 
 function Filters({
