@@ -3,6 +3,7 @@
 exports[`List.js Tests List.js Snapshot List.js renders with mocked state 1`] = `
 <div
   className="alt-result"
+  data-testid="empty-quakes"
 >
   <svg
     className="result-image"

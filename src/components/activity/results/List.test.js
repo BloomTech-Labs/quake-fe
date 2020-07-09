@@ -49,15 +49,16 @@ describe("List.js Tests", () => {
         },
       });
 
-      listComponent = rtl.render(
+      const { queryByTestId } = rtl.render(
         <Provider store={store}>
           <List />
         </Provider>
       );
 
-      const element = listComponent.getByText(/Aww SHOCKS!/i);
-
-      expect(element).toBeVisible();
+      expect(queryByTestId(/empty-quakes/i)).toBeTruthy();
+      expect(queryByTestId(/mapped-quake/i)).toBeNull();
+      expect(queryByTestId(/quake-search/i)).toBeNull();
+      expect(queryByTestId(/quake-error/i)).toBeNull();
     });
   });
 
@@ -112,15 +113,16 @@ describe("List.js Tests", () => {
         },
       });
 
-      listComponent = rtl.render(
+      const { queryByTestId } = rtl.render(
         <Provider store={store}>
           <List />
         </Provider>
       );
 
-      const element = listComponent.getByText(/Goldfield/i);
-
-      expect(element).toBeVisible();
+      expect(queryByTestId(/empty-quakes/i)).toBeNull();
+      expect(queryByTestId(/mapped-quake/i)).toBeTruthy();
+      expect(queryByTestId(/quake-search/i)).toBeNull();
+      expect(queryByTestId(/quake-error/i)).toBeNull();
     });
   });
 
@@ -136,39 +138,41 @@ describe("List.js Tests", () => {
         },
       });
 
-      listComponent = rtl.render(
+      const { queryByTestId } = rtl.render(
         <Provider store={store}>
           <List />
         </Provider>
       );
 
-      const element = listComponent.getByText(/Searching for quakes.../i);
-
-      expect(element).toBeVisible();
+      expect(queryByTestId(/empty-quakes/i)).toBeNull();
+      expect(queryByTestId(/mapped-quake/i)).toBeNull();
+      expect(queryByTestId(/quake-search/i)).toBeTruthy();
+      expect(queryByTestId(/quake-error/i)).toBeNull();
     });
   });
 
-    // Error display
-    describe("Quake Error Condition", () => {
-      it("show no results", () => {
-        store = mockStore({
-          quakeReducer: {
-            quakes: [],
-            quakeFetch: false,
-            quakeFetchError: true,
-            sortBy: "newest",
-          },
-        });
-
-        listComponent = rtl.render(
-          <Provider store={store}>
-            <List />
-          </Provider>
-        );
-
-        const element = listComponent.getByText(/There was a problem getting your quakes.../i);
-        
-        expect(element).toBeVisible();
+  // Error display
+  describe("Quake Error Condition", () => {
+    it("show no results", () => {
+      store = mockStore({
+        quakeReducer: {
+          quakes: [],
+          quakeFetch: false,
+          quakeFetchError: true,
+          sortBy: "newest",
+        },
       });
+
+      const { queryByTestId } = rtl.render(
+        <Provider store={store}>
+          <List />
+        </Provider>
+      );
+
+      expect(queryByTestId(/empty-quakes/i)).toBeNull();
+      expect(queryByTestId(/mapped-quake/i)).toBeNull();
+      expect(queryByTestId(/quake-search/i)).toBeNull();
+      expect(queryByTestId(/quake-error/i)).toBeTruthy();
     });
+  });
 });
