@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`List.js Tests should render with given state 1`] = `
+exports[`List.js Tests List.js Snapshot List.js renders with mocked state 1`] = `
 <div
   className="alt-result"
 >
