@@ -1,15 +1,18 @@
-import React, {Fragment} from "react";
+import React, {Fragment, useEffect} from "react";
 import TitleContainer from './titleContainer';
 import ResourceCard from './resourceCard';
 import ImageRow from './imageRow';
 import ListTypePlus from './listTypePlus';
 import ListTypeSolid from './listTypeSolid';
 
-import { Drop, Cover, HoldOn, CaneDrop, CaneCover, CaneHoldOn, WalkerLock, WalkerCover, WalkerHoldOn, WheelchairBrake, WheelchairCover, WheelchairHoldOn, STEPLogo} from './imageImports';
+import { Drop, Cover, HoldOn, CaneDrop, CaneCover, CaneHoldOn, WalkerLock, WalkerCover, WalkerHoldOn, WheelchairBrake, WheelchairCover, WheelchairHoldOn, STEPLogo, Outdoors, InVehicle, EKit} from './imageImports';
 
 const Resources = () => {
+  useEffect (() => {
+
+  })
   return (
-    <Fragment>
+    <div className='main-container resource-page scroll'>
       <section id='intro'>
         <div className='content-container'>
           <h1 className='title'>About 20,000 earthquakes occur every year.</h1>
@@ -33,8 +36,9 @@ const Resources = () => {
         </div>
       </section>
       <section id='indoors'>
-        <div className='content-container'>
-          <TitleContainer title='Indoors:'/>
+        <TitleContainer title='Indoors:' customClickEvent={() => {document.querySelector('#indoors .content-container').classList.toggle('closed');
+          document.querySelector('#indoors .triangle-up').classList.toggle('closed')}}/>
+        <div className='content-container closed'>
           <div className='section-text-container'>
             <p className='section-text'>While indoors during an earthquake the best thing to do is find a safe spot <strong>away from windows</strong> preferably on the <strong>1st floor</strong>.</p>
           </div>
@@ -54,8 +58,9 @@ const Resources = () => {
         </div>
       </section>
       <section id='outdoors'>
-        <div className='content-container'>
-          <TitleContainer title='Outdoors:'/>
+        <TitleContainer title='Outdoors:' customClickEvent={() => {document.querySelector('#outdoors .content-container').classList.toggle('closed');
+          document.querySelector('#outdoors .triangle-up').classList.toggle('closed')}}/>
+        <div className='content-container closed'>
           <div className='section-text-container'>
             <p className='section-text'>While outdoors during an earthquake</p>
           </div>
@@ -63,26 +68,31 @@ const Resources = () => {
           <div className='section-text-container'>
             <p className='section-text'><strong>Injury can occur from broken doorways or glass.</strong></p>
             <p className='section-text'>Instead <strong>look for an open area</strong> away from powerlines, buildings, tall structures, and anything else that could be flung around during an earthquake.</p>
+            <Outdoors className='outdoor-img' alt='people standing in an open area during an earthquake'/>
             <p className='section-text'><strong>Get into the drop and cover position and wait out the shaking.</strong></p>
           </div>
         </div>
       </section>
       <section id='in-vehicle'>
-        <div className='content-container'>
-          <TitleContainer title='In your vehicle:' />
+        <TitleContainer title='In your vehicle:' customClickEvent={() => {document.querySelector('#in-vehicle .content-container').classList.toggle('closed');
+          document.querySelector('#in-vehicle .triangle-up').classList.toggle('closed')}}/>
+        <div className='content-container closed'>
           <div className='section-text-container'>
             <p className='section-text'>Drive to an <strong>open area</strong> free of powerlines, overpasses, or anything that could fall or collapse.</p>
-            <p className='section-text'><strong>Stay buckled and remain in the car until the quake has ended.</strong></p>
+            <InVehicle className='invehicle-img' alt='slow down, pull over, stay inside image representation'/>
+            <p className='section-text bigger'><strong>Stay buckled and remain in the car until the quake has ended.</strong></p>
             <p className='section-text'>Check the vehicle for damage as well as the roadway for cracks or tall debris.</p>
           </div>
         </div>
       </section>
       <section id='e-kits'>
-        <div className='content-container'>
-          <TitleContainer title='Keep an emergency kit:' />
+        <TitleContainer title='Keep an emergency kit:' customClickEvent={() => {document.querySelector('#e-kits .content-container').classList.toggle('closed');
+          document.querySelector('#e-kits .triangle-up').classList.toggle('closed')}}/>
+        <div className='content-container closed'>
           <div className='section-text-container'>
-            <p className='section-text'><strong>A kit can save the day should the worst occur.</strong></p>
-            <p className='section-text'>Consider leaving a kit in your house, car, or luggage in a earthquake prone area.</p>
+            <EKit className='ekit-img' alt='emergency kit containing the following items: waterproof bags, non-perishable food, batteries, first aid kit, important documents in sealed bags, flashlight, baby formula, sturdy gloves, portable radio'/>
+            <p className='section-text bigger'><strong>An emergency kit can save the day should the worst occur.</strong></p>
+            <p className='section-text'>Consider leaving a kit in your house, vehicle, or luggage in an earthquake prone area.</p>
           </div>
           <ListTypePlus />
           <div className='section-text-container'>
@@ -91,9 +101,10 @@ const Resources = () => {
         </div>
       </section>
       <section id='step'>
-        <div className='content-container'>
-          <TitleContainer title='Sign up for S.T.E.P. and Faultline Notifications' size='large-title'/>
-          <div className='logo-container'>
+        <TitleContainer title='Sign up for S.T.E.P.' customClickEvent={() => {document.querySelector('#step .content-container').classList.toggle('closed');
+          document.querySelector('#step .triangle-up').classList.toggle('closed')}}/>
+        <div className='content-container closed'>
+          <div className='step-logo-container'>
             <STEPLogo className='step-logo' alt='Smart Traveler Enrollment Program compony logo'/>
             <a href='https://step.state.gov/' target='_blank' rel='noopener noreferrer' className='resource-link'>Connect to step.state.gov</a>
           </div>
@@ -102,24 +113,10 @@ const Resources = () => {
           </div>
         </div>
       </section>
-      <section id='site-tools'>
-        <div className='content-container'>
-          <div className='resource-link-container'>
-            <div className='section-text-container'>
-              <p className='section-text'><strong>Consider using the tools on this site to get</strong></p>
-            </div>
-            {/* temp links while pages under construction */}
-            <a href='#intro' className='resource-link'>SMS Messenger updates</a>
-            <a href='#intro' className='resource-link'>Find locations of shelters nearby</a>
-            <a href='#intro' className='resource-link'>Report an event</a>
-            <a href='#intro' className='resource-link'>Review the news feed for up-to-date information</a>
-          </div>
-        </div>
-
-      </section>
       <section id='help-signals'>
-        <div className='content-container'>
-          <TitleContainer title='Signaling for help:' />
+        <TitleContainer title='Signaling for help:' customClickEvent={() => {document.querySelector('#help-signals .content-container').classList.toggle('closed');
+          document.querySelector('#help-signals .triangle-up').classList.toggle('closed')}}/>
+        <div className='content-container closed'>
           <div className='section-text-container'>
             <p className='section-text'>During an earthquake, becoming buried under debris is possible.</p>
             <div className='green-message'>
@@ -131,16 +128,18 @@ const Resources = () => {
         </div>
       </section>
       <section id='travel-tips'>
-        <div className='content-container'>
-          <TitleContainer title='Other travel tips:' />
+        <TitleContainer title='Other travel tips:' customClickEvent={() => {document.querySelector('#travel-tips .content-container').classList.toggle('closed');
+          document.querySelector('#travel-tips .triangle-up').classList.toggle('closed')}}/>
+        <div className='content-container closed'>
           <div className='section-text-container'>
             <p className='section-text'>Consider travel insurance to cover possible expenses abroad. Bring cash and copies of important travel documents in case you are forced to evacuate the country.</p>
           </div>
         </div>
       </section>
       <section id='medical-aid'>
-        <div className='content-container'>
-          <TitleContainer title='Medical aid:' />
+        <TitleContainer title='Medical aid:' customClickEvent={() => {document.querySelector('#medical-aid .content-container').classList.toggle('closed');
+          document.querySelector('#medical-aid .triangle-up').classList.toggle('closed')}}/>
+        <div className='content-container closed'>
           <div className='section-text-container'>
             <p className='section-text'>If you find yourself or anyone injured during an event, refer to these links for medical care.</p>
           </div>
@@ -154,14 +153,16 @@ const Resources = () => {
         </div>
       </section>
       <section id='disaster-help'>
-        <div className='content-container'>
-          <TitleContainer title='Disaster Links:' />
+        <TitleContainer title='Disaster Links:' customClickEvent={() => {
+          document.querySelector('#disaster-help .content-container').classList.toggle('closed');
+          document.querySelector('#disaster-help .triangle-up').classList.toggle('closed')}}/>
+        <div className='content-container closed'>
           <div className='resources-container'>
             <ResourceCard />
           </div>
         </div>
       </section>
-    </Fragment>
+    </div>
   );
 };
 
