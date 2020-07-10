@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React, {Fragment, useEffect} from "react";
 import TitleContainer from './titleContainer';
 import ResourceCard from './resourceCard';
 import ImageRow from './imageRow';
@@ -8,8 +8,11 @@ import ListTypeSolid from './listTypeSolid';
 import { Drop, Cover, HoldOn, CaneDrop, CaneCover, CaneHoldOn, WalkerLock, WalkerCover, WalkerHoldOn, WheelchairBrake, WheelchairCover, WheelchairHoldOn, STEPLogo, Outdoors, InVehicle, EKit} from './imageImports';
 
 const Resources = () => {
+  useEffect (() => {
+
+  })
   return (
-    <Fragment>
+    <div className='main-container resource-page scroll'>
       <section id='intro'>
         <div className='content-container'>
           <h1 className='title'>About 20,000 earthquakes occur every year.</h1>
@@ -101,7 +104,7 @@ const Resources = () => {
         <TitleContainer title='Sign up for S.T.E.P.' customClickEvent={() => {document.querySelector('#step .content-container').classList.toggle('closed');
           document.querySelector('#step .triangle-up').classList.toggle('closed')}}/>
         <div className='content-container closed'>
-          <div className='logo-container'>
+          <div className='step-logo-container'>
             <STEPLogo className='step-logo' alt='Smart Traveler Enrollment Program compony logo'/>
             <a href='https://step.state.gov/' target='_blank' rel='noopener noreferrer' className='resource-link'>Connect to step.state.gov</a>
           </div>
@@ -159,7 +162,7 @@ const Resources = () => {
           </div>
         </div>
       </section>
-    </Fragment>
+    </div>
   );
 };
 

@@ -221,9 +221,9 @@
   } // end content-container
 } // end all sections
 
-#intro {
-  margin-top: 35px;
-}
+// #intro {
+//   margin-top: 35px;
+// }
 
 #section-links {
   box-shadow: inset 0px 2px 2px rgba(36, 114, 73, 0.24);
@@ -252,7 +252,7 @@
 }
 
 #step {
-  .logo-container {
+  .step-logo-container {
     .step-logo {
       width: 100%;
     }
@@ -284,7 +284,7 @@
         fill: $lightest-text;
       }
 
-      .logo-container, .resource-card {
+      .step-logo-container, .resource-card {
         background-color: $logo-background;
       }
     } // end content-container
