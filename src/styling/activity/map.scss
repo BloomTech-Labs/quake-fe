@@ -1,0 +1,17 @@
+@import "../variables.scss";
+
+.map-container {
+  width: 100%;
+  height: calc(25% + 45px);
+  // calc(25% + 45px)
+  transition: 0.2s cubic-bezier(0.73, 0, 0.9, 1);
+  position: absolute;
+  top: 0;
+  z-index: 998;
+  background: rgba(51, 51, 51, 0.425);
+  display: block;
+}
+
+.map-marker {
+  width: 35px;
+}

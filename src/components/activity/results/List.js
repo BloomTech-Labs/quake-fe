@@ -1,31 +1,39 @@
 import React from "react";
 import { connect } from "react-redux";
+import { ReactComponent as CracksImage } from "../../../images/cracks.svg";
+import { ReactComponent as SearchImage } from "../../../images/search.svg";
 import Card from "./Card";
 
 function List({ quakes, quakeFetch, quakeFetchError }) {
   if (quakeFetchError === false) {
-    console.log("No Fetch Error", quakeFetchError);
     if (quakeFetch === false) {
-      console.log("Not Fetching Quakes", quakeFetch);
       if (quakes.length === 0) {
-        console.log("No Quakes", quakes);
-        return <div>Looks Like We Couldn't Find Any Quakes...</div>;
-      } else {
-        console.log("Have Quakes", quakes);
         return (
-          <div className="earthquake-list-container">
+          <div className="alt-result">
+            <CracksImage className="result-image" />
+            <h1>Aww SHOCKS!</h1>
+            <p>Looks like there aren't any quakes here.</p>
+            <p>Why not adjust your filters or try a new location?</p>
+          </div>
+        );
+      } else {
+        return (
+          <>
             {quakes.map((quake, index) => {
               return <Card quake={quake} number={index} key={index} />;
             })}
-          </div>
+          </>
         );
       }
     } else {
-      console.log("Fetching Quakes", quakeFetch);
-      return <div>Fetching Quakes...</div>;
+      return (
+        <div className="alt-result">
+          <SearchImage className="result-image" />
+          <h1>Searching for quakes...</h1>
+        </div>
+      );
     }
   } else {
-    console.log("Fetch Error", quakeFetchError);
     return <div>There was a problem getting your quakes...</div>;
   }
 }

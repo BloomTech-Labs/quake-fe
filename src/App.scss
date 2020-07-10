@@ -1,24 +1,32 @@
-//Import component styles: 
-@import './styling/reset.scss';
-@import './styling/activity/activity.scss';
-@import './styling/header.scss';
-@import './styling/navigation.scss';
-@import './styling/resources.scss';
+//Import component styles:
+@import "./styling/reset.scss";
+@import "./styling/activity/activity.scss";
+@import "./styling/header.scss";
+@import "./styling/navigation.scss";
+@import "./styling/resources.scss";
 
 @media (max-width: 505px) {
-  .App { 
+  .App {
     width: 100%;
-   }
-  .Wipe { display: none; }
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .Wipe {
+    display: none;
+  }
 }
 
 @media (min-width: 506px) {
   // for desktop wipe
-  .Wipe { 
+  .Wipe {
     font-size: 7vh;
     text-align: center;
   }
-  .App { display: none; }
+  .App {
+    display: none;
+  }
 }
 
 .App-link {
@@ -29,6 +37,3 @@ button:focus {
   outline: none;
   border: none;
 }
-
-
-

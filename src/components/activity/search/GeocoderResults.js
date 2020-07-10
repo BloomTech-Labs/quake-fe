@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { updateSearchParams } from "../../actions";
+import { updateSearchParams } from "../../../actions";
 
 const SearchBarResults = ({ updateSearchParams, feature, clearResults }) => {
   // Sets coords and place name to state when autocomplete result is selected
@@ -31,7 +31,7 @@ const SearchBarResults = ({ updateSearchParams, feature, clearResults }) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
-  // ownProps allows the setting of props being passed down from a parent to state along side store props
+  // ownProps allows the mapping of props being passed down from a parent to state along side store props
   return {
     feature: ownProps.feature,
     clearResults: ownProps.clearResults,
