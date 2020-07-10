@@ -80,8 +80,6 @@
       line-height: 18px;
     }
 
-    
-
     .links-container {
       display: flex;
       flex-direction: row;
@@ -126,8 +124,6 @@
       }
     }
     
-
-
     .list-type-plus {
       .list-item {
         font-weight: 600;
@@ -228,7 +224,7 @@
           }
         }
       }
-    }
+    } // end resources-container
   } // end content-container
 } // end all sections
 
@@ -287,36 +283,64 @@
 
 .dark-mode {
   #intro, #section-links, #indoors, #outdoors, #in-vehicle, #e-kits, #step, #help-signals, #travel-tips, #medical-aid, #disaster-help {
-    box-shadow: inset 0px 2px 2px rgba(36, 114, 73, 0.24), 0px 2px 2px rgba(36, 114, 73, 0.24);
-    padding: 12px 0;
-  }
+    // box-shadow: inset 0px 2px 2px rgba(36, 114, 73, 0.24), 0px 2px 2px rgba(36, 114, 73, 0.24);
+    // padding: 12px 0;
 
-  #section-links, .resource-link-container, #medical-aid,
-  #site-tools, #disaster-help, .green-message {
+    .content-container {
+      .title, .text , .section-text, .sub-head-text, .list-item {
+        color: white;
+      }
+
+      .bullet-plus-color, .bullet-solid-color {
+        fill: $lightest-text;
+      }
+
+      .logo-container, .resource-card {
+        background-color: $logo-background;
+      }
+    } // end content-container
+
+    .title-container {
+      .section-title {
+        color: white;
+      }
+
+      .triangle-color {
+        fill: $lightest-text;
+      }
+    } // end title-container
+  } // end all sections
+
+  #section-links, #medical-aid .content-container {
     background: $neutral-2;
 
-    .section-title {
-      color: $font-color;
+    // .section-title {
+    //   color: $font-color;
+    // }
+  }
+
+  #medical-aid .content-container {
+    margin: 0;
+    padding: 15px 18px;
+    width: 100%;
+    .section-text {
+      color: black;
     }
-  }
+  } 
 
-  .triangle-color, .bullet-plus-color, .bullet-solid-color {
-    fill: $lightest-text;
-  }
 
-  .logo-container {
-    background-color: $logo-background;
-  }
 
-  .green-message-text, #medical-aid .section-text,
-  .resource-name, .resource-phone, .resource-email,
-  #site-tools .section-text strong {
-    color: $font-color;
-  }
+
+
+  // .green-message-text, #medical-aid .section-text,
+  // .resource-name, .resource-phone, .resource-email,
+  // #site-tools .section-text strong {
+  //   color: $font-color;
+  // }
   
-  #medical-aid .triangle-color, #disaster-help .triangle-color {
-    fill: $accent-color;
-  }
+  // #medical-aid .triangle-color, #disaster-help .triangle-color {
+  //   fill: $accent-color;
+  // }
 
   #indoors {
     .img-row {
