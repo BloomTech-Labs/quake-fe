@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filters.js Tests Filters.js Snapshot Filters.js renders with mocked state 1`] = `
+<dialog
+  className="search-menu"
+  id="search-menu"
+  onClick={[Function]}
+>
+  <form
+    name="filters-form"
+    onSubmit={[Function]}
+  >
+    <fieldset
+      className="advanced-filters"
+      id="advanced-filters"
+    >
+      <legend>
+        Advanced Filters
+      </legend>
+      <fieldset
+        className="radius-field"
+      >
+        <legend>
+          Search Radius:
+        </legend>
+        <label
+          htmlFor="kilometers"
+        >
+          Kilometers
+          <input
+            data-testid="input-km"
+            id="kilometers"
+            max="20001.6"
+            min="1"
+            name="maxradiuskm"
+            onChange={[Function]}
+            step="0.1"
+            type="number"
+            value={5000}
+          />
+        </label>
+      </fieldset>
+      <fieldset
+        className="date-field"
+      >
+        <legend>
+          Date Range:
+        </legend>
+        <label
+          htmlFor="start-date"
+        >
+          Start
+          <input
+            id="start-date"
+            name="starttime"
+            onChange={[Function]}
+            type="date"
+            value="2020-01-01"
+          />
+        </label>
+        <label
+          htmlFor="end-date"
+        >
+          End
+          <input
+            id="end-date"
+            name="endtime"
+            onChange={[Function]}
+            type="date"
+            value="2020-01-02"
+          />
+        </label>
+      </fieldset>
+      <fieldset
+        className="mag-field"
+      >
+        <legend>
+          Magnitude Range:
+        </legend>
+        <label
+          htmlFor="start-magnitude"
+        >
+          Start
+          <input
+            id="start-magnitude"
+            max="10"
+            min="0"
+            name="minmagnitude"
+            onChange={[Function]}
+            step="0.1"
+            type="number"
+            value={3}
+          />
+        </label>
+        <label
+          htmlFor="end-magnitude"
+        >
+          End
+          <input
+            id="end-magnitude"
+            max="10"
+            min="0"
+            name="maxmagnitude"
+            onChange={[Function]}
+            step="0.1"
+            type="number"
+            value={10}
+          />
+        </label>
+      </fieldset>
+    </fieldset>
+    <button
+      className="search-submit-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Search For Activity
+    </button>
+    <p
+      className="close-sort"
+      onClick={[Function]}
+      role="button"
+      type="button"
+    >
+      Close
+    </p>
+    <aside
+      className="dark-mode-toggle"
+    >
+      <div
+        aria-checked={false}
+        aria-label="dark mode toggle"
+        className="toggle-switch"
+        onClick={[Function]}
+        role="switch"
+        type="button"
+      />
+    </aside>
+    <p
+      className="dark-mode-text"
+    >
+      Dark mode
+    </p>
+  </form>
+</dialog>
+`;

@@ -28,6 +28,7 @@ function Card({ jumpViewport, quake, number }) {
 
   return (
     <main
+      data-testid="mapped-quake"
       className={
         !open
           ? "activity-card-container activity-card-container-closed"
