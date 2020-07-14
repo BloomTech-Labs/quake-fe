@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List.js Tests List.js Snapshot List.js renders with mocked state 1`] = `
+<div
+  className="alt-result"
+  data-testid="empty-quakes"
+>
+  <svg
+    className="result-image"
+  >
+    cracks.svg
+  </svg>
+  <h1>
+    Aww SHOCKS!
+  </h1>
+  <p>
+    Looks like there aren't any quakes here.
+  </p>
+  <p>
+    Why not adjust your filters or try a new location?
+  </p>
+</div>
+`;

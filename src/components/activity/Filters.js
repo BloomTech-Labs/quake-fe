@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import { quakeFetch, updateSearchParams } from "../../actions";
-// import SearchBar from "./search/SearchBar";
 import useDarkMode from "../../customHooks/useDarkMode";
 
 function Filters({
@@ -45,7 +44,6 @@ function Filters({
   // dispatches quakeFetch actions with the query for USGS upon form submit
   const formSubmitCallback = (e) => {
     e.preventDefault();
-    toggleSearch();
     quakeFetch(USGSQuery);
   };
 
@@ -87,6 +85,7 @@ function Filters({
                 min="1"
                 max="20001.6"
                 step="0.1"
+                data-testid="input-km"
               />
             </label>
           </fieldset>
@@ -150,7 +149,7 @@ function Filters({
           </fieldset>
         </fieldset>
 
-        <button type="submit" className="search-submit-button">
+        <button type="submit" onClick={toggleSearch} className="search-submit-button">
           Search For Activity
         </button>
 
