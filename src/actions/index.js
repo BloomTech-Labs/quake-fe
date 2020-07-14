@@ -69,6 +69,22 @@ export const quakeSort = (sortBy, quakes) => (dispatch) => {
     console.log("SORTED QUAKES: ", sortedQuakes);
     dispatch({ type: SORT_QUAKES, quakeData: [] });
     dispatch({ type: SORT_QUAKES, quakeData: sortedQuakes });
+  } else if (sortBy === "closest depth") {
+    const sortedQuakes = quakes.sort(
+      (a, b) => a.geometry.coordinates[2] - b.geometry.coordinates[2]
+    );
+
+    console.log("SORTED QUAKES: ", sortedQuakes);
+    dispatch({ type: SORT_QUAKES, quakeData: [] });
+    dispatch({ type: SORT_QUAKES, quakeData: sortedQuakes });
+  } else if (sortBy === "furthest depth") {
+    const sortedQuakes = quakes.sort(
+      (a, b) => b.geometry.coordinates[2] - a.geometry.coordinates[2]
+    );
+
+    console.log("SORTED QUAKES: ", sortedQuakes);
+    dispatch({ type: SORT_QUAKES, quakeData: [] });
+    dispatch({ type: SORT_QUAKES, quakeData: sortedQuakes });
   }
 };
 
