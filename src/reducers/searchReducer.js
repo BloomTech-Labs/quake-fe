@@ -8,7 +8,7 @@ const tomorrow = new Date(today);
 tomorrow.setDate(tomorrow.getDate() + 1);
 
 function getDates(theDate) {
-  var month = "" + (theDate.getMonth() + 1),
+  let month = "" + (theDate.getMonth() + 1),
     day = "" + theDate.getDate(),
     year = theDate.getFullYear();
 

@@ -9,7 +9,7 @@ function List({ quakes, quakeFetch, quakeFetchError }) {
     if (quakeFetch === false) {
       if (quakes.length === 0) {
         return (
-          <div className="alt-result">
+          <div data-testid="empty-quakes" className="alt-result">
             <CracksImage className="result-image" />
             <h1>Aww SHOCKS!</h1>
             <p>Looks like there aren't any quakes here.</p>
@@ -27,14 +27,14 @@ function List({ quakes, quakeFetch, quakeFetchError }) {
       }
     } else {
       return (
-        <div className="alt-result">
+        <div data-testid="quake-search" className="alt-result">
           <SearchImage className="result-image" />
           <h1>Searching for quakes...</h1>
         </div>
       );
     }
   } else {
-    return <div>There was a problem getting your quakes...</div>;
+    return <div data-testid="quake-error">There was a problem getting your quakes...</div>;
   }
 }
 
