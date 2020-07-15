@@ -27,9 +27,6 @@ import "./App.scss";
 import ReactGA from "react-ga";
 
 const store = createStore(reducers, applyMiddleware(thunk));
-store.subscribe(() => {
-  store.getState();
-});
 
 function App() {
   ReactGA.initialize("UA-169193629-1"); //this is our unique ga id
