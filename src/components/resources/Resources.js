@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import TitleContainer from './titleContainer';
 import ResourceCard from './resourceCard';
 import ImageRow from './imageRow';
@@ -8,9 +8,6 @@ import ListTypeSolid from './listTypeSolid';
 import { Drop, Cover, HoldOn, CaneDrop, CaneCover, CaneHoldOn, WalkerLock, WalkerCover, WalkerHoldOn, WheelchairBrake, WheelchairCover, WheelchairHoldOn, STEPLogo, Outdoors, InVehicle, EKit} from './imageImports';
 
 const Resources = () => {
-  useEffect (() => {
-
-  })
   return (
     <div className='main-container resource-page scroll'>
       <section id='intro'>
