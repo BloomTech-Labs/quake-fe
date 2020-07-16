@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect} from "react";
+import React, { useEffect } from "react";
 import TitleContainer from './titleContainer';
 import ResourceCard from './resourceCard';
 import ImageRow from './imageRow';

@@ -10,14 +10,14 @@ const About = () => {
           <h1>We are FaultLine</h1>
           <aside className="about-team-img" />
           <section className="about-team-links">
-            <a className="ej">Eddie</a>
-            <a className="ls">Laura</a>
-            <a className="kd">Ken</a>
-            <a className="jb">Jeff</a>
-            <a className="pj">Pete</a>
-            <a className="ch">Cesar</a>
-            <a className="jg">Jeremy</a>
-            <a className="nw">Nicole</a>
+            <a href={"/"} className="ej">Eddie</a>
+            <a href={"/"} className="ls">Laura</a>
+            <a href={"/"} className="kd">Ken</a>
+            <a href={"/"} className="jb">Jeff</a>
+            <a href={"/"} className="pj">Pete</a>
+            <a href={"/"} className="ch">Cesar</a>
+            <a href={"/"} className="jg">Jeremy</a>
+            <a href={"/"} className="nw">Nicole</a>
           </section>
         </section>
 

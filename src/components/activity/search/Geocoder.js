@@ -87,21 +87,45 @@ function Geocoder({
     }
   };
 
-  const updateGeoLocation = (e) => {
-    // e.preventDefault();
+  const onSearchClick = async () => {
+    await quakeFetch(
+      `&starttime=${starttime}&endtime=${endtime}&minmagnitude=${minmagnitude}&maxmagnitude=${maxmagnitude}&maxradiuskm=${maxradiuskm}&latitude=${latitude}&longitude=${longitude}`
+    );
+  };
+
+  const reverseGeoLocation = (props) => {
+    axios
+      .get(
+        `https://api.mapbox.com/geocoding/v5/mapbox.places/${props.longitude},${props.latitude}.json?access_token=${process.env.REACT_APP_MAP_API_TOKEN}`
+      )
+      .then((res) => {
+        const userLocation = res.data.features[0].place_name;
+        updateSearchParams({
+          name: "placename",
+          value: userLocation,
+        });
+
+        console.log(res.data.features[0].place_name);
+      })
+      .catch((err) => {
+        console.log("Error", err);
+      });
+    quakeFetch(
+      `&starttime=${starttime}&endtime=${endtime}&minmagnitude=${minmagnitude}&maxmagnitude=${maxmagnitude}&maxradiuskm=${maxradiuskm}&latitude=${props.latitude}&longitude=${props.longitude}`
+    );
+  };
+
+  const updateGeoLocation = async (e) => {
     setGeocodeResults([]);
 
     setGps(() => {
       const latestCoords = JSON.parse(getGps());
 
+      reverseGeoLocation(latestCoords);
+
       if (latestCoords) {
         console.log("latestCordsLat", latestCoords.latitude);
         console.log("latestCordsLong", latestCoords.longitude);
-
-        updateSearchParams({
-          name: "placename",
-          value: "Your Current Location",
-        });
 
         updateSearchParams({
           name: "latitude",
@@ -112,16 +136,17 @@ function Geocoder({
           name: "longitude",
           value: latestCoords.longitude,
         });
-
-        quakeFetch(
-          `&starttime=${starttime}&endtime=${endtime}&minmagnitude=${minmagnitude}&maxmagnitude=${maxmagnitude}&maxradiuskm=${maxradiuskm}&latitude=${latitude}&longitude=${longitude}`
-        );
       }
     });
   };
 
   return (
     <div className="geocoder-container">
+      <button
+        aria-label="update geolocation"
+        className="geo-location"
+        onClick={() => updateGeoLocation()}
+      />
       <input
         role="search"
         type="search"
@@ -135,7 +160,12 @@ function Geocoder({
         aria-label="input location"
         autoComplete="off"
       />
-      <button aria-label="update geolocation" className="geo-location" onClick={() => updateGeoLocation()} />
+      <button
+        aria-label="update search"
+        className="search-icon"
+        onClick={onSearchClick}
+      />
+
       <aside className="geocoder-results">
         {geocodeResults.map((feature) => {
           return (
@@ -161,6 +191,7 @@ const mapStateToProps = (state) => {
     maxradiuskm: state.searchReducer.maxradiuskm,
     latitude: state.searchReducer.latitude,
     longitude: state.searchReducer.longitude,
+    
   };
 };
 
