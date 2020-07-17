@@ -120,24 +120,24 @@ export const quakeSort = (sortBy, quakes, state = initialSearchState) => (dispat
 };
 
 export const setViewport = (viewport) => (dispatch) => {
-  console.log('UPDATING VIEWPORT TO: ', viewport);
-    let newVP = {
-      ...viewport,
-      width: "100%",
-      height: "100%",
-    };
+  console.log("UPDATING VIEWPORT TO: ", viewport);
+  let newVP = {
+    ...viewport,
+    width: "100%",
+    height: "100%",
+  };
 
-    dispatch({ type: UPDATE_VIEWPORT, viewportInfo: newVP });
-}
+  dispatch({ type: UPDATE_VIEWPORT, viewportInfo: newVP });
+};
 
 export const jumpViewport = (long, lat) => (dispatch) => {
-  console.log('JUMPING VIEWPORT TO: ', lat, long);
-    let newVP = {
-      latitude: lat,
-      longitude: long,
-      width: "100%",
-      height: "100%",
-    };
+  console.log("JUMPING VIEWPORT TO: ", lat, long);
+  let newVP = {
+    latitude: lat,
+    longitude: long,
+    width: "100%",
+    height: "100%",
+  };
 
-    dispatch({ type: JUMP_VIEWPORT, jumpInfo: newVP });
-}
+  dispatch({ type: JUMP_VIEWPORT, jumpInfo: newVP });
+};

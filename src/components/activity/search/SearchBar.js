@@ -21,7 +21,7 @@ const SearchBar = () => {
         <Geocoder />
         {/* Current Location Button */}
       </div>
-      <button className="filters-toggle" onClick={toggleFilters}></button>
+      <button aria-label="filters toggle" className="filters-toggle" onClick={toggleFilters}></button>
     </div>
   );
 };
