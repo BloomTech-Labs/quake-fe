@@ -1,22 +1,167 @@
 @import "./variables.scss";
 
-.nav {
+nav {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  height: 66px;
-  width: 100vw;
-  background-color: $logo-primary;
-}
 
-nav {
   width: 100%;
   background: $logo-primary;
-  height: 45px;
-  // position: fixed;
+  height: 55px; // If height adjustments need to be made, remember to adjust the height calc of '.main-container' in activity.scss. It's height is 100vh minus the sum of the header and footer nav height
+
+  padding: 0 10px;
+
   bottom: 0;
   border-top: 1px solid #fff;
+  z-index: 1000;
+
+  .nav-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 20%;
+    height: 85%;
+
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.3em;
+    font-family: $font-body;
+
+    border-radius: 5px;
+
+    background: transparent;
+
+    transition: 0.2s ease-in-out;
+    border: 1px solid orange;
+
+    .nav-icon {
+      width: 22px;
+      height: 22px;
+      fill: #000;
+    }
+  }
+}
+
+.more-links-focus {
+  width: 100%;
+  height: calc(100vh - 55px); // 55px is nav bar height
+
+  position: absolute;
+  bottom: 55px;
+  left: 0;
+
+  background: #00000040;
+  @supports (
+    (-webkit-backdrop-filter: blur(4px)) or (backdrop-filter: blur(4px))
+  ) {
+    background-color: #00000040;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+  }
+
+  border: 1px solid orange;
+
+  .more-links-container {
+    width: 270px;
+    height: 450px;
+
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+    padding: 17px;
+    background: $logo-primary;
+
+    border-radius: 5px;
+
+    .more-links {
+      display: flex;
+      flex-direction: column;
+
+      height: 60%;
+
+      // border: 3px solid red;
+
+      h1 {
+        margin-bottom: 5px;
+        color: #fff;
+        font-size: 1.9em;
+        font-weight: 500;
+        text-decoration: none;
+        font-family: $font-body;
+      }
+
+      a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        color: #fff;
+        font-size: 1.3em;
+        text-decoration: none;
+        font-family: $font-body;
+
+        .nav-icon {
+          width: 20px;
+          height: 20px;
+          margin-right: 5px;
+        }
+      }
+
+      .currently-open {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 25%;
+        // border: 3px solid rgb(0, 255, 149);
+      }
+
+      .quick-access {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 75%;
+        // border: 3px solid rgb(0, 204, 255);
+      }
+    }
+
+    .big-link-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+
+      // border: 3px solid rgb(174, 0, 255);
+      height: 40%;
+
+      a {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        width: 48%;
+        height: 45%;
+
+        background: #308257;
+
+        border-radius: 5px;
+
+        color: #fff;
+        font-size: 1.3em;
+        text-decoration: none;
+        font-family: $font-body;
+
+        .nav-icon {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
 }
