@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+
+// Icons
 import { ReactComponent as FeedIcon } from "../images/feed-icon.svg";
 import { ReactComponent as ReportIcon } from "../images/report-icon.svg";
 import { ReactComponent as ActivityIcon } from "../images/activity-icon.svg";
 import { ReactComponent as MenuIcon } from "../images/menu-icon.svg";
+import { ReactComponent as PeopleIcon } from "../images/people-icon.svg";
+import { ReactComponent as PhoneIcon } from "../images/phone-icon.svg";
+import { ReactComponent as BookIcon } from "../images/book-icon.svg";
+import { ReactComponent as ThemeIcon } from "../images/theme-icon.svg";
+import { ReactComponent as FaqIcon } from "../images/faq-icon.svg";
+import { ReactComponent as BugIcon } from "../images/bug-icon.svg";
+import { ReactComponent as FilterIcon } from "../images/filter.svg";
 
 const Navigation = () => {
+  const [viewMore, setViewMore] = useState(false);
+
   const displayMoreLinks = () => {};
 
   return (
@@ -40,12 +51,12 @@ const Navigation = () => {
         <p>Activity</p>
       </NavLink>
 
-      <div onClick="displayMoreLinks" className="nav-link">
+      <div onClick={() => {setViewMore(!viewMore)}} className="nav-link">
         <MenuIcon className="nav-icon" />
         <p>More</p>
       </div>
 
-      <div className="more-links-focus">
+      <div onClick={() => {setViewMore(!viewMore)}} className={viewMore ? "more-links-focus" : "more-links-hidden"}>
         <div className="more-links-container">
           <div className="more-links">
             <div className="currently-open">
@@ -53,7 +64,7 @@ const Navigation = () => {
 
               <NavLink to="/">
                 <ActivityIcon className="nav-icon" />
-                <p>Make This Change</p>
+                <p>Activity</p>
               </NavLink>
             </div>
 
@@ -61,50 +72,50 @@ const Navigation = () => {
               <h1>Quick Access</h1>
 
               <NavLink to="/">
-                <ActivityIcon className="nav-icon" />
+                <ReportIcon className="nav-icon" />
                 <p>Report an Event</p>
               </NavLink>
 
               <NavLink to="/">
-                <ActivityIcon className="nav-icon" />
+                <FeedIcon className="nav-icon" />
                 <p>Access News Feed</p>
               </NavLink>
 
               <NavLink to="/">
-                <ActivityIcon className="nav-icon" />
+                <BugIcon className="nav-icon" />
                 <p>Report a Bug</p>
               </NavLink>
 
               <NavLink to="/">
-                <ActivityIcon className="nav-icon" />
+                <FaqIcon className="nav-icon" />
                 <p>Frequently Asked Questions</p>
               </NavLink>
 
               <NavLink to="/">
-                <ActivityIcon className="nav-icon" />
+                <ThemeIcon className="nav-icon" />
                 <p>Toggle Light/Dark Theme</p>
               </NavLink>
             </div>
           </div>
 
           <div className="big-link-container">
-            <NavLink to="/">
-              <ActivityIcon className="nav-icon" />
+            <NavLink to="/about">
+              <PeopleIcon className="nav-icon" />
               <p>About Us</p>
             </NavLink>
 
             <NavLink to="/">
-              <ActivityIcon className="nav-icon" />
+              <PhoneIcon className="nav-icon" />
               <p>Setup Notifications</p>
             </NavLink>
 
             <NavLink to="/">
-              <ActivityIcon className="nav-icon" />
+              <BookIcon className="nav-icon" />
               <p>Survival Info</p>
             </NavLink>
 
             <NavLink to="/">
-              <ActivityIcon className="nav-icon" />
+              <FilterIcon className="nav-icon" />
               <p>Filter Results</p>
             </NavLink>
           </div>

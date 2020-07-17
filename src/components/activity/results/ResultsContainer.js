@@ -18,8 +18,8 @@ const ResultsContainer = () => {
           theMap.style.height = "45px";
           setFullList(true);
         } else {
-          container.style.height = "calc(75% - 45px)";
-          theMap.style.height = "calc(25% + 45px)";
+          container.style.height = "calc(65% - 45px)";
+          theMap.style.height = "calc(35% + 45px)";
           setFullList(false);
         }
       }
@@ -42,7 +42,7 @@ const ResultsContainer = () => {
             setOpenList(false);
           } else {
             container.style.transform = "translateY(0)";
-            theMap.style.height = "calc(25% + 45px)";
+            theMap.style.height = "calc(35% + 45px)";
             setOpenList(true);
           }
 

@@ -46,6 +46,9 @@ nav {
   }
 }
 
+.more-links-hidden {
+  display: none;
+}
 .more-links-focus {
   width: 100%;
   height: calc(100vh - 55px); // 55px is nav bar height
