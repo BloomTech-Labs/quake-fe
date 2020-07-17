@@ -18,6 +18,10 @@ function Sort({ quakeSort, quakes, sortBy }) {
           <option value="oldest">Time: Oldest First</option>
           <option value="ascending magnitude">Magnitude: Lowest First</option>
           <option value="descending magnitude">Magnitude: Highest First</option>
+          <option value="closest distance">Distance: Closest First</option>
+          <option value="furthest distance">Distance: Furthest First</option>
+          <option value="closest depth">Depth: Closest First</option>
+          <option value="furthest depth">Depth: Furthest First</option>
         </select>
       </label>
 

@@ -1,0 +1,87 @@
+@import "./variables.scss";
+
+.spacer {
+  width: 100vw;
+  height: 1.5vh;
+  margin-bottom: 5%;
+  background: #d9e3e2;
+  /* inner shadow */
+  box-shadow: inset 0px 2px 2px rgba(36, 114, 73, 0.24);
+}
+
+.about-main {
+  margin: 2vmax;
+  max-width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  color: #247249;
+
+  h1 {
+    font-family: Catamaran;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 5.5vmin;
+  }
+
+  .about-links-container {
+    max-width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+
+    .about-team-img {
+      margin-bottom: 1%;
+      height: 30vmin;
+      background-size: cover;
+      background-image: url(../images/about-us-main.png);
+    }
+
+    .about-team-links {
+      padding-left: 1vmax;
+      font-size: 3.8vmin;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+    }
+  }
+  .about-map-container {
+    max-width: 100%;
+    margin-top: 10vmin;
+    display: flex;
+    flex-flow: column nowrap;
+
+    .about-horizontalbg {
+      position: relative;
+      height: 19vmin;
+      background-image: url(../images/about-us-horizontal.png);
+      background-size: cover;
+      h1 {
+        position: relative;
+        top: 70%;
+        left: 3%;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 5.5vmin;
+        z-index: 1;
+      }
+    }
+
+    .about-map-verticalbg {
+      position: relative;
+      .imgMap {
+        position: relative;  
+        width: 95%;
+        height: 34vmax;
+        z-index: 1;
+      }
+      .vertical-accent {
+          position: absolute;
+          width: 20%;
+          height: 32vmax;
+          bottom: 25%;
+          right: 80%;
+          z-index: 0;
+      }
+    }
+  }
+}

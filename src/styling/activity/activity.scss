@@ -67,29 +67,36 @@
   .geocode-input {
     height: 35px;
     padding: 5px;
-    padding-left: 35px;
     box-sizing: border-box;
     background: #fffffa;
     border: none;
     border-radius: 5px;
     z-index: 1001;
-
-    background-image: url("../../images/search.svg");
-    background-size: 25px;
-    background-position: 5px;
-    background-repeat: no-repeat;
-
     width: 85%;
     font-size: 1.6em;
+  }
+
+  .search-icon {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background-image: url("../../images/search.svg");
+
+    background-color: transparent;
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    cursor: pointer;
   }
 
   .geo-location {
     width: 35px;
     height: 35px;
     border: none;
-
     background-color: transparent;
     background-image: url("../../images/current-location-icon.svg");
+
     background-size: 25px;
     background-position: center;
     background-repeat: no-repeat;
