@@ -15,6 +15,7 @@ import About from "./components/About";
 import Resources from "./components/resources/Resources";
 import Report from "./components/Report";
 import useDarkMode from "./customHooks/useDarkMode";
+import Navigation from "./partials/Navigation";
 
 // Common Components
 // import Navigation from "./partials/Navigation";
@@ -52,7 +53,7 @@ function App() {
             <Route exact path="/resources" component={Resources} />
             <Route exact path="/report" component={Report} />
           </Switch>
-          <nav></nav>
+          <Navigation/>
           {/* Navigation Placeholder */}
         </div>
       </Router>
