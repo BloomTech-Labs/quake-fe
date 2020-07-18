@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+import CurrentPage from "./CurrentPage";
 
 // Icons
 import { ReactComponent as FeedIcon } from "../images/feed-icon.svg";
@@ -15,9 +16,8 @@ import { ReactComponent as BugIcon } from "../images/bug-icon.svg";
 import { ReactComponent as FilterIcon } from "../images/filter.svg";
 
 const Navigation = () => {
+  let location = useLocation();
   const [viewMore, setViewMore] = useState(false);
-
-  const displayMoreLinks = () => {};
 
   return (
     <nav>
@@ -51,21 +51,31 @@ const Navigation = () => {
         <p>Activity</p>
       </NavLink>
 
-      <div onClick={() => {setViewMore(!viewMore)}} className="nav-link">
+      <div
+        onClick={() => {
+          setViewMore(!viewMore);
+        }}
+        className="nav-link"
+        style={
+          viewMore ? { background: "#cccccc40" } : { background: "transparent" }
+        }
+      >
         <MenuIcon className="nav-icon" />
         <p>More</p>
       </div>
 
-      <div onClick={() => {setViewMore(!viewMore)}} className={viewMore ? "more-links-focus" : "more-links-hidden"}>
+      <div
+        onClick={() => {
+          setViewMore(!viewMore);
+        }}
+        className={viewMore ? "more-links-focus" : "more-links-hidden"}
+      >
         <div className="more-links-container">
           <div className="more-links">
             <div className="currently-open">
               <h1>Currently Open</h1>
 
-              <NavLink to="/">
-                <ActivityIcon className="nav-icon" />
-                <p>Activity</p>
-              </NavLink>
+              <CurrentPage location={location.pathname} />
             </div>
 
             <div className="quick-access">

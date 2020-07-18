@@ -36,7 +36,8 @@ nav {
     background: transparent;
 
     transition: 0.2s ease-in-out;
-    border: 1px solid orange;
+
+    cursor: pointer;
 
     .nav-icon {
       width: 22px;
@@ -66,7 +67,6 @@ nav {
     backdrop-filter: blur(2px);
   }
 
-  border: 1px solid orange;
 
   .more-links-container {
     width: 270px;
@@ -120,7 +120,6 @@ nav {
         flex-direction: column;
         justify-content: space-evenly;
         height: 25%;
-        // border: 3px solid rgb(0, 255, 149);
       }
 
       .quick-access {
@@ -128,7 +127,6 @@ nav {
         flex-direction: column;
         justify-content: space-evenly;
         height: 75%;
-        // border: 3px solid rgb(0, 204, 255);
       }
     }
 
@@ -139,7 +137,6 @@ nav {
       justify-content: space-between;
       align-items: center;
 
-      // border: 3px solid rgb(174, 0, 255);
       height: 40%;
 
       a {
