@@ -46,8 +46,11 @@ function MapContainer({
                 stroke="#00000022"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                
-                  <circle cx="7" cy="7" r="7" fill={
+                <circle
+                  cx="7"
+                  cy="7"
+                  r="7"
+                  fill={
                     roundedMag < 1.5
                       ? "#53e0cd"
                       : roundedMag < 3
@@ -59,11 +62,16 @@ function MapContainer({
                       : roundedMag < 7.5
                       ? "#f13342"
                       : "#ef2073"
-                  }/>
-                  <circle cx="7" cy="7" r="6.5" stroke="black" stroke-opacity="0.3"/>
-                </svg>
-
-              
+                  }
+                />
+                <circle
+                  cx="7"
+                  cy="7"
+                  r="6.5"
+                  stroke="black"
+                  stroke-opacity="0.3"
+                />
+              </svg>
             </Marker>
           );
         })}

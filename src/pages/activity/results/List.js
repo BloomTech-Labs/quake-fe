@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { ReactComponent as CracksImage } from "../../../images/cracks.svg";
-import { ReactComponent as SearchImage } from "../../../images/search.svg";
+import { ReactComponent as CracksImage } from "../../../images/graphics/cracks.svg";
+import { ReactComponent as SearchImage } from "../../../images/icons/search.svg";
 import Card from "./Card";
 
 function List({ quakes, quakeFetch, quakeFetchError }) {
@@ -34,7 +34,11 @@ function List({ quakes, quakeFetch, quakeFetchError }) {
       );
     }
   } else {
-    return <div data-testid="quake-error">There was a problem getting your quakes...</div>;
+    return (
+      <div data-testid="quake-error">
+        There was a problem getting your quakes...
+      </div>
+    );
   }
 }
 

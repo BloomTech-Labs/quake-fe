@@ -191,7 +191,6 @@ const mapStateToProps = (state) => {
     maxradiuskm: state.searchReducer.maxradiuskm,
     latitude: state.searchReducer.latitude,
     longitude: state.searchReducer.longitude,
-    
   };
 };
 

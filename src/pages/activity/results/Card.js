@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { jumpViewport } from "../../../redux/actions";
-import Arrow from "../../../images/Arrow_Active.png";
+import Arrow from "../../../images/icons/Arrow_Active.png";
 var moment = require("moment");
 
 function Card({ jumpViewport, quake, number }) {

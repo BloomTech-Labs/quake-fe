@@ -149,7 +149,11 @@ function Filters({
           </fieldset>
         </fieldset>
 
-        <button type="submit" onClick={toggleSearch} className="search-submit-button">
+        <button
+          type="submit"
+          onClick={toggleSearch}
+          className="search-submit-button"
+        >
           Search For Activity
         </button>
 

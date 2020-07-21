@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as FaultlineLogo } from "../images/Faultline_Logo.svg";
+import { ReactComponent as FaultlineLogo } from "../images/graphics/Faultline_Logo.svg";
 
 const Header = () => {
   return (

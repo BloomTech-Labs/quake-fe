@@ -27,74 +27,75 @@ $mag-6: #ef2073;
 
 //----------
 
-// Resources page theme:
+// Resources Page Theme:
 $font-color: #323232;
 $accent-color: #247249;
 
-// dark mode
+// Dark Mode
 $dark-theme: #323232;
 $logo-outline: #fffffa;
 
-// Site fonts:
+// Site Fonts:
 $font-logo: "Montserrat", Arial, Helvetica, sans-serif;
 $font-body: "Catamaran", Arial, Helvetica, sans-serif;
 
+// Font & Weight Imports
 @font-face {
   font-family: "Montserrat";
   src: local("Montserrat"),
-    url(./fonts/MontserratSubrayada-Regular.ttf) format("truetype");
+    url("./fonts/MontserratSubrayada-Regular.ttf") format("truetype");
 }
 @font-face {
-    font-family: 'Catamaran';
-    src: url(./fonts/Catamaran-Thin.ttf) format('truetype');
-    font-weight: 100;
-    font-style: normal;
+  font-family: "Catamaran";
+  src: url("./fonts/Catamaran-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'Catamaran';
-    src: url(./fonts/Catamaran-ExtraLight.ttf) format('truetype');
-    font-weight: 200;
-    font-style: normal;
+  font-family: "Catamaran";
+  src: url("./fonts/Catamaran-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'Catamaran';
-    src: url(./fonts/Catamaran-Light.ttf) format('truetype');
-    font-weight: 300;
-    font-style: normal;
+  font-family: "Catamaran";
+  src: url("./fonts/Catamaran-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'Catamaran';
-    src: url(./fonts/Catamaran-Regular.ttf) format('truetype');
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Catamaran";
+  src: url("./fonts/Catamaran-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'Catamaran';
-    src: url(./fonts/Catamaran-Medium.ttf) format('truetype');
-    font-weight: 500;
-    font-style: normal;
+  font-family: "Catamaran";
+  src: url("./fonts/Catamaran-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'Catamaran';
-    src: url(./fonts/Catamaran-SemiBold.ttf) format('truetype');
-    font-weight: 600;
-    font-style: normal;
+  font-family: "Catamaran";
+  src: url("./fonts/Catamaran-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'Catamaran';
-    src: url(./fonts/Catamaran-Bold.ttf) format('truetype');
-    font-weight: 700;
-    font-style: normal;
+  font-family: "Catamaran";
+  src: url("./fonts/Catamaran-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'Catamaran';
-    src: url(./fonts/Catamaran-ExtraBold.ttf) format('truetype');
-    font-weight: 800;
-    font-style: normal;
+  font-family: "Catamaran";
+  src: url("./fonts/Catamaran-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'Catamaran';
-    src: url(./fonts/Catamaran-Black.ttf) format('truetype');
-    font-weight: 900;
-    font-style: normal;
+  font-family: "Catamaran";
+  src: url("./fonts/Catamaran-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
 }
