@@ -1,5 +1,5 @@
 import React from "react";
-import Filters from "./Filters";
+import Filters from "./filters/Filters";
 import SearchBar from "./search/SearchBar";
 import ResultsContainer from "./results/ResultsContainer";
 import MapContainer from "./map/MapContainer";

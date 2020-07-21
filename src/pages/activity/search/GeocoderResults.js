@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { updateSearchParams } from "../../../actions";
+import { updateSearchParams } from "../../../redux/actions";
 
 const SearchBarResults = ({ updateSearchParams, feature, clearResults }) => {
   // Sets coords and place name to state when autocomplete result is selected

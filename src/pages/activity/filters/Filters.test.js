@@ -7,7 +7,7 @@ import renderer from "react-test-renderer";
 
 import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
-import { quakeFetch, updateSearchParams } from "../../actions";
+import { quakeFetch, updateSearchParams } from "../../../redux/actions";
 
 import Filters from "./Filters";
 import { getByTestId } from "@testing-library/react";

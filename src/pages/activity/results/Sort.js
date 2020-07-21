@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { quakeSort } from "../../../actions/index.js";
+import { quakeSort } from "../../../redux/actions";
 
 function Sort({ quakeSort, quakes, sortBy }) {
   const handleChanges = (e) => {

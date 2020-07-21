@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { setViewport } from "../../../actions";
+import { setViewport } from "../../../redux/actions";
 import ReactMapGL, { Marker } from "react-map-gl"; // https://github.com/visgl/react-map-gl/tree/master/docs
 
 function MapContainer({

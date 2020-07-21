@@ -2,16 +2,16 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 // Icons
-import { ReactComponent as FeedIcon } from "../images/feed-icon.svg";
-import { ReactComponent as ReportIcon } from "../images/report-icon.svg";
-import { ReactComponent as ActivityIcon } from "../images/activity-icon.svg";
-import { ReactComponent as PeopleIcon } from "../images/people-icon.svg";
-import { ReactComponent as PhoneIcon } from "../images/phone-icon.svg";
-import { ReactComponent as BookIcon } from "../images/book-icon.svg";
-import { ReactComponent as ThemeIcon } from "../images/theme-icon.svg";
-import { ReactComponent as FaqIcon } from "../images/faq-icon.svg";
-import { ReactComponent as BugIcon } from "../images/bug-icon.svg";
-import { ReactComponent as FilterIcon } from "../images/filter.svg";
+import { ReactComponent as FeedIcon } from "../../images/feed-icon.svg";
+import { ReactComponent as ReportIcon } from "../../images/report-icon.svg";
+import { ReactComponent as ActivityIcon } from "../../images/activity-icon.svg";
+import { ReactComponent as PeopleIcon } from "../../images/people-icon.svg";
+import { ReactComponent as PhoneIcon } from "../../images/phone-icon.svg";
+import { ReactComponent as BookIcon } from "../../images/book-icon.svg";
+import { ReactComponent as ThemeIcon } from "../../images/theme-icon.svg";
+import { ReactComponent as FaqIcon } from "../../images/faq-icon.svg";
+import { ReactComponent as BugIcon } from "../../images/bug-icon.svg";
+import { ReactComponent as FilterIcon } from "../../images/filter.svg";
 
 const CurrentPage = ({ location }) => {
   if (location === "/") {

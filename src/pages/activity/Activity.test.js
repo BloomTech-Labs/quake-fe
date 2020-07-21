@@ -6,7 +6,7 @@ import * as rtl from "@testing-library/react";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
-import { rootReducer as reducers } from "../../reducers/index";
+import { rootReducer as reducers } from "../../redux/reducers";
 
 import Activity from "./Activity";
 

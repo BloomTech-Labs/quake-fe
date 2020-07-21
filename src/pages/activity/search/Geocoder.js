@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { updateSearchParams, quakeFetch } from "../../../actions";
+import { updateSearchParams, quakeFetch } from "../../../redux/actions";
 import axios from "axios";
 import GeocoderResults from "./GeocoderResults";
 import { setGps, getGps } from "../../../utils/UserLocation";

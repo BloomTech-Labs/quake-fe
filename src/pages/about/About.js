@@ -1,6 +1,6 @@
 import React from "react";
-import aboutMap from "../images/about-us-map.png";
-import aboutVerticalImg from "../images/about-us-vertical.png";
+import aboutMap from "../../images/about-us-map.png";
+import aboutVerticalImg from "../../images/about-us-vertical.png";
 const About = () => {
   return (
     <div className="main-container no-scroll">
