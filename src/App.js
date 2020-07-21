@@ -1,25 +1,27 @@
 // React
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 // Redux
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
-import { rootReducer as reducers } from "./reducers/index";
+import { rootReducer as reducers } from "./redux/reducers/index";
 
-// Components
-import Header from "./partials/Header";
-import Activity from "./components/activity/Activity";
-import Feed from "./components/feed/Feed";
-import About from "./components/About";
-import Resources from "./components/resources/Resources";
-import Report from "./components/Report";
-import useDarkMode from "./customHooks/useDarkMode";
-import Navigation from "./partials/Navigation";
+// Major Components
+import Activity from "./pages/activity/Activity";
+import Feed from "./pages/feed/Feed";
+import About from "./pages/about/About";
+import Resources from "./pages/resources/Resources";
+import BugReport from "./pages/report/BugReport";
 
 // Common Components
-// import Navigation from "./partials/Navigation";
-import Responsive from "./partials/Responsive";
+import Header from "./components/Header";
+import Responsive from "./components/Responsive";
+import Navigation from "./components/navigation/Navigation";
+
+// Utils
+import useDarkMode from "./utils/customHooks/useDarkMode";
 
 // Design
 import "./App.scss";
@@ -51,7 +53,7 @@ function App() {
             <Route exact path="/feed" component={Feed} />
             <Route exact path="/about" component={About} />
             <Route exact path="/resources" component={Resources} />
-            <Route exact path="/report" component={Report} />
+            <Route exact path="/report" component={BugReport} />
           </Switch>
           <Navigation/>
           {/* Navigation Placeholder */}
