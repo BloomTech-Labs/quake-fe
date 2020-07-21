@@ -31,15 +31,15 @@ const Navigation = () => {
         <p>News</p>
       </NavLink>
 
-      <NavLink
+      <a
         exact
         className="nav-link"
         activeStyle={{ background: "#cccccc40" }}
-        to="/report"
+        href="https://earthquake.usgs.gov/earthquakes/eventpage/tellus"
       >
         <ReportIcon className="nav-icon" />
         <p>Report</p>
-      </NavLink>
+      </a>
 
       <NavLink
         exact

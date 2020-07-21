@@ -110,7 +110,7 @@ function Card({ jumpViewport, quake, number }) {
             <strong>Magnitude:</strong> {quake.properties.mag}
           </section>
 
-          <button onClick={locationJump}>Jump to Loaction</button>
+          <button onClick={locationJump}>Jump to Location</button>
         </article>
 
         {/* ----- End Details Dropdown Card ----- */}
