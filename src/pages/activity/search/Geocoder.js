@@ -23,7 +23,7 @@ function Geocoder({
   maxmagnitude,
   latitude,
   longitude,
-  jumpViewport
+  jumpViewport,
 }) {
   const [encodedSearch, setEncodedSearch] = useState(""); // Holds the URI encoded search text
 
@@ -116,8 +116,11 @@ function Geocoder({
           name: "placename",
           value: userLocation,
         });
-        jumpViewport(res.data.features[0].geometry.coordinates[0], res.data.features[0].geometry.coordinates[1], 5.201256526);
-        console.log(res.data.features[0].geometry.coordinates);
+        jumpViewport(
+          res.data.features[0].geometry.coordinates[0],
+          res.data.features[0].geometry.coordinates[1],
+          5.201256526
+        );
       })
       .catch((err) => {
         console.log("Error", err);
@@ -136,9 +139,6 @@ function Geocoder({
       reverseGeoLocation(latestCoords);
 
       if (latestCoords) {
-        console.log("latestCordsLat", latestCoords.latitude);
-        console.log("latestCordsLong", latestCoords.longitude);
-
         updateSearchParams({
           name: "latitude",
           value: latestCoords.latitude,
@@ -209,5 +209,5 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
   updateSearchParams,
   quakeFetch,
-  jumpViewport
+  jumpViewport,
 })(Geocoder);

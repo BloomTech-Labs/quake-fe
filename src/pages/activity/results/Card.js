@@ -23,7 +23,11 @@ function Card({ jumpViewport, quake, number }) {
   const locationJump = (e) => {
     // Triggers map to move to quake marker
     e.preventDefault();
-    jumpViewport(quake.geometry.coordinates[0], quake.geometry.coordinates[1], 4.201256526);
+    jumpViewport(
+      quake.geometry.coordinates[0],
+      quake.geometry.coordinates[1],
+      4.201256526
+    );
   };
 
   return (

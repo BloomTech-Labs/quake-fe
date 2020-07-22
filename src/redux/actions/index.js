@@ -23,7 +23,6 @@ export const quakeFetch = (theQuery) => (dispatch) => {
         `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100${theQuery}`
       )
       .then((res) => {
-        console.log(res.data.features);
         dispatch({ type: DISPLAY_QUAKES, quakeData: res.data.features });
       })
       .catch((err) => {
@@ -135,7 +134,7 @@ export const jumpViewport = (long, lat, zoom) => (dispatch) => {
     longitude: long,
     width: "100%",
     height: "100%",
-    zoom: zoom
+    zoom: zoom,
   };
 
   dispatch({ type: JUMP_VIEWPORT, jumpInfo: newVP });
