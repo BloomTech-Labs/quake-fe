@@ -129,12 +129,13 @@ export const setViewport = (viewport) => (dispatch) => {
   dispatch({ type: UPDATE_VIEWPORT, viewportInfo: newVP });
 };
 
-export const jumpViewport = (long, lat) => (dispatch) => {
+export const jumpViewport = (long, lat, zoom) => (dispatch) => {
   let newVP = {
     latitude: lat,
     longitude: long,
     width: "100%",
     height: "100%",
+    zoom: zoom
   };
 
   dispatch({ type: JUMP_VIEWPORT, jumpInfo: newVP });

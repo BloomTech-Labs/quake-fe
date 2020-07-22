@@ -31,7 +31,7 @@ export const mapReducer = (state = initialMapState, action) => {
         latitude: action.jumpInfo.latitude,
         longitude: action.jumpInfo.longitude,
         transition: 500,
-        zoom: 10,
+        zoom: action.jumpInfo.zoom,
       };
     default:
       return state;

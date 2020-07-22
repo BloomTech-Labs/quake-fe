@@ -6,12 +6,8 @@ import { ReactComponent as FeedIcon } from "../../images/icons/feed-icon.svg";
 import { ReactComponent as ReportIcon } from "../../images/icons/report-icon.svg";
 import { ReactComponent as ActivityIcon } from "../../images/icons/activity-icon.svg";
 import { ReactComponent as PeopleIcon } from "../../images/icons/people-icon.svg";
-import { ReactComponent as PhoneIcon } from "../../images/icons/phone-icon.svg";
 import { ReactComponent as BookIcon } from "../../images/icons/book-icon.svg";
-import { ReactComponent as ThemeIcon } from "../../images/icons/theme-icon.svg";
-import { ReactComponent as FaqIcon } from "../../images/icons/faq-icon.svg";
 import { ReactComponent as BugIcon } from "../../images/icons/bug-icon.svg";
-import { ReactComponent as FilterIcon } from "../../images/icons/filter.svg";
 
 const CurrentPage = ({ location }) => {
   if (location === "/") {
