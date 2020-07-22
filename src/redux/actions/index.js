@@ -93,8 +93,8 @@ export const quakeSort = (sortBy, quakes, state = initialSearchState) => (
     let quakeDistances = quakes.map((a) => {
       // TURF POINT ORDER: longitude, latitude
       var to = turf.point([
-        a.geometry.coordinates[1],
         a.geometry.coordinates[0],
+        a.geometry.coordinates[1],
       ]);
       return { ...a, distance: turf.distance(from, to).toFixed(2) };
     });
@@ -107,8 +107,8 @@ export const quakeSort = (sortBy, quakes, state = initialSearchState) => (
     let quakeDistances = quakes.map((a) => {
       // TURF POINT ORDER: longitude, latitude
       var to = turf.point([
-        a.geometry.coordinates[1],
         a.geometry.coordinates[0],
+        a.geometry.coordinates[1],
       ]);
       return { ...a, distance: turf.distance(from, to).toFixed(2) };
     });
