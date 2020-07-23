@@ -20,10 +20,8 @@
   border-bottom-left-radius: 5px;
 
   %activity-color {
-    width: 15px;
+    width: 14px;
     height: 100%;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
   }
   .magnitude-1 {
     @extend %activity-color;
@@ -185,10 +183,10 @@
 
 .dark-mode {
   background: $dark-theme;
-  .activity-card {
+  .activity-info-primary {
     background-color: #323232;
     color: white;
-    .dropdown-arrow,
+    .dropdown-arrow-not-clicked,
     .dropdown-arrow-clicked {
       filter: invert(1);
     }
