@@ -10,6 +10,7 @@
     "@turf/turf": "^5.1.6",
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
+    "emailjs-com": "^2.6.3",
     "moment": "^2.26.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",

@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import { quakeFetch, updateSearchParams } from "../../../redux/actions";
-import useDarkMode from "../../../utils/customHooks/useDarkMode";
 
 function Filters({
   quakeFetch,
@@ -14,14 +13,6 @@ function Filters({
   latitude,
   longitude,
 }) {
-  // Toggles Dark Mode CSS theme. See src/customHooks/useDarkMode.js
-  const [darkMode, setDarkMode] = useDarkMode("dark-mode");
-
-  const toggleDarkMode = (e) => {
-    e.preventDefault();
-    setDarkMode(!darkMode);
-  };
-
   // Set Ref for off click to close search.
   const searchRef = useRef(null);
 
@@ -165,18 +156,6 @@ function Filters({
         >
           Close
         </p>
-
-        <aside className="dark-mode-toggle">
-          <div
-            aria-label="dark mode toggle"
-            type="button"
-            role="switch"
-            aria-checked={false}
-            onClick={toggleDarkMode}
-            className={darkMode ? "toggle-switch toggled" : "toggle-switch"}
-          />
-        </aside>
-        <p className="dark-mode-text">Dark mode</p>
       </form>
     </dialog>
   );

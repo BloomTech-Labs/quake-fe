@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import CurrentPage from "./CurrentPage";
+import useDarkMode from '../../utils/customHooks/useDarkMode';
 
 // Icons
 import { ReactComponent as FeedIcon } from "../../images/icons/feed-icon.svg";
@@ -18,6 +19,13 @@ import { ReactComponent as FilterIcon } from "../../images/icons/filter.svg";
 const Navigation = () => {
   let location = useLocation();
   const [viewMore, setViewMore] = useState(false);
+  // Toggles Dark Mode CSS theme. See src/customHooks/useDarkMode.js
+  const [darkMode, setDarkMode] = useDarkMode("dark-mode");
+
+  const toggleDarkMode = (e) => {
+    e.preventDefault();
+    setDarkMode(!darkMode);
+  };
 
   return (
     <nav>
@@ -32,7 +40,7 @@ const Navigation = () => {
       </NavLink>
 
       <a
-        className="nav-link"
+        className="nav-link" target="_blank" rel="noopener noreferrer"
         href="https://earthquake.usgs.gov/earthquakes/eventpage/tellus"
       >
         <ReportIcon className="nav-icon" />
@@ -78,17 +86,17 @@ const Navigation = () => {
             <div className="quick-access">
               <h1>Quick Access</h1>
 
-              <NavLink to="/">
+              <a target="_blank" rel="noopener noreferrer" href="https://earthquake.usgs.gov/earthquakes/eventpage/tellus">
                 <ReportIcon className="nav-icon" />
                 <p>Report an Event</p>
-              </NavLink>
+              </a>
 
               <NavLink to="/">
                 <FeedIcon className="nav-icon" />
                 <p>Access News Feed</p>
               </NavLink>
 
-              <NavLink to="/">
+              <NavLink to="/report">
                 <BugIcon className="nav-icon" />
                 <p>Report a Bug</p>
               </NavLink>
@@ -98,7 +106,7 @@ const Navigation = () => {
                 <p>Frequently Asked Questions</p>
               </NavLink>
 
-              <NavLink to="/">
+              <NavLink to="/" onClick={toggleDarkMode}>
                 <ThemeIcon className="nav-icon" />
                 <p>Toggle Light/Dark Theme</p>
               </NavLink>
@@ -116,7 +124,7 @@ const Navigation = () => {
               <p>Setup Notifications</p>
             </NavLink>
 
-            <NavLink to="/">
+            <NavLink to="/resources">
               <BookIcon className="nav-icon" />
               <p>Survival Info</p>
             </NavLink>
