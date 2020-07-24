@@ -96,7 +96,7 @@ const Navigation = () => {
                 <p>Access News Feed</p>
               </NavLink>
 
-              <NavLink to="/">
+              <NavLink to="/report">
                 <BugIcon className="nav-icon" />
                 <p>Report a Bug</p>
               </NavLink>
