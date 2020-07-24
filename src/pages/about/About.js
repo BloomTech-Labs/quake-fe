@@ -42,7 +42,7 @@ const About = () => {
           </aside>
           <aside className="about-map-verticalbg">
             <img className="imgMap" src={aboutMap} alt="map of United States" />
-            <img className="vertical-accent" src={aboutVerticalImg} />
+            <img className="vertical-accent" src={aboutVerticalImg} alt="background accent blue" />
           </aside>
         </section>
       </main>

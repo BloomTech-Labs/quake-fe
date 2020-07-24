@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { updateSearchParams, quakeFetch } from "../../../redux/actions";
+import {
+  updateSearchParams,
+  quakeFetch,
+  jumpViewport,
+} from "../../../redux/actions";
 import axios from "axios";
 import GeocoderResults from "./GeocoderResults";
 import { setGps, getGps } from "../../../utils/UserLocation";
@@ -19,6 +23,7 @@ function Geocoder({
   maxmagnitude,
   latitude,
   longitude,
+  jumpViewport,
 }) {
   const [encodedSearch, setEncodedSearch] = useState(""); // Holds the URI encoded search text
 
@@ -62,26 +67,32 @@ function Geocoder({
     if (e.which === 13 || e.keyCode === 13) {
       e.preventDefault();
       if (geocodeResults.length > 1) {
+        const firstResult = geocodeResults[0];
+        const latitude = geocodeResults[0].geometry.coordinates[1];
+        const longitude = geocodeResults[0].geometry.coordinates[0];
         console.log(
           "LOGGING FEATURE COORDS: ",
-          geocodeResults[0].place_name,
-          geocodeResults[0].geometry.coordinates
+          firstResult.place_name,
+          firstResult.geometry.coordinates
         );
         updateSearchParams({
           name: "placename",
-          value: geocodeResults[0].place_name,
+          value: firstResult.place_name,
         });
 
         updateSearchParams({
           name: "latitude",
-          value: geocodeResults[0].geometry.coordinates[1],
+          value: latitude,
         });
 
         updateSearchParams({
           name: "longitude",
-          value: geocodeResults[0].geometry.coordinates[0],
+          value: longitude,
         });
-
+        jumpViewport(longitude, latitude, 5.201256526);
+        quakeFetch(
+          `&starttime=${starttime}&endtime=${endtime}&minmagnitude=${minmagnitude}&maxmagnitude=${maxmagnitude}&maxradiuskm=${maxradiuskm}&latitude=${latitude}&longitude=${longitude}`
+        );
         clearResults();
       }
     }
@@ -91,6 +102,7 @@ function Geocoder({
     await quakeFetch(
       `&starttime=${starttime}&endtime=${endtime}&minmagnitude=${minmagnitude}&maxmagnitude=${maxmagnitude}&maxradiuskm=${maxradiuskm}&latitude=${latitude}&longitude=${longitude}`
     );
+    jumpViewport(longitude, latitude, 5.201256526);
   };
 
   const reverseGeoLocation = (props) => {
@@ -104,8 +116,11 @@ function Geocoder({
           name: "placename",
           value: userLocation,
         });
-
-        console.log(res.data.features[0].place_name);
+        jumpViewport(
+          res.data.features[0].geometry.coordinates[0],
+          res.data.features[0].geometry.coordinates[1],
+          5.201256526
+        );
       })
       .catch((err) => {
         console.log("Error", err);
@@ -124,9 +139,6 @@ function Geocoder({
       reverseGeoLocation(latestCoords);
 
       if (latestCoords) {
-        console.log("latestCordsLat", latestCoords.latitude);
-        console.log("latestCordsLong", latestCoords.longitude);
-
         updateSearchParams({
           name: "latitude",
           value: latestCoords.latitude,
@@ -197,4 +209,5 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
   updateSearchParams,
   quakeFetch,
+  jumpViewport,
 })(Geocoder);

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { setViewport } from "../../../redux/actions";
 import ReactMapGL, { Marker } from "react-map-gl"; // https://github.com/visgl/react-map-gl/tree/master/docs
@@ -69,7 +69,7 @@ function MapContainer({
                   cy="7"
                   r="6.5"
                   stroke="black"
-                  stroke-opacity="0.3"
+                  strokeOpacity="0.3"
                 />
               </svg>
             </Marker>

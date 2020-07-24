@@ -23,7 +23,6 @@ export const quakeFetch = (theQuery) => (dispatch) => {
         `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100${theQuery}`
       )
       .then((res) => {
-        console.log(res.data.features);
         dispatch({ type: DISPLAY_QUAKES, quakeData: res.data.features });
       })
       .catch((err) => {
@@ -93,8 +92,8 @@ export const quakeSort = (sortBy, quakes, state = initialSearchState) => (
     let quakeDistances = quakes.map((a) => {
       // TURF POINT ORDER: longitude, latitude
       var to = turf.point([
-        a.geometry.coordinates[1],
         a.geometry.coordinates[0],
+        a.geometry.coordinates[1],
       ]);
       return { ...a, distance: turf.distance(from, to).toFixed(2) };
     });
@@ -107,8 +106,8 @@ export const quakeSort = (sortBy, quakes, state = initialSearchState) => (
     let quakeDistances = quakes.map((a) => {
       // TURF POINT ORDER: longitude, latitude
       var to = turf.point([
-        a.geometry.coordinates[1],
         a.geometry.coordinates[0],
+        a.geometry.coordinates[1],
       ]);
       return { ...a, distance: turf.distance(from, to).toFixed(2) };
     });
@@ -129,12 +128,13 @@ export const setViewport = (viewport) => (dispatch) => {
   dispatch({ type: UPDATE_VIEWPORT, viewportInfo: newVP });
 };
 
-export const jumpViewport = (long, lat) => (dispatch) => {
+export const jumpViewport = (long, lat, zoom) => (dispatch) => {
   let newVP = {
     latitude: lat,
     longitude: long,
     width: "100%",
     height: "100%",
+    zoom: zoom,
   };
 
   dispatch({ type: JUMP_VIEWPORT, jumpInfo: newVP });

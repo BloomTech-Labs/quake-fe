@@ -188,33 +188,4 @@
       cursor: pointer;
     }
   }
-
-  .dark-mode-toggle {
-    background: #fff;
-    border-radius: 50px;
-    border: 1px solid black;
-    height: 20px;
-    position: relative;
-    width: 40px;
-    margin-top: 10px;
-
-    .toggle-switch {
-      background: #d9e3e2;
-      border-radius: 50px;
-      height: 18px;
-      left: 0;
-      position: absolute;
-      transition: 0.2s;
-      width: 20px;
-
-      &.toggled {
-        left: 18px;
-      }
-    }
-  }
-  .dark-mode-text {
-    padding-top: 5px;
-    color: white;
-    font-size: 13px;
-  }
 } // end search-menu
