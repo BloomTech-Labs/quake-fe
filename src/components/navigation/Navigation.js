@@ -22,9 +22,9 @@ const Navigation = () => {
   return (
     <nav>
       <NavLink
-        exact
         className="nav-link"
         activeStyle={{ background: "#cccccc40" }}
+        exact
         to="/feed"
       >
         <FeedIcon className="nav-icon" />
@@ -32,9 +32,7 @@ const Navigation = () => {
       </NavLink>
 
       <a
-        exact
         className="nav-link"
-        activeStyle={{ background: "#cccccc40" }}
         href="https://earthquake.usgs.gov/earthquakes/eventpage/tellus"
       >
         <ReportIcon className="nav-icon" />
@@ -42,9 +40,9 @@ const Navigation = () => {
       </a>
 
       <NavLink
-        exact
         className="nav-link"
         activeStyle={{ background: "#cccccc40" }}
+        exact
         to="/"
       >
         <ActivityIcon className="nav-icon" />
