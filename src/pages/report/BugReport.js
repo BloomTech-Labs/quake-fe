@@ -6,7 +6,7 @@ const Report = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('contact_service', 'contact_form', e.target, 'user_wGMYOyOHSo1iJPLW7gddv')
+    emailjs.sendForm('report_service', 'report_form', e.target, 'user_4OG68qZLl4ZXKBq8cUxDT')
       .then((result) => {
         // console.log(result.text);
         document.getElementById('myForm').reset();
