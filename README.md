@@ -1,3 +1,5 @@
+
+
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 ![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
 ![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
@@ -20,29 +22,28 @@ You can find the deployed project [Here](https://quakelabs-fe-production.herokua
 
 ## Project Overview
 
+FaultLine is an application built in React.js that is focused on bringing the latest earthquake information from around the world, right to your fingertips. 
+
 [<img src="https://a.trellocdn.com/prgb/dist/images/pinned-tab-icon.225c8d1cf8bbf74add43.svg" width="15" alt="trello icon"/>](https://trello.com/b/QwlYrox7/labspt11-quake) [Trello Board](https://trello.com/b/QwlYrox7/labspt11-quake)
 
 [<img src="https://cdn.iconscout.com/icon/free/png-512/notion-1693557-1442598.png" width="25" alt="notion icon"/>](https://www.notion.so/Quake-FaultLine-b58b447c82104fc89e0237c95da33cc9) [Product Canvas](https://www.notion.so/Quake-FaultLine-b58b447c82104fc89e0237c95da33cc9)
 
 [<img src="https://static.figma.com/app/icon/1/favicon.png" width="15" alt="figma icon" />](https://www.figma.com/file/RF4AkqkiKCCzL8HGPTV82s/Quake) [UX Design files](https://www.figma.com/file/RF4AkqkiKCCzL8HGPTV82s/Quake)
 
-FaultLine is an earthquake application that is based on multiple data sources.
-With this app, you can get the latest earthquake info immediately from all over the world.  Also, you can search the earthquakes occurred in the past.
-
-
 ### Key Features
 
--    Get the latest earthquake info immediately from all over the world.
--    A map to visualize the information and browse geographically.
--    Snappy and fast to use, not dependent on any one API source.
--    A mobile first web app, so we are always in your pocket!
--    A mobile first web app, so we are always in your pocket!
+-    Get the latest earthquake info immediately, from all over the world
+-    Interactive map to visualize quake activity in a geographical context
+-    Extensive search filters to find the exact data you need
+-    Easy to use and built with accessability in mind
+-    Built mobile first so we are always in your pocket
 
-## Tech Stack
 
-### Front end built using:
+# Tech Stack
 
-#### React.js
+## Front end built using:
+
+### [React.js](https://reactjs.org/)
 
 🚫 Why did you choose this framework?
 
@@ -51,51 +52,63 @@ With this app, you can get the latest earthquake info immediately from all over 
 -    point three
 -    point four
 
-🚫List the rest of the front end features and libraries in the same format as the framework above.
+🚫 List the rest of the front end features and libraries in the same format as the framework above
 
-#### Front end deployed to `🚫insert service here`
+### [React Redux](https://react-redux.js.org/)
 
-#### [Back end](🚫link to back end repo here) built using:
+### [React Router](https://reactrouter.com/)
 
-#### 🚫 back end framework goes here
+### [Axios](https://github.com/axios/axios)
+
+### [Node SASS](https://github.com/sass/node-sass)
+
+### [React Map GL](https://visgl.github.io/react-map-gl/)
+
+### Front end deployed using [Heroku](https://www.heroku.com/)
+
+## [Back end](https://github.com/Lambda-School-Labs/quake-be) built using:
+
+### [Node.js](https://nodejs.org/en/about/)
 
 -    point one
 -    point two
 -    point three
 
 🚫 List the rest of the back end end features and libraries in the same format as the framework above
+### [Express](https://expressjs.com/)
+### [Knex](http://knexjs.org/)
 
-# APIs
+## APIs Used
 
-## [USGS Earthquake Catalog](https://earthquake.usgs.gov/fdsnws/event/1/)
+### [USGS Earthquake Catalog](https://earthquake.usgs.gov/fdsnws/event/1/)
 
-🚫Replace text below with a description of the API
+- The USGS Earthquake Catalog API allows for custom searches for earthquake information using a variety of parameters.
 
-Water's like me. It's laaazy ... Boy, it always looks for the easiest way to do things A little happy sunlight shining through there. Let all these little things happen. Don't fight them. Learn to use them. Even the worst thing we can do here is good.
+### [MapBox Search Service](https://docs.mapbox.com/api/search/)
 
-## [MapBox Search Service](https://docs.mapbox.com/api/search/)
+- The Mapbox web services APIs allow you to programmatically access Mapbox tools and services. You can use these APIs to retrieve information about your account, upload and change resources, use core Mapbox tools, and more.
 
-🚫Replace text below with a description of the API
+### [MapBox Maps Service](https://docs.mapbox.com/api/maps/)
 
-This is the way you take out your flustrations. Get away from those little Christmas tree things we used to make in school. Isn't it fantastic that you can change your mind and create all these happy things? Everything's not great in life, but we can still find beauty in it.
+- The Mapbox web services APIs allow you to programmatically access Mapbox tools and services. You can use these APIs to retrieve information about your account, upload and change resources, use core Mapbox tools, and more.
 
-## [MapBox Maps Service](https://docs.mapbox.com/api/maps/)
-
-🚫Replace text below with a description of the API
-
-You can do anything your heart can imagine. In life you need colors. This is where you take out all your hostilities and frustrations. It's better than kicking the puppy dog around and all that so. I'm sort of a softy, I couldn't shoot Bambi except with a camera. Trees get lonely too, so we'll give him a little friend. We'll lay all these little funky little things in there.
-
-## [Twilio SMS](https://www.twilio.com/docs/sms)
+### [Twilio SMS](https://www.twilio.com/docs/sms)
 
 🚫Replace text below with a description of the API
 
 When you do it your way you can go anywhere you choose. Let your heart take you to wherever you want to be. If I paint something, I don't want to have to explain what it is. A tree needs to be your friend if you're going to paint him. That's a son of a gun of a cloud. Even the worst thing we can do here is good.
 
-# ️Environment Variables
+## ️Environment Variables
 
 In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
 
-    *  REACT_APP_MAP_API_TOKEN - this is your MapBox API Token, which can be found in the MapBox Account card on the trello board.
+    * REACT_APP_MAP_API_TOKEN - MapBox Maps Service API Token.
+      - This is needed to enable access to MapBox's geocoding and map rendering service.
+      - This token can be found in the MapBox Account card on the trello board.
+      
+    * REACT_APP_MAP_STYLE_TOKEN - MapBox Map Style Token.
+      - This is needed to style the 2D map provided through MapBox.
+      - This token can be found in the MapBox Account card on the trello board.
 
 # ️Content Licenses
 
@@ -112,16 +125,25 @@ In order for the app to function correctly, the user must set up their own envir
 
 # Installation Instructions
 
-🚫explain how to install the required dependencies to get this project up and running with yarn and NPM
+ _DO NOT use NPM to install packages for this project.
+ If a package-lock.json file is in your local directory, delete it before pushing any code._
+
+1. Clone this repo from GitHub
+        `git clone https://github.com/Lambda-School-Labs/quake-fe.git`
+        
+2. Run yarn to begin installation of packages.
+	`yarn`
+ 
+ 3. Once packages are installed, start the development server and get coding
+	 `yarn start`
 
 ## Other Scripts
 
-🚫replace these examples with your own
-
-    * typecheck - runs the TypeScript compiler
     * build - creates a build of the application
-    * start - starts the production server after a build is created
-    * test - runs tests in **tests** directory \* eject - copy the configuration files and dependencies into the project so you have full control over them
+    * start - starts the development server
+    * test - runs tests in **tests** directory 
+    * coverage - runs all tests and gives a detailed report of test coverage
+    * eject - copy the configuration files and dependencies into the project so you have full control over them
 
 # Contributing
 
@@ -161,4 +183,4 @@ These contribution guidelines have been adapted from [this good-Contributing.md-
 
 ## Documentation
 
-See [Backend Documentation](🚫_link to your backend readme here_) for details on the backend of our project.
+See [Backend Documentation](https://github.com/Lambda-School-Labs/quake-be) for details on the backend of our project.
