@@ -15,7 +15,7 @@ export const UPDATE_SEARCH_PARAMS = "UPDATE_SEARCH_PARAMS";
 export const UPDATE_VIEWPORT = "UPDATE_VIEWPORT";
 export const JUMP_VIEWPORT = "JUMP_VIEWPORT";
 
-export const firstLoad = (theQuery, fallback, fallbackFn) => (dispatch) => {
+export const firstLoad = (theQuery, fallbackQuery, fallbackFn) => (dispatch) => {
   dispatch({ type: QUAKE_FETCH });
   setTimeout(() => {
     axios
@@ -27,7 +27,7 @@ export const firstLoad = (theQuery, fallback, fallbackFn) => (dispatch) => {
         dispatch({ type: DISPLAY_QUAKES, quakeData: res.data.features });
       })
       .catch((error) => {
-        fallbackFn(fallback);
+        fallbackFn(fallbackQuery);
       });
   }, 500);
  };
