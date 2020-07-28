@@ -28,11 +28,11 @@ function Filters({
  
  // The query parameters to be sent to USGS. Updates with state changes
  const USGSQuery = `&starttime=${starttime}&endtime=${endtime}&minmagnitude=${minmagnitude}&maxmagnitude=${maxmagnitude}&maxradiuskm=${maxradiuskm}&latitude=${latitude}&longitude=${longitude}`;
- const firstLoadQuery = "https://quakelabs-be-production.herokuapp.com/api/activity/first-load";
+ const firstLoadQuery = "https://quakelabs-be-production.herokuapp.com/api/activity/first-loa";
  
  // Initial Quake Search, runs on first load
  useEffect(() => {
-   firstLoad(firstLoadQuery);
+   firstLoad(firstLoadQuery, USGSQuery, quakeFetch);
    console.log('Filters.js > first load...');
  }, []);
 
