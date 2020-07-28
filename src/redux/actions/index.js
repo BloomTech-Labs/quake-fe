@@ -15,6 +15,37 @@ export const UPDATE_SEARCH_PARAMS = "UPDATE_SEARCH_PARAMS";
 export const UPDATE_VIEWPORT = "UPDATE_VIEWPORT";
 export const JUMP_VIEWPORT = "JUMP_VIEWPORT";
 
+export const firstLoad = (theQuery) => (dispatch) => {
+  dispatch({ type: QUAKE_FETCH });
+  setTimeout(() => {
+    axios
+      .get(
+        theQuery
+      )
+      .then((res) => {
+        console.log('res', res.data.feature);
+        dispatch({ type: DISPLAY_QUAKES, quakeData: res.data.features });
+      })
+      .catch((error) => {
+  
+        if (error.response) {
+          // Request made and server responded
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else if (error.request) {
+          // The request was made but no response was received
+          console.log("Request Error", error.request);
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          console.log("Error Fetching Earthquake Data From backend: ", error, theQuery);
+        }
+        dispatch({ type: QUAKE_FETCH_ERROR });
+      });
+  }, 500);
+ };
+ 
+
 export const quakeFetch = (theQuery) => (dispatch) => {
   dispatch({ type: QUAKE_FETCH });
   setTimeout(() => {
