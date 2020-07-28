@@ -1,36 +1,41 @@
 import React, { useEffect, useRef } from "react";
 import { connect } from "react-redux";
-import { quakeFetch, updateSearchParams } from "../../../redux/actions";
-
+import { firstLoad, quakeFetch, updateSearchParams } from "../../../redux/actions";
+import useDarkMode from "../../../utils/customHooks/useDarkMode";
+ 
 function Filters({
-  quakeFetch,
-  updateSearchParams,
-  maxradiuskm,
-  starttime,
-  endtime,
-  minmagnitude,
-  maxmagnitude,
-  latitude,
-  longitude,
+ quakeFetch,
+ firstLoad,
+ updateSearchParams,
+ maxradiuskm,
+ starttime,
+ endtime,
+ minmagnitude,
+ maxmagnitude,
+ latitude,
+ longitude,
 }) {
-  // Set Ref for off click to close search.
-  const searchRef = useRef(null);
+ // Set Ref for off click to close search.
+ const searchRef = useRef(null);
+ 
+ function onClickRef(e) {
+   const isOutside = searchRef.current.contains(e.target);
+ 
+   if (isOutside === false) {
+     toggleSearch();
+   }
+ }
+ 
+ // The query parameters to be sent to USGS. Updates with state changes
+ const USGSQuery = `&starttime=${starttime}&endtime=${endtime}&minmagnitude=${minmagnitude}&maxmagnitude=${maxmagnitude}&maxradiuskm=${maxradiuskm}&latitude=${latitude}&longitude=${longitude}`;
+ const firstLoadQuery = "https://quakelabs-be-production.herokuapp.com/api/activity/first-load";
+ 
+ // Initial Quake Search, runs on first load
+ useEffect(() => {
+   firstLoad(firstLoadQuery, USGSQuery, quakeFetch);
+   console.log('Filters.js > first load...');
+ }, []);
 
-  function onClickRef(e) {
-    const isOutside = searchRef.current.contains(e.target);
-
-    if (isOutside === false) {
-      toggleSearch();
-    }
-  }
-
-  // The query parameters to be sent to USGS. Updates with state changes
-  const USGSQuery = `&starttime=${starttime}&endtime=${endtime}&minmagnitude=${minmagnitude}&maxmagnitude=${maxmagnitude}&maxradiuskm=${maxradiuskm}&latitude=${latitude}&longitude=${longitude}`;
-
-  // Initial Quake Search, runs on first load
-  useEffect(() => {
-    quakeFetch(USGSQuery);
-  }, []);
 
   // dispatches quakeFetch actions with the query for USGS upon form submit
   const formSubmitCallback = (e) => {
@@ -174,6 +179,7 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, {
+  firstLoad,
   quakeFetch,
   updateSearchParams,
 })(Filters);
