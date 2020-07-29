@@ -2,6 +2,11 @@ import React, { useState, useEffect } from "react";
 import Sort from "./Sort";
 import List from "./List";
 
+// View Icons
+import { ReactComponent as MapViewIcon } from "../../../images/icons/map-view-icon.svg";
+import { ReactComponent as ComboViewIcon } from "../../../images/icons/combo-view-icon.svg";
+import { ReactComponent as ListViewIcon } from "../../../images/icons/list-view-icon.svg";
+
 const ResultsContainer = () => {
   const [viewType, setViewType] = useState("combo");
 
@@ -38,11 +43,11 @@ const ResultsContainer = () => {
           }}
           style={
             viewType === "map"
-              ? { background: "#cccccc40" }
+              ? { background: "#65FFAE20" }
               : { background: "transparent" }
           }
         >
-          Map View
+          <MapViewIcon className="view-button"/>
         </button>
 
         <button
@@ -51,11 +56,11 @@ const ResultsContainer = () => {
           }}
           style={
             viewType === "combo"
-              ? { background: "#cccccc40" }
+              ? { background: "#65FFAE20" }
               : { background: "transparent" }
           }
         >
-          Combo View
+           <ComboViewIcon className="view-button"/>
         </button>
 
         <button
@@ -64,11 +69,11 @@ const ResultsContainer = () => {
           }}
           style={
             viewType === "list"
-              ? { background: "#cccccc40" }
+              ? { background: "#65FFAE20" }
               : { background: "transparent" }
           }
         >
-          List View
+          <ListViewIcon className="view-button" />
         </button>
       </div>
       <Sort />

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import CurrentPage from "./CurrentPage";
-import useDarkMode from '../../utils/customHooks/useDarkMode';
+import useDarkMode from "../../utils/customHooks/useDarkMode";
 
-// Icons
+// General Icons
 import { ReactComponent as FeedIcon } from "../../images/icons/feed-icon.svg";
 import { ReactComponent as ReportIcon } from "../../images/icons/report-icon.svg";
 import { ReactComponent as ActivityIcon } from "../../images/icons/activity-icon.svg";
@@ -15,6 +15,7 @@ import { ReactComponent as ThemeIcon } from "../../images/icons/theme-icon.svg";
 import { ReactComponent as FaqIcon } from "../../images/icons/faq-icon.svg";
 import { ReactComponent as BugIcon } from "../../images/icons/bug-icon.svg";
 import { ReactComponent as FilterIcon } from "../../images/icons/filter.svg";
+import { ReactComponent as UnitIcon } from "../../images/icons/unit-toggle-icon.svg";
 
 const Navigation = () => {
   let location = useLocation();
@@ -31,7 +32,7 @@ const Navigation = () => {
     <nav>
       <NavLink
         className="nav-link"
-        activeStyle={{ background: "#cccccc40" }}
+        activeStyle={{ background: "#65FFAE20" }}
         exact
         to="/feed"
       >
@@ -40,11 +41,9 @@ const Navigation = () => {
       </NavLink>
 
       <a
-<<<<<<< HEAD
         className="nav-link"
-=======
-        className="nav-link" target="_blank" rel="noopener noreferrer"
->>>>>>> 738cbd4e01299279dd1236a2189acb7da3799435
+        target="_blank"
+        rel="noopener noreferrer"
         href="https://earthquake.usgs.gov/earthquakes/eventpage/tellus"
       >
         <ReportIcon className="nav-icon" />
@@ -53,7 +52,7 @@ const Navigation = () => {
 
       <NavLink
         className="nav-link"
-        activeStyle={{ background: "#cccccc40" }}
+        activeStyle={{ background: "#65FFAE20" }}
         exact
         to="/"
       >
@@ -67,7 +66,7 @@ const Navigation = () => {
         }}
         className="nav-link"
         style={
-          viewMore ? { background: "#cccccc40" } : { background: "transparent" }
+          viewMore ? { background: "#65FFAE20" } : { background: "transparent" }
         }
       >
         <MenuIcon className="nav-icon" />
@@ -81,44 +80,40 @@ const Navigation = () => {
         className={viewMore ? "more-links-focus" : "more-links-hidden"}
       >
         <div className="more-links-container">
-          <div className="more-links">
-            <div className="currently-open">
-              <h1>Currently Open</h1>
-
-              <CurrentPage location={location.pathname} />
-            </div>
-
-            <div className="quick-access">
-              <h1>Quick Access</h1>
-
-              <a target="_blank" rel="noopener noreferrer" href="https://earthquake.usgs.gov/earthquakes/eventpage/tellus">
-                <ReportIcon className="nav-icon" />
-                <p>Report an Event</p>
-              </a>
-
-              <NavLink to="/">
-                <FeedIcon className="nav-icon" />
-                <p>Access News Feed</p>
-              </NavLink>
-
-              <NavLink to="/report">
-                <BugIcon className="nav-icon" />
-                <p>Report a Bug</p>
-              </NavLink>
-
-              <NavLink to="/">
-                <FaqIcon className="nav-icon" />
-                <p>Frequently Asked Questions</p>
-              </NavLink>
-
-              <NavLink to="/" onClick={toggleDarkMode}>
-                <ThemeIcon className="nav-icon" />
-                <p>Toggle Light/Dark Theme</p>
-              </NavLink>
-            </div>
-          </div>
-
           <div className="big-link-container">
+            <NavLink to="/">
+              <FeedIcon className="nav-icon" />
+              <p>Access News Feed</p>
+            </NavLink>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://earthquake.usgs.gov/earthquakes/eventpage/tellus"
+            >
+              <ReportIcon className="nav-icon" />
+              <p>Report an Event</p>
+            </a>
+
+            <NavLink to="/">
+              <FaqIcon className="nav-icon" />
+              <p>Frequently Asked Questions</p>
+            </NavLink>
+
+            <NavLink to="/report">
+              <BugIcon className="nav-icon" />
+              <p>Report a Bug</p>
+            </NavLink>
+
+            <NavLink to="/" onClick={toggleDarkMode}>
+              <ThemeIcon className="nav-icon" />
+              <p>Toggle Light/Dark Theme</p>
+            </NavLink>
+
+            <NavLink to="/" onClick={toggleDarkMode}>
+              <UnitIcon className="nav-icon" />
+              <p>Toggle Kilometers/Miles</p>
+            </NavLink>
+
             <NavLink to="/about">
               <PeopleIcon className="nav-icon" />
               <p>About Us</p>
