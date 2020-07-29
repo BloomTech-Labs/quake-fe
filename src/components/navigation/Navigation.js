@@ -109,7 +109,7 @@ const Navigation = () => {
               <p>Toggle Light/Dark Theme</p>
             </NavLink>
 
-            <NavLink to="/" onClick={toggleDarkMode}>
+            <NavLink to="/" >
               <UnitIcon className="nav-icon" />
               <p>Toggle Kilometers/Miles</p>
             </NavLink>
