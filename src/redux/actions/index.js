@@ -15,7 +15,26 @@ export const UPDATE_SEARCH_PARAMS = "UPDATE_SEARCH_PARAMS";
 export const UPDATE_VIEWPORT = "UPDATE_VIEWPORT";
 export const JUMP_VIEWPORT = "JUMP_VIEWPORT";
 
+export const firstLoad = (theQuery, fallbackQuery, fallbackFn) => (dispatch) => {
+  dispatch({ type: QUAKE_FETCH });
+  setTimeout(() => {
+    axios
+      .get(
+        theQuery
+      )
+      .then((res) => {
+        console.log('res', res.data.feature);
+        dispatch({ type: DISPLAY_QUAKES, quakeData: res.data.features });
+      })
+      .catch((error) => {
+        fallbackFn(fallbackQuery);
+      });
+  }, 500);
+ };
+ 
+
 export const quakeFetch = (theQuery) => (dispatch) => {
+  console.log('in QuakeFetch', theQuery);
   dispatch({ type: QUAKE_FETCH });
   setTimeout(() => {
     axios
