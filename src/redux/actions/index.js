@@ -1,3 +1,4 @@
+/* eslint-disable no-eval */
 import axios from "axios";
 import * as turf from "@turf/turf";
 import { initialSearchState } from "../reducers/searchReducer";
@@ -14,6 +15,18 @@ export const UPDATE_SEARCH_PARAMS = "UPDATE_SEARCH_PARAMS";
 // mapReducer Actions
 export const UPDATE_VIEWPORT = "UPDATE_VIEWPORT";
 export const JUMP_VIEWPORT = "JUMP_VIEWPORT";
+
+let sortedQuakes,
+  sortInfo = [
+  {by:'ascending magnitude', sort:'a.properties.mag - b.properties.mag'},
+  {by:'descending magnitude', sort:'b.properties.mag - a.properties.mag'},
+  {by:'newest', sort:'b.properties.time - a.properties.time'},
+  {by:'oldest', sort:'a.properties.time - b.properties.time'},
+  {by:'closest depth', sort:'a.geometry.coordinates[2] - b.geometry.coordinates[2]'},
+  {by:'furthest depth', sort:'b.geometry.coordinates[2] - a.geometry.coordinates[2]'},
+  {by:'closest distance', sort:'a.distance - b.distance'},
+  {by:'furthest distance', sort:'b.distance - a.distance'}
+]
 
 export const firstLoad = (theQuery, fallbackQuery, fallbackFn) => (dispatch) => {
   dispatch({ type: QUAKE_FETCH });
@@ -64,77 +77,24 @@ export const quakeSort = (sortBy, quakes, state = initialSearchState) => (
   // TURF POINT ORDER: longitude, latitude
   var from = turf.point([myLocation.longitude, myLocation.latitude]);
 
-  if (sortBy === "ascending magnitude") {
-    const sortedQuakes = quakes.sort(
-      (a, b) => a.properties.mag - b.properties.mag
-    );
-
-    dispatch({ type: SORT_QUAKES, quakeData: [] });
-    dispatch({ type: SORT_QUAKES, quakeData: sortedQuakes });
-  } else if (sortBy === "descending magnitude") {
-    const sortedQuakes = quakes.sort(
-      (a, b) => b.properties.mag - a.properties.mag
-    );
-
-    dispatch({ type: SORT_QUAKES, quakeData: [] });
-    dispatch({ type: SORT_QUAKES, quakeData: sortedQuakes });
-  } else if (sortBy === "newest") {
-    const sortedQuakes = quakes.sort(
-      (a, b) => b.properties.time - a.properties.time
-    );
-
-    dispatch({ type: SORT_QUAKES, quakeData: [] });
-    dispatch({ type: SORT_QUAKES, quakeData: sortedQuakes });
-  } else if (sortBy === "oldest") {
-    const sortedQuakes = quakes.sort(
-      (a, b) => a.properties.time - b.properties.time
-    );
-
-    dispatch({ type: SORT_QUAKES, quakeData: [] });
-    dispatch({ type: SORT_QUAKES, quakeData: sortedQuakes });
-  } else if (sortBy === "closest depth") {
-    const sortedQuakes = quakes.sort(
-      (a, b) => a.geometry.coordinates[2] - b.geometry.coordinates[2]
-    );
-
-    dispatch({ type: SORT_QUAKES, quakeData: [] });
-    dispatch({ type: SORT_QUAKES, quakeData: sortedQuakes });
-  } else if (sortBy === "furthest depth") {
-    const sortedQuakes = quakes.sort(
-      (a, b) => b.geometry.coordinates[2] - a.geometry.coordinates[2]
-    );
-
-    dispatch({ type: SORT_QUAKES, quakeData: [] });
-    dispatch({ type: SORT_QUAKES, quakeData: sortedQuakes });
-  } else if (sortBy === "closest distance") {
-    // add distance from quake to user location into list of quakes
-    let quakeDistances = quakes.map((a) => {
-      // TURF POINT ORDER: longitude, latitude
-      var to = turf.point([
-        a.geometry.coordinates[0],
-        a.geometry.coordinates[1],
-      ]);
-      return { ...a, distance: turf.distance(from, to).toFixed(2) };
-    });
-    let sortedQuakes = quakeDistances.sort((a, b) => a.distance - b.distance);
-
-    dispatch({ type: SORT_QUAKES, quakeData: [] });
-    dispatch({ type: SORT_QUAKES, quakeData: sortedQuakes });
-  } else if (sortBy === "furthest distance") {
-    // add distance from quake to user location into list of quakes
-    let quakeDistances = quakes.map((a) => {
-      // TURF POINT ORDER: longitude, latitude
-      var to = turf.point([
-        a.geometry.coordinates[0],
-        a.geometry.coordinates[1],
-      ]);
-      return { ...a, distance: turf.distance(from, to).toFixed(2) };
-    });
-    let sortedQuakes = quakeDistances.sort((a, b) => b.distance - a.distance);
-
-    dispatch({ type: SORT_QUAKES, quakeData: [] });
-    dispatch({ type: SORT_QUAKES, quakeData: sortedQuakes });
+  for (let i = 0; i < sortInfo.length; i++) {
+    if (sortBy === sortInfo[i].by) {
+      if (sortInfo[i].by === 'closest distance' || sortInfo[i].by === 'furthest distance') {
+        // add distance from quake to user's location into list of quakes
+        let quakeDistances = quakes.map((a) => {
+        // TURF POINT ORDER: longitude, latitude
+        var to = turf.point([
+          a.geometry.coordinates[0],
+          a.geometry.coordinates[1],
+        ]);
+        return { ...a, distance: turf.distance(from, to).toFixed(2) };
+      });
+      sortedQuakes = quakeDistances.sort((a,b) => eval(sortInfo[i].sort))
+      } else {sortedQuakes = quakes.sort((a,b) => eval(sortInfo[i].sort))}
+    } 
   }
+  dispatch({ type: SORT_QUAKES, quakeData: [] });
+  dispatch({ type: SORT_QUAKES, quakeData: sortedQuakes });
 };
 
 export const setViewport = (viewport) => (dispatch) => {
