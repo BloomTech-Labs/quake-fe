@@ -43,6 +43,14 @@ function Filters({
     quakeFetch(USGSQuery);
   };
 
+  // quick filters
+  const quickFilters = (e) => {
+    e.preventDefault();
+    console.log('request coming?', e.target.name)
+    firstLoad(e.target.name, USGSQuery, quakeFetch);
+    toggleSearch();
+  }
+
   // Updates the search state dynamically for each input due to shared key names
   const handleChanges = (e) => {
     e.preventDefault();
@@ -69,28 +77,27 @@ function Filters({
         <div id="quick-filters-flex" className="quick-filters-flex">
         
           <button
-          type="submit"
-          onClick={toggleSearch}
+          onClick={quickFilters}
           className="quick-filters-button"
+          name='https://quakelabs-be-production.herokuapp.com/api/activity/alltime-biggest'
         >
           All Time Biggest
         </button>
         <button
-          type="submit"
-          onClick={toggleSearch}
+          onClick={quickFilters}
           className="quick-filters-button"
+          name='https://quakelabs-be-production.herokuapp.com/api/nukes/boom'
         >
           Caused by Nukes
         </button>
         <button
-          type="submit"
-          onClick={toggleSearch}
+          onClick={quickFilters}
           className="quick-filters-button"
+          name='https://quakelabs-be-production.herokuapp.com/api/tsunami/splash'
         >
           Caused a Tsunami
         </button>
         <button
-          type="submit"
           onClick={toggleSearch}
           className="quick-filters-button"
         >
