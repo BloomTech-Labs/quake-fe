@@ -8,6 +8,8 @@ function MapContainer({
   quakes,
   latitude,
   longitude,
+  queryLatitude,
+  queryLongitude,
   transition,
   zoom,
   width,
@@ -29,10 +31,24 @@ function MapContainer({
           setViewport(viewport); // it will adjust the values stored in state refreshing the map
         }}
       >
+        <Marker latitude={queryLatitude} longitude={queryLongitude}>
+          <svg
+            className="map-marker"
+            width="24"
+            height="29"
+            viewBox="0 0 24 29"
+            fill="none"
+            stroke="#00000022"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="7" cy="7" r="7" fill="#00000050" />
+            <circle cx="7" cy="7" r="6.5" stroke="black" strokeOpacity="0.3" />
+          </svg>
+        </Marker>
         {quakes.map((quake, index) => {
           let roundedMag = Math.round(quake.properties.mag * 10) / 10;
           return (
-            <Marker // Make this a marker that expands to a context menu
+            <Marker
               key={index}
               latitude={quake.geometry.coordinates[1]}
               longitude={quake.geometry.coordinates[0]}
@@ -85,6 +101,8 @@ const mapPropsToState = (state) => {
     quakes: state.quakeReducer.quakes,
     latitude: state.mapReducer.latitude,
     longitude: state.mapReducer.longitude,
+    queryLatitude: state.searchReducer.latitude,
+    queryLongitude: state.searchReducer.longitude,
     transition: state.mapReducer.transition,
     zoom: state.mapReducer.zoom,
     width: state.mapReducer.width,

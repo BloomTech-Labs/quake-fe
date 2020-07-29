@@ -26,8 +26,8 @@ export const initialSearchState = {
   minmagnitude: 3,
   maxmagnitude: 10,
   maxradiuskm: 5000,
-  latitude: 37.78197,
-  longitude: -121.93992,
+  latitude: 0,
+  longitude: 0,
   placename: "",
 };
 
