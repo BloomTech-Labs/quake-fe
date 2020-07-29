@@ -64,7 +64,40 @@ function Filters({
   return (
     <dialog id="search-menu" onClick={onClickRef} className="search-menu">
       <form ref={searchRef} onSubmit={formSubmitCallback} name="filters-form">
+        <fieldset id="quick-filters" className="quick-filters">
         <fieldset id="advanced-filters" className="advanced-filters">
+          <legend>Quick Filters</legend>
+          <button
+          type="submit"
+          onClick={toggleSearch}
+          className="quick-filters-button"
+        >
+          All Time Biggest
+        </button>
+        <button
+          type="submit"
+          onClick={toggleSearch}
+          className="quick-filters-button"
+        >
+          Caused by Nukes
+        </button>
+        <button
+          type="submit"
+          onClick={toggleSearch}
+          className="quick-filters-button"
+        >
+          Caused a Tsunami
+        </button>
+        <button
+          type="submit"
+          onClick={toggleSearch}
+          className="quick-filters-button"
+        >
+          Near me
+        </button>
+
+        </fieldset>
+
           <legend>Advanced Filters</legend>
 
           <fieldset className="radius-field">
