@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import useLocalStorage from "../../../utils/customHooks/useLocalStorage";
 import { connect } from "react-redux";
 import { setViewport } from "../../../redux/actions";
+import useDarkMode from "../../../utils/customHooks/useDarkMode";
 import ReactMapGL, { Marker } from "react-map-gl"; // https://github.com/visgl/react-map-gl/tree/master/docs
 
 function MapContainer({
@@ -33,16 +35,18 @@ function MapContainer({
       >
         <Marker latitude={queryLatitude} longitude={queryLongitude}>
           <svg
-            className="map-marker"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
             width="24"
             height="29"
-            viewBox="0 0 24 29"
-            fill="none"
-            stroke="#00000022"
-            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
           >
-            <circle cx="7" cy="7" r="7" fill="#00000050" />
-            <circle cx="7" cy="7" r="6.5" stroke="black" strokeOpacity="0.3" />
+            <path
+              d="M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7z"
+              fill="#308257"
+            />
           </svg>
         </Marker>
         {quakes.map((quake, index) => {
