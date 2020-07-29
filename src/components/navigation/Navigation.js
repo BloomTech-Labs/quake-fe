@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
-import CurrentPage from "./CurrentPage";
+import { NavLink} from "react-router-dom";
 import useDarkMode from "../../utils/customHooks/useDarkMode";
 
 // General Icons
@@ -18,7 +17,6 @@ import { ReactComponent as FilterIcon } from "../../images/icons/filter.svg";
 import { ReactComponent as UnitIcon } from "../../images/icons/unit-toggle-icon.svg";
 
 const Navigation = () => {
-  let location = useLocation();
   const [viewMore, setViewMore] = useState(false);
   // Toggles Dark Mode CSS theme. See src/customHooks/useDarkMode.js
   const [darkMode, setDarkMode] = useDarkMode("dark-mode");
@@ -109,7 +107,7 @@ const Navigation = () => {
               <p>Toggle Light/Dark Theme</p>
             </NavLink>
 
-            <NavLink to="/" onClick={toggleDarkMode}>
+            <NavLink to="/" >
               <UnitIcon className="nav-icon" />
               <p>Toggle Kilometers/Miles</p>
             </NavLink>

@@ -11,10 +11,54 @@ exports[`Filters.js Tests Filters.js Snapshot Filters.js renders with mocked sta
     onSubmit={[Function]}
   >
     <fieldset
+      className="quick-filters"
+      id="quick-filters"
+    >
+      <legend
+        id="quick-filters-label"
+      >
+        Quick Filters
+      </legend>
+      <div
+        className="quick-filters-flex"
+        id="quick-filters-flex"
+      >
+        <button
+          className="quick-filters-button"
+          name="https://quakelabs-be-production.herokuapp.com/api/activity/alltime-biggest"
+          onClick={[Function]}
+        >
+          All Time Biggest
+        </button>
+        <button
+          className="quick-filters-button"
+          name="https://quakelabs-be-production.herokuapp.com/api/nukes/boom"
+          onClick={[Function]}
+        >
+          Caused by Nukes
+        </button>
+        <button
+          className="quick-filters-button"
+          name="https://quakelabs-be-production.herokuapp.com/api/tsunami/splash"
+          onClick={[Function]}
+        >
+          Caused a Tsunami
+        </button>
+        <button
+          className="quick-filters-button"
+          onClick={[Function]}
+        >
+          Near me
+        </button>
+      </div>
+    </fieldset>
+    <fieldset
       className="advanced-filters"
       id="advanced-filters"
     >
-      <legend>
+      <legend
+        id="advanced-filters-label"
+      >
         Advanced Filters
       </legend>
       <fieldset
@@ -123,23 +167,6 @@ exports[`Filters.js Tests Filters.js Snapshot Filters.js renders with mocked sta
       type="button"
     >
       Close
-    </p>
-    <aside
-      className="dark-mode-toggle"
-    >
-      <div
-        aria-checked={false}
-        aria-label="dark mode toggle"
-        className="toggle-switch"
-        onClick={[Function]}
-        role="switch"
-        type="button"
-      />
-    </aside>
-    <p
-      className="dark-mode-text"
-    >
-      Dark mode
     </p>
   </form>
 </dialog>

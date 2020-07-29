@@ -18,8 +18,8 @@ import { ReactComponent as WalkerHoldOn } from "../../images/graphics/walker-hol
 import { ReactComponent as WheelchairBrake } from "../../images/graphics/wheelchair-brake.svg";
 import { ReactComponent as WheelchairCover } from "../../images/graphics/wheelchair-cover.svg";
 import { ReactComponent as WheelchairHoldOn } from "../../images/graphics/wheelchair-holdon.svg";
-import { ReactComponent as Outdoors } from "../../images/graphics/outdoors.svg";
-import { ReactComponent as InVehicle } from "../../images/graphics/invehicle.svg";
+import { ReactComponent as Outdoor } from "../../images/graphics/outdoors.svg";
+import { ReactComponent as Vehicle } from "../../images/graphics/vehicle.svg";
 import { ReactComponent as EKit } from "../../images/graphics/e-kit.svg";
 import { ReactComponent as STEPLogo } from "../../images/graphics/STEP-logo.svg";
 
@@ -41,8 +41,8 @@ export {
   WheelchairBrake,
   WheelchairCover,
   WheelchairHoldOn,
-  Outdoors,
-  InVehicle,
+  Outdoor,
+  Vehicle,
   EKit,
   BulletPlus,
   BulletSolid,
