@@ -1,8 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import { firstLoad, quakeFetch, updateSearchParams } from "../../../redux/actions";
-import useDarkMode from "../../../utils/customHooks/useDarkMode";
-
  
 function Filters({
  quakeFetch,
