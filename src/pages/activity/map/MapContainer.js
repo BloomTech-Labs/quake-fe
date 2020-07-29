@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import useLocalStorage from "../../../utils/customHooks/useLocalStorage";
 import { connect } from "react-redux";
 import { setViewport } from "../../../redux/actions";
+import useDarkMode from "../../../utils/customHooks/useDarkMode";
 import ReactMapGL, { Marker } from "react-map-gl"; // https://github.com/visgl/react-map-gl/tree/master/docs
 
 function MapContainer({
@@ -8,6 +10,8 @@ function MapContainer({
   quakes,
   latitude,
   longitude,
+  queryLatitude,
+  queryLongitude,
   transition,
   zoom,
   width,
@@ -29,10 +33,26 @@ function MapContainer({
           setViewport(viewport); // it will adjust the values stored in state refreshing the map
         }}
       >
+        <Marker latitude={queryLatitude} longitude={queryLongitude}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
+            width="24"
+            height="29"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7z"
+              fill="#308257"
+            />
+          </svg>
+        </Marker>
         {quakes.map((quake, index) => {
           let roundedMag = Math.round(quake.properties.mag * 10) / 10;
           return (
-            <Marker // Make this a marker that expands to a context menu
+            <Marker
               key={index}
               latitude={quake.geometry.coordinates[1]}
               longitude={quake.geometry.coordinates[0]}
@@ -85,6 +105,8 @@ const mapPropsToState = (state) => {
     quakes: state.quakeReducer.quakes,
     latitude: state.mapReducer.latitude,
     longitude: state.mapReducer.longitude,
+    queryLatitude: state.searchReducer.latitude,
+    queryLongitude: state.searchReducer.longitude,
     transition: state.mapReducer.transition,
     zoom: state.mapReducer.zoom,
     width: state.mapReducer.width,

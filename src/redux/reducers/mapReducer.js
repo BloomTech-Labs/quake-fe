@@ -1,10 +1,10 @@
 import { UPDATE_VIEWPORT, JUMP_VIEWPORT } from "../actions/index.js";
 
 export const initialMapState = {
-  latitude: 37.78197,
-  longitude: -121.93992,
+  latitude: 0,
+  longitude: 0,
   transition: 0,
-  zoom: 4,
+  zoom: 0,
   width: "100%",
   height: "100%",
 };
