@@ -65,8 +65,9 @@ function Filters({
     <dialog id="search-menu" onClick={onClickRef} className="search-menu">
       <form ref={searchRef} onSubmit={formSubmitCallback} name="filters-form">
         <fieldset id="quick-filters" className="quick-filters">
-        <fieldset id="advanced-filters" className="advanced-filters">
-          <legend>Quick Filters</legend>
+        <legend id='quick-filters-label'>Quick Filters</legend>
+        <div id="quick-filters-flex" className="quick-filters-flex">
+        
           <button
           type="submit"
           onClick={toggleSearch}
@@ -96,10 +97,13 @@ function Filters({
           Near me
         </button>
 
+        </div>
         </fieldset>
 
-          <legend>Advanced Filters</legend>
+          <fieldset id="advanced-filters" className="advanced-filters">
+          <legend id='advanced-filters-label'>Advanced Filters</legend>
 
+          
           <fieldset className="radius-field">
             <legend>Search Radius:</legend>
 

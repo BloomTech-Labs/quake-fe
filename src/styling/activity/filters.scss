@@ -168,18 +168,6 @@
       }
     }
 
-    .quick-filters-button {
-      background: #247249;
-      color: #fffffa;
-      font-size: 1.6em;
-      width: 150px;
-      border: none;
-      padding: 7px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-
     .search-submit-button {
       background: #247249;
       color: #fffffa;
@@ -200,4 +188,36 @@
       cursor: pointer;
     }
   }
+  .quick-filters-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    flex-wrap: wrap;
+  
+  }
+
+  #quick-filters-label {
+    margin-bottom: 0;
+    text-decoration: underline;
+  }
+
+  #advanced-filters-label {
+    text-decoration: underline;
+  }
+  
+  .quick-filters-button {
+    background: #247249;
+    color: #fffffa;
+    font-size: 1.2em;
+    width: 49%;
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 7px;
+  }
 } // end search-menu
+
