@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import { firstLoad, quakeFetch, updateSearchParams } from "../../../redux/actions";
 import useDarkMode from "../../../utils/customHooks/useDarkMode";
+
  
 function Filters({
  quakeFetch,
@@ -43,6 +44,14 @@ function Filters({
     quakeFetch(USGSQuery);
   };
 
+  // quick filters
+  const quickFilters = (e) => {
+    e.preventDefault();
+    console.log('request coming?', e.target.name)
+    firstLoad(e.target.name, USGSQuery, quakeFetch);
+    toggleSearch();
+  }
+
   // Updates the search state dynamically for each input due to shared key names
   const handleChanges = (e) => {
     e.preventDefault();
@@ -64,9 +73,45 @@ function Filters({
   return (
     <dialog id="search-menu" onClick={onClickRef} className="search-menu">
       <form ref={searchRef} onSubmit={formSubmitCallback} name="filters-form">
-        <fieldset id="advanced-filters" className="advanced-filters">
-          <legend>Advanced Filters</legend>
+        <fieldset id="quick-filters" className="quick-filters">
+        <legend id='quick-filters-label'>Quick Filters</legend>
+        <div id="quick-filters-flex" className="quick-filters-flex">
+        
+          <button
+          onClick={quickFilters}
+          className="quick-filters-button"
+          name='https://quakelabs-be-production.herokuapp.com/api/activity/alltime-biggest'
+        >
+          All Time Biggest
+        </button>
+        <button
+          onClick={quickFilters}
+          className="quick-filters-button"
+          name='https://quakelabs-be-production.herokuapp.com/api/nukes/boom'
+        >
+          Caused by Nukes
+        </button>
+        <button
+          onClick={quickFilters}
+          className="quick-filters-button"
+          name='https://quakelabs-be-production.herokuapp.com/api/tsunami/splash'
+        >
+          Caused a Tsunami
+        </button>
+        <button
+          onClick={toggleSearch}
+          className="quick-filters-button"
+        >
+          Near me
+        </button>
 
+        </div>
+        </fieldset>
+
+          <fieldset id="advanced-filters" className="advanced-filters">
+          <legend id='advanced-filters-label'>Advanced Filters</legend>
+
+          
           <fieldset className="radius-field">
             <legend>Search Radius:</legend>
 
