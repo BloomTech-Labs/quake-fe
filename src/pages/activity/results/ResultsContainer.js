@@ -1,11 +1,14 @@
+/* eslint-disable no-eval */
 import React, { useState, useEffect } from "react";
 import Sort from "./Sort";
 import List from "./List";
+import ViewType from './viewType'
 
-// View Icons
-import { ReactComponent as MapViewIcon } from "../../../images/icons/map-view-icon.svg";
-import { ReactComponent as ComboViewIcon } from "../../../images/icons/combo-view-icon.svg";
-import { ReactComponent as ListViewIcon } from "../../../images/icons/list-view-icon.svg";
+const view = [
+  {view: 'map', cheight: 'inherit', ctransform: 'translateY(calc(100% - 30px))', mheight: 'calc(100% - 30px)'},
+  {view: 'combo', cheight: 'calc(65% - 45px)', ctransform: 'translateY(0)', mheight: 'calc(35% + 45px)'},
+  {view: 'list', cheight: 'calc(100% - 45px)', ctransform: 'translateY(0)', mheight: '45px'},
+]
 
 const ResultsContainer = () => {
   const [viewType, setViewType] = useState("combo");
@@ -14,68 +17,18 @@ const ResultsContainer = () => {
     const container = document.getElementById("results-container");
     const map = document.getElementById("map-container");
 
-    if (viewType === "map") {
-      container.style.transform = "translateY(calc(100% - 30px))";
-      map.style.height = "calc(100% - 30px)";
-    }
-    if (viewType === "combo") {
-      container.style.height = "calc(65% - 45px)";
-      container.style.transform = "translateY(0)";
-      map.style.height = "calc(35% + 45px)";
-    }
-    if (viewType === "list") {
-      container.style.height = "calc(100% - 45px)";
-      container.style.transform = "translateY(0)";
-      map.style.height = "45px";
+    for (let i=0; i<view.length; i++) {
+      if(viewType === view[i].view) {
+        container.style.height = view[i].cheight;
+        container.style.transform = view[i].ctransform;
+        map.style.height = view[i].mheight;
+      }
     }
   }, [viewType]);
 
-  // function setViewType(viewType) {
-
-  // }
-
   return (
     <div id="results-container" className="results-container no-scroll">
-      <div className="results-toggle">
-        <button
-          onClick={() => {
-            setViewType("map");
-          }}
-          style={
-            viewType === "map"
-              ? { background: "#65FFAE20" }
-              : { background: "transparent" }
-          }
-        >
-          <MapViewIcon className="view-button"/>
-        </button>
-
-        <button
-          onClick={() => {
-            setViewType("combo");
-          }}
-          style={
-            viewType === "combo"
-              ? { background: "#65FFAE20" }
-              : { background: "transparent" }
-          }
-        >
-           <ComboViewIcon className="view-button"/>
-        </button>
-
-        <button
-          onClick={() => {
-            setViewType("list");
-          }}
-          style={
-            viewType === "list"
-              ? { background: "#65FFAE20" }
-              : { background: "transparent" }
-          }
-        >
-          <ListViewIcon className="view-button" />
-        </button>
-      </div>
+      <ViewType viewType={viewType} setViewType={setViewType}/>
       <Sort />
       <div className="earthquake-list-container scroll">
         <List />
