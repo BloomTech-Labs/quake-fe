@@ -79,23 +79,6 @@ const Navigation = () => {
       >
         <div className="more-links-container">
           <div className="big-link-container">
-            <NavLink to="/">
-              <FeedIcon className="nav-icon" />
-              <p>Access News Feed</p>
-            </NavLink>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://earthquake.usgs.gov/earthquakes/eventpage/tellus"
-            >
-              <ReportIcon className="nav-icon" />
-              <p>Report an Event</p>
-            </a>
-
-            <NavLink to="/">
-              <FaqIcon className="nav-icon" />
-              <p>Frequently Asked Questions</p>
-            </NavLink>
 
             <NavLink to="/report">
               <BugIcon className="nav-icon" />
@@ -125,11 +108,6 @@ const Navigation = () => {
             <NavLink to="/resources">
               <BookIcon className="nav-icon" />
               <p>Survival Info</p>
-            </NavLink>
-
-            <NavLink to="/">
-              <FilterIcon className="nav-icon" />
-              <p>Filter Results</p>
             </NavLink>
           </div>
         </div>
