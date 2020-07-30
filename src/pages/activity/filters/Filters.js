@@ -96,12 +96,6 @@ function Filters({
         >
           Caused a Tsunami
         </button>
-        <button
-          onClick={toggleSearch}
-          className="quick-filters-button"
-        >
-          Near me
-        </button>
 
         </div>
         </fieldset>
