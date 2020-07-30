@@ -1,6 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import { firstLoad, quakeFetch, updateSearchParams } from "../../../redux/actions";
+import QuickFilters from './quickFilters'
+import RadiusFilter from './radiusFilter'
+import DateFilter from "./dateFilter";
+import MagFilter from "./magFilter";
  
 function Filters({
  quakeFetch,
@@ -71,133 +75,22 @@ function Filters({
   return (
     <dialog id="search-menu" onClick={onClickRef} className="search-menu">
       <form ref={searchRef} onSubmit={formSubmitCallback} name="filters-form">
-        <fieldset id="quick-filters" className="quick-filters">
-        <legend id='quick-filters-label'>Quick Filters</legend>
-        <div id="quick-filters-flex" className="quick-filters-flex">
-        
-          <button
-          onClick={quickFilters}
-          className="quick-filters-button"
-          name='https://quakelabs-be-production.herokuapp.com/api/activity/alltime-biggest'
-        >
-          All Time Biggest
-        </button>
-        <button
-          onClick={quickFilters}
-          className="quick-filters-button"
-          name='https://quakelabs-be-production.herokuapp.com/api/nukes/boom'
-        >
-          Caused by Nukes
-        </button>
-        <button
-          onClick={quickFilters}
-          className="quick-filters-button"
-          name='https://quakelabs-be-production.herokuapp.com/api/tsunami/splash'
-        >
-          Caused a Tsunami
-        </button>
-
-        </div>
-        </fieldset>
-
-          <fieldset id="advanced-filters" className="advanced-filters">
+        <QuickFilters quickFilters={quickFilters}/>
+        <fieldset id="advanced-filters" className="advanced-filters">
           <legend id='advanced-filters-label'>Advanced Filters</legend>
-
-          
-          <fieldset className="radius-field">
-            <legend>Search Radius:</legend>
-
-            <label htmlFor="kilometers">
-              Kilometers
-              <input
-                id="kilometers"
-                type="number"
-                name="maxradiuskm"
-                onChange={handleChanges}
-                value={maxradiuskm}
-                min="1"
-                max="20001.6"
-                step="0.1"
-                data-testid="input-km"
-              />
-            </label>
-          </fieldset>
-
-          <fieldset className="date-field">
-            <legend>Date Range:</legend>
-
-            <label htmlFor="start-date">
-              Start
-              <input
-                id="start-date"
-                type="date"
-                name="starttime"
-                onChange={handleChanges}
-                value={starttime}
-              />
-            </label>
-
-            <label htmlFor="end-date">
-              End
-              <input
-                id="end-date"
-                type="date"
-                name="endtime"
-                onChange={handleChanges}
-                value={endtime}
-              />
-            </label>
-          </fieldset>
-
-          <fieldset className="mag-field">
-            <legend>Magnitude Range:</legend>
-
-            <label htmlFor="start-magnitude">
-              Start
-              <input
-                id="start-magnitude"
-                type="number"
-                name="minmagnitude"
-                min="0"
-                max="10"
-                step="0.1"
-                onChange={handleChanges}
-                value={minmagnitude}
-              />
-            </label>
-
-            <label htmlFor="end-magnitude">
-              End
-              <input
-                id="end-magnitude"
-                type="number"
-                name="maxmagnitude"
-                min="0"
-                max="10"
-                step="0.1"
-                onChange={handleChanges}
-                value={maxmagnitude}
-              />
-            </label>
-          </fieldset>
+          <RadiusFilter handleChanges={handleChanges} maxradiuskm={maxradiuskm}/>
+          <DateFilter handleChanges={handleChanges} starttime={starttime} endtime={endtime}/>
+          <MagFilter handleChanges={handleChanges} minmagnitude={minmagnitude} maxmagnitude={maxmagnitude}/>
         </fieldset>
 
-        <button
-          type="submit"
-          onClick={toggleSearch}
-          className="search-submit-button"
-        >
+        <button type="submit" onClick={toggleSearch} className="search-submit-button">
           Search For Activity
         </button>
 
-        <p
-          type="button"
-          role="button"
-          className="close-sort"
-          onClick={toggleSearch}
-        >
+        <p type="button" role="button" className="close-sort" onClick={toggleSearch}>
           Close
         </p>
+        
       </form>
     </dialog>
   );
