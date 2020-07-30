@@ -9,28 +9,28 @@ const About = () => {
           <h1>We are FaultLine</h1>
           <aside className="about-team-img" />
           <section className="about-team-links">
-            <a href={"/"} className="ej">
+            <a href={"https://github.com/l8nightswithJS"} className="ej">
               Eddie
             </a>
-            <a href={"/"} className="ls">
+            <a href={"https://www.linkedin.com/"} className="ls">
               Laura
             </a>
-            <a href={"/"} className="kd">
+            <a href={"https://github.com/diehlkj"} className="kd">
               Ken
             </a>
-            <a href={"/"} className="jb">
+            <a href={"https://github.com/jjbreig5909"} className="jb">
               Jeff
             </a>
-            <a href={"/"} className="pj">
+            <a href={"https://github.com/petedram"} className="pj">
               Pete
             </a>
-            <a href={"/"} className="ch">
+            <a href={"https://github.com/cesarhj19"} className="ch">
               Cesar
             </a>
-            <a href={"/"} className="jg">
+            <a href={"https://www.linkedin.com/"} className="jg">
               Jeremy
             </a>
-            <a href={"/"} className="nw">
+            <a href={"https://github.com/Nicci498"} className="nw">
               Nicole
             </a>
           </section>

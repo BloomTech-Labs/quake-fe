@@ -42,6 +42,9 @@
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-between;
+      a {
+        color: #247249;
+      }
     }
   }
   .about-map-container {
@@ -69,18 +72,18 @@
     .about-map-verticalbg {
       position: relative;
       .imgMap {
-        position: relative;  
+        position: relative;
         width: 95%;
         height: 34vmax;
         z-index: 1;
       }
       .vertical-accent {
-          position: absolute;
-          width: 20%;
-          height: 32vmax;
-          bottom: 25%;
-          right: 80%;
-          z-index: 0;
+        position: absolute;
+        width: 20%;
+        height: 32vmax;
+        bottom: 25%;
+        right: 80%;
+        z-index: 0;
       }
     }
   }
