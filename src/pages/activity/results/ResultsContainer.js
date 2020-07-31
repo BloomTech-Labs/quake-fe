@@ -38,6 +38,7 @@ const ResultsContainer = () => {
     <div id="results-container" className="results-container no-scroll">
       <div className="results-toggle">
         <button
+          aria-label={"map view"}
           onClick={() => {
             setViewType("map");
           }}
@@ -47,10 +48,11 @@ const ResultsContainer = () => {
               : { background: "transparent" }
           }
         >
-          <MapViewIcon className="view-button"/>
+          <MapViewIcon className="view-button" />
         </button>
 
         <button
+          aria-label={"map and list view"}
           onClick={() => {
             setViewType("combo");
           }}
@@ -60,10 +62,11 @@ const ResultsContainer = () => {
               : { background: "transparent" }
           }
         >
-           <ComboViewIcon className="view-button"/>
+          <ComboViewIcon className="view-button" />
         </button>
 
         <button
+          aria-label={"list view"}
           onClick={() => {
             setViewType("list");
           }}
