@@ -44,12 +44,6 @@ exports[`Filters.js Tests Filters.js Snapshot Filters.js renders with mocked sta
         >
           Caused a Tsunami
         </button>
-        <button
-          className="quick-filters-button"
-          onClick={[Function]}
-        >
-          Near me
-        </button>
       </div>
     </fieldset>
     <fieldset
