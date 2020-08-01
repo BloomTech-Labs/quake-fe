@@ -13,30 +13,34 @@ const About = () => {
           <h1 className="header-about">We are FaultLine</h1>
           <aside className="about-team-img" />
           <section className="about-team-links">
-            <a href={"https://github.com/Nicci498"} className="nw">
-              Nicole
-            </a>
-            <a href={"https://github.com/l8nightswithJS"} className="ej">
-              Eddie
-            </a>
-            <a href={"https://github.com/petedram"} className="pj">
-              Pete
-            </a>
-            <a href={"https://www.linkedin.com/"} className="jg">
-              Jeremy
-            </a>
-            <a href={"https://github.com/jjbreig5909"} className="jb">
-              Jeff
-            </a>
-            <a href={"https://www.linkedin.com/"} className="ls">
-              Laura
-            </a>
-            <a href={"https://github.com/cesarhj19"} className="ch">
-              Cesar
-            </a>
-            <a href={"https://github.com/diehlkj"} className="kd">
-              Ken
-            </a>
+            <aside className="links-row-one">
+              <a href={"https://github.com/petedram"} className="pj">
+                Pete
+              </a>
+              <a href={"https://github.com/jjbreig5909"} className="jb">
+                Jeff
+              </a>
+              <a href={"https://github.com/cesarhj19"} className="ch">
+                Cesar
+              </a>
+            </aside>
+            <aside className="links-row-two">
+              <a href={"https://github.com/Nicci498"} className="nw">
+                Nicole
+              </a>
+              <a href={"https://github.com/l8nightswithJS"} className="ej">
+                Eddie
+              </a>
+              <a href={"https://www.linkedin.com/"} className="jg">
+                Jeremy
+              </a>
+              <a href={"https://www.linkedin.com/"} className="ls">
+                Laura
+              </a>
+              <a href={"https://github.com/diehlkj"} className="kd">
+                Ken
+              </a>
+            </aside>
           </section>
         </section>
 
@@ -74,7 +78,11 @@ const About = () => {
         <section className="between-us-container">
           <h1 className="header-about">Between Us We Have:</h1>
           <aside className="dogs-cats-container">
-            <img className="imgDog" src={girlDog} alt="girl standing next to small dog" />
+            <img
+              className="imgDog"
+              src={girlDog}
+              alt="girl standing next to small dog"
+            />
             <h1 className="header-about">3 Dogs</h1>
           </aside>
           <aside className="kids-container">
@@ -82,10 +90,17 @@ const About = () => {
             <img src={fatherKid} alt="girl standing next to small dog" />
           </aside>
           <aside className="dogs-cats-container">
-            <img className="imgCat" src={girlCat} alt="girl sitting cross legged next to pink cat" />
+            <img
+              className="imgCat"
+              src={girlCat}
+              alt="girl sitting cross legged next to pink cat"
+            />
             <h1 className="header-about">8 Cats</h1>
           </aside>
-          <p>We are passionate about our product and we hope that you love it too!</p>
+          <p>
+            We are passionate about our product and we hope that you love it
+            too!
+          </p>
         </section>
       </main>
     </div>

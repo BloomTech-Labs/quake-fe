@@ -41,14 +41,35 @@
     }
 
     .about-team-links {
-      margin-top: 2vmin;
+      width: 100%;
+      margin: 2vmin 0 2vmin 0;
       padding-left: 1vmax;
-      font-size: 3.2vmin;
       display: flex;
-      flex-flow: row nowrap;
+      flex-flow: column nowrap;
       justify-content: space-between;
       a {
         color: black;
+        font-weight: 600;
+        line-height: 100%;
+        font-size: 3.2vmin;
+      }
+      .links-row-one{
+        margin: auto;
+        position: relative;
+        width: 44vmin;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        left: 8vmin;
+        
+      }
+      .links-row-two {
+        margin-top: 1.2vmin;
+        position: relative;
+        width: 82vmin;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
       }
     }
   }
