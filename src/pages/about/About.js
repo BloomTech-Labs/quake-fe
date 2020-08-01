@@ -2,12 +2,15 @@ import React from "react";
 import colorfulMap from "../../images/graphics/map-color.svg";
 import mapAccent from "../../images/graphics/map-accent.png";
 import pieChart from "../../images/graphics/pie-chart-about.svg";
+import girlDog from "../../images/graphics/girl-dog-about.svg";
+import girlCat from "../../images/graphics/gitl-cat-about.svg";
+import fatherKid from "../../images/graphics/father-daughter-about.svg";
 const About = () => {
   return (
     <div className="main-container no-scroll">
       <main className="about-main">
         <section className="about-links-info-container">
-          <h1>We are FaultLine</h1>
+          <h1 className="header-about">We are FaultLine</h1>
           <aside className="about-team-img" />
           <section className="about-team-links">
             <a href={"https://github.com/Nicci498"} className="nw">
@@ -38,7 +41,7 @@ const About = () => {
         </section>
 
         <section className="map-states-container">
-          <h1>We live in 4 different states</h1>
+          <h1 className="header-about">We live in 4 different states</h1>
           <img
             className="colorful-map"
             src={colorfulMap}
@@ -52,7 +55,7 @@ const About = () => {
         </section>
 
         <section className="pie-chart-section-container">
-          <h1>Our Jobs Are:</h1>
+          <h1 className="header-about">Our Jobs Are:</h1>
           <aside className="bullets-pie-chart-container">
             <img
               className="pie-chart"
@@ -61,12 +64,28 @@ const About = () => {
             />
             <aside className="list-container">
               <ul>
-                <li  className="orange-bullet">5 Developers</li>
-                <li className="pink-bullet" >2 Designers</li>
+                <li className="orange-bullet">5 Developers</li>
+                <li className="pink-bullet">2 Designers</li>
                 <li className="turquoise-bullet">1 Team Leader</li>
               </ul>
             </aside>
           </aside>
+        </section>
+        <section className="between-us-container">
+          <h1 className="header-about">Between Us We Have:</h1>
+          <aside className="dogs-cats-container">
+            <img className="imgDog" src={girlDog} alt="girl standing next to small dog" />
+            <h1 className="header-about">3 Dogs</h1>
+          </aside>
+          <aside className="kids-container">
+            <h1 className="header-about">6 Kids</h1>
+            <img src={fatherKid} alt="girl standing next to small dog" />
+          </aside>
+          <aside className="dogs-cats-container">
+            <img className="imgCat" src={girlCat} alt="girl sitting cross legged next to pink cat" />
+            <h1 className="header-about">8 Cats</h1>
+          </aside>
+          <p>We are passionate about our product and we hope that you love it too!</p>
         </section>
       </main>
     </div>
