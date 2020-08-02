@@ -14,9 +14,16 @@
   max-height: 100vh;
   display: flex;
   flex-flow: column nowrap;
-  
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 
+  .header-about {
+    font-family: Catamaran;
+    line-height: 100%;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 6.1vmin;
+  }
   .about-links-info-container {
     margin-top: 8vmin;
     max-width: 100%;
@@ -25,10 +32,6 @@
 
     h1 {
       margin-bottom: 6vmin;
-      font-family: Catamaran;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 5.5vmin;
     }
 
     .about-team-img {
@@ -38,14 +41,35 @@
     }
 
     .about-team-links {
-      margin-top: 2vmin;
+      width: 100%;
+      margin: 2vmin 0 2vmin 0;
       padding-left: 1vmax;
-      font-size: 3.2vmin;
       display: flex;
-      flex-flow: row nowrap;
+      flex-flow: column nowrap;
       justify-content: space-between;
       a {
         color: black;
+        font-weight: 600;
+        line-height: 100%;
+        font-size: 3.2vmin;
+      }
+      .links-row-one{
+        margin: auto;
+        position: relative;
+        width: 44vmin;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        left: 8vmin;
+        
+      }
+      .links-row-two {
+        margin-top: 1.2vmin;
+        position: relative;
+        width: 82vmin;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
       }
     }
   }
@@ -57,14 +81,9 @@
     display: flex;
     flex-flow: column nowrap;
     h1 {
-      font-family: Catamaran;
       position: relative;
       top: 2vmin;
       width: 92%;
-      line-height: 100%;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 5.5vmin;
     }
     .colorful-map {
       z-index: 1;
@@ -86,9 +105,6 @@
       width: 62%;
       line-height: 100%;
       margin-bottom: 1vmin;
-      font-family: Catamaran;
-      font-weight: 400;
-      font-size: 5.5vmin;
     }
     .bullets-pie-chart-container {
       margin: auto;
@@ -96,7 +112,7 @@
       height: 50vmin;
       display: flex;
       flex-flow: row nowrap;
-      margin-bottom: 40vmin;
+      margin-bottom: 12vmin;
       .pie-chart {
         width: 48%;
         margin: auto;
@@ -115,7 +131,6 @@
             font-size: 3.2vmin;
             font-weight: 400;
             margin-bottom: 2vmin;
-            
           }
           .orange-bullet {
             list-style: disc inside url("../images/icons/orange-bullet.svg");
@@ -128,6 +143,60 @@
           }
         }
       }
+    }
+  }
+  .between-us-container {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    margin-bottom: 30vmin;
+    h1 {
+      margin-bottom: 6vmin;
+    }
+    .dogs-cats-container {
+      display: flex;
+      flex-flow: row nowrap;
+      width: 100%;
+      margin-left: 4vmin;
+
+      h1 {
+        margin: auto;
+        width: 48vmin;
+      }
+      .imgDog {
+        width: 36vmin;
+        margin: 0;
+      }
+      .imgCat {
+        width: 36vmin;
+        margin: 0;
+      }
+    }
+    .kids-container {
+      display: flex;
+      flex-flow: row nowrap;
+      width: 100%;
+
+      h1 {
+        margin: auto;
+        width: 76vmin;
+        position: relative;
+        left: 45vmin;
+      }
+
+      img {
+        width: 24vmin;
+        margin: 0;
+      }
+    }
+    p {
+      font-family: Catamaran;
+      font-style: normal;
+      margin-top: 12vmin;
+      font-size: 7.2vmin;
+      width: 96%;
+      line-height: 11vmin;
+      font-weight: 600;
     }
   }
 }
