@@ -16,6 +16,11 @@ export const UPDATE_SEARCH_PARAMS = "UPDATE_SEARCH_PARAMS";
 export const UPDATE_VIEWPORT = "UPDATE_VIEWPORT";
 export const JUMP_VIEWPORT = "JUMP_VIEWPORT";
 
+// newsReducer Actions
+export const NEWS_FETCH = "NEWS_FETCH"
+export const NEWS_FETCH_ERROR = "NEWS_FETCH_ERROR"
+export const DISPLAY_NEWS = "DISPLAY_NEWS"
+
 let sortedQuakes,
   sortInfo = [
   {by:'ascending magnitude', sort:'a.properties.mag - b.properties.mag'},
@@ -117,4 +122,24 @@ export const jumpViewport = (long, lat, zoom) => (dispatch) => {
   };
 
   dispatch({ type: JUMP_VIEWPORT, jumpInfo: newVP });
+};
+
+// ***NEWSFEED ACTIONS*** //
+
+export const newsLoad = (newsAPI) => (dispatch) => {
+  dispatch({ type: NEWS_FETCH });
+  setTimeout(() => {
+    axios
+      .get(
+        newsAPI
+      )
+      .then((res) => {
+        console.log("news data", res.data.articles)
+        dispatch({ type: DISPLAY_NEWS, newsData: res.data.articles });
+      })
+      .catch((err) => {
+        console.log("Error Fetching News Data", err);
+        dispatch({ type: NEWS_FETCH_ERROR });
+      });
+  }, 500);
 };
