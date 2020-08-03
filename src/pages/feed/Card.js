@@ -1,9 +1,11 @@
 import React from "react";
 
-const Card = () => {
+const Card = (newsArticle) => {
+    console.log("inside card", newsArticle)
+    console.log("title of article -> ", newsArticle.newsArticle.title);
   return (
     <div className="main-container no-scroll">
-      <p>WIP...Card</p>
+      <h1>{newsArticle.newsArticle.title}</h1>
     </div>
   );
 };

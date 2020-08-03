@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import { connect } from "react-redux";
 import { newsLoad } from "../../redux/actions/index.js";
+import Card from "./Card";
 
 
 const Feed = ({ news, newsFetch, newsFetchError, newsLoad }) => {
@@ -10,16 +11,38 @@ const Feed = ({ news, newsFetch, newsFetchError, newsLoad }) => {
     console.log('News Loading...', news);
   }, []);
 
-  return (
-    <div className="main-container no-scroll">
-      <p>WIP...Feed</p>
-      <div>{news.map(article=>{
+  if (newsFetchError === false){
+    if (newsFetch===false){
+      if (news.length === 0) {
+        return(
+        <div data-testid="empty-quakes" className="alt-result">
+          <h1>Aww SHOCKS!</h1>
+          <p>Looks like there aren't any quakes here.</p>
+          <p>Why not adjust your filters or try a new location?</p>
+        </div>
+        );
+      } else {
         return (
-          <p>{article.title}</p>
-        )})}</div>
-    </div>
-  );
-};
+          <>
+          {news.map((article, index)=>{
+            return <Card newsArticle={article} key={index}/>
+            })}
+          </>
+        );
+      }
+     } else {
+        return (
+          <h1>Searching for news...</h1>
+        )
+      }
+    } else {
+      return (
+        <div data-testid="news-error">
+          There was a problem getting your news...
+        </div>
+      );
+    }
+  };
 
 const mapPropsToState = (state) => {
   return {
