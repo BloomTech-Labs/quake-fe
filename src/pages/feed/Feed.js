@@ -23,11 +23,11 @@ const Feed = ({ news, newsFetch, newsFetchError, newsLoad }) => {
         );
       } else {
         return (
-          <>
+          <div className="main-container scroll">
           {news.map((article, index)=>{
             return <Card newsArticle={article} key={index}/>
             })}
-          </>
+          </div>
         );
       }
      } else {
