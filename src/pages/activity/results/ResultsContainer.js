@@ -37,7 +37,7 @@ const ResultsContainer = () => {
   return (
     <div id="results-container" className="results-container no-scroll">
       <div className="results-toggle">
-        <button
+        <button aria-label='show map view'
           onClick={() => {
             setViewType("map");
           }}
@@ -50,7 +50,7 @@ const ResultsContainer = () => {
           <MapViewIcon className="view-button"/>
         </button>
 
-        <button
+        <button aria-label='show combo view'
           onClick={() => {
             setViewType("combo");
           }}
@@ -63,7 +63,7 @@ const ResultsContainer = () => {
            <ComboViewIcon className="view-button"/>
         </button>
 
-        <button
+        <button aria-label='show list view'
           onClick={() => {
             setViewType("list");
           }}
