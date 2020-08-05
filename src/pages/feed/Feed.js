@@ -5,7 +5,9 @@ import Card from "./Card";
 
 
 const Feed = ({ news, newsFetch, newsFetchError, newsLoad }) => {
-  const newsQuery = "http://newsapi.org/v2/everything?q=earthquake&sortBy=date&apiKey=32de8d4b1faf4bdfaa2acb02e60f7041"
+  const newsTopic = "earthquake";
+  const newsTopics = ["earthquake", "seismic activity", "volcano", "tsunami", "aftershock", "quake", "tremor"]
+  const newsQuery = `https://gnews.io/api/v3/search?q=${newsTopic}&token=50f1b1f1bf8c59542ab5becdbdb890b0`
   useEffect(() => {
     newsLoad(newsQuery);
     console.log('News Loading...', news);
@@ -17,8 +19,7 @@ const Feed = ({ news, newsFetch, newsFetchError, newsLoad }) => {
         return(
         <div data-testid="empty-quakes" className="alt-result">
           <h1>Aww SHOCKS!</h1>
-          <p>Looks like there aren't any quakes here.</p>
-          <p>Why not adjust your filters or try a new location?</p>
+          <p>Looks like there aren't any news stories here.</p>
         </div>
         );
       } else {

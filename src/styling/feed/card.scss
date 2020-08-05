@@ -14,6 +14,12 @@
     
 }
 
+.news-article-info{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .news-article-title{
     font-family: $font-body;
     font-size: 1.8em;

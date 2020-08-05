@@ -143,3 +143,4 @@ export const newsLoad = (newsAPI) => (dispatch) => {
       });
   }, 500);
 };
+
