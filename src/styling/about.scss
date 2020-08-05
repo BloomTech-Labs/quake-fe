@@ -3,85 +3,200 @@
 .spacer {
   width: 100vw;
   height: 1.5vh;
-  margin-bottom: 5%;
   background: #d9e3e2;
   /* inner shadow */
   box-shadow: inset 0px 2px 2px rgba(36, 114, 73, 0.24);
 }
 
 .about-main {
-  margin: 2vmax;
+  margin: 0 2vmax 0 2vmax;
   max-width: 100vw;
-  height: 100vh;
+  max-height: 100vh;
   display: flex;
   flex-flow: column nowrap;
-  color: #247249;
+  overflow-y: scroll;
+  overflow-x: hidden;
 
-  h1 {
+  .header-about {
     font-family: Catamaran;
+    line-height: 100%;
     font-style: normal;
     font-weight: 600;
-    font-size: 5.5vmin;
+    font-size: 6.1vmin;
   }
-
-  .about-links-container {
+  .about-links-info-container {
+    margin-top: 8vmin;
     max-width: 100%;
     display: flex;
     flex-flow: column nowrap;
 
+    h1 {
+      margin-bottom: 6vmin;
+    }
+
     .about-team-img {
-      margin-bottom: 1%;
-      height: 30vmin;
+      height: 32vmin;
       background-size: cover;
-      background-image: url("../images/graphics/about-us-main.png");
+      background-image: url("../images/graphics/team.svg");
     }
 
     .about-team-links {
+      width: 100%;
+      margin: 2vmin 0 2vmin 0;
       padding-left: 1vmax;
-      font-size: 3.8vmin;
       display: flex;
-      flex-flow: row nowrap;
+      flex-flow: column nowrap;
       justify-content: space-between;
+      a {
+        color: black;
+        font-weight: 600;
+        line-height: 100%;
+        font-size: 3.2vmin;
+      }
+      .links-row-one{
+        margin: auto;
+        position: relative;
+        width: 44vmin;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        left: 8vmin;
+        
+      }
+      .links-row-two {
+        margin-top: 1.2vmin;
+        position: relative;
+        width: 82vmin;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+      }
     }
   }
-  .about-map-container {
-    max-width: 100%;
-    margin-top: 10vmin;
+  .map-states-container {
+    margin-top: 12vmin;
+    margin-bottom: 6vmin;
+    width: 100%;
+    height: 78vmin;
+    display: flex;
+    flex-flow: column nowrap;
+    h1 {
+      position: relative;
+      top: 2vmin;
+      width: 92%;
+    }
+    .colorful-map {
+      z-index: 1;
+      width: 100%;
+      height: 68vmin;
+    }
+    .map-accent {
+      width: 100%;
+      position: relative;
+      bottom: 26vmin;
+    }
+  }
+  .pie-chart-section-container {
+    width: 100%;
     display: flex;
     flex-flow: column nowrap;
 
-    .about-horizontalbg {
-      position: relative;
-      height: 19vmin;
-      background-image: url("../images/graphics/about-us-horizontal.png");
-      background-size: cover;
-      h1 {
-        position: relative;
-        top: 70%;
-        left: 3%;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 5.5vmin;
-        z-index: 1;
+    h1 {
+      width: 62%;
+      line-height: 100%;
+      margin-bottom: 1vmin;
+    }
+    .bullets-pie-chart-container {
+      margin: auto;
+      width: 98%;
+      height: 50vmin;
+      display: flex;
+      flex-flow: row nowrap;
+      margin-bottom: 12vmin;
+      .pie-chart {
+        width: 48%;
+        margin: auto;
+      }
+      .list-container {
+        width: 48%;
+        margin: auto;
+        ul {
+          position: relative;
+          width: 100%;
+          top: 45%;
+          left: 15%;
+          margin: 0;
+          padding: 0;
+          li {
+            font-size: 3.2vmin;
+            font-weight: 400;
+            margin-bottom: 2vmin;
+          }
+          .orange-bullet {
+            list-style: disc inside url("../images/icons/orange-bullet.svg");
+          }
+          .pink-bullet {
+            list-style: disc inside url("../images/icons/pink-bullet.svg");
+          }
+          .turquoise-bullet {
+            list-style: disc inside url("../images/icons/turquoise-bullet.svg");
+          }
+        }
       }
     }
+  }
+  .between-us-container {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    margin-bottom: 30vmin;
+    h1 {
+      margin-bottom: 6vmin;
+    }
+    .dogs-cats-container {
+      display: flex;
+      flex-flow: row nowrap;
+      width: 100%;
+      margin-left: 4vmin;
 
-    .about-map-verticalbg {
-      position: relative;
-      .imgMap {
-        position: relative;  
-        width: 95%;
-        height: 34vmax;
-        z-index: 1;
+      h1 {
+        margin: auto;
+        width: 48vmin;
       }
-      .vertical-accent {
-          position: absolute;
-          width: 20%;
-          height: 32vmax;
-          bottom: 25%;
-          right: 80%;
-          z-index: 0;
+      .imgDog {
+        width: 36vmin;
+        margin: 0;
       }
+      .imgCat {
+        width: 36vmin;
+        margin: 0;
+      }
+    }
+    .kids-container {
+      display: flex;
+      flex-flow: row nowrap;
+      width: 100%;
+
+      h1 {
+        margin: auto;
+        width: 76vmin;
+        position: relative;
+        left: 45vmin;
+      }
+
+      img {
+        width: 24vmin;
+        margin: 0;
+      }
+    }
+    p {
+      font-family: Catamaran;
+      font-style: normal;
+      margin-top: 12vmin;
+      font-size: 7.2vmin;
+      width: 96%;
+      line-height: 11vmin;
+      font-weight: 600;
     }
   }
 }
