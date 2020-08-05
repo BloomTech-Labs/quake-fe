@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { setViewport } from "../../../redux/actions";
 import ReactMapGL, { Marker } from "react-map-gl"; // https://github.com/visgl/react-map-gl/tree/master/docs
@@ -15,6 +15,13 @@ function MapContainer({
   width,
   height,
 }) {
+  // Adds rel noopener/referrer to mapbox links to fix security vulnerability, on timeout to prevent parent of undefined
+  setTimeout(() => {
+    let parent = document.querySelectorAll('.mapboxgl-ctrl-attrib-inner a')
+    parent[0].setAttribute('rel', 'noopener noreferrer')
+    parent[1].setAttribute('rel', 'noopener noreferrer')
+  }, 2000)
+  
   return (
     <div className="map-container" id="map-container">
       <ReactMapGL
