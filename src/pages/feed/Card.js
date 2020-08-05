@@ -7,7 +7,7 @@ const Card = (newsArticle) => {
         <div className="news-article-info">
           <h2 className="news-article-title">{newsArticle.newsArticle.title}</h2>
           <div className="news-article-bottom-info">
-            <h3 className="news-article-topic"></h3>
+            <h3 className="news-article-topic">Test</h3>
             <time className="news-article-date">{newsArticle.newsArticle.publishedAt}</time>
           </div>
         </div>

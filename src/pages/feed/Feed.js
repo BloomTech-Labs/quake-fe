@@ -10,7 +10,11 @@ const Feed = ({ news, newsFetch, newsFetchError, newsLoad }) => {
   const newsQuery = `https://gnews.io/api/v3/search?q=${newsTopic}&token=50f1b1f1bf8c59542ab5becdbdb890b0`
   useEffect(() => {
     newsLoad(newsQuery);
+    const newNews={...news,
+      news, 
+    newsTopic1: newsTopic}
     console.log('News Loading...', news);
+    console.log("NEW NEWS", newNews);
   }, []);
 
   if (newsFetchError === false){
