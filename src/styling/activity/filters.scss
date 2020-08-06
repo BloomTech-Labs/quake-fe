@@ -1,15 +1,18 @@
 .search-menu {
   display: none;
   position: fixed;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background: #00000040;
-  border-radius: 5px;
+  width: 100%;
+
+  height: calc(100% - 100px); // 100px is nav bar height + header height
+  bottom: 65px;
+  
   z-index: 1000;
   font-family: "Catamaran";
-  border: none;
 
+  justify-content: center;
+  align-items: center;
+
+  background: #00000040;
   @supports (
     (-webkit-backdrop-filter: blur(4px)) or (backdrop-filter: blur(4px))
   ) {
@@ -17,11 +20,7 @@
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
   }
-  & > div {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-  }
+  
   form {
     display: flex;
     flex-direction: column;
@@ -29,9 +28,7 @@
     position: relative;
     width: 90vw;
     border-radius: 5px;
-    margin: 0 auto;
-    top: 50%;
-    transform: translateY(-50%);
+    margin: 0;
     background: #3b3b3b;
     padding: 20px;
 
