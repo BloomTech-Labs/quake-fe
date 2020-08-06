@@ -52,10 +52,10 @@ nav {
 }
 .more-links-focus {
   width: 100%;
-  height: calc(100vh - 55px); // 55px is nav bar height
+  height: calc(100% - 100px); // 100px is nav bar height + header height
 
-  position: absolute;
-  bottom: 55px;
+  position: fixed;
+  bottom: 65px;
   left: 0;
 
   background: #00000040;
@@ -79,7 +79,7 @@ nav {
     background: $logo-primary;
 
     border-radius: 5px;
-    border: 3px solid orange;
+    // border: 3px solid orange;
 
     .big-link-container {
       display: flex;
@@ -90,7 +90,7 @@ nav {
       // border: 3px solid pink;
       height: 100%;
 
-      border: 3px solid red;
+      // border: 3px solid red;
 
       a {
         display: flex;
