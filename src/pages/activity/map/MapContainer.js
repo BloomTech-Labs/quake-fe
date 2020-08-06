@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { setViewport } from "../../../redux/actions";
 import ReactMapGL, { Marker } from "react-map-gl"; // https://github.com/visgl/react-map-gl/tree/master/docs
@@ -15,13 +15,6 @@ function MapContainer({
   width,
   height,
 }) {
-  // Adds rel noopener/referrer to mapbox links to fix security vulnerability, on timeout to prevent parent of undefined
-  setTimeout(() => {
-    let parent = document.querySelectorAll('.mapboxgl-ctrl-attrib-inner a')
-    parent[0].setAttribute('rel', 'noopener noreferrer')
-    parent[1].setAttribute('rel', 'noopener noreferrer')
-  }, 2000)
-  
   return (
     <div className="map-container" id="map-container">
       <ReactMapGL
@@ -31,8 +24,8 @@ function MapContainer({
         width={width}
         height={height}
         transitionDuration={transition}
-        mapboxApiAccessToken="pk.eyJ1IjoiZmF1bHRsaW5lIiwiYSI6ImNrYXhjcTk5MzAyNXYycXQ5NzdzMG42djMifQ.ST8FK56qDQY8yWVzjnSMFA" // API access token from mapbox account
-        mapStyle="mapbox://styles/faultline/ckb9ryd7y10k01io62qh243cn" // style from mapbox studio
+        mapboxApiAccessToken={process.env.REACT_APP_MAP_API_TOKEN} // API access token from mapbox account
+        mapStyle={process.env.REACT_APP_MAP_STYLE_TOKEN} // style from mapbox studio
         onViewportChange={(viewport) => {
           // When a user interacts with the viewport of the map window,
           setViewport(viewport); // it will adjust the values stored in state refreshing the map
