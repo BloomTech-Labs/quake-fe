@@ -6,9 +6,9 @@ import { ReactComponent as ComboViewIcon } from "../../../images/icons/combo-vie
 import { ReactComponent as ListViewIcon } from "../../../images/icons/list-view-icon.svg";
 
 const view = [
-  {view: 'map', Icon: MapViewIcon},
-  {view: 'combo', Icon: ComboViewIcon},
-  {view: 'list', Icon: ListViewIcon},
+  {view: 'map', Icon: MapViewIcon, aria: 'show map view'},
+  {view: 'combo', Icon: ComboViewIcon, aria: 'show combo view'},
+  {view: 'list', Icon: ListViewIcon, aria: 'show list view'},
 ];
 const viewStyle = {styleTrue: '#65FFAE20', styleFalse: 'transparent'}
 
@@ -17,7 +17,7 @@ const ViewType = ({viewType, setViewType}) => {
     <div className="results-toggle">
       {view.map((view, index) => {
         return (
-          <button key={index} onClick={() => setViewType(view.view)} 
+          <button aria-label={view.aria} key={index} onClick={() => setViewType(view.view)} 
             style={viewType === view.view
               ? { background: viewStyle.styleTrue }
               : { background: viewStyle.styleFalse }}>
