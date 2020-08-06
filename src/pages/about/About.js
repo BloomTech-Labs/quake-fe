@@ -7,7 +7,7 @@ import girlCat from "../../images/graphics/gitl-cat-about.svg";
 import fatherKid from "../../images/graphics/father-daughter-about.svg";
 const About = () => {
   return (
-    <div className="main-container no-scroll">
+    <div className="main-container scroll">
       <main className="about-main">
         <section className="about-links-info-container">
           <h1 className="header-about">We are FaultLine</h1>
