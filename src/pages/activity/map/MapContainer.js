@@ -24,8 +24,8 @@ function MapContainer({
         width={width}
         height={height}
         transitionDuration={transition}
-        mapboxApiAccessToken={process.env.REACT_APP_MAP_API_TOKEN} // API access token from mapbox account
-        mapStyle={process.env.REACT_APP_MAP_STYLE_TOKEN} // style from mapbox studio
+        mapboxApiAccessToken="pk.eyJ1IjoiZmF1bHRsaW5lIiwiYSI6ImNrYXhjcTk5MzAyNXYycXQ5NzdzMG42djMifQ.ST8FK56qDQY8yWVzjnSMFA" // API access token from mapbox account
+        mapStyle="mapbox://styles/faultline/ckb9ryd7y10k01io62qh243cn" // style from mapbox studio
         onViewportChange={(viewport) => {
           // When a user interacts with the viewport of the map window,
           setViewport(viewport); // it will adjust the values stored in state refreshing the map
