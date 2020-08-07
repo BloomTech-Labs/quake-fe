@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 const axios = require('axios');
 
 const Sms = () => {
@@ -33,6 +33,16 @@ const Sms = () => {
         console.log('object', smsInfo);
       };
 
+    const [rangeval, setRangeval] = useState(50);
+
+    useEffect(() => {
+      
+      }, [rangeval]);
+
+    const handleChangeSlider = e => {
+        setRangeval(e.target.value)
+    } 
+
   return (
       
     <section id='sms-main' className='main-container no-scroll'>
@@ -48,11 +58,17 @@ const Sms = () => {
                 <label className='label'>Address or ZIP Code</label>
                 {/* reuse search bar with current location? Auto populate if value already in main screen?*/}
                 <input name='coords' className='text' type='text' placeholder='[-75.343, 39.984]' onChange={changeHandler} value={smsInfo.coords} />
+                {/* show on map? with radius indicator */}
             </div>
             <div className='Distance col'>
                 <label className='label'>Slide to choose a notification radius</label>
-                {/* Consider a slider which shows km and miles at same time */}
-                <input name='distance' className='text' placeholder='10' required onChange={changeHandler} value={smsInfo.distance} />
+               
+               <div className='slide-container'>
+                <input className='slider' type="range" min='1' max='100' value={rangeval} onChange={handleChangeSlider} />
+               </div>
+               
+               <h4>The range value is {rangeval}</h4>
+
             </div>
             <div className='btn-container'>
                 <button className='btn' type='submit'>Send Verification to my Phone</button>
