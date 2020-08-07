@@ -1,0 +1,82 @@
+#sms-main {
+  font-family: Catamaran;
+  font-style: normal;
+  font-weight: 500;
+  color: #252525;
+
+  .container {
+    width: 85%;
+    margin: 0 auto;
+
+    .title {
+      font-size: 28px;
+      line-height: 46px;
+      color: #247249;
+      margin-top: 10px;
+
+      .icon {
+        margin-right: 13px;
+      }
+    }
+    .sub-text {
+      font-size: 14px;
+      line-height: 23px;
+      margin-top: 5px;
+    }
+    #myForm {
+      .col {
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0;
+
+        .label {
+          font-size: 18px;
+          line-height: 30px;
+        }
+        .text {
+          max-width: 100%;
+          height: 30px;
+          background: #EFEFEF;
+          border-radius: 2.57931px;
+          border: none;
+          padding: 10px;
+        }
+        
+        ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+          color: #247248;
+          opacity: 1; /* Firefox */
+        }
+        
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+          color: #247248;
+        }
+        
+        ::-ms-input-placeholder { /* Microsoft Edge */
+          color: #247248;
+        }
+      }
+      .btn-container {
+        max-width: 340px;
+        margin: 0 auto;
+        margin-top: 60px;
+
+        .btn {
+          width: 100%;
+          height: 48px;
+          font-size: 22px;
+          color: #247249;
+          background: #EFF3EF;
+          border-radius: 2.57931px;
+          border: none;
+        }
+      }
+      
+    } // end myForm
+  } // end contianer
+} // end bug-report
+
+.dark-mode {
+  #bug-report {
+    color: white;
+  }
+}
