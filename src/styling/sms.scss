@@ -13,10 +13,6 @@
       line-height: 46px;
       color: #247249;
       margin-top: 10px;
-
-      .icon {
-        margin-right: 13px;
-      }
     }
     .sub-text {
       font-size: 14px;
@@ -108,12 +104,16 @@
         background: #4CAF50;
         cursor: pointer;
       }
+
+      #distance-label {
+        text-align: center;
+      }
     } // end myForm
   } // end contianer
 } // end sms
 
 .dark-mode {
-  #bug-report {
+  #sms-main {
     color: white;
   }
 }

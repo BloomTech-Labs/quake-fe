@@ -1,18 +1,13 @@
 import React, { useState, useCallback, useEffect } from 'react';
+import GeoCoder from '../activity/search/SearchBar';
 const axios = require('axios');
 
 const Sms = () => {
 
     const twilioPost = e => {
-        // alert(`Phone: ${smsInfo.cell}, Co-ords: ${smsInfo.coords}, Distance: ${smsInfo.distance}`)
-        const accountSid = 'AC11ebda6573e6d3940c8354f6b330d7c2';
-        const authToken = '3b7654bfb0a96fc246b075d26b3ad8b2';
-        const client = require('twilio')(accountSid, authToken);
-    
-        client.chat.services('IS92d9d14c9f694c3ea4ca4bf46cad0684')
-        .channels
-        .create({identity: '+123'})
-        .then(channel => console.log(channel.sid));
+      e.preventDefault();
+      alert('feature coming soon')
+      console.log(`Sms > submit ${smsInfo.cell} ${smsInfo.coords} ${smsInfo.distance}`)
     };
 
     const [smsInfo, setSmsInfo] = useState({
@@ -41,9 +36,17 @@ const Sms = () => {
       }, [rangeval]);
 
     const handleChangeSlider = e => {
+        console.log('value', e.target.value)
+        let value = e.target.value;
         setRangeval(e.target.value);
         setRangevalMiles((e.target.value / 1.609344).toFixed(1));
-    }
+        
+        
+        setSmsInfo({
+          ...smsInfo,
+          [e.target.name]: value
+        });
+      }
 
   return (
       
@@ -59,18 +62,19 @@ const Sms = () => {
             <div className='Coords col'>
                 <label className='label'>Address or ZIP Code</label>
                 {/* reuse search bar with current location? Auto populate if value already in main screen?*/}
-                <input name='coords' className='text' type='text' placeholder='[-75.343, 39.984]' onChange={changeHandler} value={smsInfo.coords} />
+                <input name='coords' className='text' type='text' onChange={changeHandler} value={smsInfo.coords} />
                 {/* show on map? with radius indicator */}
+                {/* <GeoCoder /> */}
             </div>
             <div className='Distance col'>
                 <label className='label'>Slide to choose a notification radius</label>
                
                <div className='slide-container'>
-                <input className='slider' type="range" min='1' max='100' value={rangeval} onChange={handleChangeSlider} />
+                <input name='distance' className='slider' type="range" min='1' max='100' value={rangeval} onChange={handleChangeSlider} />
                </div>
 
-               
-               <h4>Selected radius: {rangeval} Kilometers / {rangevalMiles} Miles</h4>
+               <br />
+               <h4 id='distance-label'>{rangeval} Kilometers / {rangevalMiles} Miles</h4>
 
             </div>
             <div className='btn-container'>
