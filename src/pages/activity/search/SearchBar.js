@@ -8,9 +8,9 @@ const SearchBar = () => {
 
     const filterMenu = document.getElementById("search-menu");
 
-    filterMenu.style.display === "block"
+    filterMenu.style.display === "flex"
       ? (filterMenu.style.display = "none")
-      : (filterMenu.style.display = "block");
+      : (filterMenu.style.display = "flex");
 
     console.log("toggled display");
   };

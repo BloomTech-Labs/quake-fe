@@ -9,10 +9,11 @@
   width: 100%;
   margin: 0;
   height: calc(
-    100vh - 90px
+    100% - 100px
   ); // Note: This calc's px value is a combination of 'navigation.scss > nav' and 'header.scss > .header' height values.
 
-  position: relative;
+  position: fixed;
+  top: 35px;
 }
 
 .scroll {
