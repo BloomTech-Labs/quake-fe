@@ -34,14 +34,16 @@ const Sms = () => {
       };
 
     const [rangeval, setRangeval] = useState(50);
+    const [rangevalMiles, setRangevalMiles] = useState(31.1)
 
     useEffect(() => {
       
       }, [rangeval]);
 
     const handleChangeSlider = e => {
-        setRangeval(e.target.value)
-    } 
+        setRangeval(e.target.value);
+        setRangevalMiles((e.target.value / 1.609344).toFixed(1));
+    }
 
   return (
       
@@ -66,8 +68,9 @@ const Sms = () => {
                <div className='slide-container'>
                 <input className='slider' type="range" min='1' max='100' value={rangeval} onChange={handleChangeSlider} />
                </div>
+
                
-               <h4>The range value is {rangeval}</h4>
+               <h4>Selected radius: {rangeval} Kilometers / {rangevalMiles} Miles</h4>
 
             </div>
             <div className='btn-container'>
