@@ -1,13 +1,20 @@
 // responsive breakpoints:
-//mobile:
-//tablet:
-//desktop:
+//mobile: max 505-768?
+//tablet & desktop: min 769?
+$min-desktop-tablet: 650px;
 
 // Colors for the site theme:
 //primary
 $logo-primary: #247249;
 $logo-background: #fffffa;
 
+    $theme-color-primary: #247249;
+    $theme-color-secondary: #fffffa;
+
+
+    $font-color-black: #323232;
+    $font-color-white: #fffffa;
+    $font-color-accent: #247249;
 //accent
 $active-icon: #247249;
 
