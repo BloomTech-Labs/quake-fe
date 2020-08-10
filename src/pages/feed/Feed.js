@@ -7,7 +7,8 @@ import Card from "./Card";
 const Feed = ({ news, newsFetch, newsFetchError, newsLoad }) => {
   const newsTopic = "earthquake";
   const newsTopics = ["earthquake", "seismic activity", "volcano", "tsunami", "aftershock", "quake", "tremor"]
-  const newsQuery = `https://gnews.io/api/v3/search?q=${newsTopic}&token=50f1b1f1bf8c59542ab5becdbdb890b0`
+  const newsToken = process.env.REACT_APP_NYT_API_TOKEN;
+  const newsQuery = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${newsTopic}&api-key=${newsToken}`
   useEffect(() => {
     newsLoad(newsQuery);
     const newNews={...news,

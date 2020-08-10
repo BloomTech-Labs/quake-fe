@@ -134,8 +134,8 @@ export const newsLoad = (newsAPI) => (dispatch) => {
         newsAPI
       )
       .then((res) => {
-        console.log("news data", res.data.articles)
-        dispatch({ type: DISPLAY_NEWS, newsData: res.data.articles });
+        console.log("news data", res.data.response.docs)
+        dispatch({ type: DISPLAY_NEWS, newsData: res.data.response.docs });
       })
       .catch((err) => {
         console.log("Error Fetching News Data", err);
