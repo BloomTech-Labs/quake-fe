@@ -31,6 +31,11 @@ html {
 
   position: fixed;
   top: 35px;
+
+  @media only screen and (min-width: $min-desktop-tablet) {
+    height: calc(100% - 50px);
+    top: 50px;
+  }
 }
 
 .scroll {
@@ -43,7 +48,6 @@ html {
 
 // Media Breaks
 @media (min-width: $min-desktop-tablet) {
-  
   .App {
     // display: none;
   }

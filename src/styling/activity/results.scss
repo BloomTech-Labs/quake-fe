@@ -48,7 +48,7 @@
   }
 }
 
-@media (min-width: $min-desktop-tablet) {
+@media only screen and (min-width: $min-desktop-tablet) {
     .results-container {
         width: 450px;
         height: 100%;

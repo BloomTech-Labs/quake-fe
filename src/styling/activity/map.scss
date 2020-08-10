@@ -18,7 +18,7 @@
 
 
 
-@media (min-width: $min-desktop-tablet) {
+@media only screen and (min-width: $min-desktop-tablet) {
   .map-container {
     width: calc(100% - 450px);
     height: 100%;
