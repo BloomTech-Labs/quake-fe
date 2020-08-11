@@ -14,11 +14,12 @@
       color: #247249;
       margin-top: 10px;
     }
-    .sub-text {
-      font-size: 14px;
-      line-height: 23px;
-      margin-top: 5px;
-    }
+    .subTitle {
+        font-size: 14px;
+        line-height: 23px;
+        margin-top: 5px;
+      }
+
     #myForm {
       .col {
         display: flex;
@@ -31,11 +32,15 @@
         }
         .text {
           max-width: 100%;
-          height: 30px;
-          background: #EFEFEF;
-          border-radius: 2.57931px;
+          height: 35px;
+          background: #fffffa;
+          border-radius: 5px;
           border: none;
-          padding: 10px;
+          padding: 5px;
+          box-sizing: border-box;
+          z-index: 1001;
+          width: 100%;
+          font-size: 1.6em;
         }
         
         ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
