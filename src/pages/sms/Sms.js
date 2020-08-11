@@ -1,18 +1,23 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import GeoCoder from '../activity/search/SearchBar';
+import GeoCoder from '../activity/search/Geocoder';
+import { connect } from "react-redux";
+import {
+  updateSearchParams,
+} from "../../redux/actions";
+
 const axios = require('axios');
 
-const Sms = () => {
+const Sms = (state) => {
 
     const twilioPost = e => {
       e.preventDefault();
       alert('feature coming soon')
-      console.log(`Sms > submit ${smsInfo.cell} ${smsInfo.coords} ${smsInfo.distance}`)
+      console.log(`Sms > submit ${smsInfo.cell} ${state.longitude} ${state.latitude} ${smsInfo.distance}`)
     };
+
 
     const [smsInfo, setSmsInfo] = useState({
         cell: '',
-        coords: '',
         distance: ''
       });
     
@@ -32,7 +37,6 @@ const Sms = () => {
     const [rangevalMiles, setRangevalMiles] = useState(31.1)
 
     useEffect(() => {
-      
       }, [rangeval]);
 
     const handleChangeSlider = e => {
@@ -61,10 +65,8 @@ const Sms = () => {
             </div>
             <div className='Coords col'>
                 <label className='label'>Address or ZIP Code</label>
-                {/* reuse search bar with current location? Auto populate if value already in main screen?*/}
-                <input name='coords' className='text' type='text' onChange={changeHandler} value={smsInfo.coords} />
                 {/* show on map? with radius indicator */}
-                {/* <GeoCoder /> */}
+                <GeoCoder  hideSearch='1'  />
             </div>
             <div className='Distance col'>
                 <label className='label'>Slide to choose a notification radius</label>
@@ -88,4 +90,13 @@ const Sms = () => {
 
 //US numbers only? Check Twilio
 
-export default Sms;
+const mapStateToProps = (state) => {
+  return {
+    latitude: state.searchReducer.latitude,
+    longitude: state.searchReducer.longitude,
+  };
+};
+
+export default connect(mapStateToProps, {
+  updateSearchParams,
+})(Sms);
