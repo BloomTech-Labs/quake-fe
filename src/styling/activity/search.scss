@@ -6,30 +6,52 @@
   display: flex;
 
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 
   position: absolute;
   top: 0;
-  z-index: 1000;
+  z-index: 1100;
   background: $theme-color-primary;
- 
-    @media only screen and (min-width: $min-desktop-tablet) {
-        width: calc(100% - 630px);
-        height: 50px;
-        left: 180px;
-        top: 0;
-    }
+
+  @media only screen and (min-width: $min-tablet-width) {
+    width: 100%;
+    top: 45px;
+    justify-content: left;
+    padding-left: 15px;
+    // right: 400px;
+  }
+
+  @media only screen and (min-width: $min-desktop-width) {
+    width: calc(100% - 580px);
+    top: 0;
+    left: 180px;
+    border: none;
+  }
 
   .search-bar {
     width: 80%;
     background-color: $theme-color-secondary;
     border-radius: 5px;
+  
+    @media only screen and (min-width: $min-tablet-width) {
+      width: calc(100% - 415px);
+      margin-right: 35px;
+
+      // width: calc(100% - 455px);
+      
+    }
+
+    @media only screen and (min-width: $min-desktop-width) {
+      width: calc(100% - 80px);
+      margin: 0;
+    }
   }
 
   .filters-toggle {
     width: 35px;
     height: 35px;
+    margin-left: 10px;
     border: none;
 
     background-color: transparent;

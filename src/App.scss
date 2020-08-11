@@ -32,9 +32,14 @@ html {
   position: fixed;
   top: 35px;
 
-  @media only screen and (min-width: $min-desktop-tablet) {
-    height: calc(100% - 50px);
-    top: 50px;
+  @media only screen and (min-width: $min-tablet-width) {
+    height: calc(100% - 45px);
+    top: 90px;
+  }
+  @media only screen and (min-width: $min-desktop-width) {
+    height: 100%;
+    height: calc(100% - 45px);
+    top: 45px;
   }
 }
 
@@ -47,7 +52,7 @@ html {
 }
 
 // Media Breaks
-@media (min-width: $min-desktop-tablet) {
+@media only screen and (min-width: $min-tablet-width) {
   .App {
     // display: none;
   }

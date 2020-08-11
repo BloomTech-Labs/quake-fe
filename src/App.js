@@ -47,10 +47,12 @@ function App() {
       <Router>
         <div className="App">
           <Header />
+
           <MediaQuery minWidth={650}>
-              <Route exact path="/" component={SearchBar} />
-              <Route exact path="/activity" component={SearchBar} />
-            </MediaQuery>
+            <Route exact path="/" component={SearchBar} />
+            <Route exact path="/activity" component={SearchBar} />
+          </MediaQuery>
+
           <Switch>
             <Route exact path="/" component={Activity} />
             <Route exact path="/activity" component={Activity} />
@@ -59,7 +61,7 @@ function App() {
             <Route exact path="/resources" component={Resources} />
             <Route exact path="/report" component={BugReport} />
           </Switch>
-          <Navigation/>
+          <Navigation />
           {/* Navigation Placeholder */}
         </div>
       </Router>

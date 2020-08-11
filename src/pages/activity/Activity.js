@@ -8,7 +8,7 @@ import MapContainer from "./map/MapContainer";
 const Activity = () => {
   return (
     <div className="main-container no-scroll">
-      <MediaQuery maxWidth={650}>      
+      <MediaQuery maxWidth={650}>
         <SearchBar />
       </MediaQuery>
 

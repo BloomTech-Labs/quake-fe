@@ -14,12 +14,19 @@ nav {
   padding: 0 10px 15px 10px;
   position: fixed;
   bottom: 0;
-  // border-top: 1px solid #fff;
+
   z-index: 1000;
-  
-  @media only screen and (min-width: $min-desktop-tablet) {
-    width: 450px;
-    height: 50px; // If height adjustments need to be made, remember to adjust the height calc of '.main-container' in activity.scss. It's height is 100vh minus the sum of the header and footer nav height
+
+  @media only screen and (min-width: $min-tablet-width) {
+    width: 400px;
+    height: 45px;
+    top: 0;
+    right: 0;
+    padding: 0 10px;
+  }
+
+  @media only screen and (min-width: $min-desktop-width) {
+    width: 400px;
     top: 0;
     right: 0;
     padding: 0 10px;
