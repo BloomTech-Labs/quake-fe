@@ -6,7 +6,7 @@ import Card from "./Card";
 
 
 const Feed = ({ news, newsFetch, newsFetchError, newsLoad }) => {
-  const newsTopic = "tsunami";
+  const newsTopic = "earthquake";
   const newsTopics = ["earthquake", "tsunami"]
   const newsToken = process.env.REACT_APP_NYT_API_TOKEN;
   const newsQuery = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${newsTopic}&api-key=${newsToken}`
@@ -14,12 +14,12 @@ const Feed = ({ news, newsFetch, newsFetchError, newsLoad }) => {
 
   
   useEffect(() => {
-    let allTopics = newsTopics.map(topic=>{
-    newsLoad(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${topic}&api-key=${newsToken}`)
-    console.log(news);
-    })
+    // let allTopics = newsTopics.map(topic=>{
+    // newsLoad(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${topic}&api-key=${newsToken}`)
+    // console.log(news);
+    // })
   
-    console.log(allTopics);
+    // console.log(allTopics);
     newsLoad(newsQuery);
   }, []);
 
