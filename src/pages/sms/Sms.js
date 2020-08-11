@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import {
   updateSearchParams,
 } from "../../redux/actions";
+import Map from "./Map";
+
 
 const axios = require('axios');
 
@@ -77,8 +79,8 @@ const Sms = (state) => {
 
                <br />
                <h4 id='distance-label'>{rangeval} Kilometers / {rangevalMiles} Miles</h4>
-
             </div>
+            <Map />
             <div className='btn-container'>
                 <button className='btn' type='submit'>Send Verification to my Phone</button>
             </div>
