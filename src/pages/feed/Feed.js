@@ -1,21 +1,26 @@
 import React, {useEffect} from "react";
 import { connect } from "react-redux";
 import { newsLoad } from "../../redux/actions/index.js";
+import axios from "axios";
 import Card from "./Card";
 
 
 const Feed = ({ news, newsFetch, newsFetchError, newsLoad }) => {
-  const newsTopic = "earthquake";
-  const newsTopics = ["earthquake", "seismic activity", "volcano", "tsunami", "aftershock", "quake", "tremor"]
+  const newsTopic = "tsunami";
+  const newsTopics = ["earthquake", "tsunami"]
   const newsToken = process.env.REACT_APP_NYT_API_TOKEN;
   const newsQuery = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${newsTopic}&api-key=${newsToken}`
+  
+
+  
   useEffect(() => {
+    let allTopics = newsTopics.map(topic=>{
+    newsLoad(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${topic}&api-key=${newsToken}`)
+    console.log(news);
+    })
+  
+    console.log(allTopics);
     newsLoad(newsQuery);
-    const newNews={...news,
-      news, 
-    newsTopic1: newsTopic}
-    console.log('News Loading...', news);
-    console.log("NEW NEWS", newNews);
   }, []);
 
   if (newsFetchError === false){
