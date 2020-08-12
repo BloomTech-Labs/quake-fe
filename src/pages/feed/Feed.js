@@ -1,6 +1,8 @@
 import React, {useEffect} from "react";
 import { connect } from "react-redux";
 import { newsLoad } from "../../redux/actions/index.js";
+import { ReactComponent as CracksImage } from "../../images/graphics/cracks.svg";
+import { ReactComponent as SearchImage } from "../../images/icons/search.svg";
 import Card from "./Card";
 
 
@@ -19,6 +21,7 @@ const Feed = ({ news, newsFetch, newsFetchError, newsLoad }) => {
       if (news.length === 0) {
         return(
         <div data-testid="empty-quakes" className="alt-result main-container no-scroll">
+          <CracksImage className="result-image" />
           <h1>Aww SHOCKS!</h1>
           <p>Looks like there aren't any news stories here.</p>
         </div>
@@ -34,7 +37,8 @@ const Feed = ({ news, newsFetch, newsFetchError, newsLoad }) => {
       }
      } else {
         return (
-          <div className = "main-container scroll">
+          <div className = "main-container scroll alt-result">
+            <SearchImage className="result-image" />
             <h1>Searching for news...</h1>
           </div>
         )
