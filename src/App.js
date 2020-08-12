@@ -14,6 +14,8 @@ import Feed from "./pages/feed/Feed";
 import About from "./pages/about/About";
 import Resources from "./pages/resources/Resources";
 import BugReport from "./pages/report/BugReport";
+import Sms from "./pages/sms/Sms";
+
 
 // Common Components
 import Header from "./components/Header";
@@ -54,6 +56,8 @@ function App() {
             <Route exact path="/about" component={About} />
             <Route exact path="/resources" component={Resources} />
             <Route exact path="/report" component={BugReport} />
+            <Route exact path="/sms" component={Sms} />
+
           </Switch>
           <Navigation/>
           {/* Navigation Placeholder */}

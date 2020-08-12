@@ -27,7 +27,7 @@ const Form = () => {
         <textarea className='description' name='description' rows='4' placeholder='eg. I went to the advance search, and the box I was typing in disappeared.' required/>
       </div>
       <div className='btn-container'>
-        <button className='btn' type='submit'>Submit</button>
+        <button className='btn' type='submit'>Send Verification to my Phone</button>
       </div>
     </form>
    );
