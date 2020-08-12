@@ -13,8 +13,20 @@ const Sms = (state) => {
 
     const twilioPost = e => {
       e.preventDefault();
-      alert('feature coming soon')
-      console.log(`Sms > submit ${smsInfo.cell} ${state.longitude} ${state.latitude} ${smsInfo.distance}`)
+      const longLatString = state.longitude +', ' + state.latitude
+      console.log(`Sms > submit ${smsInfo.cell} ${longLatString} ${smsInfo.distance}`)
+
+      axios.post(' https://quakelabs-be-production.herokuapp.com/api/sms/create-notify', {
+        phoneNumber: smsInfo.cell,
+        coordinates: longLatString,
+        distance: smsInfo.distance
+      })
+      .then(function (res) {
+        alert(res)
+      })
+      .catch(function (error){
+        alert(error)
+      })
     };
 
 
