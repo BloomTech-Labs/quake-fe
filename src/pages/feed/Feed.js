@@ -1,33 +1,24 @@
 import React, {useEffect} from "react";
 import { connect } from "react-redux";
 import { newsLoad } from "../../redux/actions/index.js";
-import axios from "axios";
 import Card from "./Card";
 
 
 const Feed = ({ news, newsFetch, newsFetchError, newsLoad }) => {
   const newsTopic = "earthquake";
-  const newsTopics = ["earthquake", "tsunami"]
-  const newsToken = process.env.REACT_APP_NYT_API_TOKEN;
-  const newsQuery = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${newsTopic}&api-key=${newsToken}`
+  const newsTopics = ["earthquake", "tsunami", "seismic"]
   
 
   
   useEffect(() => {
-    // let allTopics = newsTopics.map(topic=>{
-    // newsLoad(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${topic}&api-key=${newsToken}`)
-    // console.log(news);
-    // })
-  
-    // console.log(allTopics);
-    newsLoad(newsQuery);
+    newsLoad(newsTopics);
   }, []);
 
   if (newsFetchError === false){
     if (newsFetch===false){
       if (news.length === 0) {
         return(
-        <div data-testid="empty-quakes" className="alt-result">
+        <div data-testid="empty-quakes" className="alt-result main-container no-scroll">
           <h1>Aww SHOCKS!</h1>
           <p>Looks like there aren't any news stories here.</p>
         </div>
@@ -43,12 +34,14 @@ const Feed = ({ news, newsFetch, newsFetchError, newsLoad }) => {
       }
      } else {
         return (
-          <h1>Searching for news...</h1>
+          <div className = "main-container scroll">
+            <h1>Searching for news...</h1>
+          </div>
         )
       }
     } else {
       return (
-        <div data-testid="news-error">
+        <div data-testid="news-error" className = "main-container no-scroll">
           There was a problem getting your news...
         </div>
       );
