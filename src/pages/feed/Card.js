@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import defaultArticleImage from '../../images/graphics/default-image.jpg'
 
 const Card = (newsArticle) => {
+  const [newsOpen, setNewsOpen] = useState(false); 
   let articleImage={}
   let articleKeyword = []
   let articleDate = newsArticle.newsArticle.pub_date.split("T") 
@@ -19,10 +20,10 @@ const Card = (newsArticle) => {
   }
   return (
     
-      <div className="news-article-container">
+      <div className={!newsOpen ? "news-article-container" : "news-article-container-open"} onClick={() => setNewsOpen((newsOpen) => !newsOpen)}>
         <div className="news-article-info">
           <h2 className="news-article-title">{newsArticle.newsArticle.headline.main}</h2>
-          <p className = "news-article-abstract">{newsArticle.newsArticle.abstract}</p>
+          <p className = {!newsOpen ? "news-article-abstract" : "news-article-abstract-open"}>{!newsOpen ? newsArticle.newsArticle.abstract : newsArticle.newsArticle.lead_paragraph}</p>
           <div className="news-article-bottom-info">
             <h3 className="news-article-topic">{articleKeyword}</h3>
             <time className="news-article-date">{articleDate[0]}</time>
