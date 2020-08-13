@@ -6,8 +6,10 @@
   display: flex;
 
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+
+  padding: 0 10px;
 
   position: absolute;
   top: 0;
@@ -18,7 +20,7 @@
     width: 100%;
     top: 45px;
     justify-content: left;
-    padding-left: 15px;
+    // padding-left: 15px;
     // right: 400px;
   }
 
@@ -26,38 +28,69 @@
     width: calc(100% - 580px);
     top: 0;
     left: 180px;
-    border: none;
+    justify-content: space-between;
+    // border: none;
   }
 
   .search-bar {
-    width: 80%;
+    width: calc(100% - 85px);
     background-color: $theme-color-secondary;
     border-radius: 5px;
-  
+
     @media only screen and (min-width: $min-tablet-width) {
-      width: calc(100% - 415px);
-      margin-right: 35px;
+      width: calc(100% - 390px);
+      margin-right: 10px;
 
       // width: calc(100% - 455px);
-      
     }
 
     @media only screen and (min-width: $min-desktop-width) {
-      width: calc(100% - 80px);
+      width: calc(100% - 85px);
       margin: 0;
     }
   }
 
   .filters-toggle {
-    width: 35px;
-    height: 35px;
-    margin-left: 10px;
+    // width: 35px;
+    // height: 35px;
+    // margin-left: 10px;
+    // border: none;
+
+    // background-color: transparent;
+    // background-image: url("../../images/icons/filter.svg");
+    // background-size: 25px;
+    // background-position: center;
+    // background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 76px;
+    height: 85%;
+
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.3em;
+    font-family: $font-body;
+
+    border-radius: 5px;
     border: none;
 
-    background-color: transparent;
-    background-image: url("../../images/icons/filter.svg");
-    background-size: 25px;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: transparent;
+
+    transition: 0.2s ease-in-out;
+
+    cursor: pointer;
+
+    .filter-icon {
+      width: 22px;
+      height: 22px;
+    }
+
+    // @media only screen and (min-width: $min-desktop-width) {
+    //   width: 100px;
+    // }
   }
 }

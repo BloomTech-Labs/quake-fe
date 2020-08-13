@@ -13,12 +13,12 @@
   background: white;
 
   @media only screen and (min-width: $min-tablet-width) {
-    // width: 50%;
     max-width: 400px;
-    // height: 100%;
-
-    
     height: calc(100 - 90px);
+  }
+  @media only screen and (min-width: $min-desktop-width) {
+    max-width: 400px;
+    height: calc(100 - 45px);
   }
 
   .results-toggle {
