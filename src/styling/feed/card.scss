@@ -30,6 +30,24 @@
     font-weight: 600;
 }
 
+.news-article-abstract{
+    height: 4.8em;
+    font-size: 1.6em;
+    position: relative;
+    overflow: hidden;
+}
+
+.news-article-abstract::after{
+    content: "";
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 1.0em;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+}
+
 .news-article-image{
     width: 120px;
     height: 120px;
