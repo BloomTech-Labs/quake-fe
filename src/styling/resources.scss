@@ -1,4 +1,10 @@
+@import "./variables.scss";
 // all sections
+.resource-page {
+  @media only screen and (min-width: $min-tablet-width) {
+    padding: 0 20%;
+  }
+}
 #intro, #section-links, #indoors, #outdoors, #in-vehicle, #e-kits, #step, #help-signals, #travel-tips, #medical-aid, #disaster-help {
   .title-container {
     color: #323232;
