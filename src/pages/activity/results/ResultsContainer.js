@@ -24,41 +24,37 @@ const view = [
     ctransform: "translateY(0)",
     mheight: "45px",
   },
-  {
-    view: "hcombo",
-    cheight: "100%",
-    ctransform: "translateY(0)",
-    mheight: "100%",
-  },
 ];
 
 const ResultsContainer = () => {
-  const [viewType, setViewType] = useState("hcombo");
+  const [viewType, setViewType] = useState("combo");
 
   const isBigScreen = useMediaQuery({
-    query: "(min-width: 650px)",
+    query: "(min-width: 800px)",
   });
-
-  // if (isBigScreen) {
-  //   setViewType("hcombo");
-  // }
 
   useEffect(() => {
     const container = document.getElementById("results-container");
     const map = document.getElementById("map-container");
 
-    for (let i = 0; i < view.length; i++) {
-      if (viewType === view[i].view) {
-        container.style.height = view[i].cheight;
-        container.style.transform = view[i].ctransform;
-        map.style.height = view[i].mheight;
+    if (isBigScreen) {
+      container.style.height = "100%";
+      container.style.transform = "translateY(0)";
+      map.style.height = "100%";
+    } else {
+      for (let i = 0; i < view.length; i++) {
+        if (viewType === view[i].view) {
+          container.style.height = view[i].cheight;
+          container.style.transform = view[i].ctransform;
+          map.style.height = view[i].mheight;
+        }
       }
     }
-  }, [viewType]);
+  }, [viewType, isBigScreen]);
 
   return (
     <div id="results-container" className="results-container no-scroll">
-      <MediaQuery maxWidth={650}>
+      <MediaQuery maxWidth={800}>
         <ViewType viewType={viewType} setViewType={setViewType} />
       </MediaQuery>
       <Sort />

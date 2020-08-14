@@ -48,7 +48,7 @@ function App() {
         <div className="App">
           <Header />
 
-          <MediaQuery minWidth={650}>
+          <MediaQuery minWidth={800}>
             <Route exact path="/" component={SearchBar} />
             <Route exact path="/activity" component={SearchBar} />
           </MediaQuery>

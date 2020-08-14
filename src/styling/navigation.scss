@@ -81,6 +81,14 @@ nav {
     backdrop-filter: blur(2px);
   }
 
+  @media only screen and (min-width: $min-tablet-width) {
+    height: calc(100% - 90px);
+    bottom: 0;
+  }
+  @media only screen and (min-width: $min-desktop-width) {
+    height: calc(100% - 45px);
+  }
+
   .more-links-container {
     max-width: 350px;
     height: 350px;
@@ -94,6 +102,13 @@ nav {
 
     border-radius: 5px;
     // border: 3px solid orange;
+
+    @media only screen and (min-width: $min-tablet-width) {
+      top: 10px;
+      right: 10px;
+      max-width: 380px;
+      height: 380px;
+    }
 
     .big-link-container {
       display: flex;
