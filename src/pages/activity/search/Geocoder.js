@@ -24,6 +24,7 @@ function Geocoder({
   latitude,
   longitude,
   jumpViewport,
+  hideSearch, //hide param allow us to reuse searchbar for notification screen without the button
 }) {
   const [encodedSearch, setEncodedSearch] = useState(""); // Holds the URI encoded search text
 
@@ -172,11 +173,14 @@ function Geocoder({
         aria-label="input location"
         autoComplete="off"
       />
-      <button
+      {hideSearch == null &&
+        <button
         aria-label="update search"
         className="search-icon"
         onClick={onSearchClick}
       />
+      }
+      
 
       <aside className="geocoder-results">
         {geocodeResults.map((feature) => {

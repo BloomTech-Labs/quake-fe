@@ -29,7 +29,7 @@ const SubNav = () => {
     {to: '/', Icon: ThemeIcon, text: 'Toggle Light/Dark Theme', onClick: toggleDarkMode},
     {to: '/', Icon: UnitIcon, text: 'Toggle Kilometers/Miles', onClick: null},
     {to: '/about', Icon: PeopleIcon, text: 'About Us', onClick: null},
-    {to: '/', Icon: PhoneIcon, text: 'Setup Notifications', onClick: null},
+    {to: '/sms', Icon: PhoneIcon, text: 'Setup Notifications', onClick: null},
     {to: '/resources', Icon: BookIcon, text: 'Survival Info', onClick: null},
   ]
 
