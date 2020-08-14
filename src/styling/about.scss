@@ -15,6 +15,11 @@
   flex-flow: column nowrap;
   overflow-x: hidden;
 
+  @media only screen and (min-width: $min-tablet-width) {
+    width: 75%;
+    margin: 0 auto;
+  }
+
   .header-about {
     font-family: Catamaran;
     line-height: 100%;
