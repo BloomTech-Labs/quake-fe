@@ -5,7 +5,7 @@
 
   height: calc(100% - 100px); // 100px is nav bar height + header height
   bottom: 65px;
-  
+
   z-index: 1000;
   font-family: "Catamaran";
 
@@ -21,17 +21,34 @@
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
   }
-  
+
+  @media only screen and (min-width: $min-tablet-width) {
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 10px;
+
+    height: calc(100% - 90px);
+    bottom: 0;
+  }
+
+  @media only screen and (min-width: $min-desktop-width) {
+    height: calc(100% - 45px);
+  }
+
   form {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    width: 90vw;
+    width: 90%;
     border-radius: 5px;
     margin: 0;
     background: #3b3b3b;
     padding: 20px;
+
+    @media only screen and (min-width: $min-tablet-width) {
+      width: 380px;
+    }
 
     fieldset {
       width: 300px;
@@ -77,80 +94,6 @@
       outline: none;
     }
 
-    .search-bar-field {
-      display: flex;
-      align-items: center;
-
-      .geocoder-container {
-        display: flex;
-        flex-direction: row;
-        position: relative;
-        width: 100%;
-
-        .geocode-input {
-          height: 35px;
-          padding: 5px;
-          background: #fffffa;
-          border: none;
-          border-radius: 5px;
-          background-image: url("../../images/icons/search.svg");
-          background-size: 15px;
-          background-position: 96%;
-          background-repeat: no-repeat;
-          width: 85%;
-          font-size: 1.6em;
-        }
-
-        //removes background image onfocus
-        .geocode-input:focus {
-          background-image: none;
-        }
-
-        .search-results {
-          position: absolute;
-          padding: 0 5px;
-          z-index: 10;
-          margin-top: 35px;
-          width: 85%;
-          background: #3b3b3b;
-        }
-
-        .search-results p {
-          display: block;
-          background: #fffffa;
-          font-size: 0.85rem;
-          line-height: 1.2rem;
-          border-top: 1px solid #000000;
-          border-radius: 5px;
-          padding: 5px;
-          margin: 5px auto;
-          width: 100%;
-          transition: 0.2s;
-          transition-timing-function: ease-in-out;
-        }
-
-        .search-results p:hover {
-          cursor: pointer;
-          background: #d8ffc8;
-        }
-      }
-      .more-options-button {
-        width: 105px;
-        margin: 10px auto;
-        background: none;
-        color: #828282;
-        text-align: left;
-        background-image: url("../../images/icons/sort-icon.svg");
-        background-size: 15px;
-        background-position: 96% 2px;
-        background-repeat: no-repeat;
-        cursor: pointer;
-        .more-options-button:focus {
-          border: none;
-          outline: none;
-        }
-      }
-    }
     .advanced-filters {
       display: flex;
       input {
@@ -161,7 +104,7 @@
         flex-direction: row;
         justify-content: space-between;
         label {
-          width: 43%;
+          width: 45%;
         }
       }
     }
@@ -194,7 +137,6 @@
     position: relative;
     width: 100%;
     flex-wrap: wrap;
-  
   }
 
   #quick-filters-label {
@@ -205,7 +147,7 @@
   #advanced-filters-label {
     text-decoration: underline;
   }
-  
+
   .quick-filters-button {
     background: #247249;
     color: #fffffa;
@@ -218,4 +160,3 @@
     margin-bottom: 7px;
   }
 } // end search-menu
-
