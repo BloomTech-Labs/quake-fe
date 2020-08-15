@@ -15,3 +15,10 @@
 .map-marker {
   width: 35px;
 }
+
+@media only screen and (min-width: $min-tablet-width) {
+  .map-container {
+    width: calc(100% - 400px);
+    height: 100%;
+  }
+}

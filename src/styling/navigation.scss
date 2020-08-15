@@ -8,14 +8,29 @@ nav {
   align-items: center;
 
   width: 100%;
-  background: $logo-primary;
+  background: $theme-color-primary;
   height: 65px; // If height adjustments need to be made, remember to adjust the height calc of '.main-container' in activity.scss. It's height is 100vh minus the sum of the header and footer nav height
 
   padding: 0 10px 15px 10px;
   position: fixed;
   bottom: 0;
-  // border-top: 1px solid #fff;
+
   z-index: 1000;
+
+  @media only screen and (min-width: $min-tablet-width) {
+    width: 400px;
+    height: 45px;
+    top: 0;
+    right: 0;
+    padding: 0 10px;
+  }
+
+  @media only screen and (min-width: $min-desktop-width) {
+    width: 400px;
+    top: 0;
+    right: 0;
+    padding: 0 10px;
+  }
 
   .nav-link {
     display: flex;
@@ -27,7 +42,7 @@ nav {
     height: 85%;
 
     text-decoration: none;
-    color: #fff;
+    color: $font-color-white;
     font-size: 1.3em;
     font-family: $font-body;
 
@@ -39,10 +54,13 @@ nav {
 
     cursor: pointer;
 
+    &:hover {
+      background: #65ffae20;
+    }
+
     .nav-icon {
       width: 22px;
       height: 22px;
-      fill: #000;
     }
   }
 }
@@ -67,6 +85,14 @@ nav {
     backdrop-filter: blur(2px);
   }
 
+  @media only screen and (min-width: $min-tablet-width) {
+    height: calc(100% - 90px);
+    bottom: 0;
+  }
+  @media only screen and (min-width: $min-desktop-width) {
+    height: calc(100% - 45px);
+  }
+
   .more-links-container {
     max-width: 350px;
     height: 350px;
@@ -76,10 +102,17 @@ nav {
     right: 10px;
 
     padding: 17px;
-    background: $logo-primary;
+    background: $theme-color-primary;
 
     border-radius: 5px;
     // border: 3px solid orange;
+
+    @media only screen and (min-width: $min-tablet-width) {
+      top: 10px;
+      right: 10px;
+      max-width: 380px;
+      height: 380px;
+    }
 
     .big-link-container {
       display: flex;
@@ -101,14 +134,21 @@ nav {
         width: 48%;
         height: 28%;
 
-        background: #308257;
+        background: $theme-color-primary;
 
         border-radius: 5px;
 
-        color: #fff;
+        color: $font-color-white;
         font-size: 1.3em;
         text-decoration: none;
         font-family: $font-body;
+
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+          background: #65ffad62;
+        }
 
         .nav-icon {
           width: 36px;

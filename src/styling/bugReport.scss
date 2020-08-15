@@ -1,8 +1,8 @@
 #bug-report {
-  font-family: Catamaran;
+  font-family: $font-body;
   font-style: normal;
   font-weight: 500;
-  color: #252525;
+  color: $neutral-3;
 
   .container {
     width: 85%;
@@ -11,7 +11,7 @@
     .title {
       font-size: 28px;
       line-height: 46px;
-      color: #247249;
+      color: $font-color-accent;
       margin-top: 10px;
 
       .icon {
@@ -33,10 +33,11 @@
           font-size: 18px;
           line-height: 30px;
         }
-        .email, .description {
+        .email,
+        .description {
           max-width: 100%;
           height: 48px;
-          background: #EFEFEF;
+          background: #efefef;
           border-radius: 2.57931px;
           border: none;
           padding: 10px;
@@ -44,17 +45,20 @@
         .description {
           height: 166px;
         }
-        ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-          color: #247248;
+        ::placeholder {
+          /* Chrome, Firefox, Opera, Safari 10.1+ */
+          color: $font-color-accent;
           opacity: 1; /* Firefox */
         }
-        
-        :-ms-input-placeholder { /* Internet Explorer 10-11 */
-          color: #247248;
+
+        :-ms-input-placeholder {
+          /* Internet Explorer 10-11 */
+          color: $font-color-accent;
         }
-        
-        ::-ms-input-placeholder { /* Microsoft Edge */
-          color: #247248;
+
+        ::-ms-input-placeholder {
+          /* Microsoft Edge */
+          color: $font-color-accent;
         }
       }
       .btn-container {
@@ -66,8 +70,8 @@
           width: 100%;
           height: 48px;
           font-size: 22px;
-          color: #247249;
-          background: #EFF3EF;
+          color: $font-color-accent;
+          background: #eff3ef;
           border-radius: 2.57931px;
           border: none;
         }
@@ -78,6 +82,6 @@
 
 .dark-mode {
   #bug-report {
-    color: white;
+    color: $font-color-white;
   }
 }
