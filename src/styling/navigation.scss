@@ -54,6 +54,10 @@ nav {
 
     cursor: pointer;
 
+    &:hover {
+      background: #65ffae20;
+    }
+
     .nav-icon {
       width: 22px;
       height: 22px;
@@ -138,6 +142,13 @@ nav {
         font-size: 1.3em;
         text-decoration: none;
         font-family: $font-body;
+
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+          background: #65ffad62;
+        }
 
         .nav-icon {
           width: 36px;
