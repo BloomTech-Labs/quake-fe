@@ -3,7 +3,7 @@
 .spacer {
   width: 100vw;
   height: 1.5vh;
-  background: #d9e3e2;
+  background: $neutral-2;
   /* inner shadow */
   box-shadow: inset 0px 2px 2px rgba(36, 114, 73, 0.24);
 }
@@ -21,7 +21,7 @@
   }
 
   .header-about {
-    font-family: Catamaran;
+    font-family: $font-body;
     line-height: 100%;
     font-style: normal;
     font-weight: 600;
@@ -56,7 +56,7 @@
         line-height: 100%;
         font-size: 3.2vmin;
       }
-      .links-row-one{
+      .links-row-one {
         margin: auto;
         position: relative;
         width: 44vmin;
@@ -64,7 +64,6 @@
         flex-flow: row nowrap;
         justify-content: space-between;
         left: 8vmin;
-        
       }
       .links-row-two {
         margin-top: 1.2vmin;
@@ -193,7 +192,7 @@
       }
     }
     p {
-      font-family: Catamaran;
+      font-family: $font-body;
       font-style: normal;
       margin-top: 12vmin;
       font-size: 7.2vmin;

@@ -5,11 +5,22 @@
     padding: 0 20%;
   }
 }
-#intro, #section-links, #indoors, #outdoors, #in-vehicle, #e-kits, #step, #help-signals, #travel-tips, #medical-aid, #disaster-help {
+#intro,
+#section-links,
+#indoors,
+#outdoors,
+#in-vehicle,
+#e-kits,
+#step,
+#help-signals,
+#travel-tips,
+#medical-aid,
+#disaster-help {
   .title-container {
-    color: #323232;
-    font-family: Catamaran;
-    box-shadow: inset 0px 2px 2px rgba(36, 114, 73, 0.24), 0px 2px 2px rgba(36, 114, 73, 0.24);
+    color: $font-color-black;
+    font-family: $font-body;
+    box-shadow: inset 0px 2px 2px rgba(36, 114, 73, 0.24),
+      0px 2px 2px rgba(36, 114, 73, 0.24);
     padding: 15px 0 10px 0;
 
     .inner-container {
@@ -35,7 +46,7 @@
         }
       }
     }
-    
+
     &.large-title {
       .inner-container {
         flex-direction: column-reverse;
@@ -58,21 +69,21 @@
   .content-container {
     width: 91%;
     margin: 0 auto;
-    color: $font-color;
-    font-family: Catamaran;
+    color: $font-color-black;
+    font-family: $font-body;
     padding: 15px 0;
 
     &.closed {
       display: none;
     }
-  
+
     .title {
       font-weight: 800;
       font-size: 24px;
       line-height: 25px;
       padding-bottom: 15px;
     }
-  
+
     .text {
       font-weight: 600;
       font-size: 14px;
@@ -84,18 +95,18 @@
       flex-direction: row;
       flex-wrap: wrap;
       margin-top: 5px;
-    
+
       .link {
         font-weight: 600;
         font-size: 14px;
         line-height: 18px;
         width: 90px;
-        color: $accent-color;
+        color: $font-color-accent;
         padding: 5px 0;
         text-decoration: none;
       }
     } // end links-container
-  
+
     .sub-head-text {
       font-weight: 800;
       font-size: 24px;
@@ -122,13 +133,13 @@
         }
       }
     }
-    
+
     .list-type-plus {
       .list-item {
         font-weight: 600;
         font-size: 14px;
         line-height: 17px;
-  
+
         .bullet-plus {
           margin-right: 10px;
           position: relative;
@@ -136,13 +147,13 @@
         }
       }
     }
-  
+
     .list-type-solid {
       .list-item {
         font-weight: 600;
         font-size: 14px;
         line-height: 17px;
-  
+
         .bullet-solid {
           margin-right: 10px;
           position: relative;
@@ -150,46 +161,46 @@
         }
       }
     }
-  
+
     .green-message {
-      background: $accent-color;
+      background: $font-color-accent;
       border-radius: 8px;
       margin: 15px 0;
       padding: 10px 0;
-  
+
       &-text {
         font-weight: 600;
         font-size: 18px;
         line-height: 20px;
         text-align: center;
-        color: $lightest-text;
+        color: $font-color-white;
         width: 90%;
         margin: 0 auto;
       }
     }
-  
+
     .resource-link-container {
       display: flex;
       flex-direction: column;
-  
+
       .resource-link {
         margin-left: 7%;
       }
     }
-  
+
     .resource-link {
       font-weight: 600;
       font-size: 14px;
       line-height: 23px;
-      color: $accent-color;
+      color: $font-color-accent;
       padding-left: 5px;
     }
-  
+
     .resources-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
-  
+
       .resource-card {
         width: 181px;
         display: flex;
@@ -198,7 +209,7 @@
         flex-direction: column;
         border-radius: 4px;
         box-shadow: 0px 2px 2px rgba(36, 114, 73, 0.24);
-  
+
         .resource-logo {
           width: 75px;
           height: 75px;
@@ -206,18 +217,21 @@
           margin-top: 10px;
           margin-bottom: 5px;
         }
-  
+
         .resource-highlight {
-          color: $accent-color;
+          color: $font-color-accent;
         }
-  
-        .resource-name, .resource-phone, .resource-email, .website {
+
+        .resource-name,
+        .resource-phone,
+        .resource-email,
+        .website {
           width: 98%;
           margin: 2px 0 2px 2%;
           font-weight: 600;
           font-size: 14px;
           line-height: 23px;
-  
+
           &.smaller {
             font-size: 12px;
           }
@@ -262,12 +276,12 @@
     .step-logo {
       width: 100%;
     }
-    
+
     .resource-link {
       text-decoration: none;
     }
   }
-  
+
   .content-container .section-text-container .section-text {
     font-size: 16px;
     line-height: 25px;
@@ -280,33 +294,50 @@
 
 .dark-mode {
   // all sections
-  #intro, #section-links, #indoors, #outdoors, #in-vehicle, #e-kits, #step, #help-signals, #travel-tips, #medical-aid, #disaster-help {
+  #intro,
+  #section-links,
+  #indoors,
+  #outdoors,
+  #in-vehicle,
+  #e-kits,
+  #step,
+  #help-signals,
+  #travel-tips,
+  #medical-aid,
+  #disaster-help {
     .content-container {
-      .title, .text , .section-text, .sub-head-text, .list-item {
-        color: white;
+      .title,
+      .text,
+      .section-text,
+      .sub-head-text,
+      .list-item {
+        color: $font-color-white;
       }
 
-      .bullet-plus-color, .bullet-solid-color {
-        fill: $lightest-text;
+      .bullet-plus-color,
+      .bullet-solid-color {
+        fill: $theme-color-secondary;
       }
 
-      .step-logo-container, .resource-card {
-        background-color: $logo-background;
+      .step-logo-container,
+      .resource-card {
+        background-color: $theme-color-secondary;
       }
     } // end content-container
 
     .title-container {
       .section-title {
-        color: white;
+        color: $font-color-white;
       }
 
       .triangle-color {
-        fill: $lightest-text;
+        fill: $theme-color-secondary;
       }
     } // end title-container
   } // end all sections
 
-  #section-links, #medical-aid .content-container {
+  #section-links,
+  #medical-aid .content-container {
     background: $neutral-2;
   }
 
@@ -317,19 +348,24 @@
     .section-text {
       color: black;
     }
-  } 
+  }
 
   #indoors {
     .img-row {
-      .table, .arrow, .wheelchair, .walker, .cover {
-        fill: #EAAE4F;
+      .table,
+      .arrow,
+      .wheelchair,
+      .walker,
+      .cover {
+        fill: #eaae4f;
       }
       .background {
-        fill: $accent-color;
-        stroke: $accent-color;
+        fill: $theme-color-primary;
+        stroke: $theme-color-primary;
       }
-      .bottom, .person {
-        fill: $lightest-text;
+      .bottom,
+      .person {
+        fill: $theme-color-secondary;
       }
       .text {
         fill: black;
@@ -340,10 +376,10 @@
   #outdoors {
     .outdoor-img {
       .background {
-        fill: $accent-color;
+        fill: $theme-color-primary;
       }
       .person {
-        fill: white;
+        fill: $theme-color-secondary;
       }
       .highlight-background {
         fill: #889d00;
@@ -354,13 +390,20 @@
   #in-vehicle {
     .invehicle-img {
       .background {
-        fill: $accent-color;
+        fill: $theme-color-primary;
       }
-      .person, .door-frame, .gauge-cluster, .sub-img-outline, .text, .block {
+      .person,
+      .door-frame,
+      .gauge-cluster,
+      .sub-img-outline,
+      .text,
+      .block {
         fill: white;
       }
-      .steering-wheel, .table, .arrow {
-        fill: #EAAE4F;
+      .steering-wheel,
+      .table,
+      .arrow {
+        fill: #eaae4f;
       }
       .odometer {
         fill: #8cc63f;
@@ -371,7 +414,7 @@
   #e-kits {
     .ekit-img {
       .text {
-        fill: white;
+        fill: $theme-color-secondary;
       }
     }
   }

@@ -52,13 +52,6 @@ html {
   overflow-y: hidden;
 }
 
-// Media Breaks
-@media only screen and (min-width: $min-tablet-width) {
-  .App {
-    // display: none;
-  }
-}
-
 .App-link {
   color: #61dafb;
 }
