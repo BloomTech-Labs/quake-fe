@@ -19,11 +19,12 @@ const Card = (newsArticle) => {
     articleImage=`https://www.nytimes.com/${newsArticle.newsArticle.multimedia[0].url}`
   }
   return (
-    
+      
       <div className={!newsOpen ? "news-article-container" : "news-article-container-open"} onClick={() => setNewsOpen((newsOpen) => !newsOpen)}>
         <div className="news-article-info">
           <h2 className="news-article-title">{newsArticle.newsArticle.headline.main}</h2>
           <p className = {!newsOpen ? "news-article-abstract" : "news-article-abstract-open"}>{!newsOpen ? newsArticle.newsArticle.abstract : newsArticle.newsArticle.lead_paragraph}</p>
+          <a href={newsArticle.newsArticle.web_url} target="_blank" className = {!newsOpen ? "news-article-button" : "news-article-button-open"}>Open Article</a>
           <div className="news-article-bottom-info">
             <h3 className="news-article-topic">{articleKeyword}</h3>
             <time className="news-article-date">{articleDate[0]}</time>
