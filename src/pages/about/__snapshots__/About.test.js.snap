@@ -1,0 +1,187 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About Snapshot renders matching snapshot 1`] = `
+<div
+  className="main-container scroll"
+>
+  <main
+    className="about-main"
+  >
+    <section
+      className="about-links-info-container"
+    >
+      <h1
+        className="header-about"
+      >
+        We are FaultLine
+      </h1>
+      <aside
+        className="about-team-img"
+      />
+      <section
+        className="about-team-links"
+      >
+        <aside
+          className="links-row-one"
+        >
+          <a
+            href="https://github.com/petedram"
+          >
+            Pete
+          </a>
+          <a
+            href="https://github.com/jjbreig5909"
+          >
+            Jeff
+          </a>
+          <a
+            href="https://github.com/cesarhj19"
+          >
+            Cesar
+          </a>
+        </aside>
+        <aside
+          className="links-row-two"
+        >
+          <a
+            href="https://github.com/Nicci498"
+          >
+            Nicole
+          </a>
+          <a
+            href="https://github.com/l8nightswithJS"
+          >
+            Eddie
+          </a>
+          <a
+            href="https://www.linkedin.com/"
+          >
+            Jeremy
+          </a>
+          <a
+            href="https://www.laurasuyasa.com/"
+          >
+            Laura
+          </a>
+          <a
+            href="https://github.com/diehlkj"
+          >
+            Ken
+          </a>
+        </aside>
+      </section>
+    </section>
+    <section
+      className="map-states-container"
+    >
+      <h1
+        className="header-about"
+      >
+        We live in 4 different states
+      </h1>
+      <img
+        alt="colorful map with teams location marked"
+        className="colorful-map"
+        src="map-color.svg"
+      />
+      <img
+        alt="map accent background"
+        className="map-accent"
+        src="map-accent.png"
+      />
+    </section>
+    <section
+      className="pie-chart-section-container"
+    >
+      <h1
+        className="header-about"
+      >
+        Our Jobs Are:
+      </h1>
+      <aside
+        className="bullets-pie-chart-container"
+      >
+        <img
+          alt="colorful map with teams location marked"
+          className="pie-chart"
+          src="pie-chart-about.svg"
+        />
+        <aside
+          className="list-container"
+        >
+          <ul>
+            <li
+              className="orange-bullet"
+            >
+              5 Developers
+            </li>
+            <li
+              className="pink-bullet"
+            >
+              2 Designers
+            </li>
+            <li
+              className="turquoise-bullet"
+            >
+              1 Team Leader
+            </li>
+          </ul>
+        </aside>
+      </aside>
+    </section>
+    <section
+      className="between-us-container"
+    >
+      <h1
+        className="header-about"
+      >
+        Between Us We Have:
+      </h1>
+      <aside
+        className="dogs-cats-container"
+      >
+        <img
+          alt="girl standing next to small dog"
+          className="imgDog"
+          src="girl-dog-about.svg"
+        />
+        <h1
+          className="header-about"
+        >
+          3 Dogs
+        </h1>
+      </aside>
+      <aside
+        className="kids-container"
+      >
+        <h1
+          className="header-about"
+        >
+          6 Kids
+        </h1>
+        <img
+          alt="girl standing next to small dog"
+          src="father-daughter-about.svg"
+        />
+      </aside>
+      <aside
+        className="dogs-cats-container"
+      >
+        <img
+          alt="girl sitting cross legged next to pink cat"
+          className="imgCat"
+          src="gitl-cat-about.svg"
+        />
+        <h1
+          className="header-about"
+        >
+          8 Cats
+        </h1>
+      </aside>
+      <p>
+        We are passionate about our product and we hope that you love it too!
+      </p>
+    </section>
+  </main>
+</div>
+`;
