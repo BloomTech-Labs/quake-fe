@@ -59,12 +59,16 @@ exports[`resources Snapshot renders matching snapshot 1`] = `
         >
           While indoors during an earthquake the best thing to do is find a safe spot
            
-          <strong>
+          <strong
+            className="bold"
+          >
             away from windows
           </strong>
            preferably on the
            
-          <strong>
+          <strong
+            className="bold"
+          >
             1st floor
           </strong>
           .
@@ -103,7 +107,9 @@ exports[`resources Snapshot renders matching snapshot 1`] = `
         <p
           className="section-text"
         >
-          <strong>
+          <strong
+            className="bold"
+          >
             Drop
           </strong>
            to your knees.
@@ -112,7 +118,9 @@ exports[`resources Snapshot renders matching snapshot 1`] = `
           className="section-text"
         >
           Find a safe spot for 
-          <strong>
+          <strong
+            className="bold"
+          >
             cover
           </strong>
            such as a table.
@@ -125,7 +133,9 @@ exports[`resources Snapshot renders matching snapshot 1`] = `
         <p
           className="section-text"
         >
-          <strong>
+          <strong
+            className="bold"
+          >
             Hold on
           </strong>
            to your cover in case it shifts.
@@ -263,7 +273,9 @@ exports[`resources Snapshot renders matching snapshot 1`] = `
         <p
           className="section-text"
         >
-          <strong>
+          <strong
+            className="bold"
+          >
             Injury can occur from broken doorways or glass.
           </strong>
         </p>
@@ -271,7 +283,9 @@ exports[`resources Snapshot renders matching snapshot 1`] = `
           className="section-text"
         >
           Instead 
-          <strong>
+          <strong
+            className="bold"
+          >
             look for an open area
           </strong>
            away from powerlines, buildings, tall structures, and anything else that could be flung around during an earthquake.
@@ -285,7 +299,9 @@ exports[`resources Snapshot renders matching snapshot 1`] = `
         <p
           className="section-text"
         >
-          <strong>
+          <strong
+            className="bold"
+          >
             Get into the drop and cover position and wait out the shaking.
           </strong>
         </p>
@@ -328,7 +344,9 @@ exports[`resources Snapshot renders matching snapshot 1`] = `
           className="section-text"
         >
           Drive to an 
-          <strong>
+          <strong
+            className="bold"
+          >
             open area
           </strong>
            free of powerlines, overpasses, or anything that could fall or collapse.
@@ -342,7 +360,9 @@ exports[`resources Snapshot renders matching snapshot 1`] = `
         <p
           className="section-text bigger"
         >
-          <strong>
+          <strong
+            className="bold"
+          >
             Stay buckled and remain in the car until the quake has ended.
           </strong>
         </p>
@@ -395,7 +415,9 @@ exports[`resources Snapshot renders matching snapshot 1`] = `
         <p
           className="section-text bigger"
         >
-          <strong>
+          <strong
+            className="bold"
+          >
             An emergency kit can save the day should the worst occur.
           </strong>
         </p>
@@ -556,7 +578,9 @@ exports[`resources Snapshot renders matching snapshot 1`] = `
           className="section-text"
         >
           Have 
-          <strong>
+          <strong
+            className="bold"
+          >
             three days
           </strong>
            of non-perishable food and water. If traveling try to bring as much as you can fit in a carry-on.
@@ -602,15 +626,15 @@ exports[`resources Snapshot renders matching snapshot 1`] = `
         >
           STEP-logo.svg
         </svg>
-        <a
-          className="resource-link"
-          href="https://step.state.gov/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Connect to step.state.gov
-        </a>
       </div>
+      <a
+        className="resource-link"
+        href="https://step.state.gov/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Connect to step.state.gov
+      </a>
       <div
         className="section-text-container"
       >

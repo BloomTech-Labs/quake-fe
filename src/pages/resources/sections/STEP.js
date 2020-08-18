@@ -14,9 +14,10 @@ const STEP = () => {
       <div className="content-container closed">
         <div className="step-logo-container">
           <STEPLogo className="step-logo" alt="Smart Traveler Enrollment Program compony logo"/>
-          <a href="https://step.state.gov/" target="_blank" rel="noopener noreferrer"
-            className="resource-link">Connect to step.state.gov</a>
+          
         </div>
+        <a href="https://step.state.gov/" target="_blank" rel="noopener noreferrer"
+            className="resource-link">Connect to step.state.gov</a>
         <div className="section-text-container">
           <p className="section-text">
             Sign up for Smart Traveler Enrollment Program, or STEP, through

@@ -7,7 +7,6 @@
 // all sections
 .resource-page {
   #intro,
-  #section-links,
   #indoors,
   #outdoors,
   #in-vehicle,
@@ -30,23 +29,29 @@
         justify-content: space-between;
         margin: 0 auto;
 
-        .triangle-up {
-          transform: rotate(-180deg);
-          -webkit-transform: rotate(-180deg);
-          display: flex;
-          text-decoration: none;
-          width: 100%;
-          height: 100%;
-          align-items: center;
-          transition: all 0.3s;
+        .img-container {
+          width: 13px;
+          height: 25px;
 
-          &.closed {
+          .triangle-up {
+            transform: rotate(-180deg);
+            -webkit-transform: rotate(-180deg);
+            display: flex;
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+            align-items: center;
             transition: all 0.3s;
-            transform: rotate(0deg);
-            -webkit-transform: rotate(0deg);
+  
+            &.closed {
+              transition: all 0.3s;
+              transform: rotate(0deg);
+              -webkit-transform: rotate(0deg);
+            }
           }
         }
       }
+        
 
       &.large-title {
         .inner-container {
@@ -60,6 +65,10 @@
         }
       } // end large-title
     } // end title-container
+
+    .bold {
+      font-weight: 800;
+    }
 
     .section-title {
       font-weight: 800;
@@ -87,12 +96,24 @@
         @media only screen and (min-width: $min-tablet-width) {
           font-size: 31px;
         }
+        @media only screen and (min-width: $min-desktop-width) {
+          font-size: 38px;
+        }
       }
 
       .text {
         font-weight: 600;
         font-size: 14px;
         line-height: 18px;
+
+        @media only screen and (min-width: $min-tablet-width) {
+          font-size: 18px;
+          line-height: 22px;
+        }
+        @media only screen and (min-width: $min-desktop-width) {
+          font-size: 22px;
+          line-height: 26px;
+        }
       }
 
       .links-container {
@@ -131,6 +152,16 @@
           font-weight: normal;
           font-size: 14px;
           line-height: 23px;
+
+          @media only screen and (min-width: $min-tablet-width) {
+            font-size: 18px;
+            line-height: 22px;
+          }
+          @media only screen and (min-width: $min-tablet-width) {
+            font-size: 20px;
+            line-height: 22px;
+          }
+
           &.bigger {
             font-size: 24px;
             line-height: 30px;
@@ -144,6 +175,15 @@
           font-weight: 600;
           font-size: 14px;
           line-height: 17px;
+
+          @media only screen and (min-width: $min-tablet-width) {
+            font-size: 18px;
+            line-height: 22px;
+          }
+          @media only screen and (min-width: $min-desktop-width) {
+            font-size: 20px;
+            line-height: 22px;
+          }
 
           .bullet-plus {
             margin-right: 10px;
@@ -159,6 +199,15 @@
           font-size: 14px;
           line-height: 17px;
 
+          @media only screen and (min-width: $min-tablet-width) {
+            font-size: 18px;
+            line-height: 22px;
+          }
+          @media only screen and (min-width: $min-desktop-width) {
+            font-size: 20px;
+            line-height: 22px;
+          }
+
           .bullet-solid {
             margin-right: 10px;
             position: relative;
@@ -173,6 +222,13 @@
         margin: 15px 0;
         padding: 10px 0;
 
+        @media only screen and (min-width: $min-tablet-width) {
+          padding: 12px 0;
+        }
+        @media only screen and (min-width: $min-desktop-width) {
+          padding: 14px 0;
+        }
+
         &-text {
           font-weight: 600;
           font-size: 18px;
@@ -181,6 +237,13 @@
           color: $font-color-white;
           width: 90%;
           margin: 0 auto;
+
+          @media only screen and (min-width: $min-tablet-width) {
+            font-size: 22px;
+          }
+          @media only screen and (min-width: $min-desktop-width) {
+            font-size: 26px;
+          }
         }
       }
 
@@ -199,6 +262,15 @@
         line-height: 23px;
         color: $font-color-accent;
         padding-left: 5px;
+
+        @media only screen and (min-width: $min-tablet-width) {
+          font-size: 18px;
+          line-height: 22px;
+        }
+        @media only screen and (min-width: $min-tablet-width) {
+          font-size: 20px;
+          line-height: 22px;
+        }
       }
 
       .resources-container {
@@ -215,12 +287,30 @@
           border-radius: 4px;
           box-shadow: 0px 2px 2px rgba(36, 114, 73, 0.24);
 
+          @media only screen and (min-width: $min-tablet-width) {
+            width: 240px;
+            height: 250px
+          }
+          @media only screen and (min-width: $min-desktop-width) {
+            width: 260px;
+            height: 270px
+          }
+
           .resource-logo {
             width: 75px;
             height: 75px;
             margin: 0 auto;
             margin-top: 10px;
             margin-bottom: 5px;
+
+            @media only screen and (min-width: $min-tablet-width) {
+              width: 85px;
+              height: 85px;
+            }
+            @media only screen and (min-width: $min-desktop-width) {
+              width: 95px;
+              height: 95px;
+            }
           }
 
           .resource-highlight {
@@ -237,8 +327,24 @@
             font-size: 14px;
             line-height: 23px;
 
+            @media only screen and (min-width: $min-tablet-width) {
+              font-size: 18px;
+              line-height: 30px;
+            }
+            @media only screen and (min-width: $min-desktop-width) {
+              font-size: 20px;
+              line-height: 32px;
+            }
+
             &.smaller {
               font-size: 12px;
+
+              @media only screen and (min-width: $min-tablet-width) {
+                font-size: 16px;
+              }
+              @media only screen and (min-width: $min-desktop-width) {
+                font-size: 17px;
+              }
             }
           }
         } // end resource-card
@@ -248,32 +354,67 @@
 }
 
 @media only screen and (min-width: $min-tablet-width) {
-  .resource-page #intro .content-container {
-    width: 100%;
-    margin: 0;
+  .resource-page #intro {
+    margin-top: 20px;
+  
+    .content-container {
+      width: 100%;
+      margin: 0;
+    }
   }
 }
 
-#section-links {
-  box-shadow: inset 0px 2px 2px rgba(36, 114, 73, 0.24);
+#indoors {
+  .safety-step-img {
+    width: 115px;
+
+    @media only screen and (min-width: $min-tablet-width) {
+      width: 130px;
+    }
+    @media only screen and (min-width: $min-desktop-width) {
+      width: 180px;
+    }
+  }
 }
 
 #outdoors {
   .outdoor-img {
-    max-width: 100%;
+    max-width: 390px;
     margin: 5px 0;
+
+    @media only screen and (min-width: $min-tablet-width) {
+      max-width: 450px;
+    }
+    @media only screen and (min-width: $min-desktop-width) {
+      max-width: 530px;
+    }
   }
 }
 
 #in-vehicle {
   .invehicle-img {
-    max-width: 100%;
+    max-width: 390px;
     margin: 5px 0;
+
+    @media only screen and (min-width: $min-tablet-width) {
+      max-width: 450px;
+    }
+    @media only screen and (min-width: $min-desktop-width) {
+      max-width: 530px;
+    }
   }
 }
 #e-kits {
   .ekit-img {
+    max-width: 390px;
     margin-bottom: 10px;
+
+    @media only screen and (min-width: $min-tablet-width) {
+      max-width: 450px;
+    }
+    @media only screen and (min-width: $min-desktop-width) {
+      max-width: 530px;
+    }
   }
 }
 #site-tools {
@@ -283,7 +424,14 @@
 #step {
   .step-logo-container {
     .step-logo {
-      width: 100%;
+      max-width: 390px;
+
+      @media only screen and (min-width: $min-tablet-width) {
+        max-width: 450px;
+      }
+      @media only screen and (min-width: $min-desktop-width) {
+        max-width: 530px;
+      }
     }
 
     .resource-link {
@@ -304,7 +452,6 @@
 .dark-mode {
   // all sections
   #intro,
-  #section-links,
   #indoors,
   #outdoors,
   #in-vehicle,
@@ -345,7 +492,6 @@
     } // end title-container
   } // end all sections
 
-  #section-links,
   #medical-aid .content-container {
     background: $neutral-2;
   }
