@@ -1,9 +1,7 @@
 import React from "react";
-import MediaQuery from "react-responsive";
 
 // sections
 import Intro from "./sections/intro";
-import SectionLinks from "./sections/sectionLinks";
 import Indoors from "./sections/indoors";
 import Outdoors from "./sections/outdoors";
 import InVehicle from "./sections/inVehicle";
@@ -17,16 +15,7 @@ import DisasterHelp from "./sections/disasterHelp";
 const Resources = () => {
   return (
     <div className="main-container resource-page scroll">
-      <MediaQuery minWidth={800}>
-        <SectionLinks />
-        <Intro />
-      </MediaQuery>
-
-      <MediaQuery maxWidth={800}>
-        <Intro />
-        <SectionLinks />
-      </MediaQuery>
-      
+      <Intro />
       <Indoors />
       <Outdoors />
       <InVehicle />

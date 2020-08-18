@@ -18,16 +18,16 @@ const Outdoors = () => {
       <h3 className="sub-head-text">Do not try to run inside!</h3>
       <div className="section-text-container">
         <p className="section-text">
-          <strong>Injury can occur from broken doorways or glass.</strong>
+          <strong className='bold'>Injury can occur from broken doorways or glass.</strong>
         </p>
         <p className="section-text">
-          Instead <strong>look for an open area</strong> away from
+          Instead <strong className='bold'>look for an open area</strong> away from
           powerlines, buildings, tall structures, and anything else that
           could be flung around during an earthquake.
         </p>
         <Outdoor className="outdoor-img" alt="people standing in an open area during an earthquake"/>
         <p className="section-text">
-          <strong>Get into the drop and cover position and wait out the shaking.</strong>
+          <strong className='bold'>Get into the drop and cover position and wait out the shaking.</strong>
         </p>
         </div>
       </div>

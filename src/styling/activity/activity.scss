@@ -7,3 +7,12 @@
 @import "./list.scss";
 @import "./card.scss";
 @import "./map.scss";
+
+.activity-page.main-container {
+    @media only screen and (min-width: $min-tablet-width) {
+      top: 90px;
+    }
+    @media only screen and (min-width: $min-desktop-width) {
+      top: 45px;
+    }
+  }
