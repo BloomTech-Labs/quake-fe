@@ -147,8 +147,11 @@ export const newsLoad = (newsTopics) => (dispatch) => {
           `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${topic}&api-key=${process.env.REACT_APP_NYT_API_TOKEN}`
         )
         .then((res) => {
-          allArticles = allArticles.concat(res.data.response.docs);
-          console.log(allArticles)
+          let updatedResults = res.data.response.docs.map((article) => {
+            return { ...article, topic: topic };
+          });
+          allArticles = allArticles.concat(updatedResults);
+          console.log(allArticles);
           dispatch({ type: DISPLAY_NEWS, newsData: allArticles });
         })
         .catch((err) => {
@@ -156,6 +159,5 @@ export const newsLoad = (newsTopics) => (dispatch) => {
           dispatch({ type: NEWS_FETCH_ERROR });
         });
     });
-    
   }, 500);
 };

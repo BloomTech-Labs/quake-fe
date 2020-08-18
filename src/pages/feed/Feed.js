@@ -7,11 +7,8 @@ import Card from "./Card";
 
 
 const Feed = ({ news, newsFetch, newsFetchError, newsLoad }) => {
-  const newsTopic = "earthquake";
-  const newsTopics = ["earthquake", "tsunami", "seismic"]
-  
-
-  
+  const newsTopics = ["Earthquake", "Tsunami", "Seismic"]
+    
   useEffect(() => {
     newsLoad(newsTopics);
   }, []);
