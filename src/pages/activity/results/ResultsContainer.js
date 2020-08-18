@@ -54,7 +54,7 @@ const ResultsContainer = () => {
 
   return (
     <div id="results-container" className="results-container no-scroll">
-      <MediaQuery maxWidth={800}>
+      <MediaQuery maxWidth={799}>
         <ViewType viewType={viewType} setViewType={setViewType} />
       </MediaQuery>
       <Sort />
