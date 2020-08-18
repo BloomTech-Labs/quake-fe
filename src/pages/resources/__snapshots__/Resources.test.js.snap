@@ -1,0 +1,1085 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`resources Snapshot renders matching snapshot 1`] = `
+<div
+  className="main-container resource-page scroll"
+>
+  <section
+    id="intro"
+  >
+    <div
+      className="content-container"
+    >
+      <h1
+        className="title"
+      >
+        About 20,000 earthquakes occur every year.
+      </h1>
+      <p
+        className="text"
+      >
+        They can happen at any moment, so it’s important to plan accordingly and be prepared for an earthquake at any moment or place.
+      </p>
+    </div>
+  </section>
+  <section
+    id="indoors"
+  >
+    <div
+      className="title-container"
+      onClick={[Function]}
+    >
+      <div
+        className="inner-container"
+      >
+        <h2
+          className="section-title"
+        >
+          Indoors:
+        </h2>
+        <div
+          className="img-container"
+        >
+          <svg
+            className="triangle-up closed"
+          >
+            triangle-up.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="content-container closed"
+    >
+      <div
+        className="section-text-container"
+      >
+        <p
+          className="section-text"
+        >
+          While indoors during an earthquake the best thing to do is find a safe spot
+           
+          <strong
+            className="bold"
+          >
+            away from windows
+          </strong>
+           preferably on the
+           
+          <strong
+            className="bold"
+          >
+            1st floor
+          </strong>
+          .
+        </p>
+      </div>
+      <h3
+        className="sub-head-text"
+      >
+        If possible
+      </h3>
+      <div
+        className="img-row"
+      >
+        <svg
+          alt="image of person dropping to the floor"
+          className="safety-step-img imageOne"
+        >
+          drop.svg
+        </svg>
+        <svg
+          alt="image of person moving under cover"
+          className="safety-step-img imageTwo"
+        >
+          cover.svg
+        </svg>
+        <svg
+          alt="image of person holding on to cover"
+          className="safety-step-img imageThree"
+        >
+          holdon.svg
+        </svg>
+      </div>
+      <div
+        className="section-text-container"
+      >
+        <p
+          className="section-text"
+        >
+          <strong
+            className="bold"
+          >
+            Drop
+          </strong>
+           to your knees.
+        </p>
+        <p
+          className="section-text"
+        >
+          Find a safe spot for 
+          <strong
+            className="bold"
+          >
+            cover
+          </strong>
+           such as a table.
+        </p>
+        <p
+          className="section-text"
+        >
+          Place hands behind your head and place your head in your lap.
+        </p>
+        <p
+          className="section-text"
+        >
+          <strong
+            className="bold"
+          >
+            Hold on
+          </strong>
+           to your cover in case it shifts.
+        </p>
+      </div>
+      <h3
+        className="sub-head-text"
+      >
+        Using a cane
+      </h3>
+      <div
+        className="img-row"
+      >
+        <svg
+          alt="image of person with cane dropping to the floor"
+          className="safety-step-img imageOne"
+        >
+          cane-drop.svg
+        </svg>
+        <svg
+          alt="image of person with cane moving under cover"
+          className="safety-step-img imageTwo"
+        >
+          cane-cover.svg
+        </svg>
+        <svg
+          alt="image of person with cane holding on to cover"
+          className="safety-step-img imageThree"
+        >
+          cane-holdon.svg
+        </svg>
+      </div>
+      <h3
+        className="sub-head-text"
+      >
+        Using a walker
+      </h3>
+      <div
+        className="img-row"
+      >
+        <svg
+          alt="image of person locking their walker"
+          className="safety-step-img imageOne"
+        >
+          walker-lock.svg
+        </svg>
+        <svg
+          alt="image of person sitting on walker and covering their head"
+          className="safety-step-img imageTwo"
+        >
+          walker-cover.svg
+        </svg>
+        <svg
+          alt="image of person sitting on walker holding their cover over their head"
+          className="safety-step-img imageThree"
+        >
+          walker-holdon.svg
+        </svg>
+      </div>
+      <h3
+        className="sub-head-text"
+      >
+        Using a wheelchair
+      </h3>
+      <div
+        className="img-row"
+      >
+        <svg
+          alt="image of person on wheelchair putting on their breaks"
+          className="safety-step-img imageOne"
+        >
+          wheelchair-brake.svg
+        </svg>
+        <svg
+          alt="image of person on wheelchair covering their head"
+          className="safety-step-img imageTwo"
+        >
+          wheelchair-cover.svg
+        </svg>
+        <svg
+          alt="image of person on wheelchair holding their cover over their head"
+          className="safety-step-img imageThree"
+        >
+          wheelchair-holdon.svg
+        </svg>
+      </div>
+    </div>
+  </section>
+  <section
+    id="outdoors"
+  >
+    <div
+      className="title-container"
+      onClick={[Function]}
+    >
+      <div
+        className="inner-container"
+      >
+        <h2
+          className="section-title"
+        >
+          Outdoors:
+        </h2>
+        <div
+          className="img-container"
+        >
+          <svg
+            className="triangle-up closed"
+          >
+            triangle-up.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="content-container closed"
+    >
+      <div
+        className="section-text-container"
+      >
+        <p
+          className="section-text"
+        >
+          While outdoors during an earthquake
+        </p>
+      </div>
+      <h3
+        className="sub-head-text"
+      >
+        Do not try to run inside!
+      </h3>
+      <div
+        className="section-text-container"
+      >
+        <p
+          className="section-text"
+        >
+          <strong
+            className="bold"
+          >
+            Injury can occur from broken doorways or glass.
+          </strong>
+        </p>
+        <p
+          className="section-text"
+        >
+          Instead 
+          <strong
+            className="bold"
+          >
+            look for an open area
+          </strong>
+           away from powerlines, buildings, tall structures, and anything else that could be flung around during an earthquake.
+        </p>
+        <svg
+          alt="people standing in an open area during an earthquake"
+          className="outdoor-img"
+        >
+          outdoors.svg
+        </svg>
+        <p
+          className="section-text"
+        >
+          <strong
+            className="bold"
+          >
+            Get into the drop and cover position and wait out the shaking.
+          </strong>
+        </p>
+      </div>
+    </div>
+  </section>
+  <section
+    id="in-vehicle"
+  >
+    <div
+      className="title-container"
+      onClick={[Function]}
+    >
+      <div
+        className="inner-container"
+      >
+        <h2
+          className="section-title"
+        >
+          In your vehicle:
+        </h2>
+        <div
+          className="img-container"
+        >
+          <svg
+            className="triangle-up closed"
+          >
+            triangle-up.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="content-container closed"
+    >
+      <div
+        className="section-text-container"
+      >
+        <p
+          className="section-text"
+        >
+          Drive to an 
+          <strong
+            className="bold"
+          >
+            open area
+          </strong>
+           free of powerlines, overpasses, or anything that could fall or collapse.
+        </p>
+        <svg
+          alt="slow down, pull over, stay inside image representation"
+          className="invehicle-img"
+        >
+          vehicle.svg
+        </svg>
+        <p
+          className="section-text bigger"
+        >
+          <strong
+            className="bold"
+          >
+            Stay buckled and remain in the car until the quake has ended.
+          </strong>
+        </p>
+        <p
+          className="section-text"
+        >
+          Check the vehicle for damage as well as the roadway for cracks or tall debris.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section
+    id="e-kits"
+  >
+    <div
+      className="title-container"
+      onClick={[Function]}
+    >
+      <div
+        className="inner-container"
+      >
+        <h2
+          className="section-title"
+        >
+          Keep an emergency kit:
+        </h2>
+        <div
+          className="img-container"
+        >
+          <svg
+            className="triangle-up closed"
+          >
+            triangle-up.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="content-container closed"
+    >
+      <div
+        className="section-text-container"
+      >
+        <svg
+          alt="emergency kit containing the following items: waterproof bags, non-perishable food, batteries, first aid kit, important documents in sealed bags, flashlight, baby formula, sturdy gloves, portable radio"
+          className="ekit-img"
+        >
+          e-kit.svg
+        </svg>
+        <p
+          className="section-text bigger"
+        >
+          <strong
+            className="bold"
+          >
+            An emergency kit can save the day should the worst occur.
+          </strong>
+        </p>
+        <p
+          className="section-text"
+        >
+          Consider leaving a kit in your house, vehicle, or luggage in an earthquake prone area.
+        </p>
+      </div>
+      <ul
+        className="list-type-plus"
+      >
+        <li
+          className="list-item"
+        >
+          <svg
+            className="bullet-plus"
+          >
+            bullet-plus.svg
+          </svg>
+          Bandages
+        </li>
+        <li
+          className="list-item"
+        >
+          <svg
+            className="bullet-plus"
+          >
+            bullet-plus.svg
+          </svg>
+          Gauze
+        </li>
+        <li
+          className="list-item"
+        >
+          <svg
+            className="bullet-plus"
+          >
+            bullet-plus.svg
+          </svg>
+          Antiseptic
+        </li>
+        <li
+          className="list-item"
+        >
+          <svg
+            className="bullet-plus"
+          >
+            bullet-plus.svg
+          </svg>
+          Pain relievers (ibuprofen)
+        </li>
+        <li
+          className="list-item"
+        >
+          <svg
+            className="bullet-plus"
+          >
+            bullet-plus.svg
+          </svg>
+          Space blanket
+        </li>
+        <li
+          className="list-item"
+        >
+          <svg
+            className="bullet-plus"
+          >
+            bullet-plus.svg
+          </svg>
+          Dust mask
+        </li>
+        <li
+          className="list-item"
+        >
+          <svg
+            className="bullet-plus"
+          >
+            bullet-plus.svg
+          </svg>
+          Working gloves
+        </li>
+        <li
+          className="list-item"
+        >
+          <svg
+            className="bullet-plus"
+          >
+            bullet-plus.svg
+          </svg>
+          Comfortable walking shoes
+        </li>
+        <li
+          className="list-item"
+        >
+          <svg
+            className="bullet-plus"
+          >
+            bullet-plus.svg
+          </svg>
+          Flashlight
+        </li>
+        <li
+          className="list-item"
+        >
+          <svg
+            className="bullet-plus"
+          >
+            bullet-plus.svg
+          </svg>
+          Whistle or noise-maker to call for help
+        </li>
+        <li
+          className="list-item"
+        >
+          <svg
+            className="bullet-plus"
+          >
+            bullet-plus.svg
+          </svg>
+          Bottled water
+        </li>
+        <li
+          className="list-item"
+        >
+          <svg
+            className="bullet-plus"
+          >
+            bullet-plus.svg
+          </svg>
+          Canned food
+        </li>
+        <li
+          className="list-item"
+        >
+          <svg
+            className="bullet-plus"
+          >
+            bullet-plus.svg
+          </svg>
+          Large food storage bags
+        </li>
+        <li
+          className="list-item"
+        >
+          <svg
+            className="bullet-plus"
+          >
+            bullet-plus.svg
+          </svg>
+          Colored paper or markers to mark areas safe to walk over
+        </li>
+      </ul>
+      <div
+        className="section-text-container"
+      >
+        <p
+          className="section-text"
+        >
+          Have 
+          <strong
+            className="bold"
+          >
+            three days
+          </strong>
+           of non-perishable food and water. If traveling try to bring as much as you can fit in a carry-on.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section
+    id="step"
+  >
+    <div
+      className="title-container"
+      onClick={[Function]}
+    >
+      <div
+        className="inner-container"
+      >
+        <h2
+          className="section-title"
+        >
+          Sign up for S.T.E.P.
+        </h2>
+        <div
+          className="img-container"
+        >
+          <svg
+            className="triangle-up closed"
+          >
+            triangle-up.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="content-container closed"
+    >
+      <div
+        className="step-logo-container"
+      >
+        <svg
+          alt="Smart Traveler Enrollment Program compony logo"
+          className="step-logo"
+        >
+          STEP-logo.svg
+        </svg>
+      </div>
+      <a
+        className="resource-link"
+        href="https://step.state.gov/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Connect to step.state.gov
+      </a>
+      <div
+        className="section-text-container"
+      >
+        <p
+          className="section-text"
+        >
+          Sign up for Smart Traveler Enrollment Program, or STEP, through the Bureau of Consular Affairs. They will send you important emergency information during a disaster.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section
+    id="help-signals"
+  >
+    <div
+      className="title-container"
+      onClick={[Function]}
+    >
+      <div
+        className="inner-container"
+      >
+        <h2
+          className="section-title"
+        >
+          Signaling for help:
+        </h2>
+        <div
+          className="img-container"
+        >
+          <svg
+            className="triangle-up closed"
+          >
+            triangle-up.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="content-container closed"
+    >
+      <div
+        className="section-text-container"
+      >
+        <p
+          className="section-text"
+        >
+          During an earthquake, becoming buried under debris is possible.
+        </p>
+        <div
+          className="green-message"
+        >
+          <p
+            className="green-message-text"
+          >
+            It’s important to learn how to signal for help so rescuers can find you.
+          </p>
+        </div>
+        <p
+          className="section-text"
+        >
+          Possible signaling techniques:
+        </p>
+      </div>
+      <ul
+        className="list-type-solid"
+      >
+        <li
+          className="list-item"
+        >
+          <svg
+            className="bullet-solid"
+          >
+            bullet-solid.svg
+          </svg>
+          Blow on a whistle in bursts of three until help arrives.
+        </li>
+        <li
+          className="list-item"
+        >
+          <svg
+            className="bullet-solid"
+          >
+            bullet-solid.svg
+          </svg>
+          Flick a light on and off until help arrives.
+        </li>
+        <li
+          className="list-item"
+        >
+          <svg
+            className="bullet-solid"
+          >
+            bullet-solid.svg
+          </svg>
+          Shine a flashlight in a dark area.
+        </li>
+        <li
+          className="list-item"
+        >
+          <svg
+            className="bullet-solid"
+          >
+            bullet-solid.svg
+          </svg>
+          Yell loudly.
+        </li>
+        <li
+          className="list-item"
+        >
+          <svg
+            className="bullet-solid"
+          >
+            bullet-solid.svg
+          </svg>
+          Tap on piping or other objects that can carry sound.
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section
+    id="travel-tips"
+  >
+    <div
+      className="title-container"
+      onClick={[Function]}
+    >
+      <div
+        className="inner-container"
+      >
+        <h2
+          className="section-title"
+        >
+          Other travel tips:
+        </h2>
+        <div
+          className="img-container"
+        >
+          <svg
+            className="triangle-up closed"
+          >
+            triangle-up.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="content-container closed"
+    >
+      <div
+        className="section-text-container"
+      >
+        <p
+          className="section-text"
+        >
+          Consider travel insurance to cover possible expenses abroad. Bring cash and copies of important travel documents in case you are forced to evacuate the country.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section
+    id="medical-aid"
+  >
+    <div
+      className="title-container"
+      onClick={[Function]}
+    >
+      <div
+        className="inner-container"
+      >
+        <h2
+          className="section-title"
+        >
+          Medical aid:
+        </h2>
+        <div
+          className="img-container"
+        >
+          <svg
+            className="triangle-up closed"
+          >
+            triangle-up.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="content-container closed"
+    >
+      <div
+        className="section-text-container"
+      >
+        <p
+          className="section-text"
+        >
+          If you find yourself or anyone injured during an event, refer to these links for medical care.
+        </p>
+      </div>
+      <div
+        className="resource-link-container"
+      >
+        <a
+          className="resource-link"
+          href="https://www.osha.gov/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          OSHA - Occupational Safety and Health Administration
+        </a>
+        <a
+          className="resource-link"
+          href="https://www.cdc.gov/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          CDC - Center for Disease Control
+        </a>
+        <a
+          className="resource-link"
+          href="https://www.redcross.org/get-help/how-to-prepare-for-emergencie types-of-emergencies/earthquake.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Red Cross.org Earthquake Safety
+        </a>
+        <a
+          className="resource-link"
+          href="https://www.fema.gov/media-library-data/1510153676317-82124ab3b0a31ea239f60acc8d46c2ba/FEMA_B-526_Earthquake_Safety_Checklist_110217_508.pdf"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          FEMA - Earthquake Preparedness Form
+        </a>
+        <a
+          className="resource-link"
+          href="https://www.aarp.org/health/healthy-living/info-10-2012/medical-emergency-preparation.html"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          AARP - Tips to Prepare for Medical Response
+        </a>
+      </div>
+    </div>
+  </section>
+  <section
+    id="disaster-help"
+  >
+    <div
+      className="title-container"
+      onClick={[Function]}
+    >
+      <div
+        className="inner-container"
+      >
+        <h2
+          className="section-title"
+        >
+          Disaster Links:
+        </h2>
+        <div
+          className="img-container"
+        >
+          <svg
+            className="triangle-up closed"
+          >
+            triangle-up.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="content-container closed"
+    >
+      <div
+        className="resources-container"
+      >
+        <div
+          className="resource-card"
+        >
+          <img
+            alt="Federal Emergency Management Agency logo"
+            className="resource-logo"
+            src="fema-logo.jpg"
+          />
+          <h4
+            className="resource-name"
+          >
+            FEMA - Greater LA Area
+          </h4>
+          <p
+            className="resource-phone"
+          >
+            Phone:
+            <span
+              className="resource-highlight"
+            >
+              231-549-2345
+            </span>
+          </p>
+          <p
+            className="resource-email"
+          >
+            Email:
+            <span
+              className="resource-highlight"
+            >
+              helpnow@fema.org
+            </span>
+          </p>
+          <a
+            className="resource-highlight website"
+            href="http://www.fema.gov"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            http://www.fema.gov
+          </a>
+        </div>
+        <div
+          className="resource-card"
+        >
+          <img
+            alt="American Red Cross logo"
+            className="resource-logo"
+            src="red-cross-logo.jpg"
+          />
+          <h4
+            className="resource-name"
+          >
+            American Red Cross - LA
+          </h4>
+          <p
+            className="resource-phone"
+          >
+            Phone:
+            <span
+              className="resource-highlight"
+            >
+              231-549-2345
+            </span>
+          </p>
+          <p
+            className="resource-email"
+          >
+            Email:
+            <span
+              className="resource-highlight"
+            >
+              helpnow@redcross.org
+            </span>
+          </p>
+          <a
+            className="resource-highlight website"
+            href="http://www.recross.org"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            http://www.recross.org
+          </a>
+        </div>
+        <div
+          className="resource-card"
+        >
+          <img
+            alt="Salvation Army logo"
+            className="resource-logo"
+            src="salvation-army-logo.jpg"
+          />
+          <h4
+            className="resource-name"
+          >
+            Salvation Army - Greater LA
+          </h4>
+          <p
+            className="resource-phone"
+          >
+            Phone:
+            <span
+              className="resource-highlight"
+            >
+              231-549-2345
+            </span>
+          </p>
+          <p
+            className="resource-email smaller"
+          >
+            Email:
+            <span
+              className="resource-highlight"
+            >
+              help@salvationarmyusa.org
+            </span>
+          </p>
+          <a
+            className="resource-highlight website smaller"
+            href="http://www.salvationarmyusa.org"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            http://www.salvationarmyusa.org
+          </a>
+        </div>
+        <div
+          className="resource-card"
+        >
+          <img
+            alt="Emergency Shelters logo"
+            className="resource-logo"
+            src="earthquake-shelter-logo.jpg"
+          />
+          <h4
+            className="resource-name"
+          >
+            LA Emergency Shelters
+          </h4>
+          <p
+            className="resource-phone"
+          >
+            Phone:
+            <span
+              className="resource-highlight"
+            >
+              231-549-2345
+            </span>
+          </p>
+          <p
+            className="resource-email smaller"
+          >
+            Email:
+            <span
+              className="resource-highlight"
+            >
+              help@salvationarmyusa.org
+            </span>
+          </p>
+          <a
+            className="resource-highlight website smaller"
+            href="http://www.salvationarmyusa.org"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            http://www.salvationarmyusa.org
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;

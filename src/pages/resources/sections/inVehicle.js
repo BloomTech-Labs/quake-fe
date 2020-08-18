@@ -14,12 +14,12 @@ const InVehicle = () => {
       <div className="content-container closed">
         <div className="section-text-container">
           <p className="section-text">
-            Drive to an <strong>open area</strong> free of powerlines,
+            Drive to an <strong className='bold'>open area</strong> free of powerlines,
             overpasses, or anything that could fall or collapse.
           </p>
           <Vehicle className="invehicle-img" alt="slow down, pull over, stay inside image representation" />
           <p className="section-text bigger">
-            <strong>
+            <strong className='bold'>
               Stay buckled and remain in the car until the quake has ended.
             </strong>
           </p>

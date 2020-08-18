@@ -31,16 +31,16 @@ html {
   ); // Note: This calc's px value is a combination of 'navigation.scss > nav' and 'header.scss > .header' height values.
 
   position: fixed;
-  top: 35px;
+  top: 45px;
 
   @media only screen and (min-width: $min-tablet-width) {
     height: calc(100% - 45px);
-    top: 90px;
+    // top prop in activity.scss due to whitespace issue
   }
   @media only screen and (min-width: $min-desktop-width) {
     height: 100%;
     height: calc(100% - 45px);
-    top: 45px;
+    // top prop in activity.scss due to whitespace issue
   }
 }
 

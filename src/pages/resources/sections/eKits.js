@@ -16,7 +16,7 @@ const EKits = () => {
         <div className="section-text-container">
           <EKit className="ekit-img" alt="emergency kit containing the following items: waterproof bags, non-perishable food, batteries, first aid kit, important documents in sealed bags, flashlight, baby formula, sturdy gloves, portable radio"/>
           <p className="section-text bigger">
-            <strong>An emergency kit can save the day should the worst occur.</strong>
+            <strong className='bold'>An emergency kit can save the day should the worst occur.</strong>
           </p>
           <p className="section-text">
             Consider leaving a kit in your house, vehicle, or luggage in an
@@ -26,7 +26,7 @@ const EKits = () => {
         <ListTypePlus />
         <div className="section-text-container">
           <p className="section-text">
-            Have <strong>three days</strong> of non-perishable food and water.
+            Have <strong className='bold'>three days</strong> of non-perishable food and water.
             If traveling try to bring as much as you can fit in a carry-on.
           </p>
         </div>

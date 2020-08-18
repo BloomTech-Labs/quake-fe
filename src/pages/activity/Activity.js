@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Fragment} from "react";
 import MediaQuery from "react-responsive";
 import Filters from "./filters/Filters";
 import SearchBar from "./search/SearchBar";
@@ -7,15 +7,20 @@ import MapContainer from "./map/MapContainer";
 
 const Activity = () => {
   return (
-    <div className="main-container no-scroll">
-      <MediaQuery maxWidth={799}>
+    <Fragment>
+      <MediaQuery minWidth={800}>
         <SearchBar />
       </MediaQuery>
-
-      <Filters />
-      <ResultsContainer />
-      <MapContainer />
-    </div>
+      <div className="main-container no-scroll activity-page">
+        <MediaQuery maxWidth={799}>
+          <SearchBar />
+        </MediaQuery>
+        <Filters />
+        <ResultsContainer />
+        <MapContainer />
+      </div>
+    </Fragment>
+    
   );
 };
 

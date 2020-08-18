@@ -36,15 +36,15 @@ const Indoors = () => {
 				<div className='section-text-container'>
 					<p className='section-text'>
 						While indoors during an earthquake the best thing to do is find a safe spot{' '}
-						<strong>away from windows</strong> preferably on the{' '}
-						<strong>1st floor</strong>.</p>
+						<strong className='bold'>away from windows</strong> preferably on the{' '}
+						<strong className='bold'>1st floor</strong>.</p>
 				</div>
 				<ImageRow subHeadText='If possible' ImageOne={Drop} altOne='image of person dropping to the floor' ImageTwo={Cover} altTwo='image of person moving under cover' ImageThree={HoldOn} altThree='image of person holding on to cover'/>
 				<div className='section-text-container'>
-					<p className='section-text'><strong>Drop</strong> to your knees.</p>
-					<p className='section-text'>Find a safe spot for <strong>cover</strong> such as a table.</p>
+					<p className='section-text'><strong className='bold'>Drop</strong> to your knees.</p>
+					<p className='section-text'>Find a safe spot for <strong className='bold'>cover</strong> such as a table.</p>
 					<p className='section-text'>Place hands behind your head and place your head in your lap.</p>
-					<p className='section-text'><strong>Hold on</strong> to your cover in case it shifts.</p>
+					<p className='section-text'><strong className='bold'>Hold on</strong> to your cover in case it shifts.</p>
 				</div>
 				{subImageRow.map((row, index) => {return(
 						<ImageRow subHeadText={row.text} key={index} ImageOne={row.imgOne} altOne={row.altOne} ImageTwo={row.imgTwo} altTwo={row.altTwo} ImageThree={row.imgThree} altThree={row.altThree}/>
