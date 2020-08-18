@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { jumpViewport } from "../../../redux/actions";
-import Arrow from "../../../images/icons/Arrow_Active.png";
+import {ReactComponent as Arrow} from "../../../images/icons/Arrow_Active.svg";
 var moment = require("moment");
 
 function Card({ jumpViewport, quake, number }) {
@@ -82,8 +82,7 @@ function Card({ jumpViewport, quake, number }) {
             <h3 className="distance">{split2[2]}</h3>
           </article>
 
-          <img
-            src={Arrow}
+          <Arrow
             className={
               !open ? "dropdown-arrow-not-clicked" : "dropdown-arrow-clicked"
             }

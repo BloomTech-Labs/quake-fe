@@ -67,9 +67,9 @@ function Filters({
   const toggleSearch = () => {
     // Toggles visibility of search menu
     const searchMenu = document.getElementById("search-menu");
-    searchMenu.style.display === "block"
+    searchMenu.style.display === "flex"
       ? (searchMenu.style.display = "none")
-      : (searchMenu.style.display = "block");
+      : (searchMenu.style.display = "flex");
   };
 
   return (

@@ -1,0 +1,145 @@
+@import "./variables.scss";
+
+#sms-main {
+  font-family: $font-body;
+  font-style: normal;
+  font-weight: 500;
+  color: #252525;
+
+  .container {
+    width: 85%;
+    margin: 0 auto;
+
+    .title {
+      font-size: 28px;
+      line-height: 46px;
+      color: $font-color-accent;
+      margin-top: 10px;
+    }
+    .subTitle {
+      font-size: 14px;
+      line-height: 23px;
+      margin-top: 5px;
+    }
+
+    #myForm {
+      .col {
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0;
+
+        .label {
+          font-size: 18px;
+          line-height: 30px;
+        }
+        .text {
+          max-width: 100%;
+          height: 35px;
+          background: $theme-color-secondary;
+          border-radius: 5px;
+          border: none;
+          padding: 5px;
+          box-sizing: border-box;
+          z-index: 1001;
+          width: 100%;
+          font-size: 1.6em;
+        }
+
+        ::placeholder {
+          /* Chrome, Firefox, Opera, Safari 10.1+ */
+          color: $font-color-accent;
+          opacity: 1; /* Firefox */
+        }
+
+        :-ms-input-placeholder {
+          /* Internet Explorer 10-11 */
+          color: $font-color-accent;
+        }
+
+        ::-ms-input-placeholder {
+          /* Microsoft Edge */
+          color: $font-color-accent;
+        }
+      }
+
+      .btn-container {
+        max-width: 340px;
+        margin: 0 auto;
+        margin-top: 30px;
+
+        .btn {
+          width: 100%;
+          height: 48px;
+          font-size: 22px;
+          color: $font-color-accent;
+          background: #eff3ef;
+          border-radius: 2.57931px;
+          border: none;
+        }
+      }
+
+      .slide-container {
+        width: 100%;
+      }
+
+      .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 15px;
+        border-radius: 5px;
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: 0.1s;
+        transition: opacity 0.1s;
+      }
+
+      .slider:hover {
+        opacity: 1;
+      }
+
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #4caf50;
+        cursor: pointer;
+      }
+
+      .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #4caf50;
+        cursor: pointer;
+      }
+
+      #distance-label {
+        text-align: center;
+      }
+
+      .map-container {
+        width: 100%;
+        height: 150px;
+        transition: 0.2s cubic-bezier(0.73, 0, 0.9, 1);
+        position: relative;
+        top: 0;
+        z-index: 998;
+        background: rgba(51, 51, 51, 0.425);
+        display: block;
+      }
+
+      .map-marker {
+        width: 35px;
+      }
+    } // end myForm
+  } // end contianer
+} // end sms
+
+.dark-mode {
+  #sms-main {
+    color: $font-color-white;
+  }
+}

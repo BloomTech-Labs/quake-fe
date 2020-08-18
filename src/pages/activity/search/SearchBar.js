@@ -1,5 +1,6 @@
 import React from "react";
 import Geocoder from "./Geocoder";
+import { ReactComponent as FilterIcon } from "../../../images/icons/filter.svg";
 
 const SearchBar = () => {
   const toggleFilters = (e) => {
@@ -8,9 +9,9 @@ const SearchBar = () => {
 
     const filterMenu = document.getElementById("search-menu");
 
-    filterMenu.style.display === "block"
+    filterMenu.style.display === "flex"
       ? (filterMenu.style.display = "none")
-      : (filterMenu.style.display = "block");
+      : (filterMenu.style.display = "flex");
 
     console.log("toggled display");
   };
@@ -21,11 +22,14 @@ const SearchBar = () => {
         <Geocoder />
         {/* Current Location Button */}
       </div>
-      <button
+      <div
         aria-label="filters toggle"
         className="filters-toggle"
         onClick={toggleFilters}
-      ></button>
+      >
+        <FilterIcon className="filter-icon" />
+        <p>Filter</p>
+      </div>
     </div>
   );
 };

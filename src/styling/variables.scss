@@ -1,35 +1,28 @@
 // responsive breakpoints:
-//mobile:
-//tablet:
-//desktop:
+$min-tablet-width: 800px;
+$min-desktop-width: 1024px;
 
 // Colors for the site theme:
-//primary
-$logo-primary: #247249;
-$logo-background: #fffffa;
+$theme-color-primary: #247249;
+$theme-color-secondary: #fffffa;
 
-//accent
-$active-icon: #247249;
+// font colors:
+$font-color-black: #323232;
+$font-color-white: #fffffa;
+$font-color-accent: #247249;
 
-//etc.
-$inactive-icon: #7ba29e;
-$lightest-text: #fffffa;
+// general colors:
 $neutral-1: #f6fcfb;
 $neutral-2: #d9e3e2;
 $neutral-3: #252525;
 
+// quake card colors:
 $mag-1: #53e0cd;
 $mag-2: #a5bf65;
 $mag-3: #e4912f;
 $mag-4: #f46428;
 $mag-5: #f13342;
 $mag-6: #ef2073;
-
-//----------
-
-// Resources Page Theme:
-$font-color: #323232;
-$accent-color: #247249;
 
 // Dark Mode
 $dark-theme: #323232;

@@ -1,6 +1,7 @@
 // React
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import MediaQuery from "react-responsive";
 
 // Redux
 import { createStore, applyMiddleware } from "redux";
@@ -14,11 +15,13 @@ import Feed from "./pages/feed/Feed";
 import About from "./pages/about/About";
 import Resources from "./pages/resources/Resources";
 import BugReport from "./pages/report/BugReport";
+import Sms from "./pages/sms/Sms";
+
 
 // Common Components
 import Header from "./components/Header";
-import Responsive from "./components/Responsive";
 import Navigation from "./components/navigation/Navigation";
+import SearchBar from "./pages/activity/search/SearchBar";
 
 // Utils
 import useDarkMode from "./utils/customHooks/useDarkMode";
@@ -44,9 +47,14 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <Responsive />
         <div className="App">
           <Header />
+
+          <MediaQuery minWidth={800}>
+            <Route exact path="/" component={SearchBar} />
+            <Route exact path="/activity" component={SearchBar} />
+          </MediaQuery>
+
           <Switch>
             <Route exact path="/" component={Activity} />
             <Route exact path="/activity" component={Activity} />
@@ -54,8 +62,10 @@ function App() {
             <Route exact path="/about" component={About} />
             <Route exact path="/resources" component={Resources} />
             <Route exact path="/report" component={BugReport} />
+            <Route exact path="/sms" component={Sms} />
+
           </Switch>
-          <Navigation/>
+          <Navigation />
           {/* Navigation Placeholder */}
         </div>
       </Router>

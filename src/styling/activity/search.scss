@@ -1,0 +1,81 @@
+@import "../variables.scss";
+
+.search-container {
+  width: 100%;
+  height: 45px;
+  display: flex;
+
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 10px;
+
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  background: $theme-color-primary;
+
+  @media only screen and (min-width: $min-tablet-width) {
+    width: 100%;
+    top: 45px;
+    justify-content: left;
+  }
+
+  @media only screen and (min-width: $min-desktop-width) {
+    width: calc(100% - 580px);
+    top: 0;
+    left: 180px;
+    justify-content: space-between;
+    border: none;
+  }
+
+  .search-bar {
+    width: calc(100% - 85px);
+    background-color: $theme-color-secondary;
+    border-radius: 5px;
+
+    @media only screen and (min-width: $min-tablet-width) {
+      width: calc(100% - 390px);
+      margin-right: 10px;
+    }
+
+    @media only screen and (min-width: $min-desktop-width) {
+      width: calc(100% - 85px);
+      margin: 0;
+    }
+  }
+
+  .filters-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 76px;
+    height: 85%;
+
+    text-decoration: none;
+    color: $theme-color-secondary;
+    font-size: 1.3em;
+    font-family: $font-body;
+
+    border-radius: 5px;
+    border: none;
+
+    background: transparent;
+
+    transition: 0.2s ease-in-out;
+
+    cursor: pointer;
+
+    &:hover {
+      background: #65FFAE20;
+    }
+
+    .filter-icon {
+      width: 22px;
+      height: 22px;
+    }
+  }
+}
