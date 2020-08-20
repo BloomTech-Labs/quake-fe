@@ -58,11 +58,10 @@ const Card = (newsArticle) => {
           <time className="news-article-date">{articleDate[0]}</time>
         </div>
       </div>
-      <img
+      <div
         style={{ backgroundImage: `url(${articleImage})` }}
         className="news-article-image"
-        alt="Article Image"
-      />
+      ></div>
     </div>
   );
 };
