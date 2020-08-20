@@ -34,8 +34,8 @@
           height: 25px;
 
           .triangle-up {
-            transform: rotate(-180deg);
-            -webkit-transform: rotate(-180deg);
+            transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
             display: flex;
             text-decoration: none;
             width: 100%;
@@ -45,8 +45,8 @@
   
             &.closed {
               transition: all 0.3s;
-              transform: rotate(0deg);
-              -webkit-transform: rotate(0deg);
+              transform: rotate(-180deg);
+              -webkit-transform: rotate(-180deg);
             }
           }
         }
