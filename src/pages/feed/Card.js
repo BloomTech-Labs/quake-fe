@@ -7,7 +7,7 @@ const Card = (newsArticle) => {
   let articleImage = {};
   let articleKeyword = [];
   let articleDate = newsArticle.newsArticle.pub_date.split("T");
-  const lowerCaseTopic = newsArticle.newsArticle.topic.toLowerCase()
+  const lowerCaseTopic = newsArticle.newsArticle.topic.toLowerCase();
 
   if (newsArticle.newsArticle.multimedia[0] === undefined) {
     articleImage = defaultArticleImage;
@@ -58,7 +58,11 @@ const Card = (newsArticle) => {
           <time className="news-article-date">{articleDate[0]}</time>
         </div>
       </div>
-      <img style={{backgroundImage: `url(${articleImage})`}} className="news-article-image" />
+      <img
+        style={{ backgroundImage: `url(${articleImage})` }}
+        className="news-article-image"
+        alt="Article Image"
+      />
     </div>
   );
 };
