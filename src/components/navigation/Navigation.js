@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import MediaQuery from "react-responsive";
 import { NavLink } from "react-router-dom";
 import SubNav from "./subNav";
 
@@ -15,11 +16,41 @@ const Navigation = () => {
   const toggleViewMore = () => {
     setViewMore(!viewMore);
   };
+
+  const [sideView, setSideView] = useState(false);
+  const toggleSideNews = () => {
+    const container = document.getElementById("feed-container");
+    if (!sideView) {
+      container.style.transform = "translateX(0px)";
+      setSideView(!sideView);
+    } else {
+      container.style.transform = "translateX(-400px)";
+      setSideView(!sideView);
+    }
+  };
+
   return (
     <nav>
-      <NavLink className="nav-link" activeStyle={activeStyle} exact to="/feed">
-        <FeedIcon className="nav-icon" /> <p>News</p>
-      </NavLink>
+      <MediaQuery maxWidth={799}>
+        <NavLink
+          className="nav-link"
+          activeStyle={activeStyle}
+          exact
+          to="/feed"
+        >
+          <FeedIcon className="nav-icon" /> <p>News</p>
+        </NavLink>
+      </MediaQuery>
+      <MediaQuery minWidth={800}>
+        <div
+          onClick={toggleSideNews}
+          className="nav-link"
+          style={sideView ? activeStyle : { background: "transparent" }}
+        >
+          <FeedIcon className="nav-icon" />
+          <p>News</p>
+        </div>
+      </MediaQuery>
 
       <a
         className="nav-link"

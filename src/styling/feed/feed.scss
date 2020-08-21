@@ -1,2 +1,25 @@
 @import "./card.scss";
 @import "./details.scss";
+
+.persistant-container {
+//   height: calc(100% - 90px);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1100;
+  transform: translateX(-400px);
+  transition: 0.2s ease-in-out;
+
+  background: $theme-color-secondary;
+
+  @media only screen and (min-width: $min-tablet-width) {
+    max-width: 400px;
+    height: calc(100% - 90px);
+    transition: 0.2s ease-in-out;
+  }
+  @media only screen and (min-width: $min-desktop-width) {
+    max-width: 400px;
+    height: calc(100% - 45px);
+    transition: 0.2s ease-in-out;
+  }
+}

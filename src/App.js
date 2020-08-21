@@ -1,6 +1,7 @@
 // React
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import MediaQuery from "react-responsive";
 
 // Redux
 import { createStore, applyMiddleware } from "redux";
@@ -10,12 +11,11 @@ import { rootReducer as reducers } from "./redux/reducers/index";
 
 // Major Components
 import Activity from "./pages/activity/Activity";
-import Feed from "./pages/feed/Feed";
+import FeedContainer from "./pages/feed/FeedContainer";
 import About from "./pages/about/About";
 import Resources from "./pages/resources/Resources";
 import BugReport from "./pages/report/BugReport";
 import Sms from "./pages/sms/Sms";
-
 
 // Common Components
 import Header from "./components/Header";
@@ -48,18 +48,23 @@ function App() {
         <div className="App">
           <Header />
 
+          <MediaQuery minWidth={800}>
+            <FeedContainer />
+          </MediaQuery>
+
           <Switch>
             <Route exact path="/" component={Activity} />
             <Route exact path="/activity" component={Activity} />
-            <Route exact path="/feed" component={Feed} />
+
+            <Route exact path="/feed" component={FeedContainer} />
+
             <Route exact path="/about" component={About} />
             <Route exact path="/resources" component={Resources} />
             <Route exact path="/report" component={BugReport} />
             <Route exact path="/sms" component={Sms} />
-
           </Switch>
+
           <Navigation />
-          {/* Navigation Placeholder */}
         </div>
       </Router>
     </Provider>

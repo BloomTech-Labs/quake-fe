@@ -3,18 +3,18 @@ import defaultArticleImage from "../../images/graphics/default-image.jpg";
 
 const Card = (newsArticle) => {
   const [newsOpen, setNewsOpen] = useState(false);
-  const newsTopics = ["Earthquake", "Tsunami", "Seismic", "Alaska"];
   let articleImage = {};
-  let articleKeyword = [];
   let articleDate = newsArticle.newsArticle.pub_date.split("T");
-  const lowerCaseTopic = newsArticle.newsArticle.topic.toLowerCase()
+  const lowerCaseTopic = newsArticle.newsArticle.topic.toLowerCase();
 
+  // Missing article image catch
   if (newsArticle.newsArticle.multimedia[0] === undefined) {
     articleImage = defaultArticleImage;
   } else {
     articleImage = `https://www.nytimes.com/${newsArticle.newsArticle.multimedia[0].url}`;
   }
 
+  // Missing article abstract catch
   if (newsArticle.newsArticle.abstract === "") {
     newsArticle.newsArticle.abstract =
       "Please visit the full article to read more.";
@@ -58,7 +58,10 @@ const Card = (newsArticle) => {
           <time className="news-article-date">{articleDate[0]}</time>
         </div>
       </div>
-      <img src={articleImage} className="news-article-image" />
+      <div
+        style={{ backgroundImage: `url(${articleImage})` }}
+        className="news-article-image"
+      ></div>
     </div>
   );
 };

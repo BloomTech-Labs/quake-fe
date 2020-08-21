@@ -1,43 +1,39 @@
 @import "../variables.scss";
 
-.news-article-container{
-    display: flex;
-    flex-direction: row;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-height: 180px;
-    transition: 0.3s ease-in-out;
-    border-bottom: 1px solid #d5d1c680;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    padding: 15px;
-    
+.news-article-container {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-height: 300px;
+  transition: 0.3s ease-in-out;
+  border-bottom: 1px solid #d5d1c680;
+  padding: 10px;
 }
 
-.news-article-container-open{
-    display: flex;
-    flex-direction: row;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-height: 700px;
-    transition: 0.3s ease-in-out;
-    border-bottom: 1px solid #d5d1c680;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    padding: 15px;
-    
+.news-article-container-open {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-height: 700px;
+  transition: 0.3s ease-in-out;
+  border-bottom: 1px solid #d5d1c680;
+  padding: 10px;
 }
 
-.news-article-info{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    justify-content: space-between;
+.news-article-info {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: calc(100% - 130px); // (100% - ( 120px width of image + 10px spacing ))
+  justify-content: space-between;
+
+  transition: 0.3s ease-in-out;
 }
 
 .news-article-title {
@@ -46,88 +42,111 @@
   font-weight: 600;
 }
 
-.news-article-abstract{
-    height: 4.8em;
-    font-family: $font-body;
-    font-size: 1.6em;
-    position: relative;
-    overflow: hidden;
-    margin: 20px 0;
-
+.news-article-abstract {
+  height: 4.8em;
+  font-family: $font-body;
+  font-size: 1.6em;
+  position: relative;
+  overflow: hidden;
+  margin: 10px 0;
 }
 
-.news-article-abstract-open{
-    height: 100%;
-    font-family: $font-body;
-    font-size: 1.6em;
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding-right: 10px;
-    margin: 20px 0;
+.news-article-abstract-open {
+  height: 100%;
+  font-family: $font-body;
+  font-size: 1.6em;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+  margin: 10px 0;
 }
 
-.news-article-abstract::after{
-    content: "";
+.news-article-abstract::after {
+  content: "";
   text-align: right;
   position: absolute;
   bottom: 0;
   right: 0;
   width: 70%;
-  height: .8em;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
-  transition: all .3s;
+  height: 0.8em;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1) 50%
+  );
+  transition: all 0.3s;
 }
 
-.news-article-image{
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
+.news-article-bottom-info {
+  display: flex;
+  justify-content: space-between;
+  font-family: $font-body;
+  font-size: 1.6em;
+  width: 100%;
 }
 
-.news-article-bottom-info{
-    display: flex;
-    justify-content: space-between;
-    font-family: $font-body;
-    font-size: 1.6em;
-    width: 100%;
+// Search Topics
+.topic-earthquake {
+  padding: 3px;
+  border-radius: 5px;
+  background: rgb(160, 221, 148);
 }
 
-%news-article-topic {
-    width: 25px;
-  }
-  .topic-earthquake {
-    @extend %activity-color;
-    background: red;
-  }
-
-.news-article-button{
-    transition: all .3s;
-    display: none;
-    opacity: 0;
-    height: 0;
-    width: 50%;
-    margin: auto;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.topic-tsunami {
+  padding: 3px;
+  border-radius: 5px;
+  background: rgb(158, 221, 250);
 }
 
-.news-article-button-open{
-    background-color: #247249;
-    transition: all .3s;
-    border-radius: 5px;
-    width: 50%;
-    height: 40px;
-    margin: auto;
-    margin-bottom: 10px;
-    opacity: 1;
-    transition: all .3s;
-    color: white;
-    font-size: 1.6em;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.topic-seismic {
+  padding: 3px;
+  border-radius: 5px;
+  background: rgb(245, 236, 153);
+}
+
+.topic-alaska {
+  padding: 3px;
+  border-radius: 5px;
+  background: rgb(255, 205, 205);
+}
+
+.news-article-image {
+  width: 120px;
+  height: 120px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.news-article-button {
+  transition: all 0.3s;
+  display: none;
+  opacity: 0;
+  height: 0;
+  width: 50%;
+  margin: 0 auto;
+  color: $font-color-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.news-article-button-open {
+  background-color: $theme-color-primary;
+  transition: all 0.3s;
+  border-radius: 5px;
+  width: 50%;
+  height: 40px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  opacity: 1;
+  transition: all 0.3s;
+  color: $font-color-white;
+  font-size: 1.6em;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-body;
 }
