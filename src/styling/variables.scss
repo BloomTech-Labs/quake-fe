@@ -10,6 +10,9 @@ $theme-color-secondary: #fffffa;
 $font-color-black: #323232;
 $font-color-white: #fffffa;
 $font-color-accent: #247249;
+:export {
+  fontColorAccent: $font-color-accent;
+}
 
 // general colors:
 $neutral-1: #f6fcfb;
