@@ -10,7 +10,7 @@ const Sms = (state) => {
   const longLatString = state.longitude + ", " + state.latitude;
 
   const [smsInfo, setSmsInfo] = useState({
-    coordinates: "",
+    coordinates: [],
   });
   console.log(smsInfo);
 
@@ -26,7 +26,7 @@ const Sms = (state) => {
         smsInfo
       )
       .then(function (res) {
-        alert(res);
+        alert("You have been added, for Faultline notifications");
       })
       .catch(function (error) {
         alert(error);
@@ -63,9 +63,10 @@ const Sms = (state) => {
   };
 
   useEffect(() => {
+    const coords = [state.longitude, state.latitude]
     setSmsInfo({
       ...smsInfo,
-      coordinates: longLatString,
+      coordinates: coords
     });
   }, [longLatString]);
 
