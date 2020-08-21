@@ -1,18 +1,30 @@
 import React, { useState, createRef } from 'react';
 import emailjs from 'emailjs-com'
 import ReCAPTCHA from 'react-google-recaptcha'
+import styleVar from '../../styling/variables.scss'
 
 const recaptchaRef = createRef(); // ref to use captcha functions
 const sendEmail = (e) => {
   emailjs.sendForm('report_service', 'report_form', e.target, 'user_4OG68qZLl4ZXKBq8cUxDT')
     .then((result) => {
       document.getElementById('myForm').reset();
-      alert('Email sent');
+      alert('Thank you! Your report has been sent.\n\nFeel free to check our FAQs page for updates on bug fixes and a description of how the features can be best utilized.');
     }, (error) => {
       console.log(error.text);
       alert('error');
     })
 } 
+
+const activeButton = {
+  background: styleVar.fontColorAccent,
+  color: 'white',
+  cursor: 'pointer'
+}
+
+const inActiveButton = {
+  color: styleVar.fontColorAccent,
+  background: '#eff3ef'
+}
 
 const Form = () => {
   const [isHuman, setIsHuman] = useState(false);
@@ -27,7 +39,7 @@ const Form = () => {
     }
     else alert('Verify Captcha')
   }
-
+   
   return ( 
     <form id='myForm' onSubmit={handleSubmit}>
       <div className='email-container col'>
@@ -40,7 +52,7 @@ const Form = () => {
       </div>
       <ReCAPTCHA sitekey={process.env.REACT_APP_CAPTCHA_SITE_KEY} onChange={onChange} onExpired={onExpired} ref={recaptchaRef}/>
       <div className='btn-container'>
-        <button className='btn' type='submit'>Submit</button>
+        <button className='btn' type='submit' style={isHuman ? activeButton:inActiveButton}>Submit</button>
       </div>
     </form>
    );
