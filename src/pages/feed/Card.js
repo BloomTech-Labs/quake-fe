@@ -5,7 +5,6 @@ const Card = (newsArticle) => {
   const [newsOpen, setNewsOpen] = useState(false);
   const newsTopics = ["Earthquake", "Tsunami", "Seismic", "Alaska"];
   let articleImage = {};
-  // let articleKeyword = [];
   let articleDate = newsArticle.newsArticle.pub_date.split("T");
   const lowerCaseTopic = newsArticle.newsArticle.topic.toLowerCase();
 

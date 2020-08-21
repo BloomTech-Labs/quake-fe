@@ -21,10 +21,10 @@ const Navigation = () => {
   const toggleSideNews = () => {
     const container = document.getElementById("feed-container");
     if (!sideView) {
-      container.style.transform = "translateX(0px)"
+      container.style.transform = "translateX(0px)";
       setSideView(!sideView);
     } else {
-      container.style.transform = "translateX(-400px)"
+      container.style.transform = "translateX(-400px)";
       setSideView(!sideView);
     }
   };
@@ -42,8 +42,13 @@ const Navigation = () => {
         </NavLink>
       </MediaQuery>
       <MediaQuery minWidth={800}>
-        <div onClick={toggleSideNews} className="nav-link">
-          <FeedIcon className="nav-icon" /> <p>News</p>
+        <div
+          onClick={toggleSideNews}
+          className="nav-link"
+          style={sideView ? activeStyle : { background: "transparent" }}
+        >
+          <FeedIcon className="nav-icon" />
+          <p>News</p>
         </div>
       </MediaQuery>
 

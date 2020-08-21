@@ -13,30 +13,6 @@ const Feed = ({ news, newsFetch, newsFetchError, newsLoad }) => {
     newsLoad(newsTopics);
   }, []);
 
-  // const [sideView, setSideView] = useState();
-  // const isBigScreen = useMediaQuery({
-  //   query: "(min-width: 800px)",
-  // });
-
-  // useEffect(() => {
-  //   const container = document.getElementById("results-container");
-  //   const map = document.getElementById("map-container");
-
-  //   if (isBigScreen) {
-  //     container.style.height = "100%";
-  //     container.style.transform = "translateY(0)";
-  //     map.style.height = "100%";
-  //   } else {
-  //     for (let i = 0; i < view.length; i++) {
-  //       if (viewType === view[i].view) {
-  //         container.style.height = view[i].cheight;
-  //         container.style.transform = view[i].ctransform;
-  //         map.style.height = view[i].mheight;
-  //       }
-  //     }
-  //   }
-  // }, [viewType, isBigScreen]);
-
   if (newsFetchError === false) {
     if (newsFetch === false) {
       if (news.length === 0) {

@@ -47,24 +47,24 @@ function App() {
       <Router>
         <div className="App">
           <Header />
+
           <MediaQuery minWidth={800}>
             <FeedContainer />
           </MediaQuery>
+
           <Switch>
             <Route exact path="/" component={Activity} />
             <Route exact path="/activity" component={Activity} />
 
-            <MediaQuery maxWidth={799}>
-              <Route exact path="/feed" component={FeedContainer} />
-            </MediaQuery>
+            <Route exact path="/feed" component={FeedContainer} />
 
             <Route exact path="/about" component={About} />
             <Route exact path="/resources" component={Resources} />
             <Route exact path="/report" component={BugReport} />
             <Route exact path="/sms" component={Sms} />
           </Switch>
+
           <Navigation />
-          {/* Navigation Placeholder */}
         </div>
       </Router>
     </Provider>
