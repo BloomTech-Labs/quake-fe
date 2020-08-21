@@ -3,7 +3,6 @@ import defaultArticleImage from "../../images/graphics/default-image.jpg";
 
 const Card = (newsArticle) => {
   const [newsOpen, setNewsOpen] = useState(false);
-  const newsTopics = ["Earthquake", "Tsunami", "Seismic", "Alaska"];
   let articleImage = {};
   let articleDate = newsArticle.newsArticle.pub_date.split("T");
   const lowerCaseTopic = newsArticle.newsArticle.topic.toLowerCase();
