@@ -74,8 +74,8 @@ const Sms = (state) => {
     if(rangeValFunc == 6371) {
       return rangeValFunc = "global"
     } else if(rangeValFunc == 1) {
-      return (rangeValFunc + " " + "Kilometer")
-    } else return (rangeValFunc + " " + "Kilometers")
+      return (rangeValFunc + " " + "Kilometre")
+    } else return (rangeValFunc + " " + "Kilometres")
   }
 
   const globalMi = (rangeValFunc) => {
