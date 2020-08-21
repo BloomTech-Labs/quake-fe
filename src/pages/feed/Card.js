@@ -5,16 +5,18 @@ const Card = (newsArticle) => {
   const [newsOpen, setNewsOpen] = useState(false);
   const newsTopics = ["Earthquake", "Tsunami", "Seismic", "Alaska"];
   let articleImage = {};
-  let articleKeyword = [];
+  // let articleKeyword = [];
   let articleDate = newsArticle.newsArticle.pub_date.split("T");
   const lowerCaseTopic = newsArticle.newsArticle.topic.toLowerCase();
 
+  // Missing article image catch
   if (newsArticle.newsArticle.multimedia[0] === undefined) {
     articleImage = defaultArticleImage;
   } else {
     articleImage = `https://www.nytimes.com/${newsArticle.newsArticle.multimedia[0].url}`;
   }
 
+  // Missing article abstract catch
   if (newsArticle.newsArticle.abstract === "") {
     newsArticle.newsArticle.abstract =
       "Please visit the full article to read more.";
