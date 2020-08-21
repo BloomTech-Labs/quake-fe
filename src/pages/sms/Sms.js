@@ -26,7 +26,7 @@ const Sms = (state) => {
         smsInfo
       )
       .then(function (res) {
-        alert(res);
+        alert("You have been added, for Faultline notifications");
       })
       .catch(function (error) {
         alert(error);
