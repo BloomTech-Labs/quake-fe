@@ -26,7 +26,7 @@ const Sms = (state) => {
         smsInfo
       )
       .then(function (res) {
-        alert("You have been added, for Faultline notifications");
+        alert("You have been added to Faultline notifications, you will receive alerts for earthquakes of a magnitude of 5 or higher");
       })
       .catch(function (error) {
         alert(error);
@@ -70,6 +70,22 @@ const Sms = (state) => {
     });
   }, [longLatString]);
 
+  const globalKm = (rangeValFunc) => {
+    if(rangeValFunc == 6371) {
+      return rangeValFunc = "global"
+    } else if(rangeValFunc == 1) {
+      return (rangeValFunc + " " + "Kilometre")
+    } else return (rangeValFunc + " " + "Kilometres")
+  }
+
+  const globalMi = (rangeValFunc) => {
+    if(rangeValFunc == 3958.8) {
+      return rangeValFunc = "global"
+    } else if(rangeValFunc == 1) {
+      return (rangeValFunc + " " + "Mile")
+    } else return (rangeValFunc + " " + "Miles")
+  }
+
   return (
     <section id="sms-main" className="main-container no-scroll">
       <div className="container">
@@ -104,7 +120,7 @@ const Sms = (state) => {
                 className="slider"
                 type="range"
                 min="1"
-                max="100"
+                max="6371"
                 value={rangeval}
                 onChange={handleChangeSlider}
               />
@@ -112,7 +128,7 @@ const Sms = (state) => {
 
             <br />
             <h4 id="distance-label">
-              {rangeval} Kilometers / {rangevalMiles} Miles
+              {globalKm(rangeval)} / {globalMi(rangevalMiles)} 
             </h4>
           </div>
           <Map />
