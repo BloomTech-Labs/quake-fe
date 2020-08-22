@@ -47,7 +47,7 @@ export const firstLoad = (theQuery, fallbackQuery, fallbackFn) => (
     axios
       .get(theQuery)
       .then((res) => {
-        console.log("res", res.data.feature);
+        console.log("res", res);
         dispatch({ type: DISPLAY_QUAKES, quakeData: res.data.features });
       })
       .catch((error) => {
