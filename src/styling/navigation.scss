@@ -112,6 +112,7 @@ nav {
       right: 10px;
       max-width: 380px;
       height: 380px;
+      max-height: calc(100% - 20px);
     }
 
     .big-link-container {
