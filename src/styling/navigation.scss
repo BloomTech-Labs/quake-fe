@@ -159,3 +159,18 @@ nav {
     }
   }
 }
+
+.dark-mode {
+  nav,
+  .more-links-container {
+    background: $dark-theme;
+    .big-link-container {
+      a {
+        background: $dark-theme;
+        &:hover {
+          background: #2b694862;
+        }
+      }
+    }
+  }
+}

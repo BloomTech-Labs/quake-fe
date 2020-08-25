@@ -56,3 +56,9 @@
     }
   }
 }
+
+.dark-mode {
+  .results-container {
+    background: $dark-theme;
+  }
+}
