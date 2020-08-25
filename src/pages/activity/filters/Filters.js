@@ -36,7 +36,6 @@ function Filters({
  // Initial Quake Search, runs on first load
  useEffect(() => {
    firstLoad(firstLoadQuery, USGSQuery, quakeFetch);
-   console.log('Filters.js > first load...');
  }, []);
 
 

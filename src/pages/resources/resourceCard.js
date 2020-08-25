@@ -38,16 +38,6 @@ const resources = [
     emailSize: "smaller",
     websiteSize: "smaller",
   },
-  {
-    image: EarthquakeShelterLogo,
-    alt: "Emergency Shelters logo",
-    name: "LA Emergency Shelters",
-    phone: "231-549-2345",
-    email: "help@salvationarmyusa.org",
-    website: "http://www.salvationarmyusa.org",
-    emailSize: "smaller",
-    websiteSize: "smaller",
-  },
 ];
 
 const ResourceCard = () => {

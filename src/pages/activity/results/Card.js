@@ -120,6 +120,7 @@ function Card({ jumpViewport, quake, number }) {
               <button onClick={locationJump}>Jump to Location</button>
               <a
                 href={`https://www.google.com/search?q=${quake.properties.mag}+magnitude+earthquake+${quake.properties.place}+at+${localTime}`}
+                rel="noopener noreferrer"
                 target="_blank"
               >
                 More Info
