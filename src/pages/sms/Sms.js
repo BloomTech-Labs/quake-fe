@@ -14,13 +14,13 @@ const Sms = (state) => {
   });
   console.log(smsInfo);
 
-  const twilioPost = (e) => {
+  const twilioPost = async (e) => {
     e.preventDefault();
     console.log(
       `Sms > submit ${smsInfo.cell} ${smsInfo.coordinates} ${smsInfo.distance}`
     );
 
-    axios
+    await axios
       .post(
         "https://quakelabs-be-production.herokuapp.com/api/sms/create-notify",
         smsInfo
@@ -31,6 +31,18 @@ const Sms = (state) => {
       .catch(function (error) {
         alert(error);
       });
+
+      axios
+      .post(
+        "http://localhost:5001/api/sms/signup-sms",
+        smsInfo
+      )
+      .then(function (res) {
+        console.log("sent");
+      })
+      .catch(function (error) {
+        alert(error);
+      });  
   };
 
   const changeHandler = (ev) => {
