@@ -3,7 +3,6 @@ import {
   FEMALogo,
   RedCrossLogo,
   SalvationArmyLogo,
-  EarthquakeShelterLogo,
 } from "./imageImports";
 
 // emailSize/websiteSize = smaller (to fit longer text in card else leave empty)

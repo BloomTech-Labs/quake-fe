@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import GeoCoder from "../activity/search/Geocoder";
 import { connect } from "react-redux";
 import { updateSearchParams } from "../../redux/actions";
@@ -26,23 +26,22 @@ const Sms = (state) => {
         smsInfo
       )
       .then(function (res) {
-        alert("You have been added to Faultline notifications, you will receive alerts for earthquakes of a magnitude of 5 or higher");
+        alert(
+          "You have been added to Faultline notifications, you will receive alerts for earthquakes of a magnitude of 5 or higher"
+        );
       })
       .catch(function (error) {
         alert(error);
       });
 
-      axios
-      .post(
-        "http://localhost:5001/api/sms/signup-sms",
-        smsInfo
-      )
+    axios
+      .post("https://quakelabs-be-production.herokuapp.com/api/sms/signup-sms", smsInfo)
       .then(function (res) {
         console.log("sent");
       })
       .catch(function (error) {
         alert(error);
-      });  
+      });
   };
 
   const changeHandler = (ev) => {
@@ -75,28 +74,28 @@ const Sms = (state) => {
   };
 
   useEffect(() => {
-    const coords = [state.longitude, state.latitude]
+    const coords = [state.longitude, state.latitude];
     setSmsInfo({
       ...smsInfo,
-      coordinates: coords
+      coordinates: coords,
     });
   }, [longLatString]);
 
   const globalKm = (rangeValFunc) => {
-    if(rangeValFunc == 6371) {
-      return rangeValFunc = "global"
-    } else if(rangeValFunc == 1) {
-      return (rangeValFunc + " " + "Kilometre")
-    } else return (rangeValFunc + " " + "Kilometres")
-  }
+    if (rangeValFunc === 6371) {
+      return (rangeValFunc = "global");
+    } else if (rangeValFunc === 1) {
+      return `${rangeValFunc} Kilometre`;
+    } else return `${rangeValFunc} Kilometres`;
+  };
 
   const globalMi = (rangeValFunc) => {
-    if(rangeValFunc == 3958.8) {
-      return rangeValFunc = "global"
-    } else if(rangeValFunc == 1) {
-      return (rangeValFunc + " " + "Mile")
-    } else return (rangeValFunc + " " + "Miles")
-  }
+    if (rangeValFunc === 3958.8) {
+      return (rangeValFunc = "global");
+    } else if (rangeValFunc === 1) {
+      return `${rangeValFunc} Mile`;
+    } else return `${rangeValFunc} Miles`;
+  };
 
   return (
     <section id="sms-main" className="main-container no-scroll">
@@ -140,7 +139,7 @@ const Sms = (state) => {
 
             <br />
             <h4 id="distance-label">
-              {globalKm(rangeval)} / {globalMi(rangevalMiles)} 
+              {globalKm(rangeval)} / {globalMi(rangevalMiles)}
             </h4>
           </div>
           <Map />
