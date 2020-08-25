@@ -23,8 +23,9 @@ const Sms = (state) => {
       )
       .then(function (res) {
         alert(
-          "You have been added to Faultline notifications, you will receive alerts for earthquakes of a magnitude of 5 or higher"
+          `Your number ${smsInfo.cell} has been added to Faultline notifications, you will receive alerts for earthquakes of a magnitude of 5 or higher`
         );
+        window.location = '/';
       })
       .catch(function (error) {
         alert(error);
