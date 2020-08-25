@@ -12,13 +12,9 @@ const Sms = (state) => {
   const [smsInfo, setSmsInfo] = useState({
     coordinates: [],
   });
-  console.log(smsInfo);
 
   const twilioPost = async (e) => {
     e.preventDefault();
-    console.log(
-      `Sms > submit ${smsInfo.cell} ${smsInfo.coordinates} ${smsInfo.distance}`
-    );
 
     await axios
       .post(
@@ -35,7 +31,10 @@ const Sms = (state) => {
       });
 
     axios
-      .post("https://quakelabs-be-production.herokuapp.com/api/sms/signup-sms", smsInfo)
+      .post(
+        "https://quakelabs-be-production.herokuapp.com/api/sms/signup-sms",
+        smsInfo
+      )
       .then(function (res) {
         console.log("sent");
       })
@@ -45,15 +44,12 @@ const Sms = (state) => {
   };
 
   const changeHandler = (ev) => {
-    console.log("value", ev.target.value);
     let value = ev.target.value;
 
     setSmsInfo({
       ...smsInfo,
       [ev.target.name]: value,
     });
-
-    console.log("object", smsInfo);
   };
 
   const [rangeval, setRangeval] = useState(50);
@@ -62,7 +58,6 @@ const Sms = (state) => {
   useEffect(() => {}, [rangeval]);
 
   const handleChangeSlider = (e) => {
-    console.log("value", e.target.value);
     let value = e.target.value;
     setRangeval(e.target.value);
     setRangevalMiles((e.target.value / 1.609344).toFixed(1));
