@@ -47,7 +47,6 @@ export const firstLoad = (theQuery, fallbackQuery, fallbackFn) => (
     axios
       .get(theQuery)
       .then((res) => {
-        console.log("res", res.data.feature);
         dispatch({ type: DISPLAY_QUAKES, quakeData: res.data.features });
       })
       .catch((error) => {
@@ -151,7 +150,7 @@ export const newsLoad = (newsTopics) => (dispatch) => {
             return { ...article, topic: topic };
           });
           allArticles = allArticles.concat(updatedResults);
-          console.log(allArticles);
+
           dispatch({ type: DISPLAY_NEWS, newsData: allArticles });
         })
         .catch((err) => {

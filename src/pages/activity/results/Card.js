@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { jumpViewport } from "../../../redux/actions";
-import {ReactComponent as Arrow} from "../../../images/icons/Arrow_Active.svg";
+import { ReactComponent as Arrow } from "../../../images/icons/Arrow_Active.svg";
 var moment = require("moment");
 
 function Card({ jumpViewport, quake, number }) {
@@ -29,6 +29,8 @@ function Card({ jumpViewport, quake, number }) {
       4.201256526
     );
   };
+
+  // https://www.google.com/search?q= this + is + a + google + search
 
   return (
     <main
@@ -113,7 +115,20 @@ function Card({ jumpViewport, quake, number }) {
             <strong>Magnitude:</strong> {quake.properties.mag}
           </section>
 
-          <button onClick={locationJump}>Jump to Location</button>
+          {quake.properties.mag >= 5.5 ? (
+            <div className="button-combo">
+              <button onClick={locationJump}>Jump to Location</button>
+              <a
+                href={`https://www.google.com/search?q=${quake.properties.mag}+magnitude+earthquake+${quake.properties.place}+at+${localTime}`}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                More Info
+              </a>
+            </div>
+          ) : (
+            <button onClick={locationJump}>Jump to Location</button>
+          )}
         </article>
 
         {/* ----- End Details Dropdown Card ----- */}

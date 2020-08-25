@@ -71,11 +71,6 @@ function Geocoder({
         const firstResult = geocodeResults[0];
         const latitude = geocodeResults[0].geometry.coordinates[1];
         const longitude = geocodeResults[0].geometry.coordinates[0];
-        console.log(
-          "LOGGING FEATURE COORDS: ",
-          firstResult.place_name,
-          firstResult.geometry.coordinates
-        );
         updateSearchParams({
           name: "placename",
           value: firstResult.place_name,
@@ -173,14 +168,13 @@ function Geocoder({
         aria-label="input location"
         autoComplete="off"
       />
-      {hideSearch == null &&
+      {hideSearch == null && (
         <button
-        aria-label="update search"
-        className="search-icon"
-        onClick={onSearchClick}
-      />
-      }
-      
+          aria-label="update search"
+          className="search-icon"
+          onClick={onSearchClick}
+        />
+      )}
 
       <aside className="geocoder-results">
         {geocodeResults.map((feature) => {

@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import GeoCoder from "../activity/search/Geocoder";
 import { connect } from "react-redux";
 import { updateSearchParams } from "../../redux/actions";
@@ -12,13 +12,9 @@ const Sms = (state) => {
   const [smsInfo, setSmsInfo] = useState({
     coordinates: [],
   });
-  console.log(smsInfo);
 
   const twilioPost = async (e) => {
     e.preventDefault();
-    console.log(
-      `Sms > submit ${smsInfo.cell} ${smsInfo.coordinates} ${smsInfo.distance}`
-    );
 
     await axios
       .post(
@@ -26,15 +22,17 @@ const Sms = (state) => {
         smsInfo
       )
       .then(function (res) {
-        alert("You have been added to Faultline notifications, you will receive alerts for earthquakes of a magnitude of 5 or higher");
+        alert(
+          "You have been added to Faultline notifications, you will receive alerts for earthquakes of a magnitude of 5 or higher"
+        );
       })
       .catch(function (error) {
         alert(error);
       });
 
-      axios
+    axios
       .post(
-        "http://localhost:5001/api/sms/signup-sms",
+        "https://quakelabs-be-production.herokuapp.com/api/sms/signup-sms",
         smsInfo
       )
       .then(function (res) {
@@ -42,19 +40,16 @@ const Sms = (state) => {
       })
       .catch(function (error) {
         alert(error);
-      });  
+      });
   };
 
   const changeHandler = (ev) => {
-    console.log("value", ev.target.value);
     let value = ev.target.value;
 
     setSmsInfo({
       ...smsInfo,
       [ev.target.name]: value,
     });
-
-    console.log("object", smsInfo);
   };
 
   const [rangeval, setRangeval] = useState(50);
@@ -63,7 +58,6 @@ const Sms = (state) => {
   useEffect(() => {}, [rangeval]);
 
   const handleChangeSlider = (e) => {
-    console.log("value", e.target.value);
     let value = e.target.value;
     setRangeval(e.target.value);
     setRangevalMiles((e.target.value / 1.609344).toFixed(1));
@@ -75,28 +69,28 @@ const Sms = (state) => {
   };
 
   useEffect(() => {
-    const coords = [state.longitude, state.latitude]
+    const coords = [state.longitude, state.latitude];
     setSmsInfo({
       ...smsInfo,
-      coordinates: coords
+      coordinates: coords,
     });
   }, [longLatString]);
 
   const globalKm = (rangeValFunc) => {
-    if(rangeValFunc == 6371) {
-      return rangeValFunc = "global"
-    } else if(rangeValFunc == 1) {
-      return (rangeValFunc + " " + "Kilometre")
-    } else return (rangeValFunc + " " + "Kilometres")
-  }
+    if (rangeValFunc === 6371) {
+      return (rangeValFunc = "global");
+    } else if (rangeValFunc === 1) {
+      return `${rangeValFunc} Kilometre`;
+    } else return `${rangeValFunc} Kilometres`;
+  };
 
   const globalMi = (rangeValFunc) => {
-    if(rangeValFunc == 3958.8) {
-      return rangeValFunc = "global"
-    } else if(rangeValFunc == 1) {
-      return (rangeValFunc + " " + "Mile")
-    } else return (rangeValFunc + " " + "Miles")
-  }
+    if (rangeValFunc === 3958.8) {
+      return (rangeValFunc = "global");
+    } else if (rangeValFunc === 1) {
+      return `${rangeValFunc} Mile`;
+    } else return `${rangeValFunc} Miles`;
+  };
 
   return (
     <section id="sms-main" className="main-container no-scroll">
@@ -140,7 +134,7 @@ const Sms = (state) => {
 
             <br />
             <h4 id="distance-label">
-              {globalKm(rangeval)} / {globalMi(rangevalMiles)} 
+              {globalKm(rangeval)} / {globalMi(rangevalMiles)}
             </h4>
           </div>
           <Map />
