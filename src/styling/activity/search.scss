@@ -79,3 +79,9 @@
     }
   }
 }
+
+.dark-mode {
+  .search-container {
+    background: $dark-theme;
+  }
+}

@@ -217,6 +217,10 @@
       filter: invert(1);
     }
   }
+  .activity-info-secondary {
+    background: $neutral-3;
+    color: $font-color-white;
+  }
 }
 
 // ----- End Details Dropdown Card -----
