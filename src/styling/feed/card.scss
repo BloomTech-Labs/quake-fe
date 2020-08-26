@@ -73,7 +73,7 @@
   background: linear-gradient(
     to right,
     rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 1) 50%
+    $theme-color-secondary 50%
   );
   transition: all 0.3s;
 }
@@ -149,4 +149,28 @@
   justify-content: center;
   align-items: center;
   font-family: $font-body;
+}
+
+// Dark Mode
+
+.dark-mode {
+  .news-article-container,
+  .news-article-container-open {
+    background: $dark-theme;
+  }
+
+  .news-article-date,
+  .news-article-title,
+  .news-article-abstract,
+  .news-article-abstract-open {
+    color: $font-color-white;
+  }
+
+  .news-article-abstract::after {
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      $dark-theme 50%
+    );
+  }
 }
