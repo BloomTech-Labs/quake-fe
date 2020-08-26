@@ -202,3 +202,14 @@
     }
   }
 }
+.dark-mode {
+  .about-main {
+    color: $font-color-white;
+    .about-team-links a {
+      color: $font-color-white;
+    }
+    .map-accent{
+      display: none;
+    }
+  }
+}
