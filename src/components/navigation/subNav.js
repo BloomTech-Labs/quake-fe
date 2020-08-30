@@ -34,15 +34,15 @@ const SubNav = () => {
 
   // Checks if should display install popup notification:
   const triggerHomescreen = () => {
-  //   if (isIos() && !isInStandaloneMode()) {
-  //     // this.setState({ showInstallMessage: true });
-  //     alert('iOS! and not in Standalone mode')
-  //   } else if (window.matchMedia('(display-mode: standalone)')) {
-  //     alert('in standalone mode')
-  //     alert(window.matchMedia)
-  //   } else if (window.matchMedia(!'(display-mode: standalone)')) {
-  //   alert('not in standalone mode')
-  // }
+    if (isIos() && !isInStandaloneMode()) {
+      // this.setState({ showInstallMessage: true });
+      alert('iOS! and not in Standalone mode')
+    } else if (window.matchMedia('(display-mode: standalone)')) {
+      alert('in standalone mode')
+      alert(window.matchMedia)
+    } else if (window.matchMedia(!'(display-mode: standalone)')) {
+    alert('not in standalone mode')
+  }
 
   }
   
