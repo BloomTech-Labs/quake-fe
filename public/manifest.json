@@ -1,6 +1,7 @@
 {
   "short_name": "FaultLine",
   "name": "FaultLine - Epicentral",
+  "description": "Displaying earthquake data in a user friendly way",
   "icons": [
     {
       "src": "logo-152px.png",
@@ -18,8 +19,9 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#247249",
   "background_color": "#247249"
 }
+
