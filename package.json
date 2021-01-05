@@ -8,7 +8,7 @@
     "@testing-library/user-event": "^7.1.2",
     "@turf/distance": "^6.0.1",
     "@turf/turf": "^5.1.6",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "emailjs-com": "^2.6.3",
     "moment": "^2.26.0",
