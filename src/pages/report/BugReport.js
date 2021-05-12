@@ -4,7 +4,7 @@ import Form from './form'
 
 const Report = () => {
   return ( 
-    <section id='bug-report' className='main-container no-scroll'>
+    <section id='bug-report' className='main-container scroll'>
       <div className='container'>
         <header>
           <h2 className='title'>
